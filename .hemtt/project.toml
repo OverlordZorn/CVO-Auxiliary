@@ -21,6 +21,7 @@ exclude = [
     "*.psd",        # By default this list is empty
     "*.md",
     "/.vscode/",
+    ".ogg",
 ]
 
 [version]
