@@ -130,9 +130,7 @@ diag_log format ["[CVO][MUSIC](playlist selected) %1", _playlist];
 private _song;
 private _selection;
 
-_selection = switch (_playlist) do {
-	case "leaveBase": {
-		[	
+private _leaveBase = [	
 			"cvo_music_chorniVoron",
 			"AmbientTrack01_F",
 			"AmbientTrack01a_F",
@@ -170,9 +168,7 @@ _selection = switch (_playlist) do {
 			"LeadTrack02_F_Tacops",
 			"LeadTrack03_F_Tacops"
 		];
-	};
-	case "tense": {
-		[
+private _tense = [
 			"cvo_RocketTrain",
 			"Track11_StageB_stealth",
 			"AmbientTrack01b_F",
@@ -224,12 +220,34 @@ _selection = switch (_playlist) do {
 			"AmbientTrack01b_F_Tacops",
 			"AmbientTrack01a_F_Tacops"			
 		];
-	};
-	case "ChorniVoron": {
-		[
-			"cvo_chorniVoron"
-		];
-	};
+private _cvo = [ "cvo_chorniVoron" ];
+
+
+if (/*western sahara is loaded */false) then {
+	_leaveBase append [
+		""
+	];
+	_tense append [
+		""
+	];
+
+};
+
+if (/*reaction forces is loaded */false) then {
+	_leaveBase append [
+		""
+	];
+	_tense append [
+		""
+	];
+
+};
+
+
+_selection = switch (_playlist) do {
+	case "leaveBase": {_leaveBase};
+	case "tense": {_tense};
+	case "ChorniVoron": {_cvo};
 }; 
 
 _song = _selection call BIS_fnc_selectRandom;
