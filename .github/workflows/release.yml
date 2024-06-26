@@ -35,7 +35,7 @@ jobs:
         - name: Update to Steam Workshop (stable)
           uses: arma-actions/workshop-upload@v1
           with:
-            itemId: '3037257908'
+            itemId: '3037257908_696969'
             contentPath: './@cvo_aux-${{ env.VERSION }}'
             changelog: |
               https://github.com/OverlordZorn/CVO-Auxiliary/releases/tag/v${{ env.VERSION }}
