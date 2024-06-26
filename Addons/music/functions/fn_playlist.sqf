@@ -121,12 +121,14 @@ if (_playlist isEqualTo "postInit") exitWith {
 		_action = ["cvo_music_zeus_pl_ChorniVoron","Chorni Voron","\A3\ui_f\data\igui\cfg\simpleTasks\types\takeoff_ca.paa",{["ChorniVoron"] call CVO_Music_fnc_playlist},{true}] call ace_interact_menu_fnc_createAction;
 		[["ACE_ZeusActions","cvo_music_zeus_node","cvo_music_zeus_playlists"], _action] call ace_interact_menu_fnc_addActionToZeus;
 
-		if (configName (configFile >> "CfgMusic" >> "AmbientTrack01_lxWS") != "") then {
 
+		_action = ["cvo_music_zeus_pl_Desiderii_Marginis","Desiderii Marginis","\A3\ui_f\data\igui\cfg\simpleTasks\types\takeoff_ca.paa",{["cvo_Desiderii_Marginis"] call CVO_Music_fnc_playlist},{true}] call ace_interact_menu_fnc_createAction;
+		[["ACE_ZeusActions","cvo_music_zeus_node","cvo_music_zeus_playlists"], _action] call ace_interact_menu_fnc_addActionToZeus;
+
+
+		if (configName (configFile >> "CfgMusic" >> "AmbientTrack01_lxWS") != "") then {
 			_action = ["cvo_music_zeus_pl_WS_Ambient","WS Ambient","\A3\ui_f\data\igui\cfg\simpleTasks\types\takeoff_ca.paa",{["WS_Ambient"] call CVO_Music_fnc_playlist},{true}] call ace_interact_menu_fnc_createAction;
 			[["ACE_ZeusActions","cvo_music_zeus_node","cvo_music_zeus_playlists"], _action] call ace_interact_menu_fnc_addActionToZeus;
-
-
 		};
 
 	diag_log ("[CVO][MUSIC] - Zeus Actions Established");
@@ -289,6 +291,22 @@ private _selection = switch (_playlist) do {
 			"jukebox_d5_lxWS",
 			"alchemist_01v2_lxWS",
 			"alchemist_02v2_lxWS"
+		]
+	};
+
+	case "cvo_Desiderii_Marginis": {
+		[
+			"BlackLight_WhenLIfeShoneWarm",
+			"BlackLight_Twilight",
+			"BlackLight_TheShadowIsOne",
+			"BlackLight_TearsOfWax",
+			"BlackLight_Ghostfires",
+			"BlackLight_AnInnerWilderness",
+
+			"Procession_SilentMessenger",
+			"Procession_Procession",
+			"Procession_ComeRuindAndRapture",
+			"Procession_Adrift"
 		]
 	};
 
