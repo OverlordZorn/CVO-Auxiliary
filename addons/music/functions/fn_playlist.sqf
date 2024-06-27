@@ -311,9 +311,16 @@ private _selection = switch (_playlist) do {
 	};
 
 	case "ChorniVoron": {
-		[ "cvo_chorniVoron" ]
+		[ "cvo_chorniVoron" ] 
+	};
+
+	default {
+		systemChat format ["[CVO][MUSIC](Playlist) %1 not found", _playlist];
+		[]
 	};
 }; 
+
+if ( count _selection == 0 ) exitWith {};
 
 _selection = _selection select { configName (configFile >> "CfgMusic" >> _x) != "" };
 
