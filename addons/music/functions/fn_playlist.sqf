@@ -138,7 +138,8 @@ if (_playlist isEqualTo "postInit") exitWith {
 // Playlist Function starts here when param is not "postInit"
 
 diag_log format ["[CVO][MUSIC](playlist selected) %1", _playlist];
-private _selection = switch (_playlist) do {
+private _selection = switch (_playlist) do
+{
 	case "leave_Base": {
 		[	
 			"cvo_music_chorniVoron",
@@ -293,7 +294,7 @@ private _selection = switch (_playlist) do {
 			"alchemist_02v2_lxWS"
 		]
 	};
-
+	
 	case "cvo_Desiderii_Marginis": {
 		[
 			"BlackLight_WhenLIfeShoneWarm",
@@ -309,17 +310,13 @@ private _selection = switch (_playlist) do {
 			"Procession_Adrift"
 		]
 	};
-
 	case "ChorniVoron": {
 		[ "cvo_chorniVoron" ] 
 	};
-
-	default {
-		systemChat format ["[CVO][MUSIC](Playlist) %1 not found", _playlist];
-		[]
-	};
+	default { systemChat format ["[CVO][MUSIC](Playlist) %1 not found", _playlist]; [] };
 }; 
 
+if ( typeName _selection == "BOOL" ) exitWith {};
 if ( count _selection == 0 ) exitWith {};
 
 _selection = _selection select { configName (configFile >> "CfgMusic" >> _x) != "" };
