@@ -2,7 +2,7 @@
 	Author: Mr. Zorn
 
 	Description:
-		Defines or Updates the local CVO_A_FULL Array to be used in the CVO Arsenal.
+		returns the _finalKit Array to be used in the CVO Arsenal.
 
 	Parameter(s):
 
@@ -16,21 +16,24 @@
 if (!hasInterface) exitWith {};
 
 private _finalKit = [];
-_finalKit append CVO_A_BASE;
+
+_baseKit = missionNamespace getVariable ["CVO_A_BASE", []];
+_finalKit append _baseKit;
 
 // ############ Detect ROLE KIT ############
 
 private _roles = player getVariable ["CVO_A_Roles", []];
 
 // Detectes ACE MEDIC and ACE Engineer
-if (0 < player getVariable ["ace_medical_medicClass", 0]) 	then {_roles pushBackUnique "Medic"};
-if (0 < player getVariable ["ACE_IsEngineer",0]) 			then {_roles pushBackUnique "Engineer"};
+if ([player, 1] call ace_medical_treatment_fnc_isMedic) then {_roles pushBackUnique "Medic"};
+if ([player, 1] call ace_repair_fnc_isEngineer) 		then {_roles pushBackUnique "Engineer"};
 
 
 {// Retrieves Info from HASHMAP
-	private _array = CVO_A_HASH_RoleKit getOrDefault [_x,false];
+	private _hashMap_RoleKit = missionNamespace getVariable ["CVO_A_HASH_RoleKit", createHashMap];
+	private _array = _hashMap_RoleKit getOrDefault [_x,false];
 
-diag_log format ["_array: %1", _array];
+	diag_log format ["_array: %1", _array];
 
 
 	if (!(_array isEqualTo false)) then {
@@ -50,8 +53,10 @@ diag_log format ["_array: %1", _array];
 
 // ############ Detect PLAYER KIT ############
 private _uid = getPlayerUID player;
-_array = CVO_A_HASH_PlayerKit getOrDefault [_uid,false];
-diag_log format ["_PKarray: %1", _array];
+
+private _hashMap_PlayerKit = missionNamespace getVariable ["CVO_A_HASH_PlayerKit", createHashMap];
+_array = _hashMap_PlayerKit getOrDefault [_uid,false];
+
 
 if (!(_array isEqualTo false)) then {
 
