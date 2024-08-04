@@ -35,7 +35,6 @@ class CfgFunctions
 	{
 		class Arsenal           // Category
 		{
-			file = "cvo\auxiliary\arsenal\functions";
 			class eventHandlers  { postInit = 1; };
 			class saveStartingLoadout { postInit = 1; };
 
@@ -46,7 +45,6 @@ class CfgFunctions
 
 		class CVO_Arsenal_GreenMag
 		{
-			file = "cvo\auxiliary\arsenal\functions";
 			requiredAddons[] = { "greenmag_main" };
 			class greenmag_tab { postInit = 1; };
 		};
