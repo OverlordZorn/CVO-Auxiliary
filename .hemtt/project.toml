@@ -6,6 +6,8 @@ mainprefix = "z"
 author = "CVO Team - Mr. Zorn"
 url = "https://github.com/OverlordZorn/CVO-Auxiliary"
 
+[binarize]
+enabled = false # Default: true
 
 [files]
 include = [
@@ -21,6 +23,7 @@ exclude = [
     "*.psd",        # By default this list is empty
     "*.md",
     "/.vscode/",
+    ".ogg",
 ]
 
 [version]
@@ -28,6 +31,8 @@ major = 0 # Overrides path when set
 minor = 1
 patch = 1
 git_hash = 4 # Default: 8
+
+
 
 
 [hemtt.launch.default]
@@ -56,21 +61,24 @@ parameters = [
 
 executable = "arma3_x64"        # Default: "arma3_x64"
 
-[hemtt.launch.test]
+[hemtt.launch.stratis]
 workshop = [
     "450814997", # CBA_A3's Workshop ID
     "463939057", # ACE3
     "2369477168", # Advanced Developer Tools
 ]
 
+mission = "test.Stratis"
+
 dlc = [
+    "Reaction Forces",
+    "Western Sahara"
 ]
 
 optionals = [
 ]
 
 parameters = [
-    "\test-mission\\test.Stratis\\mission.sqm",
     "-skipIntro",           # These parameters are passed to the Arma 3 executable
     "-noSplash",            # They do not need to be added to your list
     "-showScriptErrors",    # You can add additional parameters here
