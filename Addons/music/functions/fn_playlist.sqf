@@ -54,7 +54,7 @@ if (_playlist isEqualTo "postInit") exitWith {
 			_path = (configFile >> "CfgMusic" >> _musicClassname);
 			_name = [_path,"name", "Not Found"] call BIS_fnc_returnConfigEntry;
 
-			_str switch (missionNamespace getVariable ["CVO_CBA_MusicDisplayString", "NAME"]) do {
+			_str = switch (missionNamespace getVariable ["CVO_CBA_MusicDisplayString", "NAME"]) do {
 				case "NAME": { _name };
 				default { _musicClassname };
 			};
