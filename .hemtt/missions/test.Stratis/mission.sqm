@@ -8,14 +8,14 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=11;
+		nextID=18;
 	};
 	class Camera
 	{
-		pos[]={3445.9348,150.47997,2613.9331};
-		dir[]={0.7216844,-0.36228833,0.58984619};
-		up[]={0.28051454,0.9320662,0.22926962};
-		aside[]={0.63283747,1.929584e-008,-0.77428496};
+		pos[]={3497.6094,150.47997,2645.4236};
+		dir[]={-0.59880126,-0.35564977,-0.71760404};
+		up[]={-0.22786213,0.93461853,-0.27307031};
+		aside[]={-0.76780456,-1.1175871e-008,0.64069128};
 	};
 };
 binarizationWanted=0;
@@ -23,13 +23,14 @@ sourceName="test";
 addons[]=
 {
 	"A3_Characters_F",
-	"A3_Props_F_Decade_Military_Decorative"
+	"A3_Props_F_Decade_Military_Decorative",
+	"ace_marker_flags"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=2;
+		items=3;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -44,11 +45,19 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item2
+		{
+			className="ace_marker_flags";
+			name="ACE3 - Marker Flags";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
 	};
 };
 dlcs[]=
 {
-	"Decade"
+	"Decade",
+	"ORANGE"
 };
 randomSeed=16580065;
 class ScenarioData
@@ -79,7 +88,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=10;
 		class Item0
 		{
 			dataType="Group";
@@ -230,6 +239,111 @@ class Mission
 				};
 				nAttributes=3;
 			};
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1615.2897,5.9699674,5243.8853};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=11;
+			type="ace_marker_flags_black";
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1650.6694,5.9699674,5249.5093};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=12;
+			type="ace_marker_flags_blue";
+		};
+		class Item5
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1669.2185,5.9699674,5287.7817};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=13;
+			type="ace_marker_flags_green";
+		};
+		class Item6
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1695.9857,5.9699674,5346.4819};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=14;
+			type="ace_marker_flags_purple";
+		};
+		class Item7
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1657.9481,5.9699674,5359.3955};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=15;
+			type="ace_marker_flags_red";
+		};
+		class Item8
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1738.0149,5.9699674,5309.6177};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=16;
+			type="ace_marker_flags_white";
+		};
+		class Item9
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1726.7444,5.9699674,5288.0166};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=17;
+			type="ace_marker_flags_yellow";
 		};
 	};
 };
