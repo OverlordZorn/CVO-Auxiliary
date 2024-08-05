@@ -8,7 +8,7 @@ if !(hasInterface) exitWith {};
 
 ["CBA_settingsInitialized", {
 
-	private _isEnabled = missionNamespace getVariable ["CVO_SET_savePlayerLoadoutAtArsenalClose", true];
+	private _isEnabled = missionNamespace getVariable ["CVO_SET_Arsenal_saveOnArsenalClose", true];
 	if !(_isEnabled) exitWith {};
 
     ["ace_arsenal_displayClosed", {

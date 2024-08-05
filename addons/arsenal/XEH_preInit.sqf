@@ -1,5 +1,5 @@
 [
-	"CVO_SET_savePlayerLoadoutAtArsenalClose",//    _setting     - Unique setting name. Matches resulting variable name <STRING>
+	"CVO_SET_Arsenal_saveOnArsenalClose",//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"CHECKBOX",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
 	["Save Player Loadout on ACE Arsenal closed","Save Player Loadout when the ACE Arsenal is being closed"],
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
