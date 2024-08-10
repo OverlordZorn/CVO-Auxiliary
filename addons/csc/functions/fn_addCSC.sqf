@@ -35,7 +35,8 @@
  * 		objNull,
  * 		[
  * 			["B_SCBA_01_F",6]
- * 		]
+ * 		],
+
  * 	] call CVO_CSC_fnc_addCSC;
  * 	
  * 	
@@ -47,23 +48,20 @@
 */
 
 params [
-	["_spawner", objNull],
-	["_name", "defaultName", ["String"]],
-	["_array",[]],
-	["_BoxType","Land_WoodenBox_F", ["String"]],
-	["_backpacks", []],
-	["_spawnloc", objNull]
+	["_spawner", 		objNull, 			[objNull, ""] 				],
+	["_name", 			"defaultName", 		["String"] 					],
+	["_array",			[] 												],
+	["_BoxType",		"Land_WoodenBox_F", ["String"] 					],
+	["_backpacks", 		[]												],
+	["_spawnloc", 		"REL", 				["",objNull,[]],	[2,3] 	]
 ];
 
 // ########## Creates the CSC Parent Ace Interaction Node ##########
 // ### Creates an Array to store all already existing "Menu Nodes" when the Array doesnt exist yet.
-if (isNil "CVO_CSC_array") then {
-	CVO_CSC_array = [];
-	diag_log ("[CVO][CSC] created CVO_CSC_Array.");
-};
+private _nodeArray = missionNamespace getVariable ["CVO_CSC_NodeArray", []];
 
 // ### Creates CSC Menu Node if the _spawner does not carries a CSC Menu Node yet.
-if (!(_spawner in CVO_CSC_array)) then {
+if (!(_spawner in _nodeArray)) then {
 	private _root = [
 		"cvo_csc_root",													// Action Name
 		"Take Custom Supply Crates",									// Name for the ACE Interaction Menu
@@ -72,7 +70,7 @@ if (!(_spawner in CVO_CSC_array)) then {
 		{true}															// Condition
 	] call ace_interact_menu_fnc_createAction;
 
-	if (typeName _spawner isEqualTo "OBJECT") then {
+	if (_spawner isEqualType objNull) then {
 		_test = [
 			_spawner,										// Object the action should be assigned to
 			0,												// Type of action, 0 for action, 1 for self-actionIDs
@@ -90,9 +88,9 @@ if (!(_spawner in CVO_CSC_array)) then {
 		] call ace_interact_menu_fnc_addActionToClass;		
 	};
 
-	CVO_CSC_array pushBack _spawner;
+	_nodeArray pushBack _spawner;
 };
-
+missionNamespace setVariable ["CVO_CSC_NodeArray", _nodeArray];
 // ########## Creates the individual CSC ACE Interaction ##########
 
 // ### Adapts Names for the Ace action
@@ -105,7 +103,7 @@ private _action = [
 	_actionname,													// Action Name
 	_actionstring,													// Name for the ACE Interaction Menu 
 	"\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa",																// Custom Icon 
-	{_this call cvo_CSC_fn_spawnCSC},								// Statement
+	{_this call CVO_CSC_fnc_spawnCSC},								// Statement
 	{true},															// Condition
 	{},
 	[_BoxType, _spawnloc, _name, _array, _backpacks]
