@@ -7,43 +7,32 @@
 */
 
 // Defines the Params
-_parameter = _this select 2;
-_parameter params["_BoxType", "_spawnloc", "_name", "_array", "_backpacks"];
+params ["_target", "_player", "_actionParams"]; //Default parameter given through the interaction framework
+_actionParams params ["_BoxType", "_spawnLoc", "_name", "_itemArray", "_backbackArray"];
 
-diag_log (format ["[CVO][CSC](Request) New Request %1", _this]);
+diag_log (format ["[CVO][CSC](spawnCSC) New Request %1", _actionParams]);
 
+diag_log format ['[CVO](debug)(fn_spawnCSC) _boxType: %1 - _spawnLoc: %2 - _name: %3 - _itemArray: %4 - _backbackArray: %5', _boxType , _spawnLoc ,_name , _itemArray , _backbackArray];
 
-private ["_spawnPos", "_size"];
+private _spawnPos = switch (true) do {
+	case (_spawnLoc isEqualTo "REL"): 		{
+			
+			_target getRelPos [((_target call BIS_fnc_boundingBoxDimensions)#0 / 2) + 3 ,180]
+		};
+	case (_spawnLoc isEqualType objNull): 	{ getPosATL _spawnLoc };
+	case (_spawnLoc isEqualType []): 		{ _spawnLoc };
+	default { [0,0,0] };
+};
 
-_spawnPos = [];
-_size = _target call BIS_fnc_boundingBoxDimensions;
-diag_log (format ["[CVO][CSC](Request) _target: %1 - _size = %2", _target, _size]);
+_spawnPos set [2,_spawnPos#2 + 1];
 
+diag_log (format ["[CVO][CSC](spawnCSC) Established spawnPos: %1", _spawnPos]);
 
-if (_spawnloc isEqualTo "REL")  then {
-
-	_spawnPos = _target getRelPos [(_size#0 / 2) + 3 ,180];
-	diag_log (format ["[CVO][CSC](Request) post getRelPos _spawnPos: %1", _spawnPos]);
-
-} else {
-
-	_spawnPos = getPosATL _spawnloc;
-
-	};
-
-
-diag_log (format ["[CVO][CSC](Request) pre set[2,1] _spawnPos: %1", _spawnPos]);
-_spawnPos set [2,1];
-diag_log (format ["[CVO][CSC](Request) post set [2,1] _spawnPos: %1", _spawnPos]);
-
-
-diag_log ("[CVO][CSC](Request) - " + _name + " - Start");
-
+diag_log ("[CVO][CSC](spawnCSC) - " + _name + " - Start");
 
 // spawn the desired box at the desired location.
-
 _box = createVehicle [_BoxType, _spawnPos,[],2,"CAN_COLLIDE"]; 		
-diag_log ("[CVO][CSC](Request) - " + _name + " - Box Created");
+diag_log ("[CVO][CSC](spawnCSC) - " + _name + " - Box Created");
 
 
 // set the custom name for Ace Cargo
@@ -55,18 +44,19 @@ clearBackpackCargoGlobal _box;
 clearMagazineCargoGlobal _box;
 clearWeaponCargoGlobal _box;
 clearItemCargoGlobal _box;
-diag_log ("[CVO][CSC](Request) - " + _name + " - Cleared Default Inventory");
+diag_log ("[CVO][CSC](spawnCSC) - " + _name + " - Cleared Default Inventory");
 
 
 // Fills the Box with anything in the array that isnt a backpack
-if (count _array > 0) then {
-	{_box addItemCargoGlobal [_x select 0, _x select 1];} forEach _array;
-};
+{
+	_box addItemCargoGlobal [_x # 0, _x # 1]
+} forEach _itemArray;
+
 
 // Fills the Box with with backpacks
-if (count _backpacks > 0) then {
-	{_box addBackpackCargoGlobal [_x select 0, _x select 1];} forEach _backpacks;
-};
-diag_log ("[CVO][CSC](Request) - " + _name + " - Added Custom Inventory");
+{
+	_box addBackpackCargoGlobal [_x # 0, _x # 1]
+} forEach _backbackArray;
 
-diag_log ("[CVO][CSC](Request) - " + _name + " - Spawning Complete");
+diag_log ("[CVO][CSC](spawnCSC) - " + _name + " - Added Custom Inventory");
+diag_log ("[CVO][CSC](spawnCSC) - " + _name + " - Spawning Complete");
