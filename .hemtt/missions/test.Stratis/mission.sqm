@@ -8,14 +8,14 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=18;
+		nextID=19;
 	};
 	class Camera
 	{
-		pos[]={3497.6094,150.47997,2645.4236};
-		dir[]={-0.59880126,-0.35564977,-0.71760404};
-		up[]={-0.22786213,0.93461853,-0.27307031};
-		aside[]={-0.76780456,-1.1175871e-008,0.64069128};
+		pos[]={3489.1826,150.47997,2644.2896};
+		dir[]={-0.86676669,-0.4708904,-0.16427249};
+		up[]={-0.4626568,0.88219059,-0.087684408};
+		aside[]={-0.1862095,-5.0320523e-008,0.98251468};
 	};
 };
 binarizationWanted=0;
@@ -24,13 +24,16 @@ addons[]=
 {
 	"A3_Characters_F",
 	"A3_Props_F_Decade_Military_Decorative",
-	"ace_marker_flags"
+	"ace_marker_flags",
+	"A3_Supplies_F_Heli_Slingload",
+	"ace_rearm",
+	"ace_cargo"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=6;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -52,12 +55,34 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item3
+		{
+			className="A3_Supplies_F_Heli";
+			name="Arma 3 Helicopters - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="ace_rearm";
+			name="ACE3 - Rearm";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item5
+		{
+			className="ace_cargo";
+			name="ACE3 - Cargo";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
 	};
 };
 dlcs[]=
 {
 	"Decade",
-	"ORANGE"
+	"ORANGE",
+	"Heli"
 };
 randomSeed=16580065;
 class ScenarioData
@@ -88,7 +113,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=10;
+		items=11;
 		class Item0
 		{
 			dataType="Group";
@@ -344,6 +369,23 @@ class Mission
 			};
 			id=17;
 			type="ace_marker_flags_yellow";
+		};
+		class Item10
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3471.4854,144.72379,2647.4185};
+				angles[]={6.2407117,1.4903799,6.2731848};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=18;
+			type="B_Slingload_01_Ammo_F";
+			atlOffset=1.5258789e-005;
 		};
 	};
 };
