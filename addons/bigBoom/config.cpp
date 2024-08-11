@@ -31,8 +31,8 @@ class CfgFunctions
 		{
 			file = "z\cvo_aux\addons\bigBoom\functions";
 
-    	    class fn_bigBoomPrep {};
-    	    class fn_bigBoomHMO {};
+    	    class bigBoomPrep {};
+    	    class bigBoomHMO {};
 		};
 	}; 
 };
