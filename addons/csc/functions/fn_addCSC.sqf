@@ -51,46 +51,14 @@ params [
 	["_spawner", 		objNull, 			[objNull, ""] 				],
 	["_name", 			"defaultName", 		["String"] 					],
 	["_array",			[] 												],
-	["_BoxType",		"Land_WoodenBox_F", ["String"] 					],
+	["_className",		"Land_WoodenBox_F", ["String"] 					],
 	["_backpacks", 		[]												],
 	["_spawnloc", 		"REL", 				["",objNull,[]],	[2,3] 	]
 ];
 
-// ########## Creates the CSC Parent Ace Interaction Node ##########
-// ### Creates an Array to store all already existing "Menu Nodes" when the Array doesnt exist yet.
-private _nodeArray = missionNamespace getVariable ["CVO_CSC_NodeArray", []];
+// Create Parent Node (if needed)
+[_spawner] call CVO_CSC_fnc_createNode;
 
-// ### Creates CSC Menu Node if the _spawner does not carries a CSC Menu Node yet.
-if (!(_spawner in _nodeArray)) then {
-	private _root = [
-		"cvo_csc_root",													// Action Name
-		"Take Custom Supply Crates",									// Name for the ACE Interaction Menu
-		"\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa",																// Custom Icon 
-		{},																// Statement
-		{true}															// Condition
-	] call ace_interact_menu_fnc_createAction;
-
-	if (_spawner isEqualType objNull) then {
-		_test = [
-			_spawner,										// Object the action should be assigned to
-			0,												// Type of action, 0 for action, 1 for self-actionIDs
-			["ACE_MainActions"],							// Parent path of the new action <Array>
-			_root
-		] call ace_interact_menu_fnc_addActionToObject;
-
-	} else {
-
-		_test = [
-			_spawner,										// Class(string) the action should be assigned to
-			0,												// Type of action, 0 for action, 1 for self-actionIDs
-			["ACE_MainActions"],							// Parent path of the new action <Array>
-			_root
-		] call ace_interact_menu_fnc_addActionToClass;		
-	};
-
-	_nodeArray pushBack _spawner;
-};
-missionNamespace setVariable ["CVO_CSC_NodeArray", _nodeArray];
 // ########## Creates the individual CSC ACE Interaction ##########
 
 // ### Adapts Names for the Ace action
@@ -106,11 +74,16 @@ private _action = [
 	{_this call CVO_CSC_fnc_spawnCSC},								// Statement
 	{true},															// Condition
 	{},
-	[_BoxType, _spawnloc, _name, _array, _backpacks]
+	[_className, _spawnloc, _name, _array, _backpacks]
 ] call ace_interact_menu_fnc_createAction;
 
 
 // ## ATTACHING THE ACTION to class OR OBJECT
+
+	switch (typeName _spawner) do {
+		case "OBJECT": { [_spawner, 0, ["ACE_MainActions"], _root ] call ace_interact_menu_fnc_addActionToObject; };
+		case "STRING": { [_spawner, 0, ["ACE_MainActions"],	_root ] call ace_interact_menu_fnc_addActionToClass;  };
+	};
 
 if (typeName _spawner isEqualTo "OBJECT") then {
 
