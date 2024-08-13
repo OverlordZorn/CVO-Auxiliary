@@ -107,8 +107,8 @@ Parameter(s):
 	Returns False when <_target> is not defined.
 
 */
-		[ourMedicalVehicleObject] 					call CVO_Others_fnc_fullHeal;	// Adds Full Health Check on a single object
-		["mod_vehicle_medical_classname", 30, 0] 	call CVO_Others_fnc_fullHeal;	// Adds Full Health Check on all objects of this classname and disables the easteregg
+		[ourMedicalVehicleObject]                 call CVO_Others_fnc_fullHeal;	// Adds Full Health Check on a single object
+		["mod_vehicle_medical_classname", 30, 0]  call CVO_Others_fnc_fullHeal;	// Adds Full Health Check on all objects of this classname and disables the easteregg
 ```
 
 ### Flag Texture Paths
@@ -126,3 +126,13 @@ Classname  `GalleryFrame_01_large_portrait_F`
 Texture #0 `z\cvo_aux\addons\others\img\Leaderportrait.paa`
 Note: Seems like it doesnt like `"`
 Old Path:  `z\cvo_aux\img\Leaderportrait.paa`
+
+
+## Grad's Dynamic Groups
+![alt text](img\readme\dynamicGroups.png)
+
+Modifies and enhances BI's dynamic groups system.
+
+* removes *unconscious* and *dead* icons from player list in group menu
+* removes randomized insignia on group creation
+* adds insignia selection menu to group menu (click on insignia symbol)

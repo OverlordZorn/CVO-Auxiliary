@@ -31,7 +31,7 @@ diag_log (format ["[CVO][CSC](spawnCSC) Established spawnPos: %1", _spawnPos]);
 diag_log ("[CVO][CSC](spawnCSC) - " + _name + " - Start");
 
 // spawn the desired box at the desired location.
-_box = createVehicle [_BoxType, _spawnPos,[],2,"CAN_COLLIDE"]; 		
+private _box = createVehicle [_BoxType, _spawnPos,[],2,"CAN_COLLIDE"]; 		
 diag_log ("[CVO][CSC](spawnCSC) - " + _name + " - Box Created");
 
 
@@ -57,6 +57,8 @@ diag_log ("[CVO][CSC](spawnCSC) - " + _name + " - Cleared Default Inventory");
 {
 	_box addBackpackCargoGlobal [_x # 0, _x # 1]
 } forEach _backbackArray;
+
+["cvo_csc_Event_crateSpawnedServer", [_box, _name] ] call CBA_fnc_ServerEvent;
 
 diag_log ("[CVO][CSC](spawnCSC) - " + _name + " - Added Custom Inventory");
 diag_log ("[CVO][CSC](spawnCSC) - " + _name + " - Spawning Complete");
