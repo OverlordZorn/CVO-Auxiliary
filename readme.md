@@ -129,7 +129,7 @@ Old Path:  `z\cvo_aux\img\Leaderportrait.paa`
 
 
 ## Grad's Dynamic Groups
-![alt text](img\readme\dynamicGroups.png)
+![alt text](/img/readme/dynamicGroups.png)
 
 Modifies and enhances BI's dynamic groups system.
 
