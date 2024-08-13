@@ -126,3 +126,13 @@ Classname  `GalleryFrame_01_large_portrait_F`
 Texture #0 `z\cvo_aux\addons\others\img\Leaderportrait.paa`
 Note: Seems like it doesnt like `"`
 Old Path:  `z\cvo_aux\img\Leaderportrait.paa`
+
+
+## Grad's Dynamic Groups
+![alt text](img\readme\dynamicGroups.png)
+
+Modifies and enhances BI's dynamic groups system.
+
+* removes *unconscious* and *dead* icons from player list in group menu
+* removes randomized insignia on group creation
+* adds insignia selection menu to group menu (click on insignia symbol)

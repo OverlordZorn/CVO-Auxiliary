@@ -49,9 +49,6 @@ optionals = [
 ]
 
 parameters = [
-    "-skipIntro",           # These parameters are passed to the Arma 3 executable
-    "-noSplash",            # They do not need to be added to your list
-    "-showScriptErrors",    # You can add additional parameters here
     "-debug",
     "-filePatching",
     "-window",
@@ -59,32 +56,7 @@ parameters = [
     "-noPauseAudio",
 ]
 
-executable = "arma3_x64"        # Default: "arma3_x64"
+[hemtt.launch.Stratis]
+extends = "default"
+mission = "Stratis.Stratis"
 
-[hemtt.launch.stratis]
-workshop = [
-    "450814997", # CBA_A3's Workshop ID
-    "463939057", # ACE3
-    "2369477168", # Advanced Developer Tools
-]
-
-mission = "test.Stratis"
-
-dlc = [
-    "Reaction Forces",
-    "Western Sahara"
-]
-
-optionals = [
-]
-
-parameters = [
-    "-skipIntro",           # These parameters are passed to the Arma 3 executable
-    "-noSplash",            # They do not need to be added to your list
-    "-showScriptErrors",    # You can add additional parameters here
-    "-debug",
-    "-filePatching",
-    "-window",
-    "-noPause",
-    "-noPauseAudio",
-]
