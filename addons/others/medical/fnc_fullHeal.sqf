@@ -18,8 +18,8 @@
 		Returns False when <_target> is not defined.
 
 	Examples:
-		[ourMedicalVehicleObject] 					call CVO_Others_fnc_fullHeal;	// Adds Full Health Check on a single object
-		["mod_vehicle_medical_classname", 30, 0] 	call CVO_Others_fnc_fullHeal;	// Adds Full Health Check on all objects of this classname and disables the easteregg
+		[ourMedicalVehicleObject]                call CVO_Others_fnc_fullHeal;	// Adds Full Health Check on a single object
+		["mod_vehicle_medical_classname", 30, 0] call CVO_Others_fnc_fullHeal;	// Adds Full Health Check on all objects of this classname and disables the easteregg
 */
 
 
