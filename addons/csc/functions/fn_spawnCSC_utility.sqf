@@ -6,11 +6,7 @@
 	Public: No
 */
 
-// Defines the Params
-params ["_target", "_player", "_actionParams"]; //Default parameter given through the interaction framework
-_actionParams params ["_title","_className","_hashMap","_spawnLoc"];
-
-diag_log (format ["[CVO][CSC](spawnCSC) New Request %1", _actionParams]);
+params ["_target","_title","_className","_hashMap","_spawnLoc"];
 
 private _spawnPos = switch (true) do {
 	case (_spawnLoc isEqualTo "REL"):     { _target getRelPos [((_target call BIS_fnc_boundingBoxDimensions)#0 / 2) + 3 ,180] };
@@ -33,18 +29,23 @@ clearWeaponCargoGlobal _box;
 clearItemCargoGlobal _box;
 
 // ACE Medical Facility
-if (_hashMap getOrDefault ["ace_medical_facility", false]) then {
+if (_hashMap getOrDefault ["ace_medical_facility", false]) then { 
     _box setVariable ["ace_medical_isMedicalFacility", true, true];  
 };
 
-// ACE Repair Vehicle
-if (_hashMap getOrDefault ["ace_repair_vehicle", false]) then {
-    _box setVariable ["ace_repair_canRepair", true, true];  
+// ACE Medical vehicle
+if (_hashMap getOrDefault ["ace_medical_vehicle", false]) then {
+    _box setVariable ["ace_medical_isMedicalVehicle", true, true];  
 };
 
 // ACE Repair Facility
 if (_hashMap getOrDefault ["ace_repair_facility", false]) then {
     _box setVariable ["ace_isRepairFacility", true, true];  
+};
+
+// ACE Repair Vehicle
+if (_hashMap getOrDefault ["ace_repair_vehicle", false]) then {
+    _box setVariable ["ace_repair_canRepair", true, true];  
 };
 
 // ACE Rearm Source
@@ -66,4 +67,4 @@ if (_hashMap getOrDefault ["ace_refuel_source", false]) then {
 
 ["cvo_csc_Event_crateSpawnedServer", [_box, _title] ] call CBA_fnc_ServerEvent;
 
-diag_log ("[CVO][CSC](spawnCSC_utility) - " + _title + " - Done");
+diag_log format ['[CVO](debug)(fn_spawnCSC_utility) Created: %1 Requested by %2', _title , _player];

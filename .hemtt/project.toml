@@ -43,11 +43,8 @@ workshop = [
     "2369477168", # Advanced Developer Tools
 ]
 
-dlc = [
-]
-
-optionals = [
-]
+dlc = []
+optionals = []
 
 parameters = [
     "-window",
@@ -56,6 +53,7 @@ parameters = [
 ]
 
 [hemtt.launch.Stratis]
+dlc = ["ws","rf"]
 extends = "default"
 mission = "Stratis.Stratis"
 
