@@ -1,6 +1,6 @@
 /*
 * Author: Zorn
-* create ACE Interaction Node for CSC if needed
+* checks and, if needed, creates ACE Interaction Node for CSC
 *
 * Arguments:
 * 0 _source   - <OBJECT or CLASSNAME>
@@ -9,16 +9,22 @@
 * true when successful
 *
 * Example:
-* [_source] call CVO_CSC_fnc_createNode;
+* [cursorObject] call CVO_CSC_fnc_createNode;
 *
 * Public: No
 */
 
-params ["_spawner"];
+params
+[
+	["_spawner", objNull, [objNull, ""]]
+];
 
-// ########## Creates the CSC Parent Ace Interaction Node ##########
+
+if (_spawner isEqualTo objNull) exitWith {};
+
 // ### Creates an Array to store all already existing "Menu Nodes" when the Array doesnt exist yet.
 private _nodeArray = missionNamespace getVariable ["CVO_CSC_NodeArray", []];
+systemChat str _nodeArray;
 
 // ### Creates CSC Menu Node if the _spawner does not carries a CSC Menu Node yet.
 if (!(_spawner in _nodeArray)) then
@@ -27,7 +33,7 @@ if (!(_spawner in _nodeArray)) then
 		"cvo_csc_root",													// Action Name
 		"Take Custom Supply Crates",									// Name for the ACE Interaction Menu
 		"\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa",																// Custom Icon 
-		{},																// Statement
+		{""},															// Statement
 		{true}															// Condition
 	] call ace_interact_menu_fnc_createAction;
 
@@ -38,6 +44,7 @@ if (!(_spawner in _nodeArray)) then
 
 	_nodeArray pushBack _spawner;
 };
+
 missionNamespace setVariable ["CVO_CSC_NodeArray", _nodeArray];
 
 true
