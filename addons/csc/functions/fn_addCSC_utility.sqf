@@ -63,10 +63,10 @@ private _action = [
 	_actionID,														// Action Name
 	_title,															// Name for the ACE Interaction Menu 
 	"\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa",			// Custom Icon 
-	{_this call CBA_fnc_serverEvent},								// Statement
+	{_this#2 call CBA_fnc_serverEvent},								// Statement
 	{true},															// Condition
 	{},
-	[_title,_className,_hashMap,_spawnLoc]
+	[_EH_ID,[_title,_className,_hashMap,_spawnLoc]]
 ] call ace_interact_menu_fnc_createAction;
 
 // Attach Action

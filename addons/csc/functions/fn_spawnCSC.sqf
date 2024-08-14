@@ -10,8 +10,7 @@
 
 diag_log format ['[CVO](debug)(fn_spawnCSC) _this: %1', _this];
 
-params ["_target", "_player", "_actionParams"]; //Default parameter given through the interaction framework
-_actionParams params ["_className", "_spawnLoc", "_title", "_itemArray", "_backbackArray"];
+params ["_target", "_className", "_spawnLoc", "_title", "_itemArray", "_backbackArray"];
 
 diag_log (format ["[CVO][CSC](spawnCSC) New Request %1", _actionParams]);
 

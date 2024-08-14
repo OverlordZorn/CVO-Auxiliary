@@ -60,22 +60,35 @@ params [
 [_spawner] call CVO_CSC_fnc_createNode;
 
 // Prep
-private _actionID = ["CVO","CSC",_title] joinString "_";
-private _EH_ID = ["CVO","CSC",_spawner,_title] joinString "_";
+private _actionID = ["CVO","CSC",_title splitString " " joinString "_"] joinString "_";
+private _EH_ID = ["CVO","CSC",_title,_spawner] joinString "_";
 
 // ## create aceActionArray
-private _action = [
-	_actionID,														// Action Name
-	_title,															// Name for the ACE Interaction Menu 
-	"\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa",			// Custom Icon 
-	{
-        diag_log format ['[CVO](debug)(fn_addCSC) _this: %1', _this];
-        _this call CVO_CSC_fnc_spawnCSC;
-    },								// Statement
-	{true},															// Condition
-	{},
-	[_className, _spawnloc, _title, _array, _backpacks]
+
+private _statement = {
+	params ["_target", "_player", "_actionParams"];
+	_actionParams params ["_EH_ID", "_className", "_spawnloc", "_title", "_itemArray", "_backbackArray"];
+
+	diag_log format ['[CVO](debug)(fn_addCSC) _this: %1', _this];
+	
+	[_EH_ID, [_target, _className, _spawnLoc, _title, _itemArray, _backbackArray] ] call CBA_fnc_serverEvent;
+};
+
+
+
+private _aceAction = [
+	_actionID,         														 		// * 0: Action name <STRING>
+	_title,            																//  * 1: Name of the action shown in the menu <STRING>
+	"\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa",                          //  * 2: Icon <STRING> "\A3\ui_f\data\igui\cfg\simpleTasks\types\backpack_ca.paa"
+	_statement,                            											//  * 3: Statement <CODE>
+	{true},														                    //  * 4: Condition <CODE>
+	{},													                            //  * 5: Insert children code <CODE> (Optional)
+	[_EH_ID, _className, _spawnloc, _title, _itemArray, _backbackArray] 			//  * 6: Action parameters <ANY> (Optional)
 ] call ace_interact_menu_fnc_createAction;
+
+
+// Create EH
+
 
 // ## ATTACHING THE ACTION to class OR OBJECT
 
@@ -86,6 +99,12 @@ private _action = [
 
 diag_log format ["[CVO][CSC] New CSC Established Sucessfully => Carrier: %1 - CSC: %2", _spawner, _title];
 
+// Register EventHandler
+[_EH_ID, { _this call CVO_CSC_fnc_spawnCSC }] call CBA_fnc_addEventHandler;
+
+if true exitWith {};
+
+
 _aceAction = [
     "My_Action_ID_Name",         // * 0: Action name <STRING>
     "Display String",            //  * 1: Name of the action shown in the menu <STRING>
@@ -95,3 +114,4 @@ _aceAction = [
     {},                          //  * 5: Insert children code <CODE> (Optional)
     []                            //  * 10: Modifier function <CODE> (Optional)
 ] call ace_interact_menu_fnc_createAction;
+
