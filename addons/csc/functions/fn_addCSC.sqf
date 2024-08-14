@@ -50,9 +50,9 @@
 params [
 	["_spawner", 		objNull, 			[objNull, ""] 				],
 	["_title", 			"Default Name", 	[""]	 	    			],
-	["_array",			[],					[[]]						],
+	["_itemArray",		[],					[[]]						],
 	["_className",		"Land_WoodenBox_F", [""] 			    		],
-	["_backpacks", 		[],					[]							],
+	["_backbackArray",	[],					[]							],
 	["_spawnloc", 		"REL", 				["",objNull,[]],	[2,3] 	]
 ];
 
@@ -86,8 +86,10 @@ private _aceAction = [
 	[_EH_ID, _className, _spawnloc, _title, _itemArray, _backbackArray] 			//  * 6: Action parameters <ANY> (Optional)
 ] call ace_interact_menu_fnc_createAction;
 
+diag_log format ['[CVO](debug)(fn_addCSC) _aceAction: %1', _aceAction];
 
-// Create EH
+// Register EventHandler
+[_EH_ID, { _this call CVO_CSC_fnc_spawnCSC }] call CBA_fnc_addEventHandler;
 
 
 // ## ATTACHING THE ACTION to class OR OBJECT
@@ -98,20 +100,3 @@ private _aceAction = [
 	};
 
 diag_log format ["[CVO][CSC] New CSC Established Sucessfully => Carrier: %1 - CSC: %2", _spawner, _title];
-
-// Register EventHandler
-[_EH_ID, { _this call CVO_CSC_fnc_spawnCSC }] call CBA_fnc_addEventHandler;
-
-if true exitWith {};
-
-
-_aceAction = [
-    "My_Action_ID_Name",         // * 0: Action name <STRING>
-    "Display String",            //  * 1: Name of the action shown in the menu <STRING>
-    "",                          //  * 2: Icon <STRING> "\A3\ui_f\data\igui\cfg\simpleTasks\types\backpack_ca.paa"
-    _code,                            //  * 3: Statement <CODE>
-    {true},                      //  * 4: Condition <CODE>
-    {},                          //  * 5: Insert children code <CODE> (Optional)
-    []                            //  * 10: Modifier function <CODE> (Optional)
-] call ace_interact_menu_fnc_createAction;
-
