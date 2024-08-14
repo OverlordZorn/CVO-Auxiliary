@@ -52,7 +52,7 @@ if (_hashMap getOrDefault ["ace_repair_vehicle", false]) then {
 if (_hashMap getOrDefault ["ace_rearm_source", false]) then {
     [
         _box,
-        _hashMap getOrDefault ["ace_rearm_source_value", 200]
+        _hashMap getOrDefault ["ace_rearm_source_value", 50]
     ] call ace_rearm_fnc_makeSource;
 };
 
@@ -60,11 +60,37 @@ if (_hashMap getOrDefault ["ace_rearm_source", false]) then {
 if (_hashMap getOrDefault ["ace_refuel_source", false]) then {
     [
         _box,
-        _hashMap getOrDefault ["ace_refuel_source_value", 200],
-        _hashMap getOrDefault ["ace_refuel_source_nozzlePos", [0,0,0]],
+        _hashMap getOrDefault ["ace_refuel_source_value", 50],
+        _hashMap getOrDefault ["ace_refuel_source_nozzlePos", [0,0,0]]
     ] call ace_refuel_fnc_makeSource;
 };
 
-["cvo_csc_Event_crateSpawnedServer", [_box, _title] ] call CBA_fnc_ServerEvent;
+// ACE Cargo SetSize (how big is the crate itself)
+if (_hashMap getOrDefault ["ace_cargo_setSize", "404"] isEqualType 0) then {
+    [_box, _hashMap get "ace_cargo_setSize"] call ace_cargo_fnc_setSize;
+};
 
+
+// ACE Cargo SetSpace (how much can you put INSIDE the crate)
+[_box, _hashMap getOrDefault ["ace_cargo_setSpace", 0]] call ace_cargo_fnc_setSpace;
+
+// ACE Drag
+[
+    _box,
+    _hashMap getOrDefault ["ace_drag_canCarry", true],
+    _hashMap getOrDefault ["ace_drag_relPOS", [0,1.5,0]],
+    _hashMap getOrDefault ["ace_drag_dir", 0],
+    _hashMap getOrDefault ["ace_drag_ignoreWeight", true]
+] call ace_dragging_fnc_setDraggable;
+
+// ACE Carry
+[
+    _box,
+    _hashMap getOrDefault ["ace_carry_canCarry", true],
+    _hashMap getOrDefault ["ace_carry_relPOS", [0,1,1]],
+    _hashMap getOrDefault ["ace_carry_dir", 0],
+    _hashMap getOrDefault ["ace_carry_ignoreWeight", false]
+] call ace_dragging_fnc_setCarryable;
+
+["cvo_csc_Event_crateSpawnedServer", [_box, _title] ] call CBA_fnc_ServerEvent;
 diag_log format ['[CVO](debug)(fn_spawnCSC_utility) Created: %1 Requested by %2', _title , _player];

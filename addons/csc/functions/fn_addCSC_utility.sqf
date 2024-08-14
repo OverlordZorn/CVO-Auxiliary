@@ -26,7 +26,20 @@ createHashMapFromArray [
 
 	["ace_refuel_source",		false	],	// defines the CSC_Utility Object as a ACE Refuel Source
 	["ace_refuel_source_value",	200		],	// defines the Supply Count for the ACE Refuel Source
-	["ace_refuel_nozzlePos",	[0,0,0]	]	// defines the relative 3D position of the fuelnozzle
+	["ace_refuel_nozzlePos",	[0,0,0]	],	// defines the relative 3D position of the fuelnozzle
+
+	["ace_refuel_cargo_setSize", "404"	],	// defines the Size of the Box itself regarding ACE Cargo
+	["ace_refuel_cargo_setSpace",0   	],	// defines the Space of the Box regarding being able to load other things inside of it
+
+	["ace_drag_canCarry",		true	],	// see ace framework wiki
+	["ace_drag_relPos",		   [0,1.5,0]],	
+	["ace_drag_dir", 			0		],  
+	["ace_drag_ignoreWeight", 	true	],
+
+	["ace_carry_canCarry",		true	],	
+	["ace_carry_relPos",		[0,1,1] ],	
+	["ace_carry_dir", 			0		],  
+	["ace_carry_ignoreWeight", 	true	]
 ]
 
  * Return Value:

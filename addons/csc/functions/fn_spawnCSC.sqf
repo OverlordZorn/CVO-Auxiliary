@@ -8,7 +8,7 @@
 
 // Defines the Params
 
-params ["_target", "_player", "_className", "_spawnLoc", "_title", "_itemArray", "_backbackArray"];
+params ["_target", "_player", "_className", "_spawnLoc", "_title", "_itemArray", "_backbackArray", "_hashMap"];
 
 
 private _spawnPos = switch (true) do {
@@ -43,6 +43,40 @@ clearItemCargoGlobal _box;
 {
 	_box addBackpackCargoGlobal [_x # 0, _x # 1]
 } forEach _backbackArray;
+
+
+
+
+
+// // Optional Parameters for Ace Cargo/Drag/Carry
+
+// ACE Cargo SetSize (how big is the crate itself)
+if (_hashMap getOrDefault ["ace_cargo_setSize", "404"] isEqualType 0) then {
+    [_box, _hashMap get "ace_cargo_setSize"] call ace_cargo_fnc_setSize;
+};
+
+
+// ACE Cargo SetSpace (how much can you put INSIDE the crate)
+[_box, _hashMap getOrDefault ["ace_cargo_setSpace", 0]] call ace_cargo_fnc_setSpace;
+
+// ACE Drag
+[
+    _box,
+    _hashMap getOrDefault ["ace_drag_canCarry", true],
+    _hashMap getOrDefault ["ace_drag_relPOS", [0,1.5,0]],
+    _hashMap getOrDefault ["ace_drag_dir", 0],
+    _hashMap getOrDefault ["ace_drag_ignoreWeight", true]
+] call ace_dragging_fnc_setDraggable;
+
+// ACE Carry
+[
+    _box,
+    _hashMap getOrDefault ["ace_carry_canCarry", true],
+    _hashMap getOrDefault ["ace_carry_relPOS", [0,1,1]],
+    _hashMap getOrDefault ["ace_carry_dir", 0],
+    _hashMap getOrDefault ["ace_carry_ignoreWeight", false]
+] call ace_dragging_fnc_setCarryable;
+
 
 ["cvo_csc_Event_crateSpawnedServer", [_box, _title] ] call CBA_fnc_ServerEvent;
 
