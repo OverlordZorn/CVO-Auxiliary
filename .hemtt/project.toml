@@ -7,7 +7,7 @@ author = "CVO Team - Mr. Zorn"
 url = "https://github.com/OverlordZorn/CVO-Auxiliary"
 
 [binarize]
-enabled = false # Default: true
+enabled = true # Default: true
 
 [files]
 include = [
@@ -27,10 +27,11 @@ exclude = [
 ]
 
 [version]
-major = 0 # Overrides path when set
-minor = 1
-patch = 1
-git_hash = 4 # Default: 8
+path = "addons/main/script_version.hpp" # Default
+# major = 0 # Overrides path when set
+# minor = 1
+# patch = 1
+# git_hash = 4 # Default: 8
 
 
 
@@ -42,21 +43,17 @@ workshop = [
     "2369477168", # Advanced Developer Tools
 ]
 
-dlc = [
-]
-
-optionals = [
-]
+dlc = []
+optionals = []
 
 parameters = [
-    "-debug",
-    "-filePatching",
     "-window",
     "-noPause",
     "-noPauseAudio",
 ]
 
 [hemtt.launch.Stratis]
+dlc = ["ws","rf"]
 extends = "default"
 mission = "Stratis.Stratis"
 
