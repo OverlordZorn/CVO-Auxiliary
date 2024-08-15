@@ -10,18 +10,22 @@
 
 params ["_target", "_player", "_className", "_spawnLoc", "_title", "_itemArray", "_backbackArray", "_hashMap"];
 
+// spawn the desired box at 0,0,0
+private _box = createVehicle [_className, [0,0,0],[],2,"CAN_COLLIDE"];
+private _boxSize = (boundingBox _box select 2);
+private _tgtSize = _target call BIS_fnc_boundingBoxDimensions;
 
 private _spawnPos = switch (true) do {
-	case (_spawnLoc isEqualTo "REL"):     { _target getRelPos [((_target call BIS_fnc_boundingBoxDimensions)#0 / 2) + 3 ,180] };
+	case (_spawnLoc isEqualTo "REL"):     { _target getRelPos [ ( ( _target call BIS_fnc_boundingBoxDimensions ) #0 / 2 ) + 3 + _boxSize,180 ] };
 	case (_spawnLoc isEqualType objNull): { getPosATL _spawnLoc };
 	case (_spawnLoc isEqualType []): 	  { _spawnLoc };
 	default { [0,0,0] };
 };
+// this is stupid but oh well...
+_spawnPos set [2,_spawnPos#2 + _tgtSize#2 * 0.8 ];
 
-_spawnPos set [2,_spawnPos#2 + 1];
-
-// spawn the desired box at the desired location.
-private _box = createVehicle [_className, _spawnPos,[],2,"CAN_COLLIDE"]; 		
+// Move box to desired position
+_box setVehiclePosition [_spawnPos, [], _boxSize * 1.5, "CAN_COLLIDE"];
 
 // set the custom name for Ace Cargo
 _box setVariable ["ace_cargo_customname", _title, true];
