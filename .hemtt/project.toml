@@ -58,5 +58,12 @@ parameters = [
 
 [hemtt.launch.Stratis]
 extends = "default"
+dlc = ["ws","rf"]
 mission = "Stratis.Stratis"
 
+
+[hemtt.launch.GreenMag]
+extends = "Stratis"
+workshop = [
+    "2352603233",
+]
