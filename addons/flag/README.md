@@ -1,8 +1,11 @@
+# Original from Gruppe Adler Utility Mod
+https://github.com/gruppe-adler/gruppe_adler_mod
+
+## Modified for CVO
+
 ### flag
-Adds a Gruppe Adler flag to the editor
-
-<img src="https://i.imgur.com/WEEVusQ.png" width="512" />
+Adds  CVO flags to the editor
 
 
-#### Maintainer(s)
+#### Original Author/Maintainer(s)
 * DerZade

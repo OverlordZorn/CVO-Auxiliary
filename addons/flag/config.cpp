@@ -2,15 +2,15 @@
 
 class CfgPatches {
 	class ADDON {
-		author = "$STR_grad_Author";
+		author = "$STR_cvo_Author";
 		name = QUOTE(ADDON);
-		url = "$STR_grad_URL";
-		requiredVersion = 1.0;
-		requiredAddons[] = {"grad_main", "A3_Structures_F_Mil_Flags"};
-		units[] = {QGVAR(gruppeAdlerWhite)};
+		url = "$STR_cvo_URL";
+		requiredVersion = 2.0;
+		requiredAddons[] = {"cvo_main", "A3_Structures_F_Mil_Flags"};
+		units[] = {QGVAR(red)};
 		weapons[] = {};
 		VERSION_CONFIG;
-        authors[] = {"DerZade [A]"};
+        authors[] = {"OverlordZorn [CVO], DerZade [A]"};
 	};
 };
 
