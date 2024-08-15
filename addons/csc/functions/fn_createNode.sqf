@@ -31,7 +31,7 @@ if (!(_spawner in _nodeArray)) then
 {
 	private _root = [
 		"cvo_csc_root",													// Action Name
-		"Take Custom Supply Crates",									// Name for the ACE Interaction Menu
+		"Take Supply Crate",									// Name for the ACE Interaction Menu
 		"\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa",																// Custom Icon 
 		{""},															// Statement
 		{true}															// Condition
