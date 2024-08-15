@@ -53,7 +53,6 @@ parameters = [
 ]
 
 [hemtt.launch.Stratis]
-dlc = ["ws","rf"]
 extends = "default"
 dlc = ["ws","rf"]
 mission = "Stratis.Stratis"
