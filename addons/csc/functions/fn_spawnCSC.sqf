@@ -115,7 +115,7 @@ if (_hashMap getOrDefault ["ace_cargo_setSize", "404"] isEqualType 0) then {
 // ACE Drag
 [
     _box,
-    _hashMap getOrDefault ["ace_drag_canCarry", true],
+    _hashMap getOrDefault ["ace_drag_canDrag", true],
     _hashMap getOrDefault ["ace_drag_relPOS", [0,1.5,0]],
     _hashMap getOrDefault ["ace_drag_dir", 0],
     _hashMap getOrDefault ["ace_drag_ignoreWeight", true]
