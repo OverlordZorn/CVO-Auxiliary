@@ -3,7 +3,7 @@
 // #####################################################
 
 
-private _isLoaded = "greenmag_main" in ("true" configClasses (configFile >> "CfgPatches"));
+private _isLoaded = "greenmag_main" in ("true" configClasses (configFile >> "CfgPatches") apply { configName _x });
 
 if (!_isLoaded) exitWith {};
 
