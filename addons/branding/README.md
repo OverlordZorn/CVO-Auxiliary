@@ -2,10 +2,9 @@
 https://github.com/gruppe-adler/gruppe_adler_mod
 
 ## Modified for CVO
-
-### flag
-Adds  CVO flags to the editor
-
+Adds Leadership Portrait
+Adds CVO Flags
+Adds CVO Banners
 
 #### Original Author/Maintainer(s)
 * DerZade
