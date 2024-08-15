@@ -46,18 +46,67 @@ clearItemCargoGlobal _box;
 
 
 
+//////////////////////////////////////////////////
+///////////// ACE Rearm Repair Refuel ////////////
+//////////////////////////////////////////////////
+
+// // Optional Parameters for Additional ACE Funcitonality (RRR)
+
+// ACE Medical Facility
+if (_hashMap getOrDefault ["ace_medical_facility", false]) then { 
+    _box setVariable ["ace_medical_isMedicalFacility", true, true];  
+};
+
+// ACE Medical vehicle
+if (_hashMap getOrDefault ["ace_medical_vehicle", false]) then {
+    _box setVariable ["ace_medical_isMedicalVehicle", true, true];  
+};
+
+// ACE Repair Facility
+if (_hashMap getOrDefault ["ace_repair_facility", false]) then {
+    _box setVariable ["ace_isRepairFacility", true, true];  
+};
+
+// ACE Repair Vehicle
+if (_hashMap getOrDefault ["ace_repair_vehicle", false]) then {
+    _box setVariable ["ace_repair_canRepair", true, true];  
+};
+
+// ACE Rearm Source
+if (_hashMap getOrDefault ["ace_rearm_source", false]) then {
+    [
+        _box,
+        _hashMap getOrDefault ["ace_rearm_source_value", 50]
+    ] call ace_rearm_fnc_makeSource;
+};
+
+// ACE Refuel Source
+if (_hashMap getOrDefault ["ace_refuel_source", false]) then {
+    [
+        _box,
+        _hashMap getOrDefault ["ace_refuel_source_value", 50],
+        _hashMap getOrDefault ["ace_refuel_source_nozzlePos", [0,0,0]]
+    ] call ace_refuel_fnc_makeSource;
+};
 
 
-// // Optional Parameters for Ace Cargo/Drag/Carry
+//////////////////////////////////////////////////
+///////////// ACE CARGO /////////////
+//////////////////////////////////////////////////
 
+// //  
 // ACE Cargo SetSize (how big is the crate itself)
 if (_hashMap getOrDefault ["ace_cargo_setSize", "404"] isEqualType 0) then {
     [_box, _hashMap get "ace_cargo_setSize"] call ace_cargo_fnc_setSize;
 };
 
-
 // ACE Cargo SetSpace (how much can you put INSIDE the crate)
 [_box, _hashMap getOrDefault ["ace_cargo_setSpace", 0]] call ace_cargo_fnc_setSpace;
+
+
+//////////////////////////////////////////////////
+///////////// ACE DRAGGING / CARRYING /////////////
+//////////////////////////////////////////////////
 
 // ACE Drag
 [
