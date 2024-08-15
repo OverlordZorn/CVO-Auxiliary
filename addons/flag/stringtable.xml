@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="cvo-aux">
      <Package name="flag">
-          <Key ID="STR_CVO_flag_display">
-               <Original>Flag (CVO)</Original>
-               <English>Flag (CVO)</English>
-               <German>Flagge (CVO)</German>
+          <Key ID="STR_CVO_flag_red_display">
+               <Original>Flag (CVO - Red)</Original>
+               <English>Flag (CVO - Red)</English>
+               <German>Flagge (CVO - Rot)</German>
+          </Key>
+          <Key ID="STR_CVO_flag_olive_display">
+               <Original>Flag (CVO - Olive)</Original>
+               <English>Flag (CVO - Olive)</English>
+               <German>Flagge (CVO - Oliv)</German>
           </Key>
      </Package>
 </Project>

@@ -6,7 +6,7 @@ picture         = "img\flag_voron_red_1024_2048.paa";                           
 hideName        = "false";                                                                                                                          // Hide the extension name
 hidePicture     = "false";                                                                                                                          // Hide the extension menu
 
-logoSmall       = "img\logo-voron-white_64.paa";                                                                                                    // Display next to the item added by the mod 64x64
+logoSmall       = "img\Raven_Voron_64.paa";                                                                                                    // Display next to the item added by the mod 64x64
 logo            = "img\logo-voron-white_128.paa";                                                                                                   // Logo displayed in the main menu 128x128
 logoOver        = "img\logo-voron-red_128.paa";                                                                                                     // When the mouse is over, in the main menu 128x128
 
