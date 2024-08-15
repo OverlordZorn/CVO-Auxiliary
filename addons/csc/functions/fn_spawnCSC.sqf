@@ -10,18 +10,22 @@
 
 params ["_target", "_player", "_className", "_spawnLoc", "_title", "_itemArray", "_backbackArray", "_hashMap"];
 
+// spawn the desired box at 0,0,0
+private _box = createVehicle [_className, [0,0,0],[],2,"CAN_COLLIDE"];
+private _boxSize = (boundingBox _box select 2);
+private _tgtSize = _target call BIS_fnc_boundingBoxDimensions;
 
 private _spawnPos = switch (true) do {
-	case (_spawnLoc isEqualTo "REL"):     { _target getRelPos [((_target call BIS_fnc_boundingBoxDimensions)#0 / 2) + 3 ,180] };
+	case (_spawnLoc isEqualTo "REL"):     { _target getRelPos [ ( ( _target call BIS_fnc_boundingBoxDimensions ) #0 / 2 ) + 3 + _boxSize,180 ] };
 	case (_spawnLoc isEqualType objNull): { getPosATL _spawnLoc };
 	case (_spawnLoc isEqualType []): 	  { _spawnLoc };
 	default { [0,0,0] };
 };
+// this is stupid but oh well...
+_spawnPos set [2,_spawnPos#2 + _tgtSize#2 * 0.8 ];
 
-_spawnPos set [2,_spawnPos#2 + 1];
-
-// spawn the desired box at the desired location.
-private _box = createVehicle [_className, _spawnPos,[],2,"CAN_COLLIDE"]; 		
+// Move box to desired position
+_box setVehiclePosition [_spawnPos, [], _boxSize * 1.5, "CAN_COLLIDE"];
 
 // set the custom name for Ace Cargo
 _box setVariable ["ace_cargo_customname", _title, true];
@@ -46,18 +50,67 @@ clearItemCargoGlobal _box;
 
 
 
+//////////////////////////////////////////////////
+///////////// ACE Rearm Repair Refuel ////////////
+//////////////////////////////////////////////////
+
+// // Optional Parameters for Additional ACE Funcitonality (RRR)
+
+// ACE Medical Facility
+if (_hashMap getOrDefault ["ace_medical_facility", false]) then { 
+    _box setVariable ["ace_medical_isMedicalFacility", true, true];  
+};
+
+// ACE Medical vehicle
+if (_hashMap getOrDefault ["ace_medical_vehicle", false]) then {
+    _box setVariable ["ace_medical_isMedicalVehicle", true, true];  
+};
+
+// ACE Repair Facility
+if (_hashMap getOrDefault ["ace_repair_facility", false]) then {
+    _box setVariable ["ace_isRepairFacility", true, true];  
+};
+
+// ACE Repair Vehicle
+if (_hashMap getOrDefault ["ace_repair_vehicle", false]) then {
+    _box setVariable ["ace_repair_canRepair", true, true];  
+};
+
+// ACE Rearm Source
+if (_hashMap getOrDefault ["ace_rearm_source", false]) then {
+    [
+        _box,
+        _hashMap getOrDefault ["ace_rearm_source_value", 50]
+    ] call ace_rearm_fnc_makeSource;
+};
+
+// ACE Refuel Source
+if (_hashMap getOrDefault ["ace_refuel_source", false]) then {
+    [
+        _box,
+        _hashMap getOrDefault ["ace_refuel_source_value", 50],
+        _hashMap getOrDefault ["ace_refuel_source_nozzlePos", [0,0,0]]
+    ] call ace_refuel_fnc_makeSource;
+};
 
 
-// // Optional Parameters for Ace Cargo/Drag/Carry
+//////////////////////////////////////////////////
+///////////// ACE CARGO /////////////
+//////////////////////////////////////////////////
 
+// //  
 // ACE Cargo SetSize (how big is the crate itself)
 if (_hashMap getOrDefault ["ace_cargo_setSize", "404"] isEqualType 0) then {
     [_box, _hashMap get "ace_cargo_setSize"] call ace_cargo_fnc_setSize;
 };
 
-
 // ACE Cargo SetSpace (how much can you put INSIDE the crate)
 [_box, _hashMap getOrDefault ["ace_cargo_setSpace", 0]] call ace_cargo_fnc_setSpace;
+
+
+//////////////////////////////////////////////////
+///////////// ACE DRAGGING / CARRYING /////////////
+//////////////////////////////////////////////////
 
 // ACE Drag
 [

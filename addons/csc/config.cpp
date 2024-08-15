@@ -39,10 +39,7 @@ class CfgFunctions
 			class createNode {};
 
 			class addCSC {};
-			class addCSC_utility {};
-			
             class spawnCSC {};
-            class spawnCSC_utility {};
 		};
 	}; 
 };
