@@ -7,12 +7,12 @@ class CfgVehicles
         _generalMacro=QGVAR(Flag_Red);
 
         author="$STR_cvo_Author";
-        displayName="$STR_CVO_flag_red_display";
+        displayName="$STR_CVO_branding_red_display";
         scope = 2;
         scopeCurator = 2;
 
 
-        class EventHandlers { init=QUOTE((_this select 0) setFlagTexture QUOTE(QPATHTOF(data\flag_voron_red_512.paa))); };
+        class EventHandlers { init=QUOTE((_this select 0) setFlagTexture QUOTE(QPATHTOF(data\flag_voron_red_2048.paa))); };
 
         class ACE_Actions {
             class ACE_MainActions {
@@ -27,10 +27,10 @@ class CfgVehicles
     class GVAR(Flag_Olive) : GVAR(Flag_Red)
     {
         _generalMacro=QGVAR(Flag_Olive);
-        displayName="$STR_CVO_flag_olive_display";
+        displayName="$STR_CVO_branding_olive_display";
         class EventHandlers
         {
-            init=QUOTE((_this select 0) setFlagTexture QUOTE(QPATHTOF(data\flag_voron_olive_512.paa)));
+            init=QUOTE((_this select 0) setFlagTexture QUOTE(QPATHTOF(data\flag_voron_olive_2048.paa)));
         };
     };
 
