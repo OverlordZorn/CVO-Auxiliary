@@ -54,6 +54,7 @@ class CfgVehicles
     {
         _generalMacro=QGVAR(Banner_Red);
         displayName="Banner (CVO - Red)";
+        author = "$STR_cvo_Author";
         hiddenSelectionsTextures[] = {QPATHTOF(data\flag_voron_red_2048.paa)};
     };
     class GVAR(Banner_Olive) : Banner_01_F
@@ -62,24 +63,14 @@ class CfgVehicles
         displayName="Banner (CVO - Olive)";
         hiddenSelectionsTextures[] = {QPATHTOF(data\flag_voron_olive_2048.paa)};
     };
-};
 
 
-    class ACE_Flag_Black: FlagCarrier_Asym {
-        author = CSTRING(ACETeam);
-        displayName = CSTRING(FlagBlack);
-        scope = 2;
-        scopeCurator = 2;
-        editorPreview = QPATHTOF(data\ace_flag_black_preview.jpg);
-        class EventHandlers {
-            init = QUOTE((_this select 0) setFlagTexture QUOTE(QPATHTOF(data\ace_flag_black_ca.paa)));
-        };
-        class ACE_Actions {
-            class ACE_MainActions {
-                displayName = ECSTRING(interaction,MainAction);
-                condition = "true";
-                position = "[-0.1, -0.35, -2.6]";
-                distance = 2;
-            };
-        };
+    class B_LegStrapBag_black_F;
+    class CVO_LegStrapBag_black_F : B_LegStrapBag_black_F
+    {
+        displayName = "Leg Strap Bag (Black - CVO)";
+        author = "$STR_cvo_Author";
+        maximumLoad = 120;
+        hiddenSelectionsTextures[] = {QPATHTOF(data\V_LegStrapBag_black_CVO_CO.paa)};
     };
+};
