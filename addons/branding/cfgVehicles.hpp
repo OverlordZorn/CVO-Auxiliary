@@ -71,6 +71,6 @@ class CfgVehicles
         displayName = "Leg Strap Bag (Black - CVO)";
         author = "$STR_cvo_Author";
         maximumLoad = 120;
-        hiddenSelectionsTextures[] = {QPATHTOF(data\V_LegStrapBag_black_CVO_CO.paa)};
+        hiddenSelectionsTextures[] = {QPATHTOF(data\legstrap\V_LegStrapBag_black_CVO_CO.paa)};
     };
 };
