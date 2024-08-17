@@ -3,7 +3,7 @@ class CfgPatches {
 	class CVO_Fonts
 	{
 		// Meta information for editor
-        name = "CVO Insignias";
+        name = "CVO Fonts";
 		version = "1.0.0";
 
 		authors[]= {"Overlord Zorn [CVO]"};
@@ -24,10 +24,9 @@ class CfgPatches {
 
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};
-
 	};
-
 };
+
 
 class CfgFontFamilies
 {
@@ -35,50 +34,100 @@ class CfgFontFamilies
 	{
         fonts[] =
         {
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH10",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH11",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH12",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH13",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH14",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH15",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH16",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH17",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH18",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH19",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH20",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH21",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH22",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH23",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH24",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH25",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH26",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH27",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH28",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH29",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH30",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH31",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH32",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH33",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH34",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH35",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH36",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH37",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH38",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH39",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH40",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH42",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH44",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH46",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH48",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH50",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH54",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH58",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH60",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH64",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH70",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH80",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH90",
-            "CVO_AUX\Fonts\VTKSSMASH\VTKSSMASH100"
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH10",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH11",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH12",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH13",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH14",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH15",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH16",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH17",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH18",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH19",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH20",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH21",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH22",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH23",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH24",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH25",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH26",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH27",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH28",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH29",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH30",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH31",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH32",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH33",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH34",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH35",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH36",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH37",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH38",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH39",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH40",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH42",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH44",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH46",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH48",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH50",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH54",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH58",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH60",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH64",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH70",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH80",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH90",
+            "z\cvo_aux\addons\fonts\VTKSSMASH\VTKSSMASH100"
+        };
+    };
+    class shaffilastri
+    {
+        fonts[] =
+        {
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri10",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri11",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri12",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri13",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri14",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri15",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri16",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri17",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri18",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri19",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri20",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri21",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri22",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri23",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri24",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri25",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri26",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri27",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri28",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri29",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri30",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri31",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri32",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri33",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri34",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri35",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri36",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri37",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri38",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri39",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri40",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri42",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri44",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri46",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri48",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri50",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri54",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri58",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri60",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri64",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri70",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri80",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri90",
+            "z\cvo_aux\addons\fonts\shaffilastri\shaffilastri100"
         };
     };
 };
