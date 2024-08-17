@@ -108,7 +108,7 @@ if (_hashMap getOrDefault ["ace_refuel_source", false]) then {
     _hashMap getOrDefault ["ace_drag_relPOS", [0,1.5,0]],
     _hashMap getOrDefault ["ace_drag_dir", 0],
     _hashMap getOrDefault ["ace_drag_ignoreWeight", true]
-] call ace_dragging_fnc_setDraggable;
+] remoteExecCall [ "ace_dragging_fnc_setDraggable", [0,-2] select isDedicated, _box ];
 
 // ACE Carry
 [
@@ -117,8 +117,7 @@ if (_hashMap getOrDefault ["ace_refuel_source", false]) then {
     _hashMap getOrDefault ["ace_carry_relPOS", [0,1,1]],
     _hashMap getOrDefault ["ace_carry_dir", 0],
     _hashMap getOrDefault ["ace_carry_ignoreWeight", false]
-] call ace_dragging_fnc_setCarryable;
-
+] remoteExecCall [ "ace_dragging_fnc_setCarryable", [0,-2] select isDedicated, _box ];
 
 
 //////////////////////////////////////////////////
