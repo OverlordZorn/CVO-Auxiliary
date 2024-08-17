@@ -36,8 +36,10 @@ class CfgFunctions
 		class CSC           // Category
 		{
 			file = "z\cvo_aux\addons\CSC\functions";
-			class addCSC	{};
-			class spawnCSC  {};
+			class createNode {};
+
+			class addCSC {};
+            class spawnCSC {};
 		};
 	}; 
 };

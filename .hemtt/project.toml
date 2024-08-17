@@ -7,7 +7,7 @@ author = "CVO Team - Mr. Zorn"
 url = "https://github.com/OverlordZorn/CVO-Auxiliary"
 
 [binarize]
-enabled = false # Default: true
+enabled = true # Default: true
 
 [files]
 include = [
@@ -27,10 +27,11 @@ exclude = [
 ]
 
 [version]
-major = 0 # Overrides path when set
-minor = 1
-patch = 1
-git_hash = 4 # Default: 8
+path = "addons/main/script_version.hpp" # Default
+# major = 0 # Overrides path when set
+# minor = 1
+# patch = 1
+# git_hash = 4 # Default: 8
 
 
 
@@ -42,49 +43,23 @@ workshop = [
     "2369477168", # Advanced Developer Tools
 ]
 
-dlc = [
-]
-
-optionals = [
-]
+dlc = []
+optionals = []
 
 parameters = [
-    "-skipIntro",           # These parameters are passed to the Arma 3 executable
-    "-noSplash",            # They do not need to be added to your list
-    "-showScriptErrors",    # You can add additional parameters here
-    "-debug",
-    "-filePatching",
     "-window",
     "-noPause",
     "-noPauseAudio",
 ]
 
-executable = "arma3_x64"        # Default: "arma3_x64"
+[hemtt.launch.Stratis]
+extends = "default"
+dlc = ["ws","rf"]
+mission = "Stratis.Stratis"
 
-[hemtt.launch.stratis]
+
+[hemtt.launch.GreenMag]
+extends = "Stratis"
 workshop = [
-    "450814997", # CBA_A3's Workshop ID
-    "463939057", # ACE3
-    "2369477168", # Advanced Developer Tools
-]
-
-mission = "test.Stratis"
-
-dlc = [
-    "Reaction Forces",
-    "Western Sahara"
-]
-
-optionals = [
-]
-
-parameters = [
-    "-skipIntro",           # These parameters are passed to the Arma 3 executable
-    "-noSplash",            # They do not need to be added to your list
-    "-showScriptErrors",    # You can add additional parameters here
-    "-debug",
-    "-filePatching",
-    "-window",
-    "-noPause",
-    "-noPauseAudio",
+    "2352603233",
 ]

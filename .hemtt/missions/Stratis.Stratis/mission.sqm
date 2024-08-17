@@ -12,14 +12,14 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3489.1826,150.47997,2644.2896};
-		dir[]={-0.86676669,-0.4708904,-0.16427249};
-		up[]={-0.4626568,0.88219059,-0.087684408};
-		aside[]={-0.1862095,-5.0320523e-008,0.98251468};
+		pos[]={3483.2817,147.82555,2635.5703};
+		dir[]={-0.84953564,-0.36400333,0.38182554};
+		up[]={-0.33201054,0.93139768,0.14922282};
+		aside[]={0.409949,0,0.91210848};
 	};
 };
 binarizationWanted=0;
-sourceName="test";
+sourceName="stratis";
 addons[]=
 {
 	"A3_Characters_F",
@@ -126,8 +126,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3459.6768,143.10693,2639.9678};
-						angles[]={0,2.267272,0};
+						position[]={3477.6582,143.27705,2638.6699};
+						angles[]={0,5.5350037,0};
 					};
 					side="West";
 					flags=7;
@@ -137,14 +137,12 @@ class Mission
 					};
 					id=1;
 					type="B_Soldier_A_F";
-					atlOffset=1.5258789e-005;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=0;
-			atlOffset=1.5258789e-005;
 		};
 		class Item1
 		{
@@ -375,17 +373,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3471.4854,144.72379,2647.4185};
-				angles[]={6.2407117,1.4903799,6.2731848};
+				position[]={3470.7646,144.68048,2646.2302};
+				angles[]={6.2407041,1.4313097,6.2731848};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="[" \n " this,""Monkey Care Package""," \n " [[""Ace_banana"", 100],[""ace_maptools"",100]]" \n "] call CVO_CSC_fnc_addCSC;";
 			};
 			id=18;
 			type="B_Slingload_01_Ammo_F";
-			atlOffset=1.5258789e-005;
 		};
 	};
 };
