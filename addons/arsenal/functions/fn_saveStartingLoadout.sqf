@@ -16,7 +16,8 @@
 
 if !(hasInterface) exitWith {};
 
-["CBA_settingsInitialized", {
+
+private _code = {
 
 	private _isEnabled = missionNamespace getVariable ["CVO_SET_savePlayerLoadoutAtStartBool", true];
 	if !(_isEnabled) exitWith {};
@@ -30,6 +31,9 @@ if !(hasInterface) exitWith {};
 
 	if (_delay == 0) then _saveLoadout else { [ _saveLoadout , [], _delay] call CBA_fnc_waitAndExecute;	}
 
-},[]] call CBA_fnc_addEventHandler;
+};
+
+if (missionNamespace getVariable ["cba_settings_ready",false]) then _code else { ["CBA_settingsInitialized",_code,[]] call CBA_fnc_addEventHandler; };
+
 
 
