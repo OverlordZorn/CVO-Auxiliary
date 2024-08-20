@@ -28,6 +28,23 @@ class CfgPatches {
 	};
 
 };
+
+
+class CfgFunctions
+{
+	class CVO_Common            // Tag
+	{
+		class Common           // Category
+		{
+			file = "z\cvo_aux\addons\others\functions";
+			class executeUnit {};
+		};
+	}; 
+};
+
+
+
+
 /*
 class CfgMarkers
 {

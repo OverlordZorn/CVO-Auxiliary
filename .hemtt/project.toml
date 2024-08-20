@@ -63,3 +63,7 @@ extends = "Stratis"
 workshop = [
     "2352603233",
 ]
+
+[hemtt.launch.exec]
+extends = "default"
+mission = "exec.VR"
