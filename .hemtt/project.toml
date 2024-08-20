@@ -60,10 +60,12 @@ mission = "Stratis.Stratis"
 
 [hemtt.launch.GreenMag]
 extends = "Stratis"
-workshop = [
-    "2352603233",
-]
+workshop = ["2352603233"]
 
 [hemtt.launch.exec]
 extends = "default"
 mission = "exec.VR"
+
+[hemtt.launch.airlift]
+extends = "default"
+mission = "airlift.VR"
