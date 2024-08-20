@@ -36,8 +36,9 @@ class CfgFunctions
 	{
 		class Common           // Category
 		{
-			file = "z\cvo_aux\addons\others\functions";
-			class executeUnit {};
+            file = "z\cvo_aux\addons\others\functions";
+            class executeUnit {};
+            class airlift_cargo {};
 		};
 	}; 
 };
