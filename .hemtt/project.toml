@@ -41,6 +41,7 @@ workshop = [
     "450814997",  # CBA_A3's Workshop ID
     "463939057",  # ACE3
     "2369477168", # Advanced Developer Tools
+    "1779063631", # ZEN
 ]
 
 dlc = []
@@ -60,10 +61,12 @@ mission = "Stratis.Stratis"
 
 [hemtt.launch.GreenMag]
 extends = "Stratis"
-workshop = [
-    "2352603233",
-]
+workshop = ["2352603233"]
 
 [hemtt.launch.exec]
 extends = "default"
 mission = "exec.VR"
+
+[hemtt.launch.airlift]
+extends = "default"
+mission = "airlift.VR"
