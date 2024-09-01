@@ -8,14 +8,14 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=19;
+		nextID=22;
 	};
 	class Camera
 	{
 		pos[]={3483.2817,147.82555,2635.5703};
-		dir[]={-0.84953564,-0.36400333,0.38182554};
-		up[]={-0.33201054,0.93139768,0.14922282};
-		aside[]={0.409949,0,0.91210848};
+		dir[]={-0.52101308,-0.30827615,0.79594111};
+		up[]={-0.16883896,0.95129669,0.25793207};
+		aside[]={0.83669001,-7.2759576e-009,0.54768705};
 	};
 };
 binarizationWanted=0;
@@ -27,13 +27,15 @@ addons[]=
 	"ace_marker_flags",
 	"A3_Supplies_F_Heli_Slingload",
 	"ace_rearm",
-	"ace_cargo"
+	"ace_cargo",
+	"A3_Characters_F_Orange",
+	"RF_Vehicles_Pickup_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=6;
+		items=8;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -76,13 +78,28 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item6
+		{
+			className="A3_Characters_F_Orange";
+			name="Arma 3 Orange - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item7
+		{
+			className="RF_Vehicles";
+			name="Arma 3 Creator DLC: Reaction Forces - Vehicles";
+			author="Rotators Collective";
+			url="https://reactionforces.rotators.net/";
+		};
 	};
 };
 dlcs[]=
 {
 	"Decade",
 	"ORANGE",
-	"Heli"
+	"Heli",
+	"rf"
 };
 randomSeed=16580065;
 class ScenarioData
@@ -113,7 +130,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=11;
+		items=13;
 		class Item0
 		{
 			dataType="Group";
@@ -384,6 +401,75 @@ class Mission
 			};
 			id=18;
 			type="B_Slingload_01_Ammo_F";
+		};
+		class Item11
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3481.9495,143.76868,2647.4968};
+						angles[]={6.2457047,0,0.039974678};
+					};
+					side="Civilian";
+					flags=6;
+					class Attributes
+					{
+					};
+					id=21;
+					type="C_IDAP_Man_AidWorker_02_F";
+					atlOffset=1.5258789e-005;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=21;
+						item1=20;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+				};
+			};
+			id=19;
+			atlOffset=1.5258789e-005;
+		};
+		class Item12
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3481.8672,145.82584,2647.3696};
+				angles[]={6.2457047,0,0.039974678};
+			};
+			side="Civilian";
+			flags=6;
+			class Attributes
+			{
+			};
+			id=20;
+			type="C_IDAP_Pickup_water_rf";
+			atlOffset=1.5258789e-005;
 		};
 	};
 };
