@@ -1,9 +1,12 @@
-class CfgPatches {
+#include "script_component.hpp"
 
-	class CVO_CSC
+class CfgPatches
+{
+
+	class CVO_Compat_RF
 	{
 		// Meta information for editor
-        name = "CVO Custom Supply Crate";
+        name = "CVO_Compat_RF";
 		version = "1.0.0";
 
 		author = "Overlord Zorn [CVO]";
@@ -15,7 +18,7 @@ class CfgPatches {
 
         // Required addons, used for setting load order.
         // When any of the addons is missing, pop-up warning will appear when launching the game.
-        requiredAddons[] = {"ace_interaction","cba_common"};
+        requiredAddons[] = {"RF_Data_Loadorder","ace_interaction","cba_common"};
 
 		// Optional. If this is 1, if any of requiredAddons[] entry is missing in your game the entire config will be ignored and return no error (but in rpt) so useful to make a compat Mod (Since Arma 3 2.14)
 		skipWhenMissingDependencies = 1;
@@ -25,23 +28,7 @@ class CfgPatches {
 
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};
-
 	};
-
 };
 
-class CfgFunctions
-{
-	class CVO_CSC            // Tag
-	{
-		class CSC           // Category
-		{
-			file = "z\cvo_aux\addons\CSC\functions";
-			class createNode {};
-
-			class addCSC {};
-            class spawnCSC {};
-		};
-	}; 
-};
-
+#include "CfgVehicles.hpp"

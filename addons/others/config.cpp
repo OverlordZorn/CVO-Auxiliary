@@ -6,7 +6,8 @@ class CfgPatches {
         name = "CVO Others";
 		version = "1.0.0";
 
-		author[]= {"Overlord Zorn [CVO]"};
+		author = "Overlord Zorn [CVO]";
+		authors[] = {"Overlord Zorn [CVO]"};
         url = "http://chronivoron.net";
 
         // Minimum compatible version. When the game's version is lower, pop-up warning will appear when launching the game.
