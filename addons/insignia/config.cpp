@@ -29,7 +29,7 @@ class CfgPatches {
 
 };
 
-class CfgUnitInsignia
-{
-	#include "insignias.hpp"	
-};
+#include "CfgFunctions.hpp"
+#include "CfgUnitInsignia.hpp"
+#include "CfgExtendedEventHandlers.hpp"
+
