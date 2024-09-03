@@ -6,26 +6,23 @@ if !(hasInterface) exitWith {};
 *
 */
 
-["CBA_settingsInitialized", {
 
-	private _isEnabled = missionNamespace getVariable ["CVO_SET_Arsenal_saveOnArsenalClose", true];
-	if !(_isEnabled) exitWith {};
-
-    ["ace_arsenal_displayClosed", {
-        player setVariable ["CVO_Loadout", getUnitLoadout player];
-    }] call CBA_fnc_addEventHandler;
-
-},[]] call CBA_fnc_addEventHandler;
+private _code = {
+        ["ace_arsenal_displayClosed", {
+            private _isEnabled = missionNamespace getVariable ["CVO_SET_Arsenal_saveOnArsenalClose", true];
+            if (_isEnabled) then {
+                [ { player setVariable ["CVO_Loadout", getUnitLoadout player]; } , [], 3] call CBA_fnc_waitAndExecute;
+            };
+        }] call CBA_fnc_addEventHandler;
 
 
-["CBA_settingsInitialized", {
+        player addEventHandler ["Respawn", {
+	        private _isEnabled = missionNamespace getVariable ["CVO_SET_loadPlayerLoadoutOnRespawn", true];
+            if (_isEnabled) then {
+                params ["_unit", "_corpse"]; 
+                player setUnitLoadout (player getVariable ["CVO_Loadout", []]);
+            };              
+        }];                   
+};
 
-	private _isEnabled = missionNamespace getVariable ["CVO_SET_loadPlayerLoadoutOnRespawn", true];
-	if !(_isEnabled) exitWith {};
-
-    // when respawning, using the previously saved loadout  
-    player addEventHandler ["Respawn", {
-        params ["_unit", "_corpse"]; 
-        player setUnitLoadout (player getVariable ["CVO_Loadout", []]);
-    }];                                 
-},[]] call CBA_fnc_addEventHandler;
+if (missionNamespace getVariable ["cba_settings_ready",false]) then _code else { ["CBA_settingsInitialized",_code,[]] call CBA_fnc_addEventHandler; };
