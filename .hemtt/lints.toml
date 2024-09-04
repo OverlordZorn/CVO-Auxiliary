@@ -8,7 +8,7 @@ options.ignore = [
     
 ]
 
-[lints.sqf.command_case]
+[sqf.command_case]
 options.ignore = [
     "rankID",
 ]
