@@ -1,0 +1,7 @@
+[sqf.banned_commands]
+
+lints.sqf.banned_commands = "Warning"
+
+options.ignore = [
+    "createSoundSource",
+]
