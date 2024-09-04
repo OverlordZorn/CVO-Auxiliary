@@ -82,11 +82,11 @@ private _heliPos = getPos leader _heliGRP;
 private _cargoPos = getPos _cargoObj;
 
 private _dis = _heliObj distance _cargoObj;
-private _far = 750;
-private _mid = 200;
+private _far = 1500;
+private _mid = 350;
 private _near = 50;
 
-if  (_direction isEqualTo "AUTO" && _dis < 750) then {
+if  (_direction isEqualTo "AUTO" && _dis < _far) then {
     _mid = _dis / _far * 200;
     _far = _dis;
 };
