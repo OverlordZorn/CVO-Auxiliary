@@ -12,7 +12,7 @@ if (!isServer) exitWith {};
 if (_target == objNull) exitWith {};
 
 
-if (CBA_MissionTime < 3) exitWith { [missionNameSpace getVariable _fnc_scriptName, _this, 3 + random 3] call CBA_fnc_waitAndExecute; };
+if (CBA_MissionTime < 3) exitWith { [missionNamespace getVariable _fnc_scriptName, _this, 3 + random 3] call CBA_fnc_waitAndExecute; };
 
 if ( _dir isEqualTo "RND" ) then {
     _dir = selectRandom [-1,1] * random _rndVal;

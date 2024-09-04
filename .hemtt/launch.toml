@@ -1,6 +1,6 @@
 
 
-[hemtt.launch.default]
+[default]
 workshop = [
     "450814997",  # CBA_A3's Workshop ID
     "463939057",  # ACE3
@@ -17,20 +17,20 @@ parameters = [
     "-noPauseAudio",
 ]
 
-[hemtt.launch.Stratis]
+[Stratis]
 extends = "default"
 dlc = ["ws","rf"]
 mission = "Stratis.Stratis"
 
 
-[hemtt.launch.GreenMag]
+[GreenMag]
 extends = "Stratis"
 workshop = ["2352603233"]
 
-[hemtt.launch.exec]
+[exec]
 extends = "default"
 mission = "exec.VR"
 
-[hemtt.launch.airlift]
+[airlift]
 extends = "default"
 mission = "airlift.VR"

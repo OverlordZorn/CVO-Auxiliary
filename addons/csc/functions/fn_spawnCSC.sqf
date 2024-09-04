@@ -148,7 +148,7 @@ while {_addTracks > 0}    do { ["ACE_Track",           _box]  call ace_cargo_fnc
 
 
 ["cvo_csc_Event_crateSpawnedServer", [_box, _title] ] call CBA_fnc_ServerEvent;
-diag_log format ['[CVO](debug)(fn_spawnCSC) %" - Requested by %2', _title , _player];
+diag_log format ['[CVO](debug)(fn_spawnCSC) %1 - Requested by %2', _title , _player];
 
 
 
