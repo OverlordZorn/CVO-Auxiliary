@@ -51,11 +51,7 @@ switch (typeName _heli) do {
 };
 
 //Check if target can be airlifted
-private _helperNeeded = false;
-if (count getArray (configOf _cargoObj >> "slingLoadCargoMemoryPoints") == 0) then {
-    _helperNeeded = true;
-
-};
+private _helperNeeded = count getArray (configOf _cargoObj >> "slingLoadCargoMemoryPoints") == 0;
 
 
 {	_x setGroupOwner 2;	} forEach [_heliGRP, group driver _cargoObj];
@@ -69,14 +65,14 @@ if (_protected) then {
 
 // Create Helper Object for The Drop Off Point and Landing Point
 private ["_dropOffPosObj", "_returnPosObj"];
-If (_dropOffPos isEqualType []) then {
+if (_dropOffPos isEqualType []) then {
     _dropOffPosObj = createVehicle ["Land_HelipadEmpty_F", _dropOffPos];
 } else {	_dropOffPosObj = _dropOffPos; _dropOffPos = getPos _dropOffPosObj;  };
 
 
 if (_returnPos isEqualTo "UNDEFINED") then {	_returnPos = getPos leader _heliGRP;  };
 
-If (_returnPos isEqualType []) then {
+if (_returnPos isEqualType []) then {
     _returnPosObj = createVehicle ["Land_HelipadEmpty_F", _returnPos];
 } else {	_returnPosObj = _returnPos; _returnPos = getPos _returnPosObj;  };
 
@@ -90,18 +86,16 @@ private _far = 750;
 private _mid = 200;
 private _near = 50;
 
-if  (_direction isEqualto "AUTO" && _dis < 750) then {
+if  (_direction isEqualTo "AUTO" && _dis < 750) then {
     _mid = _dis / _far * 200;
     _far = _dis;
 };
 
 
 // Adjust Direction in case of "AUTO"
-if (_direction isEqualto "AUTO") then {
+if (_direction isEqualTo "AUTO") then {
     _direction = _cargoObj getDir _heliObj;
 };
-
-
 
 
 
@@ -137,7 +131,7 @@ private _code = {
     if (_ogMass isNotEqualTo "404") then { _cargoOBJ setMass _ogMass; };
     
 };
-[ { (_this # 0 distance2D _this # 1) < 3 }, _code, [_dropOffPosObj, _cargoObj,_kickOut], 600, _code ] call CBA_fnc_waitUntilAndExecute;
+[ { (_this # 0 distance2D _this # 1) < 10 }, _code, [_dropOffPosObj, _cargoObj,_kickOut], 600, _code ] call CBA_fnc_waitUntilAndExecute;
 
 
 _heliObj setFuel 1;
@@ -149,40 +143,40 @@ private _wpPos3 = _cargoPos getPos [_near, _direction];
 private _wpPos4 = + _cargoPos;
 private _wpPos5 = _cargoPos getPos [_far, _direction];
 
-private _wp1 = _heliGRP addWaypoint [_wpPos1, -1];
+private _wp1 = _heliGRP addWaypoint [_wpPos1, 0];
 _wp1 setWaypointBehaviour "CARELESS";
 _wp1 setWaypointStatements ["true", "vehicle this flyInHeight [50, true]; vehicle this limitSpeed 100;"];
 _wp1 setWaypointSpeed "FULL";
 
 
-private _wp2 = _heliGRP addWaypoint [_wpPos2, -1];
+private _wp2 = _heliGRP addWaypoint [_wpPos2, 0];
 _wp2 setWaypointStatements ["true", "vehicle this flyInHeight [30, true]; vehicle this limitSpeed 50;"];
 _wp2 setWaypointSpeed "LIMITED";
 
-private _wp3 = _heliGRP addWaypoint [_wpPos3, -1];
+private _wp3 = _heliGRP addWaypoint [_wpPos3, 0];
 _wp3 setWaypointStatements ["true", "vehicle this flyInHeight [30, false]; vehicle this limitSpeed 25;" ];
 
 
 
-private _wp4 = _heliGRP addWaypoint [_cargoObj, -1];
+private _wp4 = _heliGRP addWaypoint [_cargoObj, 0];
 _wp4 waypointAttachVehicle _cargoObj;
 _wp4 setWaypointType "HOOK";
 _wp4 setWaypointStatements ["true", "vehicle this flyInHeight [15, false]; vehicle this limitSpeed 75;"];
 
 
-private _wp5 = _heliGRP addWaypoint [_wpPos5, -1];
+private _wp5 = _heliGRP addWaypoint [_wpPos5, 0];
 _wp5 setWaypointStatements ["true", "vehicle this flyInHeight [75, true]; vehicle this limitSpeed 200;"];
 
 
 
-private _wp6 = _heliGRP addWaypoint [_dropOffPos, -1];
-private _wp7 = _heliGRP addWaypoint [_dropOffPos, -1];
+private _wp6 = _heliGRP addWaypoint [_dropOffPos, 0];
+private _wp7 = _heliGRP addWaypoint [_dropOffPos, 0];
 _wp7 waypointAttachVehicle _dropOffPosObj;
 _wp7 setWaypointType "UNHOOK";
 _wp7 setWaypointStatements ["true", "vehicle this flyInHeight [50, false]; vehicle this limitSpeed 200;"];
 
 
-private _wp8 = _heliGRP addWaypoint [_returnPos, -1];
+private _wp8 = _heliGRP addWaypoint [_returnPos, 0];
 _wp8 setWaypointSpeed "FULL";
 _wp8 setWaypointStatements ["true", "vehicle this land 'LAND'"];
 _wp8 waypointAttachVehicle _returnPosObj;

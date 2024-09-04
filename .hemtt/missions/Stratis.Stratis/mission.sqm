@@ -12,10 +12,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3483.2817,147.82555,2635.5703};
-		dir[]={-0.52101308,-0.30827615,0.79594111};
-		up[]={-0.16883896,0.95129669,0.25793207};
-		aside[]={0.83669001,-7.2759576e-009,0.54768705};
+		pos[]={2720.408,194.23297,2352.8496};
+		dir[]={0.94591177,-0.09906961,0.30897394};
+		up[]={0.094179317,0.99508041,0.030762935};
+		aside[]={0.31050187,1.0849908e-007,-0.95058888};
 	};
 };
 binarizationWanted=0;
@@ -29,13 +29,14 @@ addons[]=
 	"ace_rearm",
 	"ace_cargo",
 	"A3_Characters_F_Orange",
-	"RF_Vehicles_Pickup_01"
+	"RF_Vehicles_Pickup_01",
+	"CVO_Compat_RF"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=8;
+		items=9;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -91,6 +92,13 @@ class AddonsMetaData
 			name="Arma 3 Creator DLC: Reaction Forces - Vehicles";
 			author="Rotators Collective";
 			url="https://reactionforces.rotators.net/";
+		};
+		class Item8
+		{
+			className="CVO_Compat_RF";
+			name="CVO_Compat_RF";
+			author="Overlord Zorn [CVO]";
+			url="http://chronivoron.net";
 		};
 	};
 };
