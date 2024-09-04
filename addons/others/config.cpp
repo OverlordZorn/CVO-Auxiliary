@@ -40,6 +40,7 @@ class CfgFunctions
             file = "z\cvo_aux\addons\others\functions";
             class executeUnit {};
             class airlift_cargo {};
+            class slingload_cargoOwner {};
 		};
 	}; 
 };
