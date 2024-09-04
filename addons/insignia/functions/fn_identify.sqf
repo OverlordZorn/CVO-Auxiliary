@@ -70,7 +70,7 @@ private _notLowestRank = (
 private _leadership =  switch (_regexReturn) do {
     case "1-0": {
         switch _steamID do {
-            case "76561197960287930": { 69 };
+            case "76561197970306509": { 69 };
             default { 0 };
         };
     };
@@ -90,8 +90,6 @@ private _leadership =  switch (_regexReturn) do {
         };
     };
 };
-
-
 
 
 private _isMedic = [_unit, 1] call ace_medical_treatment_fnc_isMedic;
