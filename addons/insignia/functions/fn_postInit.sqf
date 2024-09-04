@@ -14,3 +14,7 @@ private _code = {
 
 if (missionNamespace getVariable ["cba_settings_ready",false]) then _code else { ["CBA_settingsInitialized",_code,[]] call CBA_fnc_addEventHandler; };
 
+
+
+// Register Event
+["CVO_Insignia_Request_AutoAssign", { [player] call cvo_insignia_fnc_autoAssign; }] call CBA_fnc_addEventHandler;

@@ -19,6 +19,6 @@ params [
 ];
 
 private _className = [_unit] call cvo_insignia_fnc_identify;
-if (_classname isEqualTo "404") exitWith {};
+if (_classname isEqualTo false) exitWith {};
 [_unit, _className] call cvo_insignia_fnc_apply;
 

@@ -26,7 +26,7 @@ private _groupName = groupId group _unit;
 
 private _regexReturn = flatten (_groupName regexFind ["1-[0-9]"]);
 
-if (_regexReturn isEqualTo []) exitWith {"404"};
+if (_regexReturn isEqualTo []) then {_regexReturn = "404"};
 
 _regexReturn = flatten _regexReturn # 0;
 
@@ -43,17 +43,56 @@ private _callSign = switch (_regexReturn) do {
     default {"blank"};
 };
 
-private _array = ["CVO","insignia",_callSign];
+private _threshold = missionNamespace getVariable ["CVO_SET_Insignia_threshold_SL", 5];
 
+private _sortedByRankID = [units group _unit, [], {rankId _x}, "DESCEND"] call BIS_fnc_sortBy;
+private _ranks = _sortedByRankID apply {rankID _x};
+_ranks = _ranks arrayIntersect _ranks;
+
+private _classNameArray = ["CVO","insignia",_callSign];
 private _steamID = getPlayerUID _unit;
-
-private _isOfficerRole = "Officer" in (_unit getVariable ["CVO_A_Roles", []]);
-private _isTeamLeadRole = "TL" in (_unit getVariable ["CVO_A_Roles", []]);
-private _isSquadlead = _unit isEqualTo leader _unit;
 private _groupSize = count units _unit;
 
-private _is1IC = _isSquadlead && _isOfficerRole;
-private _is2IC = _isSquadlead || _isOfficerRole;
+private _highestRank = (_sortedByRankID # 0) isEqualTo _unit;
+
+private _highestRankAndSquadsize = (
+    _highestRank &&
+    {_groupSize >= _threshold}
+);
+
+
+private _notLowestRank = (
+    !_higestRank && 
+    { rankID (_sortedByRankID # -1) isNotEqualTo (rankID _unit); }
+);
+
+
+private _leadership =  switch (_regexReturn) do {
+    case "1-0": {
+        switch _steamID do {
+            case "76561197960287930": { 69 };
+            default { 0 };
+        };
+    };
+    case "1-6": {
+        switch (true) do {
+            case _highestRank: { 2 };
+            case _notLowestRank: { 1 };
+            default { 0 };
+        };
+    };
+    default {
+        switch (true) do {
+            case _highestRankAndSquadsize: { 2 };
+            case _highestRank: { 1 };
+            case _notLowestRank: { 1 };
+            default { 0 };
+        };
+    };
+};
+
+
+
 
 private _isMedic = [_unit, 1] call ace_medical_treatment_fnc_isMedic;
 private _isEngineer = [_unit, 1] call ace_repair_fnc_isEngineer;
@@ -61,16 +100,16 @@ private _isEngineer = [_unit, 1] call ace_repair_fnc_isEngineer;
 private _type = switch (_callSign) do {
 
     case "10_COY" : {
-        switch _steamID do {
-            case "76561197960287930": { "CO" };
+        switch _leadership do {
+            case 69: { "CO" };
             default { "RFL" };
         };
     };
 
     case "16_PL"  : {
         switch (true) do {
-            case _is1IC: { "CO" };
-            case _is2IC: { "SGT" };
+            case (_leadership == 2): { "CO" };
+            case (_leadership == 1): { "SGT" };
             case _isMedic: { "MED" };
             case _isEngineer: { "ENG" };
             default { "RFL" };
@@ -79,8 +118,8 @@ private _type = switch (_callSign) do {
 
     default {
         switch (true) do {
-            case _is1IC: { "SL" };
-            case _is2IC: { "TL" };
+            case (_leadership == 2): { "SL" };
+            case (_leadership == 1): { "TL" };
             case _isMedic: { "MED" };
             case _isEngineer: { "ENG" };
             default { "RFL" };
@@ -89,7 +128,7 @@ private _type = switch (_callSign) do {
 
 };
 
-_array pushBack _type;
-private _return = _array joinString "_";
+_classNameArray pushBack _type;
+private _return = _classNameArray joinString "_";
 diag_log format ['[CVO](debug)(fn_identity) _return: %1', _return];
 _return
