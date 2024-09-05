@@ -15,7 +15,7 @@
 * none
 *
 * Example:
-* [_heliGRPGroup, _CargoObj, _DZ, _home, _ingress] call cvo_fnc_airlift
+* [_heliGRPGroup, _CargoObj, _DZ, _home, _ingress] call cvo_common_fnc_airlift_cargo
 *
 * Public: [Yes/No]
 */
