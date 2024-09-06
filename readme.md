@@ -24,9 +24,10 @@ Idk. its two new fonts. One is grafitti style, the other is stencil style. Only 
 ## [Branding - Cool CVO Branded things like Flags n Shit](/addons/branding/readme.md)
 Adds Leadership Portrait, CVO Flags, CVO Banners and maybe more at some point
 
-## [Music - Music related functions and stuff](/addons/music/readme.md)
-
 ## [Common - Common Functions and Stuff](/addons/common/readme.md)
+## [Music - Music related functions and stuff](/addons/music/readme.md)
+## [BigBoom - Function to create a big explosion with a lasting fire/light/smoke effect](/addons/bigBoom/readme.md)
+
 
 # External Addons
 ## [Dyn_Groups by Gruppe Adler](/addons/dyn_groups/readme.md)
