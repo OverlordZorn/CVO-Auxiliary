@@ -7,17 +7,17 @@ if (isNull _display) exitWith {};
 
 private _list = _display ctrlCreate ["RscListBox",65523];
 
-private _listX = 40 * (((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX + (safezoneW - ((safezoneW / safezoneH) min 1.2))/2);
-private _listY = 2 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + (safezoneY + (safezoneH - (((safezoneW / safezoneH) min 1.2) / 1.2))/2);
-private _listW = 10 * (((safezoneW / safezoneH) min 1.2) / 40);
-private _listH = 16.3 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
+private _listX = 40 * (((safeZoneW / safeZoneH) min 1.2) / 40) + (safeZoneX + (safeZoneW - ((safeZoneW / safeZoneH) min 1.2))/2);
+private _listY = 2 * ((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25) + (safeZoneY + (safeZoneH - (((safeZoneW / safeZoneH) min 1.2) / 1.2))/2);
+private _listW = 10 * (((safeZoneW / safeZoneH) min 1.2) / 40);
+private _listH = 16.3 * ((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25);
 
 _list ctrlSetPosition [_listX,_listY,_listW,_listH];
 _list ctrlSetFontHeight 0.05;
 _list ctrlSetBackgroundColor [0,0,0,0.69999999];
 _list ctrlCommit 0;
 
-private _insignias = "true" configClasses (configfile >> "CfgUnitInsignia");
+private _insignias = "true" configClasses (configFile >> "CfgUnitInsignia");
 {
     _list lbAdd ([_x,"displayName",""] call BIS_fnc_returnConfigEntry);
     _list lbSetPicture [_forEachIndex,[_x,"texture",""] call BIS_fnc_returnConfigEntry];

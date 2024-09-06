@@ -23,7 +23,7 @@ switch (_mode) do
 		private _forcedInsignia = _params param [3, "", [""]];
 
 		// Center of each side
-		{ createCenter _x } forEach [WEST, EAST, RESISTANCE, CIVILIAN];
+		{ createCenter _x } forEach [west, east, resistance, civilian];
 
 		// Block multiple execution
 		if (["IsInitialized"] call GROUPS) exitWith
@@ -32,7 +32,7 @@ switch (_mode) do
 		};
 
 		// Handle requests from clients
-		VAR_ON_CLIENT_MESSAGE addPublicVariableEventHandler [missionnamespace,
+		VAR_ON_CLIENT_MESSAGE addPublicVariableEventHandler [missionNamespace,
 		{
 			["OnClientMessage", _this] call GROUPS;
 		}];
@@ -81,7 +81,7 @@ switch (_mode) do
 		CHECK(!isServer);
 
 		// Clear client message event handler
-		VAR_ON_CLIENT_MESSAGE addPublicVariableEventHandler [missionnamespace, {}];
+		VAR_ON_CLIENT_MESSAGE addPublicVariableEventHandler [missionNamespace, {}];
 
 		// Public variables
 		missionNamespace setVariable [VAR_INITIALIZED, nil, IS_PUBLIC];
@@ -568,12 +568,12 @@ switch (_mode) do
 	case "GetFriendlyPlayers" :
 	{
 		private ["_side"];
-		_side = _params param [0, SIDEUNKNOWN, [SIDEUNKNOWN]];
+		_side = _params param [0, sideUnkown, [sideUnkown]];
 
 		// Validate params
-		if !(_side in [WEST, EAST, RESISTANCE, CIVILIAN]) exitWith
+		if !(_side in [west, east, resistance, civilian]) exitWith
 		{
-			["GetFriendlyPlayers: Invalid side (%1), please use on of the supported (WEST, EAST, RESISTANCE, CIVILIAN)"] call BIS_fnc_error;
+			["GetFriendlyPlayers: Invalid side (%1), please use on of the supported (west, east, resistance, civilian)"] call BIS_fnc_error;
 			[];
 		};
 
@@ -648,7 +648,7 @@ switch (_mode) do
 		// When in the respawn screen, detect when we want to open dynamic groups
 		missionNamespace setVariable [VAR_PLAYER_RESPAWN_KEYDOWN,
 		[
-			missionnamespace,
+			missionNamespace,
 			"RscDisplayRespawnKeyDown",
 			{
 				private "_key";
@@ -715,10 +715,10 @@ switch (_mode) do
 		["RemoveKeyEvents"] call GROUPS;
 
 		// Remove respawn screen key down event handling
-		[missionnamespace, "RscDisplayRespawnKeyDown", missionNamespace getVariable [VAR_PLAYER_RESPAWN_KEYDOWN, []]] call bis_fnc_removescriptedeventhandler;
+		[missionNamespace, "RscDisplayRespawnKeyDown", missionNamespace getVariable [VAR_PLAYER_RESPAWN_KEYDOWN, []]] call bis_fnc_removescriptedeventhandler;
 
 		// Stop the updating function
-		removeMissionEventHandler ["EachFrame", missionnamespace getVariable [VAR_PLAYER_DRAW3D, -1]];
+		removeMissionEventHandler ["EachFrame", missionNamespace getVariable [VAR_PLAYER_DRAW3D, -1]];
 	};
 
 	/**
@@ -1281,7 +1281,7 @@ switch (_mode) do
 
 	case "LoadInsignias" :
 	{
-		(configfile >> "CfgUnitInsignia") call BIS_fnc_getCfgSubClasses;
+		(configFile >> "CfgUnitInsignia") call BIS_fnc_getCfgSubClasses;
 	};
 
 	case "LoadInsignia" :
@@ -1290,7 +1290,7 @@ switch (_mode) do
 		_class = _params param [0, "", [""]];
 
 		private ["_cfg", "_displayName", "_texture", "_author"];
-		_cfg            = configfile >> "CfgUnitInsignia" >> _class;
+		_cfg            = configFile >> "CfgUnitInsignia" >> _class;
 		_displayName    = getText (_cfg >> "displayName");
 		_texture        = getText (_cfg >> "texture");
 		_author         = getText (_cfg >> "author");
@@ -1344,7 +1344,7 @@ switch (_mode) do
 		_target                 = _params param [2, objNull, [objNull]];
 
 		private ["_actionKeysNames", "_keyText", "_string"];
-		_actionKeysNames        = actionkeysnamesarray ["TeamSwitch", 1];
+		_actionKeysNames        = actionKeysNamesArray ["TeamSwitch", 1];
 		_keyText                = if (count _actionKeysNames > 0) then { _actionKeysNames select 0 } else { "N/A" };
 		_string                 = format ["<t color = '%2'>[%1]</t>", _keyText, (["GUI", "BCG_RGB"] call BIS_fnc_displayColorGet) call BIS_fnc_colorRGBtoHTML];
 
@@ -1384,7 +1384,7 @@ switch (_mode) do
 		}
 		else
 		{
-			_availableInsignias = (configfile >> "CfgUnitInsignia") call BIS_fnc_getCfgSubClasses;
+			_availableInsignias = (configFile >> "CfgUnitInsignia") call BIS_fnc_getCfgSubClasses;
 			uiNamespace setVariable ["RscEGSpectator_availableInsignias", _availableInsignias];
 		};
 

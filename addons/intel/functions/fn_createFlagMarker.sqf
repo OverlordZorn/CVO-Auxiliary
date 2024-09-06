@@ -43,7 +43,7 @@ private _colorMarker = switch (_color) do
     default         {""};
 };
 
-if (isNull _flag || {_colorMarker == ""} ) exitwith {};
+if (isNull _flag || {_colorMarker == ""} ) exitWith {};
 
 
 private _size = missionNamespace getVariable ["CVO_SET_Intel_Flag_marker_size", 0.5];

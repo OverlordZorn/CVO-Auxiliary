@@ -11,7 +11,7 @@ class CfgPatches {
         url = "http://chronivoron.net";
 
         // Minimum compatible version. When the game's version is lower, pop-up warning will appear when launching the game.
-        requiredVersion = 2.0;
+        requiredVersion = 2.02;
 
         // Required addons, used for setting load order.
         // When any of the addons is missing, pop-up warning will appear when launching the game.
@@ -33,16 +33,18 @@ class CfgPatches {
 
 class CfgFunctions
 {
-	class CVO_Common            // Tag
+	class cvo_common            // Tag
 	{
 		class Common           // Category
 		{
-            file = "z\cvo_aux\addons\others\functions";
+            file = "z\cvo_aux\addons\others\functions\common";
+            class getMedianPosASL {};
+
             class executeUnit {};
             class airlift_cargo {};
             class slingload_cargoOwner {};
 		};
-	}; 
+    };
 };
 
 
