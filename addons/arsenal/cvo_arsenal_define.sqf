@@ -76,7 +76,7 @@ CVO_A_BASE = [];
 
 
 // How to add Equipment if a certain Addon is Loaded - here, GreenMag
-if (isClass (configfile >> "CfgPatches" >> "greenmag_main")) then {
+if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
 
 		CVO_A_BASE append [
 			//"greenmag_ammo_556x45_basic_60Rnd",
