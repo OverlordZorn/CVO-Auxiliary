@@ -106,24 +106,23 @@ private _type = switch (_callSign) do {
 
     case "16_PL"  : {
         switch (true) do {
-            case (_leadership == 2): { "CO" };
-            case (_leadership == 1): { "SGT" };
             case _isMedic: { "MED" };
             case _isEngineer: { "ENG" };
+            case (_leadership == 2): { "CO" };
+            case (_leadership == 1): { "SGT" };
             default { "RFL" };
         };
     };
 
     default {
         switch (true) do {
-            case (_leadership == 2): { "SL" };
-            case (_leadership == 1): { "TL" };
             case _isMedic: { "MED" };
             case _isEngineer: { "ENG" };
+            case (_leadership == 2): { "SL" };
+            case (_leadership == 1): { "TL" };
             default { "RFL" };
         };
     };
-
 };
 
 _classNameArray pushBack _type;
