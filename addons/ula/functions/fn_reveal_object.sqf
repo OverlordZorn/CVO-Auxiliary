@@ -50,11 +50,11 @@ diag_log format ['[CVO](debug)(fn_reveal_object) Remaining _objects: %1 in  _lay
 
 if (_count > 0 ) exitWith {};
 
-if (_meme) then { ["cvo_ula_EH_playSound", [player, "BREAK"]] call CBA_fnc_globalEvent; };
+if (_meme) then { ["cvo_ula_EH_playSound", [_objSource, "BREAK"]] call CBA_fnc_globalEvent; }; 
+
 deleteVehicle _objSource;
+
 CVO_ULA_HM deleteAt _layerName;
-
-
 
 
 if (count CVO_ULA_HM > 0) exitWith {};
