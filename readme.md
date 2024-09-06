@@ -2,10 +2,8 @@
 https://steamcommunity.com/sharedfiles/filedetails/?id=3037257908
 
 
-# Notes
-
-
-## CSC - Custom Supply Crates
+# Addons
+## [CSC - Custom Supply Crates](/addons/csc/readme.md)
 Creates an ACE Action on an individual Object or Objects of a certain Classname.
 When Action is being executed, an AmmoCrate with customizable Content is being spawned.
 
