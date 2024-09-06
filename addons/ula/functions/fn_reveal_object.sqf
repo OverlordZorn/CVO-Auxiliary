@@ -39,6 +39,9 @@ _obj hideObjectGlobal false;
 _visibleObjects pushBack _obj;
 private _count = count _hiddenObjects;
 
+if (_objSource getVariable ["meme", false]) then { ["cvo_ula_EH_playSound", [_obj, "PLACE"]] call CBA_fnc_globalEvent; };
+
+
 missionNamespace setVariable [_layerMap get "pubVarName", _count, true];
 
 diag_log format ['[CVO](debug)(fn_reveal_object) Remaining _objects: %1 in  _layerName: %2', _count , _layerName];
@@ -46,6 +49,8 @@ diag_log format ['[CVO](debug)(fn_reveal_object) Remaining _objects: %1 in  _lay
 if (_count > 0 ) exitWith {};
 
 deleteVehicle _objSource;
+if (_objSource getVariable ["meme", false]) then { ["cvo_ula_EH_playSound", [_obj, "BREAK"]] call CBA_fnc_globalEvent; };
+CVO_ULA_EHID_add_action
 CVO_ULA_HM deleteAt _layerName;
 
 if (count CVO_ULA_HM > 0) exitWith {};

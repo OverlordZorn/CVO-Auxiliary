@@ -30,7 +30,7 @@ class CfgSounds
 
 class CfgFunctions
 {
-	class CVO_Others            // Tag
+	class CVO            // Tag
 	{
 		class Medical           // Category
 		{
