@@ -11,4 +11,5 @@ options.ignore = [
 [sqf.command_case]
 options.ignore = [
     "rankID",
+    "groupID"
 ]
