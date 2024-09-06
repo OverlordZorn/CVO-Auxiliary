@@ -7,8 +7,7 @@ Multiple people can work together and build things faster.
 
 
 ## Showcase
-https://www.youtube.com/watch?v=buWmeaKfe0M
-
+[![Showcase](https://img.youtube.com/vi/buWmeaKfe0M/0.jpg)](https://www.youtube.com/watch?v=buWmeaKfe0M)
 
 ## Parameters
 0 - Object: the object that acts as the "building supplies crate" which has the action attached to it.
