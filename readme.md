@@ -8,9 +8,9 @@ Creates an ACE Interaction on an individual Object or Objects of a certain Class
 When Action is being executed, an AmmoCrate with customizable Content is being spawned.
 
 ## [ULA - Unhide Layer Action](/addons/ula/readme.md)
-Creates an Ace Interaction on an object. The object needs to be near a set of editor objects inside a layer with a certain name. 
-When the action is being executed, it simulates the building of "something", by unhiding the objects in the defined layer, one after another - based on bbjects ASL from lowest to highest object.
-
+Creates an Ace Interaction on an object. The object needs to be near a set of editor objects inside a layer with a certain name.
+When the action is being executed, it simulates the building of "something", by unhiding the objects in the defined layer - one after another - based on bbjects ASL from lowest to highest object.
+Multiple people can work together and build things faster.
 
 ## Music
 
