@@ -26,7 +26,7 @@ Adds Leadership Portrait, CVO Flags, CVO Banners and maybe more at some point
 
 ## [Music - Music related functions and stuff](/addons/music/readme.md)
 
-## [Common - Common Functions and Stuff](/addons/music/readme.md)
+## [Common - Common Functions and Stuff](/addons/common/readme.md)
 
 # External Addons
 ## [Dyn_Groups by Gruppe Adler](/addons/dyn_groups/readme.md)
