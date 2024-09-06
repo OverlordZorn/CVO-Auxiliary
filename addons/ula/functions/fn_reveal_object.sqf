@@ -31,6 +31,8 @@ diag_log format ['[CVO](debug)(fn_reveal_object) _layerName: %1', _layerName];
 
 if (_layerMap isEqualTo "404") exitWith {};
 
+private _meme = _objSource getVariable ["meme", false];
+
 private _hiddenObjects = _layerMap get "hiddenObjects";
 private _visibleObjects = _layerMap get "visibleObjects";
 
@@ -39,7 +41,7 @@ _obj hideObjectGlobal false;
 _visibleObjects pushBack _obj;
 private _count = count _hiddenObjects;
 
-if (_objSource getVariable ["meme", false]) then { ["cvo_ula_EH_playSound", [_obj, "PLACE"]] call CBA_fnc_globalEvent; };
+if (_meme) then { ["cvo_ula_EH_playSound", [_obj, "PLACE"]] call CBA_fnc_globalEvent; };
 
 
 missionNamespace setVariable [_layerMap get "pubVarName", _count, true];
@@ -48,13 +50,22 @@ diag_log format ['[CVO](debug)(fn_reveal_object) Remaining _objects: %1 in  _lay
 
 if (_count > 0 ) exitWith {};
 
+if (_meme) then { ["cvo_ula_EH_playSound", [player, "BREAK"]] call CBA_fnc_globalEvent; };
 deleteVehicle _objSource;
-if (_objSource getVariable ["meme", false]) then { ["cvo_ula_EH_playSound", [_obj, "BREAK"]] call CBA_fnc_globalEvent; };
-CVO_ULA_EHID_add_action
 CVO_ULA_HM deleteAt _layerName;
 
-if (count CVO_ULA_HM > 0) exitWith {};
 
+
+
+if (count CVO_ULA_HM > 0) exitWith {};
 CVO_ULA_HM = nil;
+
+if (_meme) then { ["cvo_ula_EH_playSound", CVO_ULA_EHID_meme] call CBA_fnc_removeEventHandler; };
+["cvo_ula_EH_reveal_object", CVO_ULA_EHID_reveal] call CBA_fnc_removeEventHandler;
+["cvo_ula_EH_add_action", CVO_ULA_EHID_add_action] call CBA_fnc_removeEventHandler;
+
+missionNamespace setVariable ["CVO_ULA_EHID_meme", nil, true];
+missionNamespace setVariable ["CVO_ULA_EHID_reveal", nil, true];
+missionNamespace setVariable ["CVO_ULA_EHID_add_action", nil, true];
 
 ["cvo_ula_EH_completed", [_layerName]] call CBA_fnc_serverEvent;

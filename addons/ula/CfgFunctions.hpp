@@ -11,6 +11,7 @@ class CfgFunctions
             class add_action {};
 
             class reveal_object {};
+            class play_sound {};
 
             class action_statement {};
             class action_condition {};
