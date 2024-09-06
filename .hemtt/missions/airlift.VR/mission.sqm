@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=135;
+		nextID=143;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6657.9746,78.305084,1807.0541};
-		dir[]={-0.34058958,-0.33248681,-0.87954444};
-		up[]={-0.12006966,0.94309217,-0.31007165};
-		aside[]={-0.93259436,9.6004806e-007,0.3611348};
+		pos[]={6648.3701,39.395859,1080.9772};
+		dir[]={-0.48278257,-0.36056799,0.79807621};
+		up[]={-0.18662953,0.93273264,0.30851406};
+		aside[]={0.85563141,-1.2404053e-007,0.51759952};
 	};
 };
 binarizationWanted=0;
@@ -36,13 +36,14 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Air_F_EPB_Heli_Light_03",
 	"ace_realisticnames",
-	"A3_Soft_F_Exp_LSV_01"
+	"A3_Soft_F_Exp_LSV_01",
+	"A3_Modules_F_Curator_Curator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			className="A3_Structures_F_Mil";
@@ -85,6 +86,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item6
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -119,7 +127,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=15;
+		items=21;
 		class Item0
 		{
 			dataType="Trigger";
@@ -176,7 +184,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6482.54,5,1844.2322};
-				angles[]={-0,4.7034178,0};
+				angles[]={0,4.7034178,0};
 			};
 			side="Empty";
 			flags=4;
@@ -325,11 +333,13 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6304.0762,5.0014391,1772.2834};
+						angles[]={0,4.7487388,0};
 					};
 					side="Independent";
 					flags=6;
 					class Attributes
 					{
+						name="heli_3D";
 					};
 					id=111;
 					type="I_helipilot_F";
@@ -340,6 +350,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6304.0762,6.8644705,1772.2845};
+						angles[]={0,4.7487388,0};
 					};
 					side="Independent";
 					class Attributes
@@ -393,12 +404,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6536.0571,6.8630314,1230.7615};
+				position[]={6513.27,6.8630314,1180.5833};
+				angles[]={0,4.7487388,0};
 			};
 			side="Independent";
 			flags=6;
 			class Attributes
 			{
+				name="heli_3";
 			};
 			id=110;
 			type="I_Heli_light_03_unarmed_F";
@@ -432,7 +445,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6685.626,5.0014391,1547.7344};
+						position[]={6652.5195,5.0014391,1158.3699};
 						angles[]={0,4.6992755,0};
 					};
 					side="West";
@@ -463,6 +476,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5938.8486,5.0014391,1196.4548};
+						angles[]={0,4.6857386,0};
 					};
 					side="Civilian";
 					flags=6;
@@ -479,6 +493,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5938.8486,8.6116381,1196.4497};
+						angles[]={0,4.6857386,0};
 					};
 					side="Civilian";
 					class Attributes
@@ -531,7 +546,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6471.5908,8.610199,1151.5475};
+				position[]={6511.79,8.610199,1150.6392};
+				angles[]={0,4.6857386,0};
 			};
 			side="Civilian";
 			flags=6;
@@ -656,6 +672,235 @@ class Mission
 					};
 				};
 				nAttributes=1;
+			};
+		};
+		class Item15
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6512.0498,5,1168.4771};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="start";
+			};
+			id=135;
+			type="Land_HelipadCircle_F";
+		};
+		class Item16
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3998.959,5,1197.108};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="midpoint";
+			};
+			id=136;
+			type="Land_HelipadCircle_F";
+		};
+		class Item17
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1000.293,5,1169.884};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="end";
+			};
+			id=137;
+			type="Land_HelipadCircle_F";
+		};
+		class Item18
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6343.5938,5.0014391,1778.1356};
+						angles[]={0,4.7487388,0};
+					};
+					side="Independent";
+					flags=6;
+					class Attributes
+					{
+						name="heli_3D_1";
+					};
+					id=139;
+					type="I_helipilot_F";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6343.5938,6.8644705,1778.1367};
+						angles[]={0,4.7487388,0};
+					};
+					side="Independent";
+					class Attributes
+					{
+					};
+					id=140;
+					type="I_helipilot_F";
+					atlOffset=1.8630314;
+				};
+			};
+			class Attributes
+			{
+				name="heli_4";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=139;
+						item1=141;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=140;
+						item1=141;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=138;
+			atlOffset=24.21389;
+		};
+		class Item19
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6598.3638,31.076921,1139.6799};
+				angles[]={0,4.7487388,0};
+			};
+			side="Independent";
+			flags=2;
+			class Attributes
+			{
+				name="heli_5";
+			};
+			id=141;
+			type="I_Heli_light_03_unarmed_F";
+			atlOffset=24.21389;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""arifle_Mk20C_F"",""FirstAidKit""],[2,6]],[[""SmokeShell"",""SmokeShellGreen"",""30Rnd_556x45_Stanag""],[2,2,4]],[[""ToolKit"",""ItemGPS""],[1,1]],[[""B_Parachute""],[6]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item20
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6676.3408,5,1199.825};
+			};
+			id=142;
+			type="ModuleCurator_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="#adminLogged";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=4;
 			};
 		};
 	};

@@ -1,5 +1,3 @@
-
-
 [default]
 workshop = [
     "450814997",  # CBA_A3's Workshop ID
@@ -15,6 +13,7 @@ parameters = [
     "-window",
     "-noPause",
     "-noPauseAudio",
+    "-filePatching"
 ]
 
 [Stratis]
@@ -27,10 +26,10 @@ mission = "Stratis.Stratis"
 extends = "Stratis"
 workshop = ["2352603233"]
 
-[exec]
+[Exec]
 extends = "default"
-mission = "exec.VR"
+mission = "Exec.VR"
 
-[airlift]
+[Airlift]
 extends = "default"
-mission = "airlift.VR"
+mission = "Airlift.VR"
