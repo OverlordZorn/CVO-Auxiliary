@@ -1,11 +1,9 @@
 # Unhide Layer Action
 
 ## What this?
-
-Creates an Ace Interaction on an object to simulate the building of "something", by unhiding the objects sind a layer.
-
-
-
+Creates an Ace Interaction on an object. The object needs to be near a set of editor objects inside a layer with a certain name.
+When the action is being executed, it simulates the building of "something", by unhiding the objects in the defined layer - one after another - based on bbjects ASL from lowest to highest object.
+Multiple people can work together and build things faster.
 
 
 ## Showcase
