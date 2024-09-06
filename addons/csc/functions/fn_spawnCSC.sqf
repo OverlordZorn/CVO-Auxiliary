@@ -125,7 +125,7 @@ if (_hashMap getOrDefault ["ace_refuel_source", false]) then {
 //////////////////////////////////////////////////
 
 // ACE Cargo SetSize (how big is the crate itself)
-if (_hashMap getOrDefault ["ace_cargo_setSize", "404"] isEqualType 0) then {
+if (_hashMap getOrDefault ["ace_cargo_setSize", "DEFAULT"] isEqualType 0) then {
     [_box, _hashMap get "ace_cargo_setSize"] call ace_cargo_fnc_setSize;
 };
 
