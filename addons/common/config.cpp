@@ -1,9 +1,9 @@
 class CfgPatches {
 
-	class CVO_Others
+	class CVO_Common
 	{
 		// Meta information for editor
-        name = "CVO Others";
+        name = "CVO Common";
 		version = "1.0.0";
 
 		author = "Overlord Zorn [CVO]";
@@ -37,7 +37,7 @@ class CfgFunctions
 	{
 		class Common           // Category
 		{
-            file = "z\cvo_aux\addons\others\functions\common";
+            file = "z\cvo_aux\addons\common\functions";
             class getMedianPosASL {};
 
             class executeUnit {};

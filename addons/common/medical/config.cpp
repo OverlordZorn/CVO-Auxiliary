@@ -1,12 +1,12 @@
 class CfgPatches
 {
-	class CVO_Others_Medical
+	class cvo_common_medical
 	{
 		// Use meta information from specified addon. Used to avoid repeated declarations.
-		addonRootClass = "CVO_Others";
+		addonRootClass = "cvo_common";
 
 		requiredVersion = 2.00;
-		requiredAddons[] = { "CVO_Others" };
+		requiredAddons[] = { "cvo_common" };
 		units[] = {};
 		weapons[] = {};
 	};
@@ -19,7 +19,7 @@ class CfgSounds
 	class cvo_healsound
 	{
 		name = "cvo_healsound";															// display name
-		sound[] = { "z\cvo_aux\addons\others\medical\medical_healsound.ogg", 1, 1, 100 };	// file, volume, pitch, maxDistance
+		sound[] = { "z\cvo_aux\addons\common\medical\medical_healsound.ogg", 1, 1, 100 };	// file, volume, pitch, maxDistance
 		titles[] = { 0, "[Healsound]" };												// subtitles
 
 		forceTitles = 0;			// Arma 3 - display titles even if global show titles option is off (1) or not (0)
@@ -30,13 +30,13 @@ class CfgSounds
 
 class CfgFunctions
 {
-	class CVO_Others            // Tag
+	class cvo_common            // Tag
 	{
 		class Medical           // Category
 		{
 			class fullHeal      // Function name -> Final Function will be: TAG_FNC_FunctionName
 			{
-				file = "z\cvo_aux\addons\others\medical\fnc_fullHeal.sqf";  
+				file = "z\cvo_aux\addons\common\medical\fnc_fullHeal.sqf";  
 			};
 		};
 	}; 
