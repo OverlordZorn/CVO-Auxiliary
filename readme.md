@@ -7,52 +7,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3037257908
 Creates an ACE Action on an individual Object or Objects of a certain Classname.
 When Action is being executed, an AmmoCrate with customizable Content is being spawned.
 
-### Functions
-#### CVO_CSC_fnc_addCSC
-```sqf
-/*
- * Author: Zorn
- * Creates an ACE INTERACTION on the Target to request an AmmoCrate and fills it with a custom Array.
- *
- * Arguments:
- * 0: Target supplySpawner, where the ace action should be added <OBJECT> or <CLASS as STRING>
- * 1: Name of the supplyCrateAction <string>
- * 2: Nested Array of content EXCEPT BACKPACKS [["class0", amount], ["classN",#]] <Nested Array>
- * 3: Class of Crate to be used <OBJECT> <Optional - Default: "LandWoodenBox_F">
- * 4: Nested Array of Content BACKPACKS Only [[class0, #], [classN,#]] <Nested Array > <optional - Default: []>
- * 5: Spawn Location - ideally a invisible helipad or Tarp_01_Large_Black_F <Object> <optional - default: objNull>
- * 
- * Return Value:
- * None
- *
- * Examples:
- */  
-[
-	ourSupplyTruck, 
-	"Monkey Care Package",
-	[
-		["Ace_banana", 100],
-		["ace_maptools",100]
-	]
-] call CVO_CSC_fnc_addCSC;
-
-[
-	"ACM_APD_Unimog", 
-	"CBRN Package", 
-	[
-		["U_C_CBRN_Suit_01_Blue_F",6],
-		["G_RegulatorMask_F",6]
-	],
-	"LandWoodenBox_F",
-	objNull,
-	[
-		["B_SCBA_01_F",6]
-	]
-] call CVO_CSC_fnc_addCSC;
-```
-
-#### cvo_CSC_fn_spawnCSC
-internal function that does the spawning part
+## ULA - [Unhide Layer Action](/addons/ula/readme.md)
 
 ## Music
 
