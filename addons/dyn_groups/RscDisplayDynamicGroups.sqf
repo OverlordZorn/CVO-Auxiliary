@@ -105,7 +105,7 @@ switch _mode do
 		["AddKeyEvents", [_display]] call GROUPS;
 
 		// Hide hud and commanding menu
-		showHud false;
+		showHUD false;
 		showCommandingMenu "";
 
 		// Reset collapsed groups variable
@@ -133,7 +133,7 @@ switch _mode do
 		uiNamespace setVariable [VAR_OLD_MEMBERS_LIST, nil];
 
 		// Show hud and commanding menu
-		showHud true;
+		showHUD true;
 
 		// Log
 		if (LOG_ENABLED) then
@@ -302,9 +302,9 @@ switch _mode do
 			_sideColor = [_groupSide] call BIS_fnc_sideColor;
 			_sideColorString = switch (_groupSide) do
 			{
-				case WEST : 		{ format["#(argb,8,8,3)color(%1,%2,%3,0.6)", _sideColor select 0, _sideColor select 1, _sideColor select 2] };
-				case EAST : 		{ format["#(argb,8,8,3)color(%1,%2,%3,0.6)", _sideColor select 0, _sideColor select 1, _sideColor select 2] };
-				case RESISTANCE : 	{ format["#(argb,8,8,3)color(%1,%2,%3,0.6)", _sideColor select 0, _sideColor select 1, _sideColor select 2] };
+				case west : 		{ format["#(argb,8,8,3)color(%1,%2,%3,0.6)", _sideColor select 0, _sideColor select 1, _sideColor select 2] };
+				case east : 		{ format["#(argb,8,8,3)color(%1,%2,%3,0.6)", _sideColor select 0, _sideColor select 1, _sideColor select 2] };
+				case resistance : 	{ format["#(argb,8,8,3)color(%1,%2,%3,0.6)", _sideColor select 0, _sideColor select 1, _sideColor select 2] };
 				case default 		{ "#(argb,8,8,3)color(0.9,0.9,0.9,0.6)" };
 			};
 			_sidePicture ctrlSetText _sideColorString;
@@ -490,7 +490,7 @@ switch _mode do
 				};
 
 				private _child = _listbox tvAdd [[_parent], _groupPlayerName];
-				_listbox tvSetData [[_parent, _child], getPlayerUid _x];
+				_listbox tvSetData [[_parent, _child], getPlayerUID _x];
 				_listbox tvSort [[_parent, _child], true];
 				_listbox tvSetPicture [[_parent, _child], _groupPlayerIcon];
 				_listbox tvSetPictureColor [[_parent, _child], _color];
@@ -549,7 +549,7 @@ switch _mode do
 				};
 
 				private _child = _listbox tvAdd [[_parent], _unsortedPlayerName];
-				_listbox tvSetData [[_parent, _child], getPlayerUid _x];
+				_listbox tvSetData [[_parent, _child], getPlayerUID _x];
 				_listbox tvSort [[_parent, _child], true];
 				_listbox tvSetPicture [[_parent, _child], _unsortedPlayerIcon];
 				_listbox tvSetPictureColor [[_parent, _child], _color];
@@ -615,7 +615,7 @@ switch _mode do
 
 			// Fill listbox
 			{
-				_unitElements = _unitElements - [getPlayerUid _x];
+				_unitElements = _unitElements - [getPlayerUID _x];
 
 				private ["_name", "_textureIcon", "_textureRank", "_isGroupLeader", "_texture", "_sameGroup", "_isDead", "_isIncapacitated"];
 				_name 				= [_x] call BIS_fnc_getName;
@@ -648,12 +648,12 @@ switch _mode do
 					if (_isIncapacitated) then { _texture = ICON_REVIVE; };
 				};
 
-				private _index = ["LnbGetDataIndex", [_listbox, getPlayerUid _x]] call DISPLAY;
+				private _index = ["LnbGetDataIndex", [_listbox, getPlayerUID _x]] call DISPLAY;
 
 				if (_index == -1) then
 				{
 					_listbox lnbAddRow [""];
-					_listbox lnbSetData [[_forEachIndex, 0], getPlayerUid _x];
+					_listbox lnbSetData [[_forEachIndex, 0], getPlayerUID _x];
 					_listbox lnbSetPicture [[_forEachIndex, 0], _texture];
 					_listbox lnbSetText [[_forEachIndex, 1], _name];
 					_listbox lnbSetColor [[_forEachIndex, 1], [1,1,1,1]];
@@ -963,7 +963,7 @@ switch _mode do
 		// Store the newly selected player
 		uiNamespace setVariable [VAR_SELECTED_PLAYER, _clickedPlayer];
 
-		if (!_hasInvite && {!_inSameGroup} && {_weAreLeader} && {getPlayerUid player != _clickedUid}) then
+		if (!_hasInvite && {!_inSameGroup} && {_weAreLeader} && {getPlayerUID player != _clickedUid}) then
 		{
 			_inviteButton ctrlEnable true;
 		};
@@ -1060,7 +1060,7 @@ switch _mode do
 		private ["_hasGroup", "_isLeader", "_isSelfSelected"];
 		_hasGroup 	= ["PlayerHasGroup", [player]] call GROUPS;
 		_isLeader 	= _hasGroup && {player == leader group player};
-		_isSelfSelected	= _selectedUid == getPlayeruid player;
+		_isSelfSelected	= _selectedUid == getPlayerUID player;
 
 		switch (true) do
 		{
@@ -1151,7 +1151,7 @@ switch _mode do
 		_listBoxIndex	= lnbCurSelRow _listbox;
 		_selectedUid	= _listbox lnbData [_listBoxIndex, 0];
 
-		private _isSelfSelected	= _selectedUid == getPlayerUid player;
+		private _isSelfSelected	= _selectedUid == getPlayerUID player;
 
 		// If we have ourselves selected in the listbox, we Disband group, otherwise we will Promote to leader
 		if (_isSelfSelected) then
@@ -1536,7 +1536,7 @@ switch _mode do
 		private _editGroupName = _params param [0, controlNull, [controlNull]];
 
 		// New and old group name
-		private _oldGroupName = groupid (group player);
+		private _oldGroupName = groupID (group player);
 		private _groupName = ctrlText _editGroupName;
 
 		// Make sure names are different
@@ -1566,7 +1566,7 @@ switch _mode do
 		{
 			(group player) setGroupId [_clampedGroupName];
 			["SendClientMessage", ["SetName", [group player, _clampedGroupName]]] call GROUPS;
-			playsound "ReadoutHideClick1";
+			playSound "ReadoutHideClick1";
 			_wasUpdated = true;
 		};
 
@@ -1575,9 +1575,9 @@ switch _mode do
 		_backgroundGroupName = (uiNamespace getVariable ["BIS_dynamicGroups_display", displayNull]) displayCtrl IDC_DYNAMICGROUPS_BACKGROUNDGROUPNAME;
 		_color = switch (true) do
 		{
-			case (_wasUpdated && {!_groupNameWasClamped}) : 	{ [RESISTANCE] call BIS_fnc_sideColor };
-			case (_wasUpdated && {_groupNameWasClamped}) :  	{ [CIVILIAN] call BIS_fnc_sideColor };
-			case default 						{ [EAST] call BIS_fnc_sideColor };
+			case (_wasUpdated && {!_groupNameWasClamped}) : 	{ [resistance] call BIS_fnc_sideColor };
+			case (_wasUpdated && {_groupNameWasClamped}) :  	{ [civilian] call BIS_fnc_sideColor };
+			case default 						{ [east] call BIS_fnc_sideColor };
 		};
 		_backgroundGroupName ctrlSetBackgroundColor _color;
 		_editGroupName ctrlSetTextColor [1,1,1,1];
@@ -1701,15 +1701,15 @@ switch _mode do
 	case "GetSideColor" :
 	{
 		private ["_side"];
-		_side = _params param [0, SIDEUNKNOWN, [SIDEUNKNOWN]];
+		_side = _params param [0, sideUnkown, [sideUnkown]];
 
 		private "_color";
 		_color = switch (_side) do
 		{
-			case WEST : 		{ "#(argb,8,8,3)color(0,0,1,0.6)" };
-			case EAST : 		{ "#(argb,8,8,3)color(1,0,0,0.6)" };
-			case RESISTANCE : 	{ "#(argb,8,8,3)color(0,1,0,0.6)" };
-			case CIVILIAN : 	{ "#(argb,8,8,3)color(0.5,0.5,0.5,0.6)" };
+			case west : 		{ "#(argb,8,8,3)color(0,0,1,0.6)" };
+			case east : 		{ "#(argb,8,8,3)color(1,0,0,0.6)" };
+			case resistance : 	{ "#(argb,8,8,3)color(0,1,0,0.6)" };
+			case civilian : 	{ "#(argb,8,8,3)color(0.5,0.5,0.5,0.6)" };
 			case default 		{ "#(argb,8,8,3)color(0,0,0,0.6)" };
 		};
 
@@ -1729,8 +1729,8 @@ switch _mode do
 		if (isNull _player) exitWith { ""; };
 
 		private ["_icon", "_texture"];
-		_icon 		= getText (configfile >> "CfgVehicles" >> typeOf _player >> "icon");
-		_texture	= if (_icon != "") then {getText (configfile >> "CfgVehicleIcons" >> _icon)} else {""};
+		_icon 		= getText (configFile >> "CfgVehicles" >> typeOf _player >> "icon");
+		_texture	= if (_icon != "") then {getText (configFile >> "CfgVehicleIcons" >> _icon)} else {""};
 
 		_texture;
 	};
@@ -1743,9 +1743,9 @@ switch _mode do
 		private "_string";
 		_string = switch (_side) do
 		{
-			case WEST : 		{ localize "STR_A3_texturesources_blu0" };
-			case EAST : 		{ localize "STR_A3_truck_02_transport_base_f_texturesources_opfor0" };
-			case RESISTANCE : 	{ localize "STR_A3_cfggroups_indep0" };
+			case west : 		{ localize "STR_A3_texturesources_blu0" };
+			case east : 		{ localize "STR_A3_truck_02_transport_base_f_texturesources_opfor0" };
+			case resistance : 	{ localize "STR_A3_cfggroups_indep0" };
 			case default 		{ localize "STR_A3_cfgvehicles_c_man_10" };
 		};
 
