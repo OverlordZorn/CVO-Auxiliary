@@ -8,10 +8,12 @@ class CfgFunctions
 
             class testing { recompile = 1; postInit = 1; };
 
-			class init_network	{};
+			class init_controller	{};
             class register {};
 
             class speedLimiter {};
+            class protect {};
+
 		};
 	};
 };

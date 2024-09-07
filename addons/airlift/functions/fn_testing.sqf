@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 //start midpoint end heli_3
 
 /*

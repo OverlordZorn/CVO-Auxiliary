@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=143;
+		nextID=146;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6648.3701,39.395859,1080.9772};
-		dir[]={-0.48278257,-0.36056799,0.79807621};
-		up[]={-0.18662953,0.93273264,0.30851406};
-		aside[]={0.85563141,-1.2404053e-007,0.51759952};
+		pos[]={6793.1934,125.47147,967.19611};
+		dir[]={-0.32606134,-0.34378102,0.88067538};
+		up[]={-0.11936764,0.93903953,0.32240778};
+		aside[]={0.93782735,-1.3452518e-007,0.34722};
 	};
 };
 binarizationWanted=0;
@@ -127,7 +127,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=21;
+		items=24;
 		class Item0
 		{
 			dataType="Trigger";
@@ -902,6 +902,71 @@ class Mission
 				};
 				nAttributes=4;
 			};
+		};
+		class Item21
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5678.9932,7.1761513,1168.402};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="cargo_polaris";
+			};
+			id=143;
+			type="B_LSV_01_unarmed_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""arifle_MX_F"",""FirstAidKit""],[2,10]],[[""30Rnd_65x39_caseless_mag"",""100Rnd_65x39_caseless_mag"",""HandGrenade"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""16Rnd_9x21_Mag"",""SmokeShell"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellBlue"",""NLAW_F""],[16,6,10,10,4,4,4,4,12,4,4,4,4,2]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item22
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6711.5239,5,1307.063};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="home_1";
+			};
+			id=144;
+			type="Land_HelipadCircle_F";
+		};
+		class Item23
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6907.6782,5,1249.458};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="deliveryzone";
+			};
+			id=145;
+			type="Land_HelipadCircle_F";
 		};
 	};
 };

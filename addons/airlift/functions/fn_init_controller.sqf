@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 /*
 * Author: Zorn
 * Initialises an Airlift Network - This will handle all requests, demands, needs etc.
@@ -15,17 +17,14 @@
 
 
 params [
-    ["_networkID",      "Default",      [""]    ]
+    ["_controllerID",      "Default",      [""]    ]
 ];
 
-if (!isServer) exitWith {
-    diag_log "[CVO](debug)(fn_init_network) FAILED - Needs to be Executed on the Server";
-    false
-};
+if (!isServer) exitWith { ZRN_LOG_MSG(Failed - Needs to be Executed on the server); false };
 
-if (_networkID isEqualTo "") exitWith {false};
+if (_controllerID isEqualTo "") exitWith {false};
 
-private _varName = ["CVO","Airlift","HMO",_networkID] joinSilent "_";
+private _varName = ["CVO","Airlift","HMO",_controllerID] joinString "_";
 
 private _hmo = missionNamespace getVariable [_varName, "404"];
 
@@ -33,7 +32,7 @@ if (_hmo isEqualTo "404") then {
 
     _hmo = createHashMapObject [
         [
-            ["networkID", _networkID],
+            ["networkID", _controllerID],
 
             ["protected", true],
 
@@ -52,7 +51,9 @@ if (_hmo isEqualTo "404") then {
         ],
         []
     ];
+    missionNamespace setVariable [_varName, _hmo, false];
 };
+
 
 _hmo
 
