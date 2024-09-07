@@ -1,5 +1,5 @@
-#define COMPONENT branding
-#define COMPONENT_BEAUTIFIED Branding
+#define COMPONENT ula
+#define COMPONENT_BEAUTIFIED Unhide Layer Action
 
 
 #include "\z\cvo_aux\addons\main\script_mod.hpp"
