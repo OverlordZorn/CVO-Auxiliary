@@ -51,7 +51,7 @@ private _layerMap = createHashMapFromArray [
 
 _gMap set [_layerName, _layerMap];
 
-missionNamespace setVariable ["CVO_ULA_HM", _gMap];
+missionNamespace setVariable ["CVO_ULA_HM", _gMap, true];
 
 diag_log "[CVO](debug)(fn_init_layer) Done";
 true

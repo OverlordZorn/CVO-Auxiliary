@@ -45,7 +45,6 @@ if (_meme) then { _obj setVariable ["meme", true, true]};
 
 private _attachedLayers = _obj getVariable ["cvo_ula_layers", []];
 _attachedLayers append _layers;
-//_obj setVariable ["cvo_ula_layers", _attachedLayers, true];
 
 diag_log "[CVO](debug)(fn_register) Done";
 true
