@@ -1,3 +1,6 @@
+#include "..\script_component.hpp"
+
+
 params ["_objSource", "_player", "_actionParams"];
 _actionParams params ["_layerName", "_distance", "_time"];
 
