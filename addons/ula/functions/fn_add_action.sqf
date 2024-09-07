@@ -1,3 +1,6 @@
+#include "..\script_component.hpp"
+
+
 if (!hasInterface) exitWith {};
 
 params ["_obj", "_layerName", "_distance", "_time"];
@@ -5,7 +8,7 @@ params ["_obj", "_layerName", "_distance", "_time"];
 diag_log "[CVO](debug)(fn_add_action) INIT";
 
 if (isNull _obj) exitWith {
-    diag_log format ['[CVO](debug)(fn_add_action) Failed: _obj: %1', Failed: _obj];
+    diag_log format ['[CVO](debug)(fn_add_action) Failed: _obj: %1',_obj];
 };
 
 diag_log format ['[CVO](debug)(fn_add_action) _this: %1', _this];

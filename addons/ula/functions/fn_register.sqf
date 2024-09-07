@@ -1,3 +1,6 @@
+#include "..\script_component.hpp"
+
+
 /*
 * Author: Zorn
 * Create an action on an object to simulate the building of "something", by unhiding a layer based on the name of the layer.

@@ -1,3 +1,6 @@
+#include "..\script_component.hpp"
+
+
 /*
 * Author: Zorn
 * checks for or creates layerhashmap and establishes global Variable
