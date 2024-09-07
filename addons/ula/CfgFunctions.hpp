@@ -5,6 +5,8 @@ class CfgFunctions
 		class UnhideLayerAction           // Category
 		{
             file = "z\cvo_aux\addons\ula\functions";
+            class preInit { preInit = 1; };
+            
             class register {};
             class init_layer {};
 
