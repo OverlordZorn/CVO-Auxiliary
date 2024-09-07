@@ -1,5 +1,5 @@
-#define COMPONENT branding
-#define COMPONENT_BEAUTIFIED Branding
+#define COMPONENT fonts
+#define COMPONENT_BEAUTIFIED Fonts
 
 
 #include "\z\cvo_aux\addons\main\script_mod.hpp"

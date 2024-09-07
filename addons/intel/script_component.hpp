@@ -1,5 +1,5 @@
-#define COMPONENT branding
-#define COMPONENT_BEAUTIFIED Branding
+#define COMPONENT intel
+#define COMPONENT_BEAUTIFIED Intel
 
 
 #include "\z\cvo_aux\addons\main\script_mod.hpp"

@@ -1,5 +1,5 @@
-#define COMPONENT branding
-#define COMPONENT_BEAUTIFIED Branding
+#define COMPONENT music
+#define COMPONENT_BEAUTIFIED Music
 
 
 #include "\z\cvo_aux\addons\main\script_mod.hpp"
