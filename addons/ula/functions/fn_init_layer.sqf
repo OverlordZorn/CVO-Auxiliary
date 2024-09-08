@@ -35,7 +35,7 @@ private _objects = getMissionLayerEntities _layerName select 0;
 _objects = [_objects, [], {(getPosASL _x)#2}, "ASCEND"] call BIS_fnc_sortBy;
  
 
-[{{ _x hideObjectGlobal true } forEach _this}, _objects, 1] call CBA_fnc_waitAndExecute;
+{ _x hideObjectGlobal true } forEach _objects;
 
 missionNamespace setVariable [_varName, count _objects, true];
 
