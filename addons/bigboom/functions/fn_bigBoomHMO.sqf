@@ -246,7 +246,7 @@ private _HashMapObject = createHashMapObject [[
         _helperObj addEventHandler ["Deleted", {
 	        params ["_helperObj"];
             private _varNameHMO = _helperObj getVariable "varNameHMO";
-            missionNameSpace setVariable [_varNameHMO, nil]; // Will delete the HMO
+            missionNamespace setVariable [_varNameHMO, nil]; // Will delete the HMO
             diag_log format ['[CVO](debug)(fn_bigBoomHMO) isNil _varNameHMO: %1', isNil _varNameHMO];
         }];
     }]

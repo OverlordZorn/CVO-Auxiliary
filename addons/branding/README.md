@@ -6,5 +6,22 @@ Adds Leadership Portrait
 Adds CVO Flags
 Adds CVO Banners
 
-#### Original Author/Maintainer(s)
-* DerZade
+![Preview of CVO Branding](/img/readme/branding.png)
+
+
+## Old
+### Flag Texture Paths
+```sqf 
+this setFlagTexture "z\cvo_aux\addons\branding\data\flag_voron_red_512.paa";
+this setFlagTexture "z\cvo_aux\addons\branding\data\flag_voron_red_2048.paa";
+
+this setFlagTexture "z\cvo_aux\addons\branding\data\flag_voron_olive_512.paa";
+this setFlagTexture "z\cvo_aux\addons\branding\data\flag_voron_olive_2048.paa";
+```
+
+### Leaderportrait
+tba. 
+Vanilla Classname  `GalleryFrame_01_large_portrait_F`
+Texture #0 `z\cvo_aux\addons\branding\data\Leaderportrait.paa`
+Note: Seems like it doesnt like `"`
+

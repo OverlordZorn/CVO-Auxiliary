@@ -6,11 +6,12 @@ class CfgPatches {
         name = "CVO Arsenal";
 		version = "1.0.0";
 
-		author[]= {"Overlord Zorn [CVO]"};
+		author = "Overlord Zorn [CVO]";
+		authors[] = {"Overlord Zorn [CVO]"};
         url = "http://chronivoron.net";
 
         // Minimum compatible version. When the game's version is lower, pop-up warning will appear when launching the game.
-        requiredVersion = 2.0;
+        requiredVersion = 2.02;
 
         // Required addons, used for setting load order.
         // When any of the addons is missing, pop-up warning will appear when launching the game.

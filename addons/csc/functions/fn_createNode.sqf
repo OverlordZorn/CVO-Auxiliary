@@ -24,7 +24,6 @@ if (_spawner isEqualTo objNull) exitWith {};
 
 // ### Creates an Array to store all already existing "Menu Nodes" when the Array doesnt exist yet.
 private _nodeArray = missionNamespace getVariable ["CVO_CSC_NodeArray", []];
-systemChat str _nodeArray;
 
 // ### Creates CSC Menu Node if the _spawner does not carries a CSC Menu Node yet.
 if (!(_spawner in _nodeArray)) then

@@ -5,17 +5,21 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=19;
+		nextID=1315;
+	};
+	class LayerIndexProvider
+	{
+		nextID=58;
 	};
 	class Camera
 	{
-		pos[]={3483.2817,147.82555,2635.5703};
-		dir[]={-0.84953564,-0.36400333,0.38182554};
-		up[]={-0.33201054,0.93139768,0.14922282};
-		aside[]={0.409949,0,0.91210848};
+		pos[]={1802.8573,8.5018902,5547.8584};
+		dir[]={-0.3870886,-0.19076654,0.90209234};
+		up[]={-0.075225025,0.98163545,0.1753085};
+		aside[]={0.9189688,0,0.39433029};
 	};
 };
 binarizationWanted=0;
@@ -27,13 +31,28 @@ addons[]=
 	"ace_marker_flags",
 	"A3_Supplies_F_Heli_Slingload",
 	"ace_rearm",
-	"ace_cargo"
+	"ace_cargo",
+	"A3_Characters_F_Orange",
+	"RF_Vehicles_Pickup_01",
+	"CVO_Compat_RF",
+	"A3_Props_F_Enoch_Military_Equipment",
+	"A3_Props_F_Enoch_Military_Camps",
+	"A3_Structures_F_Civ_Camping",
+	"ace_dragging",
+	"A3_Props_F_Exp_A_Military_Equipment",
+	"A3_Props_F_Exp_Military_Camps",
+	"A3_Weapons_F_Ammoboxes",
+	"A3_Structures_F_Items_Vessels",
+	"A3_Structures_F_Items_Stationery",
+	"A3_Structures_F_Items_Documents",
+	"A3_Structures_F_EPB_Items_Military",
+	"A3_Structures_F_Items_Electronics"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=6;
+		items=16;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -76,13 +95,87 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item6
+		{
+			className="A3_Characters_F_Orange";
+			name="Arma 3 Orange - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item7
+		{
+			className="RF_Vehicles";
+			name="Arma 3 Creator DLC: Reaction Forces - Vehicles";
+			author="Rotators Collective";
+			url="https://reactionforces.rotators.net/";
+		};
+		class Item8
+		{
+			className="CVO_Compat_RF";
+			name="CVO_Compat_RF";
+			author="Overlord Zorn [CVO]";
+			url="http://chronivoron.net";
+		};
+		class Item9
+		{
+			className="A3_Props_F_Enoch";
+			name="Arma 3 Contact Platform - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item10
+		{
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item11
+		{
+			className="ace_dragging";
+			name="ACE3 - Dragging";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item12
+		{
+			className="A3_Props_F_Exp_A";
+			name="Arma 3 Nexus Update - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item13
+		{
+			className="A3_Props_F_Exp";
+			name="Arma 3 Apex - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item14
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item15
+		{
+			className="A3_Structures_F_EPB";
+			name="Arma 3 Adapt Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
 {
 	"Decade",
 	"ORANGE",
-	"Heli"
+	"Heli",
+	"rf",
+	"Enoch",
+	"Contact",
+	"Expansion"
 };
 randomSeed=16580065;
 class ScenarioData
@@ -113,7 +206,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=11;
+		items=15;
 		class Item0
 		{
 			dataType="Group";
@@ -384,6 +477,707 @@ class Mission
 			};
 			id=18;
 			type="B_Slingload_01_Ammo_F";
+		};
+		class Item11
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3481.9495,143.76868,2647.4968};
+						angles[]={6.2457047,0,0.039974678};
+					};
+					side="Civilian";
+					flags=6;
+					class Attributes
+					{
+					};
+					id=21;
+					type="C_IDAP_Man_AidWorker_02_F";
+					atlOffset=1.5258789e-005;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=21;
+						item1=20;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+				};
+			};
+			id=19;
+			atlOffset=1.5258789e-005;
+		};
+		class Item12
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3481.8672,145.82584,2647.3696};
+				angles[]={6.2457047,0,0.039974678};
+			};
+			side="Civilian";
+			flags=6;
+			class Attributes
+			{
+			};
+			id=20;
+			type="C_IDAP_Pickup_water_rf";
+			atlOffset=1.5258789e-005;
+		};
+		class Item13
+		{
+			dataType="Layer";
+			name="Uplink";
+			class Entities
+			{
+				items=31;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1796.2114,6.6032038,5562.8262};
+						angles[]={0,4.6752443,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1282;
+					type="Land_Router_01_olive_F";
+					atlOffset=0.091268063;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1797.1216,5.6730704,5562.7534};
+						angles[]={0,0.10028137,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1283;
+					type="Land_PortableServer_01_olive_F";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1797.3213,5.5419955,5562.0405};
+						angles[]={0,3.040571,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1284;
+					type="Land_PortableServer_01_cover_olive_F";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1797.6841,5.843071,5562.7896};
+						angles[]={0,4.6508784,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1285;
+					type="Land_PortableLight_02_folded_olive_F";
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1794.7124,5.9179478,5561.6167};
+						angles[]={0,0.60176826,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1286;
+					type="Land_PortableCabinet_01_7drawers_olive_F";
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1795.6436,5.6635885,5561.7769};
+						angles[]={0,2.3111031,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1287;
+					type="Land_PortableCabinet_01_closed_olive_F";
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1796.3066,6.5635853,5562.4634};
+						angles[]={0,5.4390392,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1288;
+					type="Land_Laptop_03_olive_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom1";
+							expression="_this setObjectTextureGlobal [1,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="a3\structures_f\items\electronics\data\electronics_screens_laptop_co.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1795.75,6.6370201,5562.5508};
+						angles[]={0,5.9191189,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1289;
+					type="Land_MultiScreenComputer_01_closed_olive_F";
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1796.9697,6.4233556,5562.7124};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1290;
+					type="Land_IPPhone_01_olive_F";
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1797.3091,6.5360284,5562.7422};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1291;
+					type="Land_BatteryPack_01_closed_olive_F";
+				};
+				class Item10
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1795.8291,7.5414591,5563.6245};
+						angles[]={0,0.82506502,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1292;
+					type="OmniDirectionalAntenna_01_olive_F";
+				};
+				class Item11
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1795.5029,6.8180399,5561.8843};
+						angles[]={0,4.5745964,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1293;
+					type="SatelliteAntenna_01_Small_Olive_F";
+				};
+				class Item12
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1794.5376,5.6635885,5562.3994};
+						angles[]={0,3.5946491,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1294;
+					type="Land_PortableCabinet_01_closed_olive_F";
+				};
+				class Item13
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1794.8071,5.7326179,5563.0815};
+						angles[]={6.2821498,5.3612375,0.79107976};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1295;
+					type="Land_PortableCabinet_01_closed_olive_F";
+				};
+				class Item14
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1794.6597,5.9867163,5562.7729};
+						angles[]={0,5.2663417,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1296;
+					type="Land_PortableCabinet_01_closed_olive_F";
+					atlOffset=0.32312775;
+				};
+				class Item15
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1796.3369,5.9438882,5562.6289};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1297;
+					type="Land_PortableDesk_01_olive_F";
+				};
+				class Item16
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1795.5576,5.9052014,5561.8496};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1298;
+					type="Land_CampingTable_small_F";
+				};
+				class Item17
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1797.1206,6.0202131,5562.75};
+						angles[]={0,0.10028137,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1299;
+					type="Land_PortableServer_01_olive_F";
+				};
+				class Item18
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1797.376,6.5031633,5562.4922};
+						angles[]={4.9488983,3.142343,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1300;
+					type="Land_Tablet_02_F";
+					atlOffset=0.082065105;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item19
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1796.5898,5.7207956,5561.79};
+						angles[]={0,5.8979192,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1301;
+					type="Land_DeskChair_01_olive_F";
+				};
+				class Item20
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1797.7075,5.7735276,5562.3101};
+						angles[]={5.7279663,0.69981349,5.4549456};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1302;
+					type="Land_PortableServer_01_cover_olive_F";
+					atlOffset=0.2315321;
+				};
+				class Item21
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1795.7412,5.8722248,5561.814};
+						angles[]={0,4.772274,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1303;
+					type="Land_Computer_01_olive_F";
+					atlOffset=0.32748556;
+				};
+				class Item22
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1796.6558,6.3462853,5563.3159};
+						angles[]={0,3.1829395,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1304;
+					type="Land_TripodScreen_01_dual_v2_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="a3\props_f_argo\items\electronics\data\laptop_02_screen_co.paa";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ObjectTextureCustom1";
+							expression="_this setObjectTextureGlobal [1,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="a3\structures_f_epc\items\electronics\data\electronics_screens_laptop_device_co.paa";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item23
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1795.4404,5.7840548,5562.8711};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1305;
+					type="Box_NATO_Ammo_F";
+				};
+				class Item24
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1795.3667,6.6440287,5562.7041};
+						angles[]={0,1.8934553,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=1306;
+					type="Land_TentLamp_01_standing_red_F";
+					atlOffset=6.5326691e-005;
+				};
+				class Item25
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1797.9521,5.7734971,5562.6538};
+						angles[]={0,1.9662048,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1307;
+					type="Land_CanisterFuel_F";
+				};
+				class Item26
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1797.0337,6.3997941,5562.5767};
+						angles[]={0,0.63266677,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1308;
+					type="Land_PensAndPencils_F";
+					atlOffset=0.0049748421;
+				};
+				class Item27
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1796.9077,6.3878407,5562.4526};
+						angles[]={0,0.2825467,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1309;
+					type="Land_Photos_V6_F";
+				};
+				class Item28
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1797.0278,6.3980026,5562.5747};
+						angles[]={0,0.63266677,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1310;
+					type="Land_Notepad_F";
+				};
+				class Item29
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1797.644,5.6053624,5563.1836};
+						angles[]={0,3.9397435,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1311;
+					type="Land_Ammobox_rounds_F";
+				};
+				class Item30
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1797.1411,5.8591809,5563.6396};
+						angles[]={0,5.9058862,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1312;
+					type="Land_Portable_generator_F";
+				};
+			};
+			id=1281;
+			atlOffset=0.20167828;
+		};
+		class Item14
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1798.12,6.3924227,5554.96};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this, [""Uplink""], 50, 0.5] call cvo_ula_fnc_register;";
+			};
+			id=1314;
+			type="C_supplyCrate_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""arifle_MX_F"",""arifle_MX_GL_F"",""arifle_MX_SW_F"",""srifle_EBR_F"",""srifle_LRR_F"",""srifle_DMR_02_F"",""launch_NLAW_F"",""FirstAidKit"",""Medikit""],[2,1,1,1,1,1,1,10,1]],[[""30Rnd_65x39_caseless_mag"",""100Rnd_65x39_caseless_mag"",""20Rnd_762x51_Mag"",""7Rnd_408_Mag"",""10Rnd_338_Mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65_Creedmor_mag""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4]],[[""Binocular"",""Laserdesignator"",""optic_Holosight"",""optic_Hamr"",""optic_SOS"",""optic_NVS"",""optic_tws"",""acc_flashlight"",""ToolKit"",""MineDetector"",""bipod_01_F_blk"",""bipod_01_F_mtp"",""bipod_01_F_snd"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,1,1,1,1,1,1,2,1,1,1,1,1,12,12]],[[""B_Kitbag_rgr""],[2]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

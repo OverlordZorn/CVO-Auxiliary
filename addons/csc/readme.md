@@ -50,7 +50,7 @@ createHashmapFromArray [
     // Space will be automatically adjusted
 
     ["ace_cargo_setSpace", 0],
-    ["ace_cargo_setSize", "404"]
+    ["ace_cargo_setSize", "DEFAULT"]
 ]
 ```
 ## CBA Events

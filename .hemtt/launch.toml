@@ -1,0 +1,36 @@
+
+
+[default]
+workshop = [
+    "450814997",  # CBA_A3's Workshop ID
+    "463939057",  # ACE3
+    "2369477168", # Advanced Developer Tools
+    "1779063631", # ZEN
+]
+
+dlc = []
+optionals = []
+
+parameters = [
+    "-window",
+    "-noPause",
+    "-noPauseAudio",
+]
+
+[Stratis]
+extends = "default"
+dlc = ["ws","rf"]
+mission = "Stratis.Stratis"
+
+
+[GreenMag]
+extends = "Stratis"
+workshop = ["2352603233"]
+
+[exec]
+extends = "default"
+mission = "exec.VR"
+
+[airlift]
+extends = "default"
+mission = "airlift.VR"

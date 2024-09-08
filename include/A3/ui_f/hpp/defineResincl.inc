@@ -1829,12 +1829,12 @@ enum
 #define IDC_SRVSIDE_NAME              101
 #define IDC_SRVSIDE_ISLAND            102
 #define IDC_SRVSIDE_POOL              103
-#define IDC_SRVSIDE_WEST              104
-#define IDC_SRVSIDE_EAST              105
+#define IDC_SRVSIDE_west              104
+#define IDC_SRVSIDE_east              105
 #define IDC_SRVSIDE_RESIST            106
 #define IDC_SRVSIDE_CIVIL             107
-#define IDC_SRVSIDE_WEST_TEXT         108
-#define IDC_SRVSIDE_EAST_TEXT         109
+#define IDC_SRVSIDE_west_TEXT         108
+#define IDC_SRVSIDE_east_TEXT         109
 #define IDC_SRVSIDE_RESIST_TEXT       110
 #define IDC_SRVSIDE_CIVIL_TEXT        111
 #define IDC_SRVSIDE_DEFAULT           112
@@ -1901,10 +1901,10 @@ enum
 #define IDC_MPSETUP_NAME              101
 #define IDC_MPSETUP_ISLAND            102
 #define IDC_MPSETUP_DESC              103
-#define IDC_MPSETUP_WEST              104
-#define IDC_MPSETUP_EAST              105
+#define IDC_MPSETUP_west              104
+#define IDC_MPSETUP_east              105
 #define IDC_MPSETUP_GUERRILA          106
-#define IDC_MPSETUP_CIVILIAN          107
+#define IDC_MPSETUP_civilian          107
 #define IDC_MPSETUP_ROLES_TITLE       108
 #define IDC_MPSETUP_ROLES             109
 #define IDC_MPSETUP_PARAM1_TITLE      110
@@ -2129,7 +2129,7 @@ enum
 #define IDC_ARCMARK_FILL              110
 #define IDC_ARCMARK_TEXT              111
 
-#define IDC_INTEL_RESISTANCE          101
+#define IDC_INTEL_resistance          101
 #define IDC_INTEL_MONTH               102
 #define IDC_INTEL_DAY                 103
 #define IDC_INTEL_HOUR                104

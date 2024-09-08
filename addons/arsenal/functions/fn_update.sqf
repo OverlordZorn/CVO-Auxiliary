@@ -23,6 +23,8 @@ _finalKit append _baseKit;
 // ############ Detect ROLE KIT ############
 
 private _roles = player getVariable ["CVO_A_Roles", []];
+diag_log format ['[CVO](ARSENAL) Init: Player Roles: %1', _roles];
+systemChat format ['[CVO](ARSENAL) Init: Player Roles: %1', _roles];
 
 // Detectes ACE MEDIC and ACE Engineer
 if ([player, 1] call ace_medical_treatment_fnc_isMedic) then {_roles pushBackUnique "Medic"};

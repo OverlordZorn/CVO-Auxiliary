@@ -108,7 +108,7 @@ if (_hashMap getOrDefault ["ace_refuel_source", false]) then {
     _hashMap getOrDefault ["ace_drag_relPOS", [0,1.5,0]],
     _hashMap getOrDefault ["ace_drag_dir", 0],
     _hashMap getOrDefault ["ace_drag_ignoreWeight", true]
-] call ace_dragging_fnc_setDraggable;
+] remoteExecCall [ "ace_dragging_fnc_setDraggable", [0,-2] select isDedicated, _box ];
 
 // ACE Carry
 [
@@ -117,8 +117,7 @@ if (_hashMap getOrDefault ["ace_refuel_source", false]) then {
     _hashMap getOrDefault ["ace_carry_relPOS", [0,1,1]],
     _hashMap getOrDefault ["ace_carry_dir", 0],
     _hashMap getOrDefault ["ace_carry_ignoreWeight", false]
-] call ace_dragging_fnc_setCarryable;
-
+] remoteExecCall [ "ace_dragging_fnc_setCarryable", [0,-2] select isDedicated, _box ];
 
 
 //////////////////////////////////////////////////
@@ -126,7 +125,7 @@ if (_hashMap getOrDefault ["ace_refuel_source", false]) then {
 //////////////////////////////////////////////////
 
 // ACE Cargo SetSize (how big is the crate itself)
-if (_hashMap getOrDefault ["ace_cargo_setSize", "404"] isEqualType 0) then {
+if (_hashMap getOrDefault ["ace_cargo_setSize", "DEFAULT"] isEqualType 0) then {
     [_box, _hashMap get "ace_cargo_setSize"] call ace_cargo_fnc_setSize;
 };
 
@@ -149,7 +148,7 @@ while {_addTracks > 0}    do { ["ACE_Track",           _box]  call ace_cargo_fnc
 
 
 ["cvo_csc_Event_crateSpawnedServer", [_box, _title] ] call CBA_fnc_ServerEvent;
-diag_log format ['[CVO](debug)(fn_spawnCSC) %" - Requested by %2', _title , _player];
+diag_log format ['[CVO](debug)(fn_spawnCSC) %1 - Requested by %2', _title , _player];
 
 
 

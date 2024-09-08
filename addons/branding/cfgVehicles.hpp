@@ -1,6 +1,6 @@
 class CfgVehicles
 {
-
+    // Flags with CVO Flag Texture
     class FlagCarrier_Asym;
     class GVAR(Flag_Red): FlagCarrier_Asym
     {
@@ -23,7 +23,6 @@ class CfgVehicles
             };
         };
     };
-
     class GVAR(Flag_Olive) : GVAR(Flag_Red)
     {
         _generalMacro=QGVAR(Flag_Olive);
@@ -34,6 +33,7 @@ class CfgVehicles
         };
     };
 
+    // A portrait of the oh so glorious leader
     class GalleryFrame_01_large_portrait_F;
     class GVAR(Leadership_Portrait) : GalleryFrame_01_large_portrait_F
     {
@@ -49,6 +49,7 @@ class CfgVehicles
         };
     };
 
+    // Banners with CVO Flag Texture
     class Banner_01_F;
     class GVAR(Banner_Red) : Banner_01_F
     {

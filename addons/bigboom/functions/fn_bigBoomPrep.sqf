@@ -12,7 +12,7 @@ private _ehCode = {
     params ["_object", "_killer", "_instigator", "_useEffects"];
     _thisArgs params ["_delay"];
 
-    diag_log format ['[CVO](debug)(Killed EH triggered) %1 killed by %2 - instigator: ', _object ,_killer, _instigator];
+    diag_log format ['[CVO](debug)(Killed EH triggered) %1 killed by %2 - instigator: %3',_object,_killer, _instigator];
 
     
     // creates helper object which can be deleted by zeus to stop the effects
