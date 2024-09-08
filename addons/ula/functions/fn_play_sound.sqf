@@ -36,7 +36,10 @@ private _sound = switch (_type) do {
 
 if (_type isEqualTo "BREAK") then {
     _soundSourceOBJ = createVehicleLocal ["Helper_Base_F",_soundSourceOBJ];
-    [ { deleteVehicle _this#0; } , [_soundSourceOBJ], 3] call CBA_fnc_waitAndExecute;
+    [ {
+        if (isNil "_this" ) exitWith {};
+        deleteVehicle _this;
+    } , _soundSourceOBJ, 3] call CBA_fnc_waitAndExecute;
 };
 
 _soundSourceOBJ say3D _sound;
