@@ -55,6 +55,7 @@ class CfgVehicles
     {
         _generalMacro=QGVAR(Banner_Red);
         displayName="Banner (CVO - Red)";
+        author = "$STR_cvo_Author";
         hiddenSelectionsTextures[] = {QPATHTOF(data\flag_voron_red_2048.paa)};
     };
     class GVAR(Banner_Olive) : Banner_01_F
@@ -62,5 +63,30 @@ class CfgVehicles
         _generalMacro=QGVAR(Banner_Olive);
         displayName="Banner (CVO - Olive)";
         hiddenSelectionsTextures[] = {QPATHTOF(data\flag_voron_olive_2048.paa)};
+    };
+
+
+    
+    // Branded Merch
+    class B_LegStrapBag_black_F;
+    class GVAR(LegStrapBag_black): B_LegStrapBag_black_F
+    {
+        _generalMacro=QGVAR(LegStrapBag_black);
+        displayName = "Leg Strap Bag (Black - CVO)";
+        author = "$STR_cvo_Author";
+        maximumLoad = 120;
+        hiddenSelectionsTextures[] = {QPATHTOF(data\legstrap\V_LegStrapBag_black_CVO_CO.paa)};
+        hiddenSelectionsMaterials[] = {QPATHTOF(data\legstrap\V_LegStrapBag_CVO.rvmat)};
+    };
+
+    class B_Kitbag_Base;
+    class GVAR(Kitbag_blk): B_Kitbag_Base
+    {
+        _generalMacro=QGVAR(Kitbag_blk);
+        displayName = "Kitbag (Black - CVO)";
+        scope = 2;
+        author = "$STR_cvo_Author";
+        maximumLoad = 300;
+        hiddenSelectionsTextures[] = {QPATHTOF(data\kitbag\backpack_fast_blk_cvo_co.paa)};
     };
 };
