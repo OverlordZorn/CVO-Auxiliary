@@ -1,4 +1,5 @@
 # Fonts
+Idk. its two new fonts. One is grafitti style, the other is stencil style. Only afterwards did i discover that `ACE_Stencil` is a thing.
 
 ![alt text](/img/readme/fonts.png)
 
