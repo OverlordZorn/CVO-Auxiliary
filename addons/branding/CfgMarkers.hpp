@@ -39,5 +39,6 @@ class CfgMarkers
         name = "CVO Raven";			                                    // name used in the Editor and other UIs
         icon = QPATHTOF(data\Raven_Voron_512.paa);		// marker icon
         texture = QPATHTOF(data\Raven_Voron_512.paa);	// ?
+        shadow = 1;
     };
 };
