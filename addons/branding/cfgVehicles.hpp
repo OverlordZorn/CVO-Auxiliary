@@ -69,8 +69,9 @@ class CfgVehicles
     
     // Branded Merch
     class B_LegStrapBag_black_F;
-    class CVO_LegStrapBag_black_F: B_LegStrapBag_black_F
+    class GVAR(LegStrapBag_black): B_LegStrapBag_black_F
     {
+        _generalMacro=QGVAR(LegStrapBag_black);
         displayName = "Leg Strap Bag (Black - CVO)";
         author = "$STR_cvo_Author";
         maximumLoad = 120;
