@@ -2,9 +2,9 @@ class CfgVehicles
 {
     // Flags with CVO Flag Texture
     class FlagCarrier_Asym;
-    class GVAR(Flag_Red): FlagCarrier_Asym
+    class SPVAR(Flag_Red): FlagCarrier_Asym
     {
-        _generalMacro=QGVAR(Flag_Red);
+        _generalMacro=QSPVAR(Flag_Red);
 
         author="$STR_cvo_Author";
         displayName="$STR_CVO_branding_red_display";
@@ -23,9 +23,9 @@ class CfgVehicles
             };
         };
     };
-    class GVAR(Flag_Olive) : GVAR(Flag_Red)
+    class SPVAR(Flag_Olive) : SPVAR(Flag_Red)
     {
-        _generalMacro=QGVAR(Flag_Olive);
+        _generalMacro=QSPVAR(Flag_Olive);
         displayName="$STR_CVO_branding_olive_display";
         class EventHandlers
         {
@@ -35,15 +35,15 @@ class CfgVehicles
 
     // A portrait of the oh so glorious leader
     class GalleryFrame_01_large_portrait_F;
-    class GVAR(Leadership_Portrait) : GalleryFrame_01_large_portrait_F
+    class SPVAR(Leadership_Portrait) : GalleryFrame_01_large_portrait_F
     {
-        _generalMacro=QGVAR(Leadership_Portrait);
+        _generalMacro=QSPVAR(Leadership_Portrait);
 
         displayName="Leadership Portrait (CVO)";
 
         hiddenSelectionsTextures[] =
         {
-            QPATHTOF(data\cvo_leaderportrait.paa),
+            QPATHTOF(data\cvo_portrait_director.paa),
             "a3\props_f_aow\civilian\gallery\data\galleryframe_01_large_portrait_f_co.paa",
             "a3\props_f_aow\civilian\gallery\data\galleryframe_01_large_portrait_f_co.paa"
         };
@@ -51,16 +51,16 @@ class CfgVehicles
 
     // Banners with CVO Flag Texture
     class Banner_01_F;
-    class GVAR(Banner_Red) : Banner_01_F
+    class SPVAR(Banner_Red) : Banner_01_F
     {
-        _generalMacro=QGVAR(Banner_Red);
+        _generalMacro=QSPVAR(Banner_Red);
         displayName="Banner (CVO - Red)";
         author = "$STR_cvo_Author";
         hiddenSelectionsTextures[] = {QPATHTOF(data\flag_voron_red_2048.paa)};
     };
-    class GVAR(Banner_Olive) : Banner_01_F
+    class SPVAR(Banner_Olive) : Banner_01_F
     {
-        _generalMacro=QGVAR(Banner_Olive);
+        _generalMacro=QSPVAR(Banner_Olive);
         displayName="Banner (CVO - Olive)";
         hiddenSelectionsTextures[] = {QPATHTOF(data\flag_voron_olive_2048.paa)};
     };
@@ -69,9 +69,9 @@ class CfgVehicles
     
     // Branded Merch
     class B_LegStrapBag_black_F;
-    class GVAR(LegStrapBag_black): B_LegStrapBag_black_F
+    class SPVAR(LegStrapBag_black): B_LegStrapBag_black_F
     {
-        _generalMacro=QGVAR(LegStrapBag_black);
+        _generalMacro=QSPVAR(LegStrapBag_black);
         displayName = "Leg Strap Bag (Black - CVO)";
         author = "$STR_cvo_Author";
         maximumLoad = 120;
@@ -80,9 +80,9 @@ class CfgVehicles
     };
 
     class B_Kitbag_Base;
-    class GVAR(Kitbag_blk): B_Kitbag_Base
+    class SPVAR(Kitbag_blk): B_Kitbag_Base
     {
-        _generalMacro=QGVAR(Kitbag_blk);
+        _generalMacro=QSPVAR(Kitbag_blk);
         displayName = "Kitbag (Black - CVO)";
         scope = 2;
         author = "$STR_cvo_Author";

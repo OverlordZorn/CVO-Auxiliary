@@ -24,3 +24,4 @@ class CfgPatches {
 };
 
 #include "cfgVehicles.hpp"
+#include "CfgMarkers.hpp"
