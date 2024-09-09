@@ -8,18 +8,22 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=1323;
+		nextID=1334;
+	};
+	class MarkerIDProvider
+	{
+		nextID=11;
 	};
 	class LayerIndexProvider
 	{
-		nextID=64;
+		nextID=69;
 	};
 	class Camera
 	{
-		pos[]={2739.2349,16.410105,3945.489};
-		dir[]={0.96921211,-0.20065904,-0.14278346};
-		up[]={0.19852412,0.9796595,-0.029246282};
-		aside[]={-0.14574692,1.7527782e-008,-0.9893319};
+		pos[]={2737.8623,16.942509,3946.4001};
+		dir[]={0.97078246,-0.23984829,0.0088139717};
+		up[]={0.23984353,0.97080761,0.0021776643};
+		aside[]={0.009078837,-2.0869766e-007,-0.99996793};
 	};
 };
 binarizationWanted=0;
@@ -47,21 +51,22 @@ addons[]=
 	"A3_Structures_F_Items_Documents",
 	"A3_Structures_F_EPB_Items_Military",
 	"A3_Structures_F_Items_Electronics",
-	"A3_Characters_F_Exp_Civil",
-	"A3_Weapons_F",
 	"A3_Characters_F_AoW",
 	"A3_Weapons_F_Exp_Rifles_AK12",
 	"cba_jr",
 	"ace_realisticnames",
 	"A3_Weapons_F_Exp",
+	"A3_Weapons_F",
 	"A3_Characters_F_Enoch_Facewear",
-	"A3_Characters_F_Enoch"
+	"A3_Characters_F_Enoch",
+	"cvo_aux_branding",
+	"A3_Ui_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=21;
+		items=22;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -176,36 +181,43 @@ class AddonsMetaData
 		};
 		class Item16
 		{
-			className="A3_Characters_F_Exp";
-			name="Arma 3 Apex - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item17
-		{
 			className="A3_Characters_F_AoW";
 			name="Arma 3 Art of War - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item18
+		class Item17
 		{
 			className="A3_Weapons_F_Exp";
 			name="Arma 3 Apex - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item18
 		{
 			className="cba_jr";
 			name="Community Base Addons - Joint Rails";
 			author="CBA Team";
 			url="https://www.github.com/CBATeam/CBA_A3";
 		};
-		class Item20
+		class Item19
 		{
 			className="A3_Characters_F_Enoch";
 			name="Arma 3 Contact Platform - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item20
+		{
+			className="cvo_aux_branding";
+			name="cvo_aux_branding";
+			author="24th Chorni Voron";
+			url="https://github.com/OverlordZorn/CVO-Auxiliary";
+		};
+		class Item21
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -225,9 +237,6 @@ randomSeed=16580065;
 class ScenarioData
 {
 	author="Overlord Zorn";
-};
-class CustomAttributes
-{
 };
 class Mission
 {
@@ -253,7 +262,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=17;
+		items=19;
 		class Item0
 		{
 			dataType="Group";
@@ -453,7 +462,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1695.9857,5.9699674,5346.4819};
+				position[]={1627.0963,5.9699674,5204.3438};
 			};
 			side="Empty";
 			flags=4;
@@ -468,7 +477,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1657.9481,5.9699674,5359.3955};
+				position[]={1589.0587,5.9699674,5217.2573};
 			};
 			side="Empty";
 			flags=4;
@@ -483,7 +492,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1738.0149,5.9699674,5309.6177};
+				position[]={1669.1254,5.9699674,5167.4795};
 			};
 			side="Empty";
 			flags=4;
@@ -1238,54 +1247,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={16674.941,13032.54,47548.887};
-					};
-					side="Civilian";
-					flags=3;
-					class Attributes
-					{
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="U_C_Poloshirt_stripped";
-								isBackpack=0;
-							};
-							class backpack
-							{
-								typeName="CVO_LegStrapBag_black_F";
-								isBackpack=1;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-						};
-					};
-					id=1318;
-					type="C_man_1";
-					atlOffset=13157.569;
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1317;
-			atlOffset=13157.569;
-		};
-		class Item16
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
 						position[]={2743.197,14.653106,3945.6379};
-						angles[]={0,2.4837961,-0};
+						angles[]={0,2.4837961,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -1310,7 +1273,7 @@ class Mission
 							};
 							class backpack
 							{
-								typeName="cvo_aux_branding_Kitbag_blk";
+								typeName="cvo_Kitbag_blk";
 								isBackpack=1;
 							};
 							map="ItemMap";
@@ -1330,6 +1293,36 @@ class Mission
 			};
 			id=1321;
 			atlOffset=1.2397766e-005;
+		};
+		class Item16
+		{
+			dataType="Marker";
+			position[]={2153.6189,5.5,6747.7681};
+			name="marker_7";
+			text="123";
+			type="cvo_flag_red";
+			id=1330;
+			atlOffset=42.057865;
+		};
+		class Item17
+		{
+			dataType="Marker";
+			position[]={1947.2649,5.5,6749.311};
+			name="marker_9";
+			text="123";
+			type="cvo_flag_olive";
+			id=1332;
+			atlOffset=33.726936;
+		};
+		class Item18
+		{
+			dataType="Marker";
+			position[]={2051.009,5.5,6747.6699};
+			name="marker_10";
+			text="123";
+			type="cvo_raven";
+			id=1333;
+			atlOffset=35.791939;
 		};
 	};
 };
