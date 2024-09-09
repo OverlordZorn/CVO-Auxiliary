@@ -9,13 +9,13 @@ class CfgPatches {
 		requiredAddons[] = {"cvo_aux_main", "A3_Structures_F_Mil_Flags"};
 		units[] = 
         {
-            QGVAR(Flag_Red),
-            QGVAR(Flag_Olive),
+            QSPVAR(Flag_Red),
+            QSPVAR(Flag_Olive),
 
-            QGVAR(Banner_Red),
-            QGVAR(Banner_Olive),
+            QSPVAR(Banner_Red),
+            QSPVAR(Banner_Olive),
 
-            QGVAR(Leadership_Portrait)
+            QSPVAR(Portrait_Director)
         };
 		weapons[] = {};
 		VERSION_CONFIG;
@@ -23,5 +23,5 @@ class CfgPatches {
 	};
 };
 
-#include "cfgVehicles.hpp"
+#include "CfgVehicles.hpp"
 #include "CfgMarkers.hpp"
