@@ -1,5 +1,7 @@
 #define _STORM_DEBUG_     // TODO Comment out before big release
 
+
+
 // CBA Settings
 #define SET(var1) TRIPLES(ADDON,SET,var1)
 #define QSET(var1) Q(SET(var1))
@@ -8,9 +10,9 @@
 #define QESET(var1,var2) Q(ESET(var1,var2))
 #define QQESET(var1,var2) QQ(ESET(var1,var2))
 
-// Stringtable.xml
-#define XML(var1) TRIPLES(STR,ADDON,var1)
-#define QXML(var1) Q(XML(var1))
+// Stringtable.xml - use LSTRING() instead
+// #define XML(var1) TRIPLES(STR,ADDON,var1)
+// #define QXML(var1) Q(XML(var1))
 
 // hashMapObjects
 #define OGET(var1) (_self get Q(var1))
@@ -28,12 +30,23 @@
 
 // Prefix Function
 #define PFUNC(var1) TRIPLES(PREFIX,fnc,var1)
-#define QPFUNC(var1) QUOTE(FUNC(var1))
+#define QPFUNC(var1) QUOTE(PFUNC(var1))
+#define QQPFUNC(var1) QUOTE(QPFUNC(var1))
+
+// Short Prefix Variable
+#ifndef SHORT_PREFIX
+    #define SHORT_PREFIX cvo
+#endif
+#define SPVAR(var1) DOUBLES(SHORT_PREFIX,var1)
+#define QSPVAR(var1) QUOTE(SPVAR(var1))
+#define QQSPVAR(var1) QUOTE(QSPVAR(Qvar1))
+
+
 
 // Prefix Variables
 #define PVAR(var1) DOUBLES(PREFIX,var1)
 #define QPVAR(var1) QUOTE(PVAR(var1))
-#define QQPVAR(var1) QUOTE(PVAR(var1))
+#define QQPVAR(var1) QUOTE(QPVAR(var1))
 
 // Component Variables
 #define CVAR(var1) DOUBLES(COMPONENT,var1)
