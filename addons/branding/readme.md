@@ -10,6 +10,13 @@ Adds CVO Banners
 
 ![Preview of CVO Branding](/img/readme/branding.png)
 
+### Classnaems of CVO Branding
+`CVO_Flag_Olive`
+`CVO_Flag_Red`
+`CVO_Banner_Olive`
+`CVO_Banner_Red`
+`CVO_Portrait_Director`
+
 ### Classnames of CVO Merch
 `CVO_Kitbag_blk`
 `CVO_LegStrapBag_black`
