@@ -66,12 +66,26 @@ class CfgVehicles
     };
 
 
+    
+    // Branded Merch
     class B_LegStrapBag_black_F;
-    class CVO_LegStrapBag_black_F : B_LegStrapBag_black_F
+    class CVO_LegStrapBag_black_F: B_LegStrapBag_black_F
     {
         displayName = "Leg Strap Bag (Black - CVO)";
         author = "$STR_cvo_Author";
         maximumLoad = 120;
         hiddenSelectionsTextures[] = {QPATHTOF(data\legstrap\V_LegStrapBag_black_CVO_CO.paa)};
+        hiddenSelectionsMaterials[] = {QPATHTOF(data\legstrap\V_LegStrapBag_CVO.rvmat)};
+    };
+
+    class B_Kitbag_Base;
+    class GVAR(Kitbag_blk): B_Kitbag_Base
+    {
+        _generalMacro=QGVAR(Kitbag_blk);
+        displayName = "Kitbag (Black - CVO)";
+        scope = 2;
+        author = "$STR_cvo_Author";
+        maximumLoad = 300;
+        hiddenSelectionsTextures[] = {QPATHTOF(data\kitbag\backpack_fast_blk_cvo_co.paa)};
     };
 };
