@@ -10,6 +10,9 @@ Adds CVO Banners
 
 ![Preview of CVO Branding](/img/readme/branding.png)
 
+### Classnames of CVO Merch
+`CVO_Kitbag_blk`
+`CVO_LegStrapBag_black`
 
 ## Old
 ### Flag Texture Paths
@@ -26,4 +29,3 @@ tba.
 Vanilla Classname  `GalleryFrame_01_large_portrait_F`
 Texture #0 `z\cvo_aux\addons\branding\data\Leaderportrait.paa`
 Note: Seems like it doesnt like `"`
-
