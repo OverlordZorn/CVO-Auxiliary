@@ -1,11 +1,9 @@
-
-
+![alt text](/img/readme/cvo_aux_title.png)
 # Steam Workshop
 https://steamcommunity.com/sharedfiles/filedetails/?id=3037257908
 
 
 # Addons
-
 ## [Arsenal - Framework for ACE Arsenal](/addons/arsenal/readme.md)
 - Supports Different Roles
 - Auto Assigns Medic and Engineer Roles based on ACE Traits
