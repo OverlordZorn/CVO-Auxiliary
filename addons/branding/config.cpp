@@ -1,5 +1,6 @@
 #include "script_component.hpp"
 
+
 class CfgPatches {
 	class ADDON {
 		author = "$STR_cvo_Author";

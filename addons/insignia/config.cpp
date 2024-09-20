@@ -1,6 +1,8 @@
+#include "script_component.hpp"
+
 class CfgPatches {
 
-	class CVO_Insignia
+	class ADDON
 	{
 		// Meta information for editor
         name = "CVO Insignias";

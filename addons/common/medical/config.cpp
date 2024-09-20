@@ -30,8 +30,9 @@ class CfgSounds
 
 class CfgFunctions
 {
-	class cvo_common            // Tag
+	class PREFIX            // Tag
 	{
+        tag = ADDON;
 		class Medical           // Category
 		{
 			class fullHeal      // Function name -> Final Function will be: TAG_FNC_FunctionName

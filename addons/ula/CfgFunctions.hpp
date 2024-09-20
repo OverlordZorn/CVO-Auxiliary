@@ -1,10 +1,11 @@
 class CfgFunctions
 {
-	class cvo_ula          // Tag
+	class PREFIX          // Tag
 	{
-		class UnhideLayerAction           // Category
+        tag = ADDON;
+		class COMPONENT           // Category
 		{
-            file = "z\cvo\addons\ula\functions";
+            file = PATH_TO_FUNC;
             class preInit { preInit = 1; };
             
             class register {};

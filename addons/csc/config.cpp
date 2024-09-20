@@ -1,3 +1,6 @@
+#include "script_component.hpp"
+
+
 class CfgPatches {
 
 	class CVO_CSC
@@ -30,18 +33,4 @@ class CfgPatches {
 
 };
 
-class CfgFunctions
-{
-	class CVO_CSC            // Tag
-	{
-		class CSC           // Category
-		{
-			file = "z\cvo\addons\CSC\functions";
-			class createNode {};
-
-			class addCSC {};
-            class spawnCSC {};
-		};
-	}; 
-};
-
+#include "CfgFunctions.hpp"

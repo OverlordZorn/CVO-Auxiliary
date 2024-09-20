@@ -1,9 +1,13 @@
-class CfgFunctions {
-	class CVO_Insignia {
-		class CVO_Insignia {
-			file = "z\cvo\addons\insignia\functions";
+class CfgFunctions
+{
+	class PREFIX
+    {
+        tag = ADDON;
+		class COMPONENT
+        {
+			file = PATH_TO_FUNC;
+
 			class postInit { postInit = 1; };
-			// class  preInit {  preInit = 1; };
 
 			class eh_arsenal {};
 			class eh_group {};
