@@ -24,7 +24,7 @@ private _tgtOBJ = createVehicleLocal ["Helper_Base_F", [0,0,0]];
 // _posEnd set [2, _posEnd#2 + 2];
 _tgtOBJ setPosASL _posStart;
 
-private _particleSource = createVehiclelocal ["#particlesource", ASLToAGL _posEnd];
+private _particleSource = createVehicleLocal ["#particlesource", ASLToAGL _posEnd];
 
 // PerFrameHandler
 private _startTime = CBA_missionTime;
