@@ -45,20 +45,20 @@ missionNamespace setVariable [_varName_isDone, false, true];
 private _posStart = getPosASL _startObj;
 
 private _posEnd = [];
-{ _posEnd = _posEnd vectorAdd (getPosASL _x); } foreach _objects;
-_posEnd = _posEnd VectorMultiply (1/count _objects);
+{ _posEnd = _posEnd vectorAdd (getPosASL _x); } forEach _objects;
+_posEnd = _posEnd vectorMultiply (1/count _objects);
 
 private _params = [_posStart, _posEnd, _startObj, _duration, _layerName, _numBombs, _varName_isDone, _varName_trigger];
 
 
 // hides all object inside layer in case they are not hidden yet
-{ _x hideObjectGlobal true } foreach _objects;
+{ _x hideObjectGlobal true } forEach _objects;
 
 
 // Establish Event Handlers and WUAE
 [_startObj, "Deleted", {
     _thisArgs call zrn_rockslide_fnc_global_effects;
-    if (is3DENPreview) then {systemchat "Rockslide - EH Deleted Triggered"};
+    if (is3DENPreview) then {systemChat "Rockslide - EH Deleted Triggered"};
 }, _params] call CBA_fnc_addBISEventHandler;
 
 if (_recieveDmg) then {
@@ -78,12 +78,12 @@ if (_recieveDmg) then {
 
 // Triggers when _varName_trigger is set to true
 private _condition = { missionNamespace getVariable [_this#0, false] isEqualTo true };
-private _statement = { deleteVehicle (_this#1); if (is3DENPreview) then {systemchat "Rockslide - WUAE Triggered"};};                                                              
+private _statement = { deleteVehicle (_this#1); if (is3DENPreview) then {systemChat "Rockslide - WUAE Triggered"};};                                                              
 private _parameter = [ _varName_trigger, _startObj ];                      
 [_condition, _statement, _parameter] call CBA_fnc_waitUntilAndExecute;
 
 
 // returns the variable name which is being monitored
 diag_log format ['[zrn](rockslide)(fn_prep) Name of monitored variable: %1', _varName_trigger];
-if (is3DENPreview) then {systemchat format ['Rockslide - Prep - Name of monitored variable: %1', _varName_trigger];};
+if (is3DENPreview) then {systemChat format ['Rockslide - Prep - Name of monitored variable: %1', _varName_trigger];};
 _varName_trigger
