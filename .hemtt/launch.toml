@@ -25,10 +25,14 @@ mission = "Stratis.Stratis"
 extends = "Stratis"
 workshop = ["2352603233"]
 
-[exec]
+[executeUnit]
 extends = "default"
 mission = "exec.VR"
 
 [airlift]
 extends = "default"
 mission = "airlift.VR"
+
+[rockslide]
+extends = "default"
+mission = "rockslide.Tanoa"
