@@ -1,6 +1,8 @@
+#include "script_component.hpp"
+
 class CfgPatches
 {
-    class cvo_intel
+    class ADDON
     {
         // Meta information for editor
         name = "CVO Intel";
@@ -25,9 +27,10 @@ class CfgPatches
 
 class CfgFunctions
 {
-	class CVO_Intel            // Tag
+	class PREFIX            // Tag
 	{
-		class Flags           // Category
+        tag = ADDON;
+		class COMPONENT           // Category
 		{
 			file = "z\cvo\addons\intel\functions";
 
