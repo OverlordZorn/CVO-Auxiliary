@@ -85,9 +85,12 @@ private _HashMapObject = createHashMapObject [[
             params ["_distance","_pos"];
 
             private _effect_range = OGET(shockwave_effect_range);
+            ZRN_LOG_1("private _effect_range = OGET(shockwave_effect_range);");
 
-            _intensity = linearConversion[0,_effect_range,_distance,15,2];
-            _duration = linearConversion[0,_effect_range,_distance,15,7];
+            ZRN_LOG_2(_effect_range,_distance);
+
+            private _intensity = linearConversion[0,_effect_range,_distance,15,2];
+            private _duration = linearConversion[0,_effect_range,_distance,15,7];
             addCamShake [_intensity, 5, _duration];
 
             // Depending on distance, there is a chance that you will be kicked over by the blastwave
