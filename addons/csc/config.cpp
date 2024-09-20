@@ -32,11 +32,12 @@ class CfgPatches {
 
 class CfgFunctions
 {
-	class CVO_CSC            // Tag
+	class PREFIX            // Tag
 	{
-		class CSC           // Category
+        tag = ADDON;
+		class COMPONENT           // Category
 		{
-			file = "z\cvo\addons\CSC\functions";
+			file = PATH_TO_FUNC;
 			class createNode {};
 
 			class addCSC {};
