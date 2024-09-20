@@ -26,9 +26,8 @@ private _groupName = groupId group _unit;
 
 private _regexReturn = flatten (_groupName regexFind ["1-[0-9]"]);
 
-if (_regexReturn isEqualTo []) then {_regexReturn = "404"};
+if (_regexReturn isEqualTo []) then { _regexReturn = "404" } else { _regexReturn = flatten _regexReturn # 0; };
 
-_regexReturn = flatten _regexReturn # 0;
 
 private _callSign = switch (_regexReturn) do {
     case "1-1": { "11" };
