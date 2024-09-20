@@ -12,18 +12,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=11;
+		nextID=13;
 	};
 	class Camera
 	{
-		pos[]={9329.2471,89.35463,13785.499};
-		dir[]={-0.82355535,-0.44455582,-0.35231623};
-		up[]={-0.4087255,0.89575118,-0.1748524};
-		aside[]={-0.39331931,0,0.919402};
+		pos[]={9244.04,108.64032,13696.204};
+		dir[]={-0.57971531,-0.25309202,-0.77454644};
+		up[]={-0.15166344,0.96743959,-0.20263429};
+		aside[]={-0.80060679,-3.5658013e-007,0.59922159};
 	};
 };
 binarizationWanted=0;
-sourceName="zrn_sqf_rockslide";
+sourceName="rockslide";
 addons[]=
 {
 	"A3_Characters_F",
@@ -112,7 +112,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={9503.8301,20.240881,13587.168};
+						position[]={9255.5811,20.169926,13732.138};
 						angles[]={0,4.7378025,0};
 					};
 					side="West";
@@ -150,6 +150,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						init="[this, ""ROCKSLIDE""] call cvo_rockslide_fnc_prep;";
 						name="rockslide_start";
 					};
 					id=22;
