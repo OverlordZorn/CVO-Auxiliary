@@ -3,9 +3,12 @@
 if (!hasInterface) exitWith {};
 
 params [
-    ["_startTime", 0,           [0]         ],  // CBA_missionTime
-    [ "_fuelTank", objNull,     [objNull]   ],
-    [ "_helperObj", objNull,    [objNull]   ]
+    ["_startTime",  0,           [0]        ],  // CBA_missionTime
+    [ "_fuelTank",  objNull,     [objNull]  ],
+    [ "_helperObj", objNull,    [objNull]   ],
+    ["_blastRange", 500,        [0]         ],
+    ["_ignoreDmg",  true,       [true]      ]
+
  ];
 
 
@@ -16,7 +19,10 @@ enableCamShake true;
 private _pos = getPos _fuelTank;
 private _radius = boundingBoxReal _fuelTank # 2 * 0.4;
 
-private _varNameHMO = ["CVO","bigBoom", "HMO",vehicleVarName _fuelTank] joinString "_";
+private _hmoID = missionNamespace getVariable [QGVAR(HMO_counter), 0];
+private _varNameHMO = ["CVO","bigBoom", "HMO",_hmoID] joinString "_";
+missionNamespace setVariable [QGVAR(HMO_counter), _hmoID + 1];
+
 _helperObj setVariable ["varNameHMO", _varNameHMO];
 
 private _HashMapObject = createHashMapObject [[
@@ -45,7 +51,7 @@ private _HashMapObject = createHashMapObject [[
     ["smoke_max", 0.1],
     ["smoke_rate", 60],
 
-    ["light_max", 5000000],
+    ["light_max", 2500000],
     ["light_min", 10000],
     ["light_rate", 0.3],
 
@@ -58,34 +64,47 @@ private _HashMapObject = createHashMapObject [[
     ["blue_max", 0.07],
     ["blue_min", 0.0],
 
+    ["shockwave_effect_range", 2000],
+
+    ["force_range_min", 150],
+    ["force_range_max", _blastRange],
+
+    ["ignoreDmg", _ignoreDmg],
+
+
     ["Execute_Shockwave",{
 
         if (cba_missionTime - (_self get "startTime") > 10) exitWith {};
 
-        private _pos = (_self get "pos");
+        private _pos = OGET(pos);
         private _distance = player distance _pos;
 
 
         [{
             // Execute Camera Shake
             params ["_distance","_pos"];
-            _intensity = linearConversion[0,2000,_distance,15,2];
-            _duration = linearConversion[0,2000,_distance,15,7];
+
+            private _effect_range = OGET(shockwave_effect_range);
+
+            _intensity = linearConversion[0,_effect_range,_distance,15,2];
+            _duration = linearConversion[0,_effect_range,_distance,15,7];
             addCamShake [_intensity, 5, _duration];
 
             // Depending on distance, there is a chance that you will be kicked over by the blastwave
-            if  ( /*_distance < random 750*/ true ) then {
+            if  ( OGET(force_range_min) + random OGET(force_range_max) > _distance ) then {
 
                 [{
-                    params ["_distance","_pos"];
+                    params ["_distance","_pos", "_ignoreDmg"];
 
                     private _forceMultiplyer = linearConversion [0, 500, _distance, 3000, 300];
-
                     if (_forceMultiplyer <= 0) exitWith {};
+
+
+
                     private _dirVector = _pos vectorFromTo (getPos player);
                     private _force =  _dirVector vectorMultiply _forceMultiplyer;
                     _force set [2, _force#2 + 500];
-                    player allowDamage false;
+                    if (_ignoreDmg) then {player allowDamage false;};
                     player addForce [_force, [0,0,1]];
 
                     [{(animationState _this) find "ace_medical_engine_uncon_anim_face" != -1}, {
@@ -98,7 +117,7 @@ private _HashMapObject = createHashMapObject [[
                 }, [_distance,_pos], 0.25] call CBA_fnc_waitAndExecute;
 
             };
-        }, [_distance, _pos], 0.01 + _distance / 343 ] call CBA_fnc_waitAndExecute;
+        }, [_distance, _pos, OGET(ignoreDmg)], 0.01 + _distance / 343 ] call CBA_fnc_waitAndExecute;
 
 
     }],
