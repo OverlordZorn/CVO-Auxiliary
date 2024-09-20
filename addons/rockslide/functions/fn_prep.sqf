@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /*
 * Author: Zorn
 * [Description]
@@ -8,12 +10,12 @@
 * None
 *
 * Example:
-* [rockslide_start, "ROCKSLIDE", 40, 1] call zrn_rockslide_fnc_prep;
+* [rockslide_start, "ROCKSLIDE", 40, 1] call cvo_rockslide_fnc_prep;
 *
 * Public: Yes
 */
 
-if !(isServer) exitWith {systemChat "ERROR - zrn_rockslide_fnc_prep needs to be executed on the server"};
+if !(isServer) exitWith {systemChat "ERROR - cvo_rockslide_fnc_prep needs to be executed on the server"};
 
 
 params [
@@ -57,7 +59,7 @@ private _params = [_posStart, _posEnd, _startObj, _duration, _layerName, _numBom
 
 // Establish Event Handlers and WUAE
 [_startObj, "Deleted", {
-    _thisArgs call zrn_rockslide_fnc_global_effects;
+    _thisArgs call FUNC(global_effects);
     if (is3DENPreview) then {systemChat "Rockslide - EH Deleted Triggered"};
 }, _params] call CBA_fnc_addBISEventHandler;
 
@@ -70,7 +72,7 @@ if (_recieveDmg) then {
         if (_damage < 0.1) exitWith {};
         if (is3DENPreview) then {systemChat "Rockslide - EH Dammaged triggered - threshhold reached"};
 
-        _thisArgs call zrn_rockslide_fnc_global_effects;
+        _thisArgs call FUNC(global_effects);
         _unit removeEventHandler ["Dammaged", _thisID];
 
     }, _params] call CBA_fnc_addBISEventHandler;
@@ -84,6 +86,6 @@ private _parameter = [ _varName_trigger, _startObj ];
 
 
 // returns the variable name which is being monitored
-diag_log format ['[zrn](rockslide)(fn_prep) Name of monitored variable: %1', _varName_trigger];
+diag_log format ['[CVO](rockslide)(fn_prep) Name of monitored variable: %1', _varName_trigger];
 if (is3DENPreview) then {systemChat format ['Rockslide - Prep - Name of monitored variable: %1', _varName_trigger];};
 _varName_trigger

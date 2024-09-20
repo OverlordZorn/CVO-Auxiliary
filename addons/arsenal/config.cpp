@@ -36,7 +36,7 @@ class CfgFunctions
 	{
 		class Arsenal           // Category
 		{
-			file = "z\cvo_aux\addons\arsenal\functions";
+			file = "z\cvo\addons\arsenal\functions";
 
 
 			class eventHandlers  { postInit = 1; };
@@ -49,7 +49,7 @@ class CfgFunctions
 
 		class CVO_Arsenal_GreenMag
 		{
-			file = "z\cvo_aux\addons\arsenal\functions";
+			file = "z\cvo\addons\arsenal\functions";
 			requiredAddons[] = { "greenmag_main" };
 
 
@@ -60,6 +60,6 @@ class CfgFunctions
 
 class Extended_PreInit_EventHandlers {
     class CVO_Arsenal_CBA_Settings_XHE_PreInit {
-        init = "call compile preprocessFileLineNumbers 'z\cvo_aux\addons\arsenal\XEH_preInit.sqf'";
+        init = "call compile preprocessFileLineNumbers 'z\cvo\addons\arsenal\XEH_preInit.sqf'";
     };
 };

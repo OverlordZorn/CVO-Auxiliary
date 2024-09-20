@@ -29,7 +29,7 @@ class CfgFunctions
 	{
 		class Flags           // Category
 		{
-			file = "z\cvo_aux\addons\bigBoom\functions";
+			file = "z\cvo\addons\bigBoom\functions";
 
     	    class bigBoomPrep {};
     	    class bigBoomHMO {};
