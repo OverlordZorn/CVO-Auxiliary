@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 if (!hasInterface) exitWith {};
 
 params [
@@ -14,7 +16,7 @@ enableCamShake true;
 private _pos = getPos _fuelTank;
 private _radius = boundingBoxReal _fuelTank # 2 * 0.4;
 
-private _varNameHMO = ["ZRN","HMO",vehicleVarName _fuelTank] joinString "_";
+private _varNameHMO = ["CVO","bigBoom", "HMO",vehicleVarName _fuelTank] joinString "_";
 _helperObj setVariable ["varNameHMO", _varNameHMO];
 
 private _HashMapObject = createHashMapObject [[
