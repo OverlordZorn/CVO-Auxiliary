@@ -12,10 +12,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5388.4629,122.01802,17828.061};
-		dir[]={0.21218395,-0.4448359,0.87018377};
-		up[]={0.10539093,0.89559633,0.43221405};
-		aside[]={0.97159761,-2.6869384e-007,-0.23691511};
+		pos[]={5413.0679,159.78636,17773.588};
+		dir[]={-0.080189079,-0.50991744,0.85647762};
+		up[]={-0.047533948,0.86022335,0.50769705};
+		aside[]={0.99564564,7.4505806e-009,0.093218908};
 	};
 };
 binarizationWanted=0;
@@ -122,9 +122,6 @@ class ScenarioData
 {
 	author="Overlord Zorn";
 };
-class CustomAttributes
-{
-};
 class Mission
 {
 	class Intel
@@ -165,6 +162,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
+				init="[this] call CVO_BIGBOOM_fnc_prep";
 				name="fuel_1";
 			};
 			id=36;
@@ -183,6 +181,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
+				init="[this] call CVO_BIGBOOM_fnc_prep";
 				name="fuel_0";
 			};
 			id=38;
@@ -232,6 +231,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
+				init="[this] call CVO_BIGBOOM_fnc_prep";
 				name="fuel_2";
 			};
 			id=40;
@@ -517,6 +517,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="[this] call CVO_BIGBOOM_fnc_prep";
 				name="fuel_3";
 			};
 			id=54;
@@ -534,6 +535,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="[this] call CVO_BIGBOOM_fnc_prep";
 				name="fuel_5";
 			};
 			id=56;
@@ -664,6 +666,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="[this] call CVO_BIGBOOM_fnc_prep";
 				name="fuel_4";
 			};
 			id=55;
@@ -681,6 +684,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="[this] call CVO_BIGBOOM_fnc_prep";
 				name="fuel_6";
 			};
 			id=63;
