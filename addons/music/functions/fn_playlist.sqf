@@ -91,7 +91,7 @@ if (_playlist isEqualTo "postInit") exitWith {
 		_action = [
 			"cvo_music_zeus_node",
 			"CVO Music",
-			"z\cvo_aux\addons\branding\data\Raven_Voron_256.paa",
+			"z\cvo\addons\branding\data\Raven_Voron_256.paa",
 			{},
 			{true}
 			] call ace_interact_menu_fnc_createAction;

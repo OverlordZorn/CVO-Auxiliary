@@ -66,7 +66,7 @@ class CfgFunctions
 	{
 		class Music           // Category
 		{
-			file = "z\cvo_aux\addons\music\functions";
+			file = "z\cvo\addons\music\functions";
 			class playlist	    {    postInit = 1;  };
     	    class play          {   };
             class fadeStop      {   };
@@ -77,6 +77,6 @@ class CfgFunctions
 
 class Extended_PreInit_EventHandlers {
     class CVO_Music_CBA_Settings_XHE_PreInit {
-        init = "call compile preprocessFileLineNumbers 'z\cvo_aux\addons\music\XEH_preInit.sqf'";
+        init = "call compile preprocessFileLineNumbers 'z\cvo\addons\music\XEH_preInit.sqf'";
     };
 };

@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /*
 * Author: Zorn
 * Function for Clientside Effects of the Rockslide
@@ -19,8 +21,8 @@ params ["_posStart", "_posEnd", "_bomb", "_duration", "_layerName", "_numberOfBo
 
 if (is3DENPreview) then {diag_log "fnc local"};
 
-_this call ZRN_rockslide_fnc_local_rocks;
-_this call ZRN_rockslide_fnc_local_smoke;
+_this call FUNC(local_rocks);
+_this call FUNC(local_smoke);
 
 private _distance = player distance _posEnd;
 

@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /*
 * Author: Zorn
 * Triggers a Rockslide and populates it across all currently connected players. No JIP required.
@@ -58,10 +60,10 @@ switch (_numBombs) do {
     params ["_posStart", "_posEnd", "_startObj", "_duration", "_layerName", "_numBombs"];
 
     // Play sound globally
-    playSound3D [getMissionPath "rockslide\data\sound_landslide.ogg", objNull , false, _posEnd, 5, 1, 2000, 0, false];
+    playSound3D [PATH_TO_ADDON_2(data,sound_landslide.ogg), objNull , false, _posEnd, 5, 1, 2000, 0, false];
     if (is3DENPreview) then {diag_log "GLOB - Sound"};
 
     // Playerside Effects
-    ["cvo_rockslide_local_effects", _this] call CBA_fnc_globalEvent;
+    [QGVAR(local_effects), _this] call CBA_fnc_globalEvent;
 
 } , [_posStart, _posEnd, _startObj, _duration, _layerName, _numBombs], 2] call CBA_fnc_waitAndExecute;

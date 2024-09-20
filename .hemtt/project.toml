@@ -1,5 +1,5 @@
 name = "24th Chorni Voron - Auxiliary Mod"
-prefix = "cvo_aux"
+prefix = "cvo"
 mainprefix = "z"
 
 [properties]
