@@ -34,13 +34,3 @@ class CfgPatches {
 
 
 #include "CfgFunctions.hpp"
-
-
-
-
-/*
-class CfgMarkers
-{
-	#include "markers.hpp"	
-};
-*/

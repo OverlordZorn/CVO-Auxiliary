@@ -1,3 +1,6 @@
+#include "script_component.hpp"
+
+
 class CfgPatches {
 
 	class CVO_Arsenal
@@ -30,8 +33,5 @@ class CfgPatches {
 
 };
 
-class Extended_PreInit_EventHandlers {
-    class CVO_Arsenal_CBA_Settings_XHE_PreInit {
-        init = "call compile preprocessFileLineNumbers 'z\cvo\addons\arsenal\XEH_preInit.sqf'";
-    };
-};
+#include "CfgFunctions.hpp"
+#include "XEH_preInit.hpp"

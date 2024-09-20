@@ -25,25 +25,5 @@ class CfgPatches
 };
 
 
-class CfgFunctions
-{
-	class PREFIX            // Tag
-	{
-        tag = ADDON;
-		class COMPONENT           // Category
-		{
-			file = "z\cvo\addons\intel\functions";
-
-    	    class postInit { postInit = 1; };
-
-    	    class createFlagMarker {};
-    	    class findAllFlags {};
-		};
-	}; 
-};
-
-class Extended_PreInit_EventHandlers {
-    class CVO_Music_CBA_Settings_XHE_PreInit {
-        init = "call compile preprocessFileLineNumbers 'z\cvo\addons\intel\XEH_preInit.sqf'";
-    };
-};
+#include "CfgFunctions.hpp"
+#include "XEH_preInit.hpp"

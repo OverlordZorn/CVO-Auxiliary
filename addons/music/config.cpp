@@ -2,7 +2,7 @@
 
 class CfgPatches
 {
-    class cvo_music
+    class ADDON
     {
         // Meta information for editor
         name = "CVO Music";
