@@ -1,11 +1,10 @@
 class CfgFunctions
 {
-	class PREFIX            // Tag
+	class ADDON            // Tag
 	{
-        tag = ADDON;
-		class Arsenal           // Category
+		class COMPONENT           // Category
 		{
-			file = "z\cvo\addons\arsenal\functions";
+			file = PATH_TO_FUNC;
 
 
 			class eventHandlers  { postInit = 1; };
@@ -16,9 +15,9 @@ class CfgFunctions
 			class addArsenalInteraction {};
 		};
 
-		class CVO_Arsenal_GreenMag
+		class Arsenal_GreenMag
 		{
-			file = "z\cvo\addons\arsenal\functions";
+			file = PATH_TO_FUNC;
 			requiredAddons[] = { "greenmag_main" };
 
 
