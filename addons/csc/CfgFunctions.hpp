@@ -1,8 +1,7 @@
 class CfgFunctions
 {
-	class PREFIX            // Tag
+	class ADDON            // Tag
 	{
-        tag = ADDON;
 		class COMPONENT           // Category
 		{
 			file = PATH_TO_FUNC;

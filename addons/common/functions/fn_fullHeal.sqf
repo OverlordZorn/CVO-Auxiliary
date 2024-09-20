@@ -41,7 +41,7 @@ if (_target isEqualTo "") exitWith {false};
 	private _egg = _parameter # 1;
 
 	if (round random 100 < _egg) then {
-		playSound3D ["z\cvo\addons\others\medical\medical_healsound.ogg", _target];
+		playSound3D ["z\cvo\addons\common\data\medical_healsound.ogg", _target];
 	};
     [
         _dur,                              	// Total Time (in game "time" seconds) <NUMBER>
@@ -60,7 +60,7 @@ if (_target isEqualTo "") exitWith {false};
 _cvo_fullAceHeal = [
 	"CVO_FullHeal",									// Action Name
 	"Get Full Health Check",						// Name for the ACE Interaction Menu
-	"z\cvo\addons\others\medical\redCrystal.paa",	// custom Icon
+	"z\cvo\addons\common\data\redCrystal.paa",		// custom Icon
 	_code,											// Statement - the code you're executing
 	{true},											// Condition
 	{},												// Insert Children

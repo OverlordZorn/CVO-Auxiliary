@@ -26,7 +26,7 @@
 #define Q(var1) QUOTE(var1)
 #define QQ(var1) QQUOTE(var1)
 
-#define QADDON Q(ADDON)
+#define QADDON QUOTE(ADDON)
 
 // Prefix Function
 #define PFUNC(var1) TRIPLES(PREFIX,fnc,var1)
