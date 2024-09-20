@@ -36,3 +36,7 @@ mission = "airlift.VR"
 [rockslide]
 extends = "default"
 mission = "rockslide.Tanoa"
+
+[bigBoom]
+extends = "default"
+mission = "bigBoom.Altis"
