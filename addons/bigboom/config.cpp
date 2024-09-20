@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 class CfgPatches
 {
     class cvo_bigBoom
@@ -23,16 +25,4 @@ class CfgPatches
 };
 
 
-class CfgFunctions
-{
-	class CVO_bigBoom            // Tag
-	{
-		class Flags           // Category
-		{
-			file = "z\cvo\addons\bigBoom\functions";
-
-    	    class bigBoomPrep {};
-    	    class bigBoomHMO {};
-		};
-	}; 
-};
+#include "CfgFunctions.hpp"
