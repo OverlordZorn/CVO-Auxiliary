@@ -1,11 +1,11 @@
 class CfgFunctions
 {
-    class cvo_rockslide
+    class ADDON
     {
-        class rockslide
+        class COMPONENT
         {
 
-            file = "z\cvo\addons\rockslide\functions";
+            file = PATH_TO_FNC;
 
             class init_cba_eh { postInit = 1; };
             
