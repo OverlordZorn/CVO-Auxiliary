@@ -1,11 +1,21 @@
 class CfgFunctions
 {
+<<<<<<< Updated upstream
     class ADDON
     {
         class COMPONENT
         {
 
             file = PATH_TO_FNC;
+=======
+    class PREFIX
+    {
+        tag = ADDON;
+        class COMPONENT
+        {
+
+            file = PATH_TO_FUNC;
+>>>>>>> Stashed changes
 
             class init_cba_eh { postInit = 1; };
             
