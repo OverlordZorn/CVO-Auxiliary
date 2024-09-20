@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 class CfgPatches {
 
 	class CVO_Common
@@ -31,21 +33,7 @@ class CfgPatches {
 };
 
 
-class CfgFunctions
-{
-	class cvo_common            // Tag
-	{
-		class Common           // Category
-		{
-            file = "z\cvo\addons\common\functions";
-            class getMedianPosASL {};
-
-            class executeUnit {};
-            class airlift_cargo {};
-            class slingload_cargoOwner {};
-		};
-    };
-};
+#include "CfgFunctions.hpp"
 
 
 
