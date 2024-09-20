@@ -27,7 +27,7 @@ class CfgFunctions
 {
 	class CVO_bigBoom            // Tag
 	{
-		class Flags           // Category
+		class bigBoom           // Category
 		{
 			file = "z\cvo_aux\addons\bigBoom\functions";
 
