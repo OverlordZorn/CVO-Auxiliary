@@ -90,7 +90,7 @@ if ($doGenerate -eq "n")
             Start-Sleep -Seconds 1
         }
 #Loop through the sizes array
-foreach ($size in $sizes)
+forEach ($size in $sizes)
     {
         $fontPath = "Fonts\$fontShort\$fontShort$size"
         $cfgStrings.Add("$fontPath") | Out-Null
