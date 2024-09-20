@@ -25,7 +25,7 @@ private _ehCode = {
     private _code = {
         params ["_object", "_helper"];
         createVehicle ["Bo_GBU12_LGB", getPos _object]; // Spawn bomb once globally
-        [CBA_missionTime, _object, _helper] remoteExecCall ["ZRN_fnc_bigBoomHMO", [0,-2] select isDedicated,_helper];
+        [CBA_missionTime, _object, _helper] remoteExecCall ["cvo_bigboom_fnc_bigBoomHMO", [0,-2] select isDedicated,_helper]; // TODO Need to be fixed!
     };
 
     if (_delay == 0) then _code else { [_code, [_object,_helper], random _delay] call CBA_fnc_waitAndExecute; };
