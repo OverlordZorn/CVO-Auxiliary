@@ -59,7 +59,7 @@ addons[]=
 	"A3_Weapons_F",
 	"A3_Characters_F_Enoch_Facewear",
 	"A3_Characters_F_Enoch",
-	"cvo_aux_branding",
+	"cvo_branding",
 	"A3_Ui_F"
 };
 class AddonsMetaData
@@ -209,8 +209,8 @@ class AddonsMetaData
 		};
 		class Item20
 		{
-			className="cvo_aux_branding";
-			name="cvo_aux_branding";
+			className="cvo_branding";
+			name="cvo_branding";
 			author="24th Chorni Voron";
 			url="https://github.com/OverlordZorn/CVO-Auxiliary";
 		};

@@ -1,7 +1,7 @@
 class CfgFunctions {
 	class CVO_Insignia {
 		class CVO_Insignia {
-			file = "z\cvo_aux\addons\insignia\functions";
+			file = "z\cvo\addons\insignia\functions";
 			class postInit { postInit = 1; };
 			// class  preInit {  preInit = 1; };
 

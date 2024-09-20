@@ -6,7 +6,7 @@ class CfgPatches {
 		name = QUOTE(ADDON);
 		url = "$STR_cvo_URL";
 		requiredVersion = 2.0;
-		requiredAddons[] = {"cvo_aux_main", "A3_Structures_F_Mil_Flags"};
+		requiredAddons[] = {"cvo_main", "A3_Structures_F_Mil_Flags"};
 		units[] = 
         {
             QSPVAR(Flag_Red),

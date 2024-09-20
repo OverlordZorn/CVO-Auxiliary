@@ -29,7 +29,7 @@ class CfgFunctions
 	{
 		class Flags           // Category
 		{
-			file = "z\cvo_aux\addons\intel\functions";
+			file = "z\cvo\addons\intel\functions";
 
     	    class postInit { postInit = 1; };
 
@@ -41,6 +41,6 @@ class CfgFunctions
 
 class Extended_PreInit_EventHandlers {
     class CVO_Music_CBA_Settings_XHE_PreInit {
-        init = "call compile preprocessFileLineNumbers 'z\cvo_aux\addons\intel\XEH_preInit.sqf'";
+        init = "call compile preprocessFileLineNumbers 'z\cvo\addons\intel\XEH_preInit.sqf'";
     };
 };

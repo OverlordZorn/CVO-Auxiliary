@@ -8,7 +8,7 @@
 * <STRING> if failed, will return "404", otherwise, choosen Classname
 *
 * Example:
-* [] call cvo_aux_insignia_fnc_identify;
+* [] call cvo_insignia_fnc_identify;
 *
 * Public: Yes
 */

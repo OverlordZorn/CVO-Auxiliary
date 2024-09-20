@@ -1,4 +1,4 @@
-#define PREFIX cvo_aux
+#define PREFIX cvo
 #define MAINPREFIX z
 
 #define SHORT_PREFIX cvo

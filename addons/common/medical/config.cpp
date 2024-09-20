@@ -19,7 +19,7 @@ class CfgSounds
 	class cvo_healsound
 	{
 		name = "cvo_healsound";															// display name
-		sound[] = { "z\cvo_aux\addons\common\medical\medical_healsound.ogg", 1, 1, 100 };	// file, volume, pitch, maxDistance
+		sound[] = { "z\cvo\addons\common\medical\medical_healsound.ogg", 1, 1, 100 };	// file, volume, pitch, maxDistance
 		titles[] = { 0, "[Healsound]" };												// subtitles
 
 		forceTitles = 0;			// Arma 3 - display titles even if global show titles option is off (1) or not (0)
@@ -36,7 +36,7 @@ class CfgFunctions
 		{
 			class fullHeal      // Function name -> Final Function will be: TAG_FNC_FunctionName
 			{
-				file = "z\cvo_aux\addons\common\medical\fnc_fullHeal.sqf";  
+				file = "z\cvo\addons\common\medical\fnc_fullHeal.sqf";  
 			};
 		};
 	}; 

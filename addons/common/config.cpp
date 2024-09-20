@@ -37,7 +37,7 @@ class CfgFunctions
 	{
 		class Common           // Category
 		{
-            file = "z\cvo_aux\addons\common\functions";
+            file = "z\cvo\addons\common\functions";
             class getMedianPosASL {};
 
             class executeUnit {};
