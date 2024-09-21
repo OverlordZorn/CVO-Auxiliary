@@ -25,13 +25,14 @@ params [
 diag_log "[CVO](debug)(fn_reveal_object) INIT";
 diag_log format ['[CVO](debug)(fn_reveal_object) _this: %1', _this];
 
-if (isNil "CVO_ULA_HM") exitWith {};
+if (isNil "CVO_ULA_HM") exitWith {ZRN_LOG_MSG(Failed: CVO_ULA_HM not defined);};
 
 private _layerMap = CVO_ULA_HM getOrDefault [_layerName, "404"];
 
-diag_log format ['[CVO](debug)(fn_reveal_object) _layerName: %1', _layerName];
 
-if (_layerMap isEqualTo "404") exitWith {};
+if (_layerMap isEqualTo "404") exitWith {
+    ZRN_LOG_MSG(Failed: _layerMap == 404);
+};
 
 private _meme = _objSource getVariable ["meme", false];
 
@@ -43,7 +44,7 @@ _obj hideObjectGlobal false;
 _visibleObjects pushBack _obj;
 private _count = count _hiddenObjects;
 
-if (_meme) then { ["cvo_ula_EH_playSound", [_obj, "PLACE"]] call CBA_fnc_globalEvent; };
+if (_meme) then { [QGVAR(EH_playSound), [_obj, "PLACE"]] call CBA_fnc_globalEvent; };
 
 
 missionNamespace setVariable [_layerMap get "pubVarName", _count, true];
@@ -52,7 +53,7 @@ diag_log format ['[CVO](debug)(fn_reveal_object) Remaining _objects: %1 in  _lay
 
 if (_count > 0 ) exitWith {};
 
-if (_meme) then { ["cvo_ula_EH_playSound", [_objSource, "BREAK"]] call CBA_fnc_globalEvent; }; 
+if (_meme) then { [QGVAR(EH_playSound), [_objSource, "BREAK"]] call CBA_fnc_globalEvent; }; 
 
 deleteVehicle _objSource;
 
@@ -62,12 +63,12 @@ CVO_ULA_HM deleteAt _layerName;
 if (count CVO_ULA_HM > 0) exitWith {};
 CVO_ULA_HM = nil;
 
-if (_meme) then { ["cvo_ula_EH_playSound", CVO_ULA_EHID_meme] call CBA_fnc_removeEventHandler; };
-["cvo_ula_EH_reveal_object", CVO_ULA_EHID_reveal] call CBA_fnc_removeEventHandler;
-["cvo_ula_EH_add_action", CVO_ULA_EHID_add_action] call CBA_fnc_removeEventHandler;
+if (_meme) then { [QGVAR(EH_playSound), CVO_ULA_EHID_meme] call CBA_fnc_removeEventHandler; };
+[QGVAR(EH_reveal_object), CVO_ULA_EHID_reveal] call CBA_fnc_removeEventHandler;
+[QGVAR(EH_add_action), CVO_ULA_EHID_add_action] call CBA_fnc_removeEventHandler;
 
 missionNamespace setVariable ["CVO_ULA_EHID_meme", nil, true];
 missionNamespace setVariable ["CVO_ULA_EHID_reveal", nil, true];
 missionNamespace setVariable ["CVO_ULA_EHID_add_action", nil, true];
 
-["cvo_ula_EH_completed", [_layerName]] call CBA_fnc_serverEvent;
+[QGVAR(EH_completed), [_layerName]] call CBA_fnc_serverEvent;
