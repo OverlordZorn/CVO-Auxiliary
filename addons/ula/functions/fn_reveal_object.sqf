@@ -63,12 +63,12 @@ CVO_ULA_HM deleteAt _layerName;
 if (count CVO_ULA_HM > 0) exitWith {};
 CVO_ULA_HM = nil;
 
-if (_meme) then { [QGVAR(EH_playSound), CVO_ULA_EHID_meme] call CBA_fnc_removeEventHandler; };
-[QGVAR(EH_reveal_object), CVO_ULA_EHID_reveal] call CBA_fnc_removeEventHandler;
-[QGVAR(EH_add_action), CVO_ULA_EHID_add_action] call CBA_fnc_removeEventHandler;
+if (_meme) then { [QGVAR(EH_playSound), GVAR(EHID_meme)] call CBA_fnc_removeEventHandler; };
+[QGVAR(EH_reveal_object), GVAR(EHID_reveal)] call CBA_fnc_removeEventHandler;
+[QGVAR(EH_add_action), GVAR(EHID_add_action)] call CBA_fnc_removeEventHandler;
 
-missionNamespace setVariable ["CVO_ULA_EHID_meme", nil, true];
-missionNamespace setVariable ["CVO_ULA_EHID_reveal", nil, true];
-missionNamespace setVariable ["CVO_ULA_EHID_add_action", nil, true];
+missionNamespace setVariable [QGVAR(EHID_meme), nil, true];
+missionNamespace setVariable [QGVAR(EHID_reveal), nil, true];
+missionNamespace setVariable [QGVAR(EHID_add_action), nil, true];
 
 [QGVAR(EH_completed), [_layerName]] call CBA_fnc_serverEvent;
