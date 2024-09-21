@@ -13,3 +13,4 @@ if !(_className in ("true" configClasses (configFile >> "CfgUnitInsignia") apply
 _unit setVariable ["BIS_fnc_setUnitInsignia_class", nil];
 [_unit, _className] call BIS_fnc_setUnitInsignia;
 
+  

@@ -18,7 +18,7 @@ params [
     ["_unit", player, [objNull]]
 ];
 
-private _className = [_unit] call cvo_insignia_fnc_identify;
+private _className = [_unit] call FUNC(identify);
 if (_classname isEqualTo false) exitWith {};
-[_unit, _className] call cvo_insignia_fnc_apply;
+[_unit, _className] call FUNC(apply);
 
