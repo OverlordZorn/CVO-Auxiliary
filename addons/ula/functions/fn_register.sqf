@@ -39,11 +39,11 @@ if (_meme) then { _obj setVariable ["meme", true, true]};
 // Initialises the layer's HMO
 {
     private _layerName = _x;
-    [_obj, _layerName, _distance, _time] call cvo_ula_fnc_init_layer;
-    ["cvo_ula_EH_add_action", [_obj, _layerName, _distance, _time]] call CBA_fnc_globalEventJIP;
+    [_obj, _layerName, _distance, _time] call FUNC(init_layer);
+    [QGVAR(EH_add_action), [_obj, _layerName, _distance, _time]] call CBA_fnc_globalEventJIP;
 } forEach _layers;
 
-private _attachedLayers = _obj getVariable ["cvo_ula_layers", []];
+private _attachedLayers = _obj getVariable [QGVAR(layers), []];
 _attachedLayers append _layers;
 
 diag_log "[CVO](debug)(fn_register) Done";
