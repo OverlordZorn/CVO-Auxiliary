@@ -5,7 +5,7 @@ class CfgFunctions
 		class COMPONENT           // Category
 		{
             file = PATH_TO_FUNC;
-            class preInit { preInit = 1; };
+            class init_cba_eh { preInit = 1; };
             
             class register {};
             class init_layer {};
