@@ -29,6 +29,8 @@
 	true									//    _needRestart - Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 ] call CBA_fnc_addSetting;
 
+/*
+
 [
 	"CVO_SET_Insignia_on_GroupChange",		//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"CHECKBOX",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
@@ -43,6 +45,7 @@
 	false									//    _needRestart - Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 ] call CBA_fnc_addSetting;
 
+*/
 
 /* Add Further Option: AutoAssign on Group Change
 
