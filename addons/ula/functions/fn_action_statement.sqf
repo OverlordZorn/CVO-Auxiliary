@@ -27,12 +27,12 @@ private _condition = {
     params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
     _args params ["_objSource", "_player", "_actionParams"];
     _actionParams params ["_layerName", "_distance", "_time"];
-    private _maxDistance = (_objSource getVariable QGVAR(size)) * 2 max 5;
+    private _maxDistance = (_objSource getVariable QGVAR(size)) * 1.5 max 5;
 
    
-    _cond1 = missionNamespace getVariable [ ["CVO", "ula","remaining", _layerName] joinString "_", 0 ] > 0;
-    _cond2 = player distance _objSource < _maxDistance;
-    _cond1 && {_cond2}
+    missionNamespace getVariable [ ["CVO", "ula","remaining", _layerName] joinString "_", 0 ] > 0
+    && { player distance _objSource < _maxDistance
+    && { inputAction "defaultAction" == 0 }}
 };
 
 
