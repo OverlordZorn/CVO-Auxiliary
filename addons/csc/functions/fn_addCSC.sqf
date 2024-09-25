@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /* 
  * Author: Zorn
  * Creates an ACE INTERACTION on the Target to request an AmmoCrate and fills it with a custom Array.
