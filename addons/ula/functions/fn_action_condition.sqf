@@ -10,7 +10,7 @@ if (_gMap isEqualTo "404") exitWith {false};
 private _lMap = _gMap getOrDefault [_layerName, "404"];
 if (_lMap isEqualTo "404") exitWith {false};
 
-private _cond1 = missionNamespace getVariable [[PREFIX, COMPONENT,"remaining", _layerName] joinString "_", 0] > 0;
+private _cond1 = missionNamespace getVariable [["cvo", "ula","remaining", _layerName] joinString "_", 0] > 0;
 private _cond2 = ( (getPosASL _objSource) distance2D (_lMap get "medianPosASL") ) <= _distance;
 
 // Return

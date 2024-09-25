@@ -30,6 +30,7 @@ private _deleteLayer = _hashMap getOrDefault [_revealLayer, "404"];
 if (_deleteLayer isEqualTo "404") exitWith {};
 
 private _objects = getMissionLayerEntities _deleteLayer select 0;
+ZRN_LOG_2(_deleteLayer,count _objects);
 { deleteVehicle _x } forEach _objects;
 
 // Add cleanup: delete Entry from HMO

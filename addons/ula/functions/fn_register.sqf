@@ -30,7 +30,8 @@ params [
     ["_layers",     [],             [[]]            ],
     ["_distance",   25,             [0]             ],
     ["_time",       5,              [0]             ],
-    ["_playSound",  true,           [true]          ]
+    ["_playSound",  true,           [true]          ],
+    ["_blockInput", false,           [true]          ]
 ];
 
 diag_log "[CVO](debug)(fn_register) Init";
@@ -39,7 +40,9 @@ if (_obj isEqualTo objNull) exitWith {false};
 if (count _layer == 0) exitWith {false};
 if (_distance <= 0) exitWith {false};
 
-if (_playSound) then { _obj setVariable [QGVAR(playSound), true, true]};
+_obj setVariable [QGVAR(playSound), _playSound, true];
+_obj setVariable [QGVAR(blockInput), _blockInput, true];
+_obj setVariable [QGVAR(size), boundingBoxReal _obj # 2, true];
 
 
 // Initialises the layer's HMO
