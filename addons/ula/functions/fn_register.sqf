@@ -8,16 +8,19 @@
 * Create an action on an object to simulate the building of "something", by unhiding a layer based on the name of the layer.
 *
 * Arguments:
-* 0 <OBJECT>             _object        the object that acts as the "building supplies crate" which has the action attached to it.
-* 1 <ARRAY of STRINGS>   _layers        Array of Layernames: One crate can be used for multiple layers.
-* 2 <NUMBER>             _distance      Minimum Distance the Object needs to be from the Median Position of the Layer
-* 3 <NUMBER>             _time          The time it takes per individual entity to be placed.
+* 0 <OBJECT>            _object         the object that acts as the "building supplies crate" which has the action attached to it.
+* 1 <ARRAY of STRINGS>  _layers         Array of Layernames: One crate can be used for multiple layers.
+* 2 <NUMBER>            _distance       Minimum Distance the Object needs to be from the Median Position of the Layer
+* 3 <NUMBER>            _time           The time it takes per individual entity to be placed.
+* 4 <BOOLEAN>           _playSound      Toggles if a soundeffect should be played when an object is revealed or the supplyer object gets deleted
+* 5 <BOOLEAN>           _blockInput     Toggles if the player's input are being blocked by the progress bar.
 *
 * Return Value:
 * None
 *
 * Example:
 * [this, ["SIGINT at Comms Alpha", "SIGINT at Comms Alpha"]] call cvo_ula_fnc_register;
+* [this, ["SIGINT at Comms Alpha", "SIGINT at Comms Alpha"], 25, 5, true, true] call cvo_ula_fnc_register;
 *
 * Public: Yes
 */
@@ -31,7 +34,7 @@ params [
     ["_distance",   25,             [0]             ],
     ["_time",       5,              [0]             ],
     ["_playSound",  true,           [true]          ],
-    ["_blockInput", false,           [true]          ]
+    ["_blockInput", false,          [true]          ]
 ];
 
 diag_log "[CVO](debug)(fn_register) Init";
