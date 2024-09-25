@@ -21,13 +21,13 @@ params [ "_obj", "_layerName", "_distance", "_time"];
 
 
 
-private _gMap = missionNamespace getVariable ["CVO_ULA_HM", "404"];
+private _gMap = missionNamespace getVariable [QGVAR(HM), "404"];
 
 if (_gMap isEqualTo "404") then { _gMap = createHashMap; };
 
 if (_layerName in _gMap) exitWith { diag_log format ['[CVO](debug)(fn_init_layer) EXIT - _layerName: %1 already in _gMap: %2',_layerName, _gMap]; };
 
-private _varName = ["CVO", "ula","remaining", _layerName] joinString "_";
+private _varName = [PREFIX, COMPONENT,"remaining", _layerName] joinString "_";
 
 private _objects = getMissionLayerEntities _layerName select 0;
 
@@ -51,7 +51,7 @@ private _layerMap = createHashMapFromArray [
 
 _gMap set [_layerName, _layerMap];
 
-missionNamespace setVariable ["CVO_ULA_HM", _gMap, true];
+missionNamespace setVariable [QGVAR(HM), _gMap, true];
 
 diag_log "[CVO](debug)(fn_init_layer) Done";
 true
