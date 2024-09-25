@@ -11,13 +11,15 @@ class CfgFunctions
             class init_layer {};
 
             class add_action {};
+            class action_statement {};
+            class action_condition {};
 
             class reveal_object {};
             class play_sound {};
 
-            class action_statement {};
-            class action_condition {};
-            
+
+            class register_cleanup {};
+            class delete_layer {};
 		};
 	}; 
 };

@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 if (!isServer) exitWith {};
 
 private _condition = { missionNamespace getVariable ["cba_settings_ready", false] };
@@ -7,7 +9,7 @@ private _statement = {
 	if ( missionNamespace getVariable ["CVO_SET_Intel_Flag_initial_isEnabled", false] ) then {
 
 		private _delay = missionNamespace getVariable ["CVO_SET_Intel_Flag_initial_Delay", 5];
-		private _code = { [] call CVO_INTEL_fnc_findAllFlags; };
+		private _code = { [] call FUNC(findAllFlags); };
 
 		if (_delay == 0) then _code else { [ _code , [], _delay] call CBA_fnc_waitAndExecute; };
 	};
@@ -21,7 +23,7 @@ private _statement = {
 
 			if (missionNamespace getVariable[ ["CVO_SET_Intel_Flag_progessive",_color] joinString "_", false]) then {
 				private _delay = (missionNamespace getVariable ["CVO_SET_Intel_Flag_progessive_Delay", 30]) * 60;
-				private _code = { [_flag] call CVO_Intel_fnc_createFlagMarker; };
+				private _code = { [_flag] call FUNC(createFlagMarker); };
 				if (_delay == 0) then _code else { [ _code , [], _delay] call CBA_fnc_waitAndExecute; };
 			};
 		},[]] call CBA_fnc_addEventHandler;

@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /* WIP
  * Author: Zorn
  * Plays music if the queue is empty, if not, it will be put the track into the queue
@@ -21,16 +23,16 @@ params [
 	["_song", "", [""]]
 ];
 
-if (!isServer) exitWith {	_this remoteExec ["cvo_music_fnc_play", 2]	};
+if (!isServer) exitWith {	_this remoteExec [QFUNC(play), 2]	};
 
 if (_song == "fadeStop") exitWith {
 	if (!CVO_Music_isPLaying) exitWith {};
-	[10] remoteExecCall ["cvo_music_fnc_fadeStop"];
+	[10] remoteExecCall [QFUNC(fadeStop)];
 };
 if (_song == "fadeStopClear") exitWith {
 	CVO_Music_Queue = [];
 	if (!CVO_Music_isPLaying) exitWith {};
-	[10] remoteExecCall ["cvo_music_fnc_fadeStop"];
+	[10] remoteExecCall [QFUNC(fadeStop)];
 };
 
 if (_song == "NEXT") then {

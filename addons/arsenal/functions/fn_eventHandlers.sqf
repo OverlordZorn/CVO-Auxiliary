@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 if !(hasInterface) exitWith {};
 
 /*
@@ -11,7 +13,7 @@ private _code = {
         ["ace_arsenal_displayClosed", {
             private _isEnabled = missionNamespace getVariable ["CVO_SET_Arsenal_saveOnArsenalClose", true];
             if (_isEnabled) then {
-                [ { player setVariable ["CVO_Loadout", getUnitLoadout player]; } , [], 3] call CBA_fnc_waitAndExecute;
+                [ { player setVariable [QGVAR(Loadout), getUnitLoadout player]; } , [], 3] call CBA_fnc_waitAndExecute;
             };
         }] call CBA_fnc_addEventHandler;
 
@@ -20,7 +22,7 @@ private _code = {
 	        private _isEnabled = missionNamespace getVariable ["CVO_SET_loadPlayerLoadoutOnRespawn", true];
             if (_isEnabled) then {
                 params ["_unit", "_corpse"]; 
-                player setUnitLoadout (player getVariable ["CVO_Loadout", []]);
+                player setUnitLoadout (player getVariable [QGVAR(Loadout), []]);
             };              
         }];                   
 };

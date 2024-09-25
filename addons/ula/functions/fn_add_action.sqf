@@ -5,13 +5,13 @@ if (!hasInterface) exitWith {};
 
 params ["_obj", "_layerName", "_distance", "_time"];
 
-diag_log "[CVO](debug)(fn_add_action) INIT";
+diag_log "[CVO](debug)(fn_addAction) INIT";
 
 if (isNull _obj) exitWith {
-    diag_log format ['[CVO](debug)(fn_add_action) Failed: _obj: %1',_obj];
+    diag_log format ['[CVO](debug)(fn_addAction) Failed: _obj: %1',_obj];
 };
 
-diag_log format ['[CVO](debug)(fn_add_action) _this: %1', _this];
+diag_log format ['[CVO](debug)(fn_addAction) _this: %1', _this];
 
 private _aceAction = [
     ["cvo","ula",_layerName] joinString "_",                        // * 0: Action name <STRING>
@@ -30,4 +30,4 @@ private _aceAction = [
     _aceAction	         			// * 3: Action <ARRAY>    
 ] call ace_interact_menu_fnc_addActionToObject;
 
-diag_log "[CVO](debug)(fn_add_action) DONE";
+diag_log "[CVO](debug)(fn_addAction) DONE";

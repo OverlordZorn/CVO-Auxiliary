@@ -13,7 +13,7 @@ private _onComplete = {
     _args params ["_objSource", "_player", "_actionParams"];
     _actionParams params ["_layerName", "_distance", "_time"];
 
-    [QGVAR(EH_reveal_object), [_layerName, _objSource]] call CBA_fnc_serverEvent;
+    [QGVAR(EH_revealObject), [_layerName, _objSource]] call CBA_fnc_serverEvent;
 
     _parameters = [_objSource, _player, _actionParams];
     [FUNC(action_statement), _parameters] call CBA_fnc_execNextFrame;
