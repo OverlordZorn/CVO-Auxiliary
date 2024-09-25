@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /*
 * Author: Zorn
 * Function to store players starting kit as the variable on the player object - intended to be exeucted at the beginning of the mission.
@@ -25,7 +27,7 @@ private _code = {
 	private _delay = missionNamespace getVariable ["CVO_SET_savePlayerLoadoutAtStartDelay", 5];
 
 	private _saveLoadout = {
-		player setVariable ["CVO_Loadout", getUnitLoadout player];
+		player setVariable [QGVAR(Loadout), getUnitLoadout player];
 		diag_log "[CVO][Arsenal] player's CVO_Loadout saved";
 	};
 

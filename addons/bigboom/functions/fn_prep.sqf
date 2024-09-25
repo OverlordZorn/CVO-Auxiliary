@@ -30,7 +30,7 @@ private _ehCode = {
         params ["_object", "_helper", "_blastRange"];
         createVehicle ["Bo_GBU12_LGB", getPos _object]; // Spawn bomb once globally
 
-        private _jip_id = [QGVAR(local_effects), [CBA_missionTime, _object, _helper, _blastRange]] call CBA_fnc_globalEventJIP;
+        private _jip_id = [QGVAR(EH_local_effects), [CBA_missionTime, _object, _helper, _blastRange]] call CBA_fnc_globalEventJIP;
         [_jip_id, _helper] call CBA_fnc_removeGlobalEventJIP;
     };
 

@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /* WIP
  * Author: Zorn
  * Plays random music from premade playlists
@@ -33,7 +35,7 @@ if (_playlist isEqualTo "postInit") exitWith {
 		// Define Delay and Execute "NEXT" on the server with cba_fnc_waitAndExecute
 		private _delay = CVO_CBA_musicDelayMin + (ceil random CVO_CBA_musicDelayRandom);
 		diag_log format ["[CVO][Music](CBAEvent)(Next) Delay until Next Song: %1 -- Music Queue: %2", _delay, CVO_Music_Queue];
-		[{	["NEXT"] call cvo_music_fnc_play;	}, [], _delay ] call CBA_fnc_waitAndExecute;	
+		[{	["NEXT"] call FUNC(play);	}, [], _delay ] call CBA_fnc_waitAndExecute;	
 	}] call CBA_fnc_addEventHandler;
 
 
