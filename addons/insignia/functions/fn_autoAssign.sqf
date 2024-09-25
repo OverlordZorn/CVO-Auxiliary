@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /*
 * Author: Zorn
 * identifies and applies the unit's insignia

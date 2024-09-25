@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /*
 *	Scans all Objects on the map, then, seperates out required flag colors.
 *
@@ -19,7 +21,7 @@ diag_log format ['[CVO](debug)(fn_findAllFlags) ACE Marker Flags found: %1', cou
 	diag_log format ['[CVO](debug)(fn_findAllFlags) _x: %1 - _color: %2 - _isEnabled: %3', _x , _color ,_isEnabled];
 
 	if (_isEnabled) then {
-		[_x] call CVO_Intel_fnc_createFlagMarker;
+		[_x] call FUNC(createFlagMarker);
 	};
 
 } forEach _flags;

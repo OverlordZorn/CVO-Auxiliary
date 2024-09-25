@@ -60,7 +60,7 @@ diag_log ("[CVO] [Arsenal_Define] - start");
 
 if (isServer) then {
 	_array = (getMissionLayerEntities EDITOR_LAYER_NAME)#0;
-	[_array] remoteExecCall ["CVO_ARSENAL_fnc_addArsenalInteraction", [0,-2] select isDedicated, true];
+	[_array] remoteExecCall ["cvo_arsenal_fnc_addArsenalInteraction", [0,-2] select isDedicated, true];
 };
 
 if (!hasInterface) exitWith {};

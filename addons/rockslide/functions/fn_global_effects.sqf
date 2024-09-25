@@ -64,6 +64,6 @@ switch (_numBombs) do {
     if (is3DENPreview) then {diag_log "GLOB - Sound"};
 
     // Playerside Effects
-    [QGVAR(local_effects), _this] call CBA_fnc_globalEvent;
+    [QGVAR(EH_local_effects), _this] call CBA_fnc_globalEvent;
 
 } , [_posStart, _posEnd, _startObj, _duration, _layerName, _numBombs], 2] call CBA_fnc_waitAndExecute;
