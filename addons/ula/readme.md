@@ -20,6 +20,10 @@ This function will do all the setup needed. It is to be apllied on the box "that
 #### [`cvo_ula_fnc_register_cleanup`](/addons/ula/functions/fn_register_cleanup.sqf)
 This function registers a layername, which' objects are to be deleted once a layer has been completely revealed.
 
+### Additional FUnction: `cvo_ula_fnc_register_cleanup`
+
+This function controls 
+
 ## Notes:
 
 Median Position: The "Median" Position will be calculated by finding the middlepoint of entities who are part of the layer.
