@@ -12,29 +12,13 @@ Multiple people can work together and build things faster.
 
 ## How to Use
 
-### Main Function: `cvo_ula_fnc_register`
-
+### Main Functions
+#### [`cvo_ula_fnc_register`](/addons/ula/functions/fn_register.sqf)
 This function will do all the setup needed. It is to be apllied on the box "that carries the building supplies".
 
-#### Parameters
-0 - Object: the object that acts as the "building supplies crate" which has the action attached to it.
-1 - Array of Layernames: One crate can be used for multiple layers.
-2 - Distance: Minimum Distance the Object needs to be from the Median Position of the Layer
-3 - Time: The time it takes per individual Entity to be placed.
-
-```sqf
-params [
-    ["_obj",        objNull,        [objNull]       ],
-    ["_layers",     [],             [[]]            ],
-    ["_distance",   25,             [0]             ],
-    ["_time",       5,              [0]             ]
-];
-```
-
-#### Example
-```sqf
-[this, ["SIGINT at Comms Alpha", "SIGINT at Comms Alpha"]] call cvo_ula_fnc_register;
-```
+### Additional Functions
+#### [`cvo_ula_fnc_register_cleanup`](/addons/ula/functions/fn_register_cleanup.sqf)
+This function registers a layername, which' objects are to be deleted once a layer has been completely revealed.
 
 ### Additional FUnction: `cvo_ula_fnc_register_cleanup`
 
