@@ -2,7 +2,7 @@ class CfgMarkerClasses
 {
     class CVO
     {
-        displayName = PREFIX;
+        displayName = "CVO";
     };
 };
 class CfgMarkers
