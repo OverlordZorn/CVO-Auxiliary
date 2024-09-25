@@ -2,15 +2,18 @@
 
 /*
 * Author: Zorn
-* [Description]
+* This function registers a layername, which objects are to be deleted once a layer to be revealed has been completely revealed.
+* Useful for large compositions. The _deleteLayer can contain flags or other marker objects to indicate the "building zone" towards the players.
 *
 * Arguments:
+* 0 <STRING>    _revealLayer    Layername of the Layer which will be revealed. (Needs to be setup already by cvo_ula_fnc_register)
+* 1 <STRING>    _deleteLayer    Layername of the Layer which will be deleted once _revealLayer has been fully revealed.
 *
 * Return Value:
 * None
 *
 * Example:
-* ['something', player] call cvo_fnc_sth
+* ['something', player] call cvo_ula_fnc_register_cleanup
 *
 * Public: Yes
 */
