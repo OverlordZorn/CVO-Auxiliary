@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /* WIP
  * Author: Zorn
  * Plays music if the queue is empty, if not, it will be put the track into the queue
