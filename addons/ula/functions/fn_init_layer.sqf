@@ -27,7 +27,7 @@ if (_gMap isEqualTo "404") then { _gMap = createHashMap; };
 
 if (_layerName in _gMap) exitWith { diag_log format ['[CVO](debug)(fn_init_layer) EXIT - _layerName: %1 already in _gMap: %2',_layerName, _gMap]; };
 
-private _varName = [PREFIX, COMPONENT,"remaining", _layerName] joinString "_";
+private _varName = ["cvo", "ula","remaining", _layerName] joinString "_";
 
 private _objects = getMissionLayerEntities _layerName select 0;
 
