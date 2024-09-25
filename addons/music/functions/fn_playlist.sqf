@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /* WIP
  * Author: Zorn
  * Plays random music from premade playlists
