@@ -45,7 +45,7 @@ private _layerMap = createHashMapFromArray [
     ["visibleObjects", []],
     ["hiddenObjects", _objects],
     ["pubVarName", _varName],
-    ["medianPosASL", [_objects] call cvo_common_fnc_getMedianPosASL]
+    ["medianPosASL", [_objects] call EFUNC(common,getMedianPosASL)]
 ];
 
 
