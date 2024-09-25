@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 addMissionEventHandler ["GroupCreated", {
 	params ["_group"];
     
