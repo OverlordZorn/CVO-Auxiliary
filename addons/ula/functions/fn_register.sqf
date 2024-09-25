@@ -3,9 +3,15 @@
 
 /*
 * Author: Zorn
+* This function will do all the setup needed. It is to be apllied on the box "that carries the building supplies".
+*
 * Create an action on an object to simulate the building of "something", by unhiding a layer based on the name of the layer.
 *
 * Arguments:
+* 0 <OBJECT>             _object        the object that acts as the "building supplies crate" which has the action attached to it.
+* 1 <ARRAY of STRINGS>   _layers        Array of Layernames: One crate can be used for multiple layers.
+* 2 <NUMBER>             _distance      Minimum Distance the Object needs to be from the Median Position of the Layer
+* 3 <NUMBER>             _time          The time it takes per individual entity to be placed.
 *
 * Return Value:
 * None
