@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /*
 * Author: Zorn
 * Adds the CVO Arsenal Interaction to an Object

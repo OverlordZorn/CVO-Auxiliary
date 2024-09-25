@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /*
 Script Runs when the players open the arsenal.
 1.

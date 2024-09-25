@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 if !(hasInterface) exitWith {};
 
 // Once CBA_Settings are initialized, will run the fnc_eventhandler to add/remove the Ace Arsenal closed eventhandler.

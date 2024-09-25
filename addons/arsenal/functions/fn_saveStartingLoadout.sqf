@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /*
 * Author: Zorn
 * Function to store players starting kit as the variable on the player object - intended to be exeucted at the beginning of the mission.

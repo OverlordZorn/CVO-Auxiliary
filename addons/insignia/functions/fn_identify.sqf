@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /*
 * Author: Zorn
 * Function to identify Insignia based on Groupname, Leadership Position and Trait (medic, Engineer)
