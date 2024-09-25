@@ -9,7 +9,14 @@ Multiple people can work together and build things faster.
 ## Showcase
 [![Showcase](https://img.youtube.com/vi/buWmeaKfe0M/0.jpg)](https://www.youtube.com/watch?v=buWmeaKfe0M)
 
-## Parameters
+
+## How to Use
+
+### Main Function: `cvo_ula_fnc_register`
+
+This function will do all the setup needed. It is to be apllied on the box "that carries the building supplies".
+
+#### Parameters
 0 - Object: the object that acts as the "building supplies crate" which has the action attached to it.
 1 - Array of Layernames: One crate can be used for multiple layers.
 2 - Distance: Minimum Distance the Object needs to be from the Median Position of the Layer
@@ -24,10 +31,14 @@ params [
 ];
 ```
 
-## Example
+#### Example
 ```sqf
-[this, ["SIGINT at Comms Alpha", "SIGINT at Comms Alpha"]] call cvo_ula_fnc_register_object;
+[this, ["SIGINT at Comms Alpha", "SIGINT at Comms Alpha"]] call cvo_ula_fnc_register;
 ```
+
+### Additional FUnction: `cvo_ula_fnc_register_cleanup`
+
+This function controls 
 
 ## Notes:
 
