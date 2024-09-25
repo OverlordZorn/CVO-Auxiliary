@@ -60,7 +60,7 @@ params [
 ];
 
 // Create Parent Node (if needed)
-[_target] call CVO_CSC_fnc_createNode;
+[_target] call FUNC(createNode);
 
 // Prep
 private _actionID = ["CVO","CSC",_title splitString " " joinString "_"] joinString "_";
@@ -91,7 +91,7 @@ switch (typeName _target) do {
 
 
 // Register EventHandler
-[_EH_ID, { _this call CVO_CSC_fnc_spawnCSC }] call CBA_fnc_addEventHandler;
+[_EH_ID, FUNC(spawnCSC)] call CBA_fnc_addEventHandler;
 
 
 diag_log format ["[CVO](debug)(fn_addCSC) Established: %2 => %1", _target, _title];

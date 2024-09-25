@@ -27,7 +27,7 @@ private _code = {
 	private _delay = missionNamespace getVariable ["CVO_SET_savePlayerLoadoutAtStartDelay", 5];
 
 	private _saveLoadout = {
-		player setVariable ["CVO_Loadout", getUnitLoadout player];
+		player setVariable [QGVAR(Loadout), getUnitLoadout player];
 		diag_log "[CVO][Arsenal] player's CVO_Loadout saved";
 	};
 

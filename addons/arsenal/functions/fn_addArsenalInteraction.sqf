@@ -24,10 +24,10 @@ params [
 if (_input isEqualTo objNull) exitWith {};
 
 _action = [
-	"CVO_Arsenal_Open",				// ActionName
+	QGVAR(open),					// ActionName
 	"Open the Arsenal",				// Name of the Action shown in the menu
 	"\A3\ui_f\data\igui\cfg\simpleTasks\types\rifle_ca.paa",		// Icon
-	{[] call cvo_arsenal_fnc_open},		// Statement (The actual Code)
+	{[] call FUNC(open)},			// Statement (The actual Code)
 	{true}							// condition
 ] call ace_interact_menu_fnc_createAction;
 
