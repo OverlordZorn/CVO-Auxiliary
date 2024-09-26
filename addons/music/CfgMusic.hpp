@@ -177,4 +177,55 @@ class CfgMusic
         musicClass = "Others";
         duration = 95;
     };
+
+    // Saharan Cellphone Music
+    class Amanar_Alghafiat
+    {
+        name = "Amanar - Alghafiat";
+        sound[] = { PATH_TO_ADDON_3(data,saharan_cellphones,Amanar - Alghafiat.ogg), "db + 0" , 1.0 };
+        musicClass = "SaharanCellphones";
+        duration = 397;
+    };
+    class EtrandeLAir_Erkazamane
+    {
+        name = "Etran de LAir - Erkazamane";
+        sound[] = { PATH_TO_ADDON_3(data,saharan_cellphones,Etran de LAir - Erkazamane.ogg), "db + 0" , 1.0 };
+        musicClass = "SaharanCellphones";
+        duration = 253;
+    };
+    class EtrandeLAir_TouboukIneChihoussay
+    {
+        name = "Etran de LAir - Toubouk Ine Chihoussay";
+        sound[] = { PATH_TO_ADDON_3(data,saharan_cellphones,Etran de LAir - Toubouk Ine Chihoussay.ogg), "db + 0" , 1.0 };
+        musicClass = "SaharanCellphones";
+        duration = 257;
+    };
+    class Tinariwen_GroupAnmataff
+    {
+        name = "Tinariwen - Group Anmataff";
+        sound[] = { PATH_TO_ADDON_3(data,saharan_cellphones,Tinariwen - Group Anmataff.ogg), "db + 0" , 1.0 };
+        musicClass = "SaharanCellphones";
+        duration = 376;
+    };
+    class Tinariwen_Nannuflay
+    {
+       name = "Tinariwen - Nannuflay";
+       sound[] = { PATH_TO_ADDON_3(data,saharan_cellphones,Tinariwen - Nannuflay.ogg), "db + 0" , 1.0 };
+       musicClass = "SaharanCellphones";
+       duration = 251;
+    };
+    class Tinariwen_Sastanaqqam
+    {
+        name = "Tinariwen - Sastanaqqam";
+        sound[] = { PATH_TO_ADDON_3(data,saharan_cellphones,Tinariwen - Sastanaqqam.ogg), "db + 0" , 1.0 };
+        musicClass = "SaharanCellphones";
+        duration = 202;
+    };
+    class Tinariwen_TenereTaqqal
+    {
+        name = "Tinariwen - Tenere Taqqal";
+        sound[] = { PATH_TO_ADDON_3(data,saharan_cellphones,Tinariwen - Tenere Taqqal.ogg), "db + 0" , 1.0 };
+        musicClass = "SaharanCellphones";
+        duration = 271;
+    };
 };
