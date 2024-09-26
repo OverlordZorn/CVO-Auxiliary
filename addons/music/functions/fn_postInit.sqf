@@ -168,7 +168,6 @@ _action = [
     "\A3\ui_f\data\igui\cfg\simpleTasks\types\documents_ca.paa",    // Icon
     {},                                                             // Statement
     {true},                                                         // Condition
-    [],                                                             // Parameters
     _insertChildren                                                 // Insert children Code
 ] call ace_interact_menu_fnc_createAction;
 
