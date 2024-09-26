@@ -88,7 +88,7 @@ if (hasInterface) then {
 // ############################################################
 // ###### Adds Zeus Parent Node
     _action = [
-        "cvo_music_zeus_node",
+        QGVAR(zeus_node),
         "CVO Music",
         "z\cvo\addons\branding\data\Raven_Voron_256.paa",
         {},
@@ -99,11 +99,11 @@ if (hasInterface) then {
 // ###### FadeStop
     _action = ["cvo_music_zeus_fadeFade","FadeStop Next","\A3\ui_f\data\igui\cfg\simpleTasks\types\exit_ca.paa",
     { [QGVAR(EH_play), "fadeStop"] call CBA_fnc_serverEvent; },{true}] call ace_interact_menu_fnc_createAction;
-    [["ACE_ZeusActions","cvo_music_zeus_node"], _action] call ace_interact_menu_fnc_addActionToZeus;
+    [["ACE_ZeusActions",QGVAR(zeus_node)], _action] call ace_interact_menu_fnc_addActionToZeus;
 
     _action = ["cvo_music_zeus_fadeFadeClear","FadeStop and Clear the Queue","\A3\ui_f\data\igui\cfg\simpleTasks\types\exit_ca.paa",
     { [QGVAR(EH_play), "fadeStopClear"] call CBA_fnc_serverEvent; },{true}] call ace_interact_menu_fnc_createAction;
-    [ ["ACE_ZeusActions","cvo_music_zeus_node"], _action] call ace_interact_menu_fnc_addActionToZeus;
+    [ ["ACE_ZeusActions",QGVAR(zeus_node)], _action] call ace_interact_menu_fnc_addActionToZeus;
 
 // ############################################################
 // ###### Adds Zeus Playlist Node
@@ -126,7 +126,7 @@ private _insertChildren = {
         private _actionName = _x splitString " " joinString "_";
 
         private _childStatement = {
-            [QGVAR(EH_play), _this] call CBA_fnc_serverEvent;
+            // [QGVAR(EH_play), _this] call CBA_fnc_serverEvent; 
         };
 
         private _action = [
@@ -166,11 +166,11 @@ _action = [
     QGVAR(zeus_playlists),                                          // name
     "Playlists",                                                    // title
     "\A3\ui_f\data\igui\cfg\simpleTasks\types\documents_ca.paa",    // Icon
-    {},                                                             // Statement
+    {},                                                           // Statement
     {true},                                                         // Condition
     _insertChildren                                                 // Insert children Code
 ] call ace_interact_menu_fnc_createAction;
 
-[["ACE_ZeusActions","cvo_music_zeus_node"], _action] call ace_interact_menu_fnc_addActionToZeus;
+[["ACE_ZeusActions",QGVAR(zeus_node)], _action] call ace_interact_menu_fnc_addActionToZeus;
 
 
