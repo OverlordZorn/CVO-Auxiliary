@@ -43,7 +43,15 @@ private _algorithm = {
 _objects = [_objects, [], _algorithm, "ASCEND"] call BIS_fnc_sortBy;
  
 
-{ _x hideObjectGlobal true } forEach _objects;
+{ 
+    _x hideObjectGlobal true;
+    _x setVariable [QGVAR(simEnabled), simulationEnabled _x];
+    _x enableSimulationGlobal false;
+
+    _x setVariable [QGVAR(inflamed), inflamed _x];
+    _x inflame false;
+
+} forEach _objects;
 
 missionNamespace setVariable [_varName, count _objects, true];
 
