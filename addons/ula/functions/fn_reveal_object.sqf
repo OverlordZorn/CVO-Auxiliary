@@ -40,7 +40,12 @@ private _hiddenObjects = _layerMap get "hiddenObjects";
 private _visibleObjects = _layerMap get "visibleObjects";
 
 private _obj = _hiddenObjects deleteAt 0;
+
 _obj hideObjectGlobal false;
+_obj enableSimulationGlobal (_obj getVariable [QGVAR(simEnabled), false]);
+_obj inflame (_obj getVariable [QGVAR(inflamed), false]);
+
+
 _visibleObjects pushBack _obj;
 private _count = count _hiddenObjects;
 
