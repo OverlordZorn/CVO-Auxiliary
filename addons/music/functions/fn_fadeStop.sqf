@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 /*
  * Author: [Name of Author(s)]
  * To be executed on each client. Saves the current musicVolume, fades the current volume, stops the music then restores the previous musicVolume 
@@ -15,19 +17,23 @@
  * Public: yes
  */
 
+if !(hasInterface) exitWith {};
+
 params [
 	["_fadeTime", 5, [0]]
 ];
 
-if (!isNil "CVO_Music_isFading") exitWith {};
+if (!isNil QGVAR(isFading)) exitWith {};
 
-CVO_Music_isFading = true;
+GVAR(isFading) = true;
 private _savedMusicVolume = musicVolume;
 _fadeTime fadeMusic 0;
 [
-	{	playMusic "";
+	{
+		playMusic "";
 		0 fadeMusic _this;
-		CVO_Music_isFading = nil;	},		// Code
+		GVAR(isFading) = nil;
+	},										// Code
 	_savedMusicVolume,						// Parameters
 	(_fadeTime + 1)							// Time To wait
 ] call CBA_fnc_waitAndExecute;
