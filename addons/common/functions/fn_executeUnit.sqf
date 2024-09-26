@@ -32,4 +32,4 @@ _tgtSide = side _target;
 
 [ { _this#0 setDamage 1; } , [_target], _delay] call CBA_fnc_waitAndExecute;
 
-["cvo_EVENT_executeUnitServer", [_target, _tgtSide] ] call CBA_fnc_ServerEvent;
+[QGVAR(EH_executeUnit), [_target, _tgtSide] ] call CBA_fnc_ServerEvent;
