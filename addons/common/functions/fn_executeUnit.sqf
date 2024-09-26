@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 params  [
     ["_target", objNull,    [objNull]   ],
     ["_dir",    "RND",      [0,""]      ],
