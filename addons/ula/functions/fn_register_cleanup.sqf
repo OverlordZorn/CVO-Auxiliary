@@ -13,7 +13,7 @@
 * None
 *
 * Example:
-* ['something', player] call cvo_ula_fnc_register_cleanup
+* ["MyBunker", "MyBunkerMarkerFlags"] call cvo_ula_fnc_register_cleanup
 *
 * Public: Yes
 */
