@@ -23,7 +23,7 @@ When Action is being executed, an AmmoCrate with customizable Content is being s
 - Auto Assigns Medic and Engineer Roles based on ACE Traits
 - Supports Steam64 IDs
 
-## [BigBoom - big explosion with a lasting fire/light/smoke effect](/addons/bigBoom/readme.md)
+## [BigBoom - big explosion with a lasting fire/light/smoke effect](/addons/bigboom/readme.md)
 
 # External Addons
 ## [Dyn_Groups by Gruppe Adler](/addons/dyn_groups/readme.md)
