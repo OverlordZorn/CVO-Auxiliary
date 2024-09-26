@@ -31,8 +31,16 @@ private _varName = ["cvo", "ula","remaining", _layerName] joinString "_";
 
 private _objects = getMissionLayerEntities _layerName select 0;
 
+private _algorithm = {
+    getPosASL _x params [ "_xPos","_yPos",["_zPos", 0]];
+    private _score = 0;
+    _score = _score + ceil _zPos * 100000;
+    _score = _score + ceil _yPos * 1;
+    _score
+};
+
 // Sorts objects based of their ASL, from lowest to highest
-_objects = [_objects, [], {(getPosASL _x)#2}, "ASCEND"] call BIS_fnc_sortBy;
+_objects = [_objects, [], _algorithm, "ASCEND"] call BIS_fnc_sortBy;
  
 
 { _x hideObjectGlobal true } forEach _objects;
