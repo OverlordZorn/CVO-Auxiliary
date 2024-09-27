@@ -24,6 +24,9 @@ class CfgMusicClasses
 	{
 		displayName = "Others";
 	};
-
+    class SaharanCellphones
+    {
+        displayName = "Sarahan Cellphones";
+    };
 
 };
