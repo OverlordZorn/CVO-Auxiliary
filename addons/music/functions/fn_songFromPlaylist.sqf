@@ -16,11 +16,9 @@
  * Public: i guess so?
 */
 
-
 params [	["_playlist", "", [""]]		];
 
 if (_playlist == "") exitWith {diag_log "[CVO] [MUSIC] - no playlist defined"};
-
 
 private _map = missionNamespace getVariable [QGVAR(Playlist_HM), "404"];
 if (_map isEqualTo "404") exitWith {};
