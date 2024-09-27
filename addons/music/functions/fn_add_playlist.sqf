@@ -24,12 +24,9 @@ params [
 
 if (_playlistName == "") exitWith {false};
 
-
 // create the Hashmap if it doesnt exist
 private _map = missionNamespace getVariable [QGVAR(Playlist_HM), "404"];
 if (_map isEqualTo "404") then {_map = createHashMap};
-
-
 
 //generates the list of CfgMusic Entries and stores it in the HashMap
 private _allSongs = _map getOrDefault ["allSongs", "404"];
@@ -52,5 +49,7 @@ _playlist = _playlist + _addEntries - _removeEntries;
 _playlist = _playlist arrayIntersect _playlist;
 
 _map set [_playlistName, _playlist];
+
+missionNamespace setVariable [QGVAR(Playlist_HM), _map];
 
 [_playlistName, _playlist]
