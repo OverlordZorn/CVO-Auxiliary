@@ -31,6 +31,22 @@
 
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(EH_MusicStarted), {
+    params ["_musicClassname"];
+
+    GVAR(isPlaying) = true;
+
+    /*
+    private _path = (configFile >> "CfgMusic" >> _musicClassname);
+    _duration = [_path,"duration", 60*15] call BIS_fnc_returnConfigEntry;
+    */
+
+
+
+}] call CBA_fnc_addEventHandler;
+
+
+
 [QGVAR(EH_play), FUNC(play)] call CBA_fnc_addEventHandler;
 [QGVAR(EH_fadeStop), FUNC(fadeStop)] call CBA_fnc_addEventHandler;
 [QGVAR(EH_playMusic), { if !(hasInterface) exitWith {}; playMusic _this; }] call CBA_fnc_addEventHandler;
@@ -58,7 +74,14 @@ if (hasInterface) then {
             default { _musicClassname };
         };
 
-        diag_log format ["[CVO][Music](Started) %1 ## classname: %2", _name, _musicClassname];
+        // Only the client with the oldest Steam64ID will execute the CBA Event to avoid multiple executions
+        private _array = call BIS_fnc_listPlayers apply { getPlayerUID _x };
+        _array sort true;
+       
+        if (getPlayerUID player == _array select 0) then {
+            [QGVAR(EH_MusicStarted), _musicClassname] call CBA_fnc_serverEvent;
+        };
+
         if (SET(displayMusic)) then { systemChat format ["[CVO][Music] Now Playing: %1", _str];	};
         if (SET(displayMusic_LowVolume) && getAudioOptionVolumes#1 < 0.05) 	then {	systemChat format ["[CVO][Music] Your Music Volume is low @ %1%2", floor((getAudioOptionVolumes#1)*1000)/10,"%"];	}; 
     }];
@@ -70,14 +93,9 @@ if (hasInterface) then {
         // Only the client with the oldest Steam64ID will execute the CBA Event to avoid multiple executions
         private _array = call BIS_fnc_listPlayers apply { getPlayerUID _x };
         _array sort true;
-        diag_log format ["[CVO][Music](Stopped) _array:    %1", _array];
-        diag_log format ["[CVO][Music](Stopped) PlayerUID: %1", getPlayerUID player];
         
         if (getPlayerUID player == _array select 0) then {
             [QGVAR(EH_MusicStopped)] call CBA_fnc_serverEvent;
-            diag_log format ["[CVO][Music](Stopped) Making the Call: %1", true];
-        } else {
-            diag_log format ["[CVO][Music](Stopped) Making the Call: %1", false];
         };
     }];
 };
