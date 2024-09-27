@@ -1,5 +1,8 @@
+#include "script_component.hpp"
+
 [
-	"CVO_CBA_musicDisplay",					//    _setting     - Unique setting name. Matches resulting variable name <STRING>
+	
+	QSET(displayMusic),					//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"CHECKBOX",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
 	["Display Music Title","This enables the message of the currently played music title by the CVO Music System"],
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
@@ -11,7 +14,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-	"CVO_CBA_musicDisplayString",					//    _setting     - Unique setting name. Matches resulting variable name <STRING>
+	QSET(displayMusic_Type),					//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"LIST",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
 	["Title or Classname?","Should the message show the Title of the track or its classname?"],
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
@@ -24,7 +27,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-	"CVO_CBA_musicDisplayLow",				//    _setting     - Unique setting name. Matches resulting variable name <STRING>
+	QSET(displayMusic_LowVolume),				//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"CHECKBOX",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
 	["Notify when MusicVolume is very low","This enables a notification when music is played and the clients musicvolume is below 5%"],
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
@@ -36,7 +39,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-	"CVO_CBA_musicDelayMin",				//    _setting     - Unique setting name. Matches resulting variable name <STRING>
+	QSET(delay_min),				//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"SLIDER",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
 	["Minimum Delay","The minimum delay in secounds that has to pass before the next title in the Music Queue will be played"],
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
@@ -48,7 +51,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-	"CVO_CBA_musicDelayRandom",				//    _setting     - Unique setting name. Matches resulting variable name <STRING>
+	QSET(delay_random),				//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"SLIDER",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
 	["Randomized Delay","This number will be added to the Minimum Delay, combined they will result in the maximum delay in secounds that has to pass before the next title in the Music Queue will be played."],
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>

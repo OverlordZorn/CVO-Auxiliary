@@ -1,4 +1,4 @@
-#define _STORM_DEBUG_     // TODO Comment out before big release
+#define _CVO_DEBUG_     // TODO Comment out before big release
 
 
 
@@ -64,7 +64,7 @@
 
 #define ZRN_LOG_MSG(MSG) diag_log (DEBUG_HEADER + " " + QUOTE(MSG))
 
-#ifdef _STORM_DEBUG_
+#ifdef _CVO_DEBUG_
     #define ZRN_SCRIPTNAME(var1) private _fnc_scriptName = Q(var1)
 
     #define ZRN_LOG_MSG_1(MSG,A) diag_log (DEBUG_HEADER + (format [' %1 - A: %2',QUOTE(MSG),RETNIL(A)]))

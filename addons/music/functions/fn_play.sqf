@@ -18,52 +18,51 @@
  * Public: i guess so?
 */
 
-
 params [	
 	["_song", "", [""]]
 ];
 
-if (!isServer) exitWith {	_this remoteExec [QFUNC(play), 2]	};
+if (!isServer) exitWith {	[QGVAR(EH_play), _this] call CBA_fnc_serverEvent;	};
 
-if (_song == "fadeStop") exitWith {
-	if (!CVO_Music_isPLaying) exitWith {};
-	[10] remoteExecCall [QFUNC(fadeStop)];
-};
-if (_song == "fadeStopClear") exitWith {
-	CVO_Music_Queue = [];
-	if (!CVO_Music_isPLaying) exitWith {};
-	[10] remoteExecCall [QFUNC(fadeStop)];
-};
 
-if (_song == "NEXT") then {
-
-	if (count CVO_Music_Queue > 0) then {
-
-		_song = CVO_Music_Queue deleteAt 0;
-		diag_log format ["[CVO][MUSIC](NEXT) %1", _song];
-		diag_log format ["[CVO][MUSIC](updated Queue) %1", CVO_MUSIC_Queue];
-
-	} else {
-
+switch (_song) do {
+	case "fadeStop": {
+		if (GVAR(isPlaying)) then { [QGVAR(EH_fadeStop), 10] call CBA_fnc_globalEvent; };
 		_song = "";
-		diag_log format ["[CVO][MUSIC](NEXT) Queue Empty %1", CVO_MUSIC_Queue];
+	};
+	case "fadeStopClear": {
+		GVAR(Queue) = [];
+		if (GVAR(isPlaying)) then { [QGVAR(EH_fadeStop), 10] call CBA_fnc_globalEvent; };
+		_song = "";
+	};
+	case "NEXT": {
+		if (count GVAR(Queue) > 0) then {
+			_song = GVAR(Queue) deleteAt 0;
+			diag_log format ["[CVO][MUSIC](NEXT) %1", _song];
+			diag_log format ["[CVO][MUSIC](updated Queue) %1", GVAR(Queue)];
+		} else {
+			diag_log format ["[CVO][MUSIC](NEXT) Queue Empty %1", GVAR(Queue)];
+			_song = "";
+		};
 	};
 };
 
-if (_song == "") exitWith {	diag_log "[CVO][MUSIC](Play) no song defined"	};
+if (_song isEqualTo "") exitWith { diag_log "[CVO][MUSIC](Play) no song defined" };
 
 // Plays the song on all clients
 
-if (CVO_Music_isPLaying) then {
+if (GVAR(isPlaying)) then {
 
-	CVO_Music_Queue pushBack _song;
+	GVAR(Queue) pushBack _song;
 	diag_log format ["[CVO][MUSIC](Play) Added to Queue: %1", _song];
 
 } else {
 
-	_song remoteExec ["playMusic",0,"CVO_Music_JIP_playMusic"];
-	CVO_Music_isPLaying = true;
-	diag_log format ["[CVO][MUSIC](Play) Playing: %1 - Queue: %2", _song, CVO_MUSIC_Queue];
+	
+	[QGVAR(EH_playMusic), _song, QGVAR(JIP_playMusic)] call CBA_fnc_globalEventJIP;
+	
+	GVAR(isPlaying) = true;
+	diag_log format ["[CVO][MUSIC](Play) Playing: %1 - Queue: %2", _song, GVAR(Queue)];
 
 };
 
