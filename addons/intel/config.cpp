@@ -1,14 +1,18 @@
 #include "script_component.hpp"
 
-class CfgPatches
-{
-    class ADDON
-    {
-        // Meta information for editor
-        name = "CVO Intel";
-        authors[] = {"Overlord Zorn"};
-        url = "http://chronivoron.net";
+class CfgPatches {
+	class ADDON {
 
+        // Meta information for editor
+		name = ADDON_NAME;
+		author = "$STR_cvo_Author";
+        authors[] = {"OverlordZorn [CVO]"};
+		
+        url = "$STR_cvo_URL";
+
+		VERSION_CONFIG;
+
+        // Addon Specific Information
         // Minimum compatible version. When the game's version is lower, pop-up warning will appear when launching the game.
         requiredVersion = 2.0;
 

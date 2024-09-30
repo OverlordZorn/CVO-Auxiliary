@@ -53,6 +53,10 @@
 #define QCVAR(var1) QUOTE(CVAR(var1))
 #define QQCVAR(var1) QUOTE(QCVAR(var1))
 
+
+// CfgPatches Stuff
+#define ADDON_NAME Q(PREFIX COMPONENT_COMPONENT_BEAUTIFIED)
+
 // Paths
 #define PATH_TO_FUNC QUOTE(\MAINPREFIX\PREFIX\addons\COMPONENT\functions)
 #define PATH_TO_ADDON(var1) QUOTE(\MAINPREFIX\PREFIX\addons\COMPONENT\var1)
