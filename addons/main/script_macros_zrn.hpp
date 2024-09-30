@@ -63,7 +63,7 @@
 
 // XEH_preInit Stuff
 #define XEH_PREINIT_CLASS GVAR(CBA_Settings_XHE_PreInit)
-#define XEH_PREINIT_INIT QUOTE(call compoile preprocessFileLineNumbers QQPATH_TO_ADDON(XEH_preInit.sqf))
+#define XEH_PREINIT_INIT QUOTE(call compile preprocessFileLineNumbers QQPATH_TO_ADDON(XEH_preInit.sqf))
 
 // Debug
 #define DEBUG_HEADER format [QUOTE([PREFIX][COMPONENT](%1)),_fnc_scriptName]
