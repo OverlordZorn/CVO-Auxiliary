@@ -33,5 +33,5 @@ class CfgPatches {
 
 #include "CfgFunctions.hpp"
 #include "CfgUnitInsignia.hpp"
-#include "CfgExtendedEventHandlers.hpp"
+#include "XEH_preInit.hpp"
 
