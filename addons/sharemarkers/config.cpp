@@ -2,7 +2,7 @@
 
 class CfgPatches {
 
-	class CVO_Rockslide
+	class ADDON
 	{
 		// Meta information for editor
         name = "CVO shareMarkers";
@@ -33,3 +33,4 @@ class CfgPatches {
 };
 
 #include "CfgFunctions.hpp"
+#include "XEH_preInit.hpp"

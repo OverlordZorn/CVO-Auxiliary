@@ -1,5 +1,5 @@
-#define COMPONENT rockslide
-#define COMPONENT_BEAUTIFIED rockslide
+#define COMPONENT sharemarkers
+#define COMPONENT_BEAUTIFIED shareMarkers
 
 
 #include "\z\cvo\addons\main\script_mod.hpp"
