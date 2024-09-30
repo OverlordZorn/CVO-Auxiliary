@@ -18,7 +18,7 @@ class CfgFunctions
 		class Arsenal_GreenMag
 		{
 			file = PATH_TO_FUNC;
-			requiredAddons[] = { "greenmag_main" };
+			requiredAddons[] = {"cvo_main",  "greenmag_main" };
 
 
 			class greenmag_tab { postInit = 1; };

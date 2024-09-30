@@ -1749,7 +1749,7 @@ Author:
         units[] = {}; \
         weapons[] = {}; \
         requiredVersion = REQUIRED_VERSION; \
-        requiredAddons[] = {}; \
+        requiredAddons[] = {"cvo_main"}; \
         version = VERSION; \
 }
 
