@@ -6,7 +6,7 @@ class CfgPatches {
 	{
 		// Meta information for editor
         name = "CVO shareMarkers";
-		version = "1.0.0";
+		version = "1.0";
 
 		author = "Overlord Zorn [CVO]";
 		authors[] = {"Overlord Zorn [CVO]"};
