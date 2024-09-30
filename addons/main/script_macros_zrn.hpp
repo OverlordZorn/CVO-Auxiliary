@@ -33,15 +33,6 @@
 #define QPFUNC(var1) QUOTE(PFUNC(var1))
 #define QQPFUNC(var1) QUOTE(QPFUNC(var1))
 
-// Short Prefix Variable
-#ifndef SHORT_PREFIX
-    #define SHORT_PREFIX cvo
-#endif
-#define SPVAR(var1) DOUBLES(SHORT_PREFIX,var1)
-#define QSPVAR(var1) QUOTE(SPVAR(var1))
-#define QQSPVAR(var1) QUOTE(QSPVAR(Qvar1))
-
-
 
 // Prefix Variables
 #define PVAR(var1) DOUBLES(PREFIX,var1)
@@ -55,7 +46,14 @@
 
 
 // CfgPatches Stuff
-#define ADDON_NAME Q(PREFIX COMPONENT_COMPONENT_BEAUTIFIED)
+#ifndef PREFIX_BEAUTIFIED
+    #define PREFIX_BEAUTIFIED PREFIX
+#endif
+#ifndef COMPONENT_BEAUTIFIED
+    #define COMPONENT_BEAUTIFIED COMPONENT
+#endif
+
+#define ADDON_NAME Q(PREFIX_BEAUTIFIED COMPONENT_BEAUTIFIED)
 
 // Paths
 #define PATH_TO_FUNC QUOTE(\MAINPREFIX\PREFIX\addons\COMPONENT\functions)
@@ -64,10 +62,6 @@
 #define PATH_TO_ADDON_3(var1,var2,var3) QUOTE(\MAINPREFIX\PREFIX\addons\COMPONENT\var1\var2\var3)
 
 #define QQPATH_TO_ADDON(var1) Q(QUOTE(\MAINPREFIX\PREFIX\addons\COMPONENT\var1))
-
-// XEH_preInit Stuff
-#define XEH_PREINIT_CLASS GVAR(CBA_Settings_XHE_PreInit)
-#define XEH_PREINIT_INIT QUOTE(call compile preprocessFileLineNumbers QQPATH_TO_ADDON(XEH_preInit.sqf))
 
 // Debug
 #define DEBUG_HEADER format [QUOTE([PREFIX][COMPONENT](%1)),_fnc_scriptName]
