@@ -59,6 +59,12 @@
 #define PATH_TO_ADDON_2(var1,var2) QUOTE(\MAINPREFIX\PREFIX\addons\COMPONENT\var1\var2)
 #define PATH_TO_ADDON_3(var1,var2,var3) QUOTE(\MAINPREFIX\PREFIX\addons\COMPONENT\var1\var2\var3)
 
+#define QQPATH_TO_ADDON(var1) Q(QUOTE(\MAINPREFIX\PREFIX\addons\COMPONENT\var1))
+
+// XEH_preInit Stuff
+#define XEH_PREINIT_CLASS GVAR(CBA_Settings_XHE_PreInit)
+#define XEH_PREINIT_INIT QUOTE(call compoile preprocessFileLineNumbers QQPATH_TO_ADDON(XEH_preInit.sqf))
+
 // Debug
 #define DEBUG_HEADER format [QUOTE([PREFIX][COMPONENT](%1)),_fnc_scriptName]
 
