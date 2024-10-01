@@ -26,8 +26,6 @@ if !(_markerName in allMapMarkers) then {
     createMarkerLocal [_markerName, [0,0,0], _markerChannel, _obj];
 };
 
-if ( count (_hmo get "Polyline") == 0 ) then { _hmo deleteAt "Polyline"};
-
 {
     switch (_x) do {
         case "Alpha":        { _markerName setMarkerAlphaLocal    _y };

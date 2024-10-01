@@ -23,6 +23,8 @@ private _requester = _allMarkersHashMap deleteAt "requester";
 private _provider = _allMarkersHashMap deleteAt "provider";
 private _type = _allMarkersHashMap deleteAt "type";
 
+
+
 {
     [_y] call FUNC(applyMarkerData);
 } forEach _allMarkersHashMap;

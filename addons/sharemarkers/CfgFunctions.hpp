@@ -12,7 +12,7 @@ class CfgFunctions
             class getMarkerData {};
 
             class request {};
-            class offer {};
+            class process {};
             class recieve {};
         };
     };
