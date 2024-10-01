@@ -6,10 +6,14 @@ class CfgFunctions
         {
 
             file = PATH_TO_FUNC;
+            
+            class preInit { preInit = 1; };
 
-            class donor {};
-            class reciever {};
+            class getMarkerData {};
 
+            class request {};
+            class offer {};
+            class recieve {};
         };
     };
 };

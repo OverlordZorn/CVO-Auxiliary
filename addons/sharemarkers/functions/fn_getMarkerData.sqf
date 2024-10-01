@@ -22,20 +22,20 @@ params [
 // If polyline marker is not used, then markerPolyline returns an empty array
 
 private _marker = createHashMapFromArray [
-    ["isPolyline",          _isPolyline],
-    ["markerName",          _markerName],
-    ["markerAlpha",         markerAlpha _markerName],
-    ["markerBrush",         markerBrush _markerName],
-    ["markerChannel",       markerChannel _markerName],
-    ["markerColor",         markerColor _markerName],
-    ["markerDir",           markerDir _markerName],
-    ["markerDrawPriority",  markerDrawPriority _markerName],
-    ["markerPolyline",      markerPolyline _markerName],
-    ["markerPos",           markerPos _markerName],
-    ["markerShadow",        markerShadow _markerName],
-    ["markerShape",         markerShape _markerName],
-    ["markerSize",          markerSize _markerName],
-    ["markerText",          markerText _markerName],
-    ["markerType",          markerType _markerName]
+    ["Name",          _markerName],
+    ["Alpha",         markerAlpha _markerName],
+    ["Brush",         markerBrush _markerName],
+    ["Channel",       markerChannel _markerName],
+    ["Color",         markerColor _markerName],
+    ["Dir",           markerDir _markerName],
+    ["DrawPriority",  markerDrawPriority _markerName],
+    ["Polyline",      markerPolyline _markerName],
+    ["Pos",           markerPos _markerName],
+    ["Shadow",        markerShadow _markerName],
+    ["Shape",         markerShape _markerName],
+    ["Size",          markerSize _markerName],
+    ["Text",          markerText _markerName],
+    ["Type",          markerType _markerName]
 ];
+
 _marker

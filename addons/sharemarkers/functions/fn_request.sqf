@@ -30,7 +30,5 @@ if !(_type in ["ALL", "ALLPLAYERS", "ONLYTHIS"]) exitWith {};
 
 private _requester = _player;
 private _provider = _target;
-private _requester_id = owner _player;
-private _provider_id = owner _target;
 
-[QGVAR(EH_1_initial_request), [_type, _requester, provider, _requester_id, _provider_id], _target] call CBA_fnc_targetEvent;
+[QGVAR(EH_1_request), [_requester, provider, _type], _provider] call CBA_fnc_targetEvent;

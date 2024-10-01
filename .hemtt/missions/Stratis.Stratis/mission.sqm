@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=73;
+		nextID=74;
 	};
 	class Camera
 	{
 		pos[]={3047.1975,215.71062,3945.6492};
-		dir[]={0.89911544,-0.39744553,0.18359034};
-		up[]={0.38942406,0.91761732,0.079516925};
-		aside[]={0.20006968,-1.2552482e-007,-0.97982264};
+		dir[]={0.89908087,-0.39743024,0.18358344};
+		up[]={0.38939551,0.9176324,0.079510719};
+		aside[]={0.20006208,7.4505806e-009,-0.9797833};
 	};
 };
 binarizationWanted=0;
@@ -59,7 +59,7 @@ addons[]=
 	"A3_Weapons_F",
 	"A3_Characters_F_Enoch_Facewear",
 	"A3_Characters_F_Enoch",
-	"cvo_branding",
+	"CVO_branding",
 	"A3_Ui_F",
 	"A3_Modules_F_Curator_Curator"
 };
@@ -127,9 +127,9 @@ class AddonsMetaData
 		class Item8
 		{
 			className="CVO_Compat_RF";
-			name="CVO_Compat_RF";
-			author="Overlord Zorn [CVO]";
-			url="http://chronivoron.net";
+			name="CVO Temporary Reaction Forces Compatibility Patch";
+			author="24th Chorni Voron";
+			url="https://github.com/OverlordZorn/CVO-Auxiliary";
 		};
 		class Item9
 		{
@@ -210,8 +210,8 @@ class AddonsMetaData
 		};
 		class Item20
 		{
-			className="cvo_branding";
-			name="cvo_branding";
+			className="CVO_branding";
+			name="CVO Branding";
 			author="24th Chorni Voron";
 			url="https://github.com/OverlordZorn/CVO-Auxiliary";
 		};
