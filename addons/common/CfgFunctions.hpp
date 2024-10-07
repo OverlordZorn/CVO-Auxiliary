@@ -15,6 +15,8 @@ class CfgFunctions
             class fullHeal {};
 
             class hint_target { preInit = 1; };
+
+            class getWeekday {};
 		};
     };
 };

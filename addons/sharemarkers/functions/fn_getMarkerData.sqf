@@ -23,8 +23,10 @@ params [
 
 private _marker = createHashMapFromArray [ ["Name",_markerName]];
 
-// Adds Data only if it does deviates from default.
 
+_marker set ["Pos", markerPos _markerName];
+
+// Adds Data only if it does deviates from default.
 private _size = markerSize _markerName;
 if (_size isNotEqualTo [1,1]) then {_marker set ["Size", _size]};
 

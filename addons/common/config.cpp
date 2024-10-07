@@ -35,4 +35,6 @@ class CfgPatches {
 
 
 #include "CfgFunctions.hpp"
+#include "XEH\CfgXEH.hpp"
+
 #include "CfgSounds.hpp"

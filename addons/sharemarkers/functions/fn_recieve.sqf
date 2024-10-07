@@ -10,21 +10,23 @@
 * None
 *
 * Example:
-* [_allMarkersHashMap] call cvo_sharemarkers_fnc_recieve;
+* [_markersRecieved] call cvo_sharemarkers_fnc_recieve;
 *
 * Public: Yes
 */
 
-params ["_allMarkersHashMap", "", [createHashMap]];
+params [
+    ["_markersRecieved", "", [createHashMap]]
+];
 
-if (_allMarkersHashMap isEqualTo "") exitWith {};
+if (_markersRecieved isEqualTo "") exitWith {ZRN_LOG_MSG(failed: input failed);};
 
-private _requester = _allMarkersHashMap deleteAt "requester";
-private _provider = _allMarkersHashMap deleteAt "provider";
-private _type = _allMarkersHashMap deleteAt "type";
-
+private _requester = _markersRecieved deleteAt "requester";
+private _provider = _markersRecieved deleteAt "provider";
+private _type = _markersRecieved deleteAt "type";
 
 
 {
+    ZRN_LOG_MSG_1(ForEach,_x);
     [_y] call FUNC(applyMarkerData);
-} forEach _allMarkersHashMap;
+} forEach _markersRecieved;

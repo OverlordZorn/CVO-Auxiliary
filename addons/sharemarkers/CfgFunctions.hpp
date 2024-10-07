@@ -10,6 +10,7 @@ class CfgFunctions
             class preInit { preInit = 1; };
 
             class getMarkerData {};
+            class applyMarkerData {};
 
             class request {};
             class process {};
