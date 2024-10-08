@@ -1,5 +1,5 @@
-#define COMPONENT ~TEMPLATE_ADDON~
-#define COMPONENT_BEAUTIFIED ~TEMPLATE_ADDON~
+#define COMPONENT supplyDrop
+#define COMPONENT_BEAUTIFIED supplyDrop System
 
 
 #include "\z\cvo\addons\main\script_mod.hpp"
