@@ -23,8 +23,8 @@ params [
 
 private _marker = createHashMapFromArray [ ["Name",_markerName]];
 
-
 _marker set ["Pos", markerPos _markerName];
+
 
 // Adds Data only if it does deviates from default.
 private _size = markerSize _markerName;
@@ -59,7 +59,6 @@ if (_Shape isNotEqualTo "ICON") then {_marker set ["Shape", _Shape]};
 
 private _Type = markerType _markerName;
 if (_Type isNotEqualTo "") then {_marker set ["Type", _Type]};
-
 
 
 _marker
