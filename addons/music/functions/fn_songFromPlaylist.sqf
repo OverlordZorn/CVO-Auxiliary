@@ -30,5 +30,5 @@ if ( count _selection == 0 ) exitWith {};
 
 private _song = selectRandom _selection;
 
-format ["Playlist: %1 - Song: %2", _playlist, _song] call FUNC(message);
+
 [QGVAR(EH_play), _song] call CBA_fnc_serverEvent;
