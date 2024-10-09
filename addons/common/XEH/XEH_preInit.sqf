@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "../script_component.hpp"
 
 [
 	QSET(freezeTime_enabled),				//    _setting     - Unique setting name. Matches resulting variable name <STRING>
