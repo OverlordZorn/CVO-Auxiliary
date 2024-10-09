@@ -33,5 +33,5 @@ private _statement = {
 	diag_log ("[CVO] [INTEL] [FLAGS] (INIT) - completed");
 };
 
-[_condition, _statement, [], 120] call CBA_fnc_waitUntilAndExecute;
+[_condition, _statement, [], 300] call CBA_fnc_waitUntilAndExecute;
 
