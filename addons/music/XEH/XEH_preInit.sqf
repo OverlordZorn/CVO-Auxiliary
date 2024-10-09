@@ -13,7 +13,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-	QSET(delivery_method),					//    _setting     - Unique setting name. Matches resulting variable name <STRING>
+	QSET(message_type),					//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"LIST",									//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
 	["Notifications - Type","Controls how the Notifications are being delivered"],
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
