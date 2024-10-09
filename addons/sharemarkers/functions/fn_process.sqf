@@ -27,15 +27,15 @@ private _selection = switch (_type) do {
 
 if (count _selection == 0) exitWith {};
 
-private _mapMarkers = createHashMap;
+private _mapMarkersHM = createHashMap;
 
-_mapMarkers set ["requester", _requester];
-_mapMarkers set ["provider", _provider];
-_mapMarkers set ["type", _type];
+_mapMarkersHM set ["requester", _requester];
+_mapMarkersHM set ["provider", _provider];
+_mapMarkersHM set ["type", _type];
 
 {
-    _mapMarkers set [_x, [_x] call FUNC(getMarkerData) ];
+    _mapMarkersHM set [_x, [_x] call FUNC(getMarkerData) ];
     
 } forEach _selection;
 
-_mapMarkers
+_mapMarkersHM
