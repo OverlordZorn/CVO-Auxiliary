@@ -31,4 +31,4 @@ if !(_type in ["ALL", "ALLPLAYERS", "ONLYTHIS"]) exitWith {};
 private _requester = _player;
 private _provider = _target;
 
-[QGVAR(EH_1_request), [_requester, provider, _type], _provider] call CBA_fnc_targetEvent;
+[QGVAR(EH_1_request), [_requester, _provider, _type], _provider] call CBA_fnc_targetEvent;
