@@ -45,7 +45,7 @@ if (_entry isEqualTo "404") then {
 
         ["side",            civilian],
 
-        ["isProtected",     false],
+        ["isProtected",     true],
         ["emptyBox",        true],
         ["attachStrobe",    false],
         ["class_strobe",    "ACE_IR_Strobe_Effect"],
