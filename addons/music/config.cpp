@@ -30,7 +30,7 @@ class CfgPatches {
 
 
 #include "CfgFunctions.hpp"
+#include "XEH/CfgXEH.hpp"
+
 #include "CfgMusic.hpp"
 #include "CfgMusicClasses.hpp"
-
-#include "XEH_preInit.hpp"

@@ -69,7 +69,7 @@ if (hasInterface) then {
         _path = (configFile >> "CfgMusic" >> _musicClassname);
         _name = [_path,"name", "Not Found"] call BIS_fnc_returnConfigEntry;
 
-        _str = switch (missionNamespace getVariable [QSET(displayMusic_Type), "NAME"]) do {
+        _str = switch (missionNamespace getVariable [QSET(name_type), "NAME"]) do {
             case "NAME": { _name };
             default { _musicClassname };
         };
@@ -82,8 +82,8 @@ if (hasInterface) then {
             [QGVAR(EH_MusicStarted), _musicClassname] call CBA_fnc_serverEvent;
         };
 
-        if (SET(displayMusic)) then { systemChat format ["[CVO][Music] Now Playing: %1", _str];	};
-        if (SET(displayMusic_LowVolume) && getAudioOptionVolumes#1 < 0.05) 	then {	systemChat format ["[CVO][Music] Your Music Volume is low @ %1%2", floor((getAudioOptionVolumes#1)*1000)/10,"%"];	}; 
+        if (SET(enabled)) then { format ["Now Playing: %1", _str] call FUNC(message); };
+        if (SET(LowVolume) && getAudioOptionVolumes#1 < SET(LowVolume_Threshold)) then { format ["Your Music Volume is low @ %1%2", floor((getAudioOptionVolumes#1)*1000)/10,"%"] call FUNC(message)	}; 
     }];
 
     addMusicEventHandler ["MusicStop", { 
