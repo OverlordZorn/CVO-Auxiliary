@@ -15,19 +15,14 @@
 * Public: Yes
 */
 
-params ["_hmo"]; // Individual Map Marker Data as HMO
+params ["_markerHM"]; // Individual Map Marker Data as HMO
 
-private _markerName = _hmo deleteAt "Name";
-private _markerChannel = _hmo deleteAt "Channel";
-
-ZRN_LOG_2(_markerName,_markerChannel);
+private _markerName = _markerHM deleteAt "Name";
+private _markerChannel = _markerHM deleteAt "Channel";
 
 if !(_markerName in allMapMarkers) then {
     // create not existing map marker.
-    ZRN_LOG_MSG_1(Marker Exists Already:,_markerName);
-    private _obj = [(flatten (_markerName regexFind ["#[0-9]*"])#0 ) trim ["#",1]] call cvo_common_fnc_getplayerIDobject;
-    ZRN_LOG_1(_obj);
-    createMarkerLocal [_markerName, [0,0,0], _markerChannel, _obj];
+    createMarkerLocal [_markerName, [0,0,0], _markerChannel];
 };
 
 {
@@ -46,6 +41,6 @@ if !(_markerName in allMapMarkers) then {
         case "Text":         { _markerName setMarkerTextLocal     _y };
         case "Type":         { _markerName setMarkerTypeLocal     _y };
     };
-} forEach _hmo;
+} forEach _markerHM;
 
 ZRN_LOG_MSG(############# Done #############);
