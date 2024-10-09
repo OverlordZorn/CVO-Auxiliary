@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=73;
+		nextID=74;
 	};
 	class Camera
 	{
-		pos[]={3047.1975,215.71062,3945.6492};
-		dir[]={0.89911544,-0.39744553,0.18359034};
-		up[]={0.38942406,0.91761732,0.079516925};
-		aside[]={0.20006968,-1.2552482e-007,-0.97982264};
+		pos[]={3517.8899,166.53816,2608.4097};
+		dir[]={-0.49986488,-0.55712432,0.66313642};
+		up[]={-0.33535248,0.83042872,0.44488937};
+		aside[]={0.79854679,-6.071059e-08,0.60193467};
 	};
 };
 binarizationWanted=0;
@@ -38,7 +38,6 @@ addons[]=
 	"ace_cargo",
 	"A3_Characters_F_Orange",
 	"RF_Vehicles_Pickup_01",
-	"CVO_Compat_RF",
 	"A3_Props_F_Enoch_Military_Equipment",
 	"A3_Props_F_Enoch_Military_Camps",
 	"A3_Structures_F_Civ_Camping",
@@ -59,7 +58,7 @@ addons[]=
 	"A3_Weapons_F",
 	"A3_Characters_F_Enoch_Facewear",
 	"A3_Characters_F_Enoch",
-	"cvo_branding",
+	"CVO_branding",
 	"A3_Ui_F",
 	"A3_Modules_F_Curator_Curator"
 };
@@ -67,7 +66,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=23;
+		items=22;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -126,103 +125,96 @@ class AddonsMetaData
 		};
 		class Item8
 		{
-			className="CVO_Compat_RF";
-			name="CVO_Compat_RF";
-			author="Overlord Zorn [CVO]";
-			url="http://chronivoron.net";
-		};
-		class Item9
-		{
 			className="A3_Props_F_Enoch";
 			name="Arma 3 Contact Platform - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item10
+		class Item9
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item10
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item12
+		class Item11
 		{
 			className="A3_Props_F_Exp_A";
 			name="Arma 3 Nexus Update - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item12
 		{
 			className="A3_Props_F_Exp";
 			name="Arma 3 Apex - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
+		class Item13
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item14
 		{
 			className="A3_Structures_F_EPB";
 			name="Arma 3 Adapt Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item15
 		{
 			className="A3_Characters_F_AoW";
 			name="Arma 3 Art of War - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item17
+		class Item16
 		{
 			className="A3_Weapons_F_Exp";
 			name="Arma 3 Apex - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item18
+		class Item17
 		{
 			className="cba_jr";
 			name="Community Base Addons - Joint Rails";
 			author="CBA Team";
 			url="https://www.github.com/CBATeam/CBA_A3";
 		};
-		class Item19
+		class Item18
 		{
 			className="A3_Characters_F_Enoch";
 			name="Arma 3 Contact Platform - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item19
 		{
-			className="cvo_branding";
-			name="cvo_branding";
+			className="CVO_branding";
+			name="CVO Branding";
 			author="24th Chorni Voron";
 			url="https://github.com/OverlordZorn/CVO-Auxiliary";
 		};
-		class Item21
+		class Item20
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item22
+		class Item21
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
@@ -564,7 +556,7 @@ class Mission
 					};
 					id=21;
 					type="C_IDAP_Man_AidWorker_02_F";
-					atlOffset=1.5258789e-005;
+					atlOffset=1.5258789e-05;
 				};
 			};
 			class Attributes
@@ -592,7 +584,7 @@ class Mission
 				};
 			};
 			id=19;
-			atlOffset=1.5258789e-005;
+			atlOffset=1.5258789e-05;
 		};
 		class Item12
 		{
@@ -609,7 +601,7 @@ class Mission
 			};
 			id=20;
 			type="C_IDAP_Pickup_water_rf";
-			atlOffset=1.5258789e-005;
+			atlOffset=1.5258789e-05;
 		};
 		class Item13
 		{
@@ -1101,7 +1093,7 @@ class Mission
 					};
 					id=1306;
 					type="Land_TentLamp_01_standing_red_F";
-					atlOffset=6.5326691e-005;
+					atlOffset=6.5326691e-05;
 				};
 				class Item25
 				{
@@ -1293,14 +1285,14 @@ class Mission
 					};
 					id=1322;
 					type="C_Man_casual_7_F";
-					atlOffset=1.2397766e-005;
+					atlOffset=1.2397766e-05;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=1321;
-			atlOffset=1.2397766e-005;
+			atlOffset=1.2397766e-05;
 		};
 		class Item16
 		{
