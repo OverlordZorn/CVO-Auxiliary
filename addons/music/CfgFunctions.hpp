@@ -17,6 +17,7 @@ class CfgFunctions
             class fadeStop {};
 
             class message {};
+            class message_backlog {};
 		};
 	}; 
 };
