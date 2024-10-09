@@ -26,8 +26,8 @@ params ["_entryName", "_aircraft"];
 
 
 private _catalog = missionNamespace getVariable [QGVAR(catalog), "404"];
-if (_catalog isEqualTo "404") exitWith {LOG_MSG(Failed: No Catalog)};
-if !(_entryName in _catalog) exitWith  {LOG_MSG(Failed: Entry Not Found)};
+if (_catalog isEqualTo "404") exitWith {ZRN_LOG_MSG(Failed - No Catalog)};
+if !(_entryName in _catalog) exitWith  {ZRN_LOG_MSG(Failed - Entry Not Found)};
 
 
 private _entry = _catalog get _entryName;
