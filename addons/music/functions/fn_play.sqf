@@ -22,7 +22,7 @@ params [
 	["_song", "", [""]]
 ];
 
-if (!isServer) exitWith {	[QGVAR(EH_play), _this] call CBA_fnc_serverEvent;	};
+if (!isServer) exitWith { [QGVAR(EH_play), _this] call CBA_fnc_serverEvent;	};
 
 
 switch (_song) do {
@@ -54,15 +54,12 @@ if (_song isEqualTo "") exitWith { diag_log "[CVO][MUSIC](Play) no song defined"
 if (GVAR(isPlaying)) then {
 
 	GVAR(Queue) pushBack _song;
-	diag_log format ["[CVO][MUSIC](Play) Added to Queue: %1", _song];
+	
 
 } else {
 
-	
 	[QGVAR(EH_playMusic), _song, QGVAR(JIP_playMusic)] call CBA_fnc_globalEventJIP;
 	
 	GVAR(isPlaying) = true;
-	diag_log format ["[CVO][MUSIC](Play) Playing: %1 - Queue: %2", _song, GVAR(Queue)];
-
+	format ["Now Playing: %1", _song] call FUNC(message);
 };
-
