@@ -43,9 +43,9 @@ if (_entry isEqualTo "404") then {
         ["class_air",       "C_Heli_Light_01_civil_F"],
         ["class_para",      "B_Parachute_02_F"],
 
-        ["side",            CIVILIAN],
+        ["side",            civilian],
 
-        ["isProtected",     false],
+        ["isProtected",     true],
         ["emptyBox",        true],
         ["attachStrobe",    false],
         ["class_strobe",    "ACE_IR_Strobe_Effect"],

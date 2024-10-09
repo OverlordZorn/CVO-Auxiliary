@@ -1,5 +1,3 @@
-#include "../script_component.hpp"
-
 /*
 * Author: Zorn
 * This is purely an example

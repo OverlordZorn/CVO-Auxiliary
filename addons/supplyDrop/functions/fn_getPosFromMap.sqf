@@ -65,6 +65,8 @@ private _code = {
 	openMap [false, false];
 	removeMissionEventHandler ["MapSingleClick", _id_mapClick];
 	missionNamespace setVariable [QGVAR(mapClicked), nil];
+
+	openCuratorInterface;
 };
 private _code_timeout = {
 	params ["_id_mapClick"];
@@ -72,6 +74,8 @@ private _code_timeout = {
 	openMap [false, false];
 	removeMissionEventHandler ["MapSingleClick", _id_mapClick];
 	missionNamespace setVariable [QGVAR(mapClicked), nil];
+
+	openCuratorInterface;
 	
 	MSG_aborted
 };

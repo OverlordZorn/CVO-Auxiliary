@@ -89,4 +89,4 @@ createHashMapFromArray [
     ["attachSmoke",     true],
     ["class_smoke",     "SmokeShellOrange"] // CfgMagazines
 ];
-`/
+*/

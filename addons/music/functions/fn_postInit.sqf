@@ -82,8 +82,9 @@ if (hasInterface) then {
             [QGVAR(EH_MusicStarted), _musicClassname] call CBA_fnc_serverEvent;
         };
 
-        if (SET(enabled)) then { format ["Now Playing: %1", _str] call FUNC(message); };
-        if (SET(LowVolume) && getAudioOptionVolumes#1 < SET(LowVolume_Threshold)) then { format ["Your Music Volume is low @ %1%2", floor((getAudioOptionVolumes#1)*1000)/10,"%"] call FUNC(message)	}; 
+        format ["Now Playing: %1", _str] call FUNC(message);
+
+        if (SET(LowVolume) && getAudioOptionVolumes#1 < SET(LowVolume_Threshold)) then { format ["Low Music Volume: %1%2", floor((getAudioOptionVolumes#1)*1000)/10,"%"] call FUNC(message)	}; 
     }];
 
     addMusicEventHandler ["MusicStop", { 
