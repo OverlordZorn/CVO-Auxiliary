@@ -72,7 +72,7 @@ _endPos = switch true do {
     default { [0,0,0] };
 };
 
-private _wpEnd = _grp AddWaypoint [_endPos, 100];
+private _wpEnd = _grp addWaypoint [_endPos, 100];
 _wpEnd setWaypointStatements ["true", "{deleteVehicle _x} forEach [vehicle this] + thisList"];
 
 
