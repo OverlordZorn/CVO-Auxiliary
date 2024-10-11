@@ -26,3 +26,41 @@ if !(isNil "texture_01") then {
     texture_01 setObjectTexture [0, _texture]; 
 };
 ```
+
+
+```sqf
+
+[ { 
+    
+    _scrambled = [ 
+        "Stprupo eht AIFS", 
+        "eW igbrn aeepc", 
+        "eW ingrb ltiytisba", 
+        "", 
+        "ejectR UAN", 
+        "ltasiatpiC gpis" 
+    ]; 
+
+    _text = [ 
+        "Support the SFIA", 
+        "We bring peace", 
+        "We bring stability", 
+        "", 
+        "Reject UNA", 
+        "Capitalist pigs" 
+    ]; 
+
+    _isTerp = player getVariable ["interpreter", false];
+
+    _text = switch (_isTerp) do {
+        case true:  { _text joinString "\n"; };
+        case false: { _rand joinString "\n"; };
+    };
+
+    _prodText = format ['#(rgb,512,512,3)text(1,1,"VTKSSMASH",0.1,"#ffcc5f","#690000",%1)', _text]; 
+    [_this#0, _prodText, _text] call BIS_fnc_initInspectable; 
+
+ } , [this], 10] call CBA_fnc_waitAndExecute;
+
+
+```
