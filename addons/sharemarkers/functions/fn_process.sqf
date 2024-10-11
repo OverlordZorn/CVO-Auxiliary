@@ -38,4 +38,6 @@ _mapMarkersHM set ["type", _type];
     
 } forEach _selection;
 
+[QGVAR(EH_2_deliver), [_mapMarkersHM], _requester] call CBA_fnc_targetEvent;
+
 _mapMarkersHM
