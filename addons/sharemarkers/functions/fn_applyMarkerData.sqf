@@ -41,6 +41,4 @@ if !(_markerName in allMapMarkers) then {
         case "Text":         { _markerName setMarkerTextLocal     _y };
         case "Type":         { _markerName setMarkerTypeLocal     _y };
     };
-} forEach _markerHM;
-
-ZRN_LOG_MSG(############# Done #############);
+} forEach _markerHM; 
