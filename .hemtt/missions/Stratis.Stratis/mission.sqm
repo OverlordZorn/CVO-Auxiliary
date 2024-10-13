@@ -8,7 +8,7 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=1341;
+		nextID=1342;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=87;
+		nextID=94;
 	};
 	class Camera
 	{
-		pos[]={4388.2974,274.20099,3737.7761};
-		dir[]={-0.30194783,-0.49461707,0.81497329};
-		up[]={-0.17184061,0.869111,0.46380696};
-		aside[]={0.93770909,0,0.3474215};
+		pos[]={3636.6379,191.81441,2449.8418};
+		dir[]={-0.41614109,-0.275359,0.86661524};
+		up[]={-0.119197,0.96133953,0.24822901};
+		aside[]={0.90146464,-7.7598088e-08,0.43287647};
 	};
 };
 binarizationWanted=0;
@@ -64,13 +64,14 @@ addons[]=
 	"ace_field_rations",
 	"RF_Vehicles_Pickup_01",
 	"ace_compat_rf",
-	"ace_compat_rf_realisticnames"
+	"ace_compat_rf_realisticnames",
+	"A3_Props_F_Orange_Civilian_InfoBoards"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=27;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -253,6 +254,13 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item26
+		{
+			className="A3_Props_F_Orange";
+			name="Arma 3 Orange - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -294,7 +302,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=22;
+		items=23;
 		class Item0
 		{
 			dataType="Group";
@@ -1834,6 +1842,23 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item22
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3472.385,145.03896,2643.5481};
+				angles[]={6.2756805,0,0.012496558};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this] call cvo_sharemarkers_fnc_register";
+			};
+			id=1341;
+			type="Land_MapBoard_01_Wall_F";
+			atlOffset=1.276001;
 		};
 	};
 };
