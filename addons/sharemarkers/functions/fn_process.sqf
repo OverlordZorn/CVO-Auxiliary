@@ -16,28 +16,14 @@
 */
 
 
-params ["_requester", "_provider", "_type"];
+params [
+    "_requester",
+    "_provider",
+    ["_filter",     "ALLPLAYERS",   [""]    ]  
+];
 
-private _selection = switch (_type) do {
-    case "ALL": { allMapMarkers };
-    case "ALLPLAYERS": { allMapMarkers select { "_USER_DEFINED" in _x } };
-    case "ONLYTHIS": { allMapMarkers select { "_USER_DEFINED" in _x && {format ["#%1",getPlayerID _provider] in _x} } };
-    default { [] };
-};
+private _markersHM = [_filter, _player] call FUNC(getMarkers);
+if (_markersHM isEqualTo false) exitWith { ZRN_LOG_MSG_1(No markers found,_filter);};
 
-if (count _selection == 0) exitWith {};
 
-private _mapMarkersHM = createHashMap;
-
-_mapMarkersHM set ["requester", _requester];
-_mapMarkersHM set ["provider", _provider];
-_mapMarkersHM set ["type", _type];
-
-{
-    _mapMarkersHM set [_x, [_x] call FUNC(getMarkerData) ];
-    
-} forEach _selection;
-
-[QGVAR(EH_2_deliver), [_mapMarkersHM], _requester] call CBA_fnc_targetEvent;
-
-_mapMarkersHM
+[QGVAR(EH_P2P_2_deliver), [_markersHM], _requester] call CBA_fnc_targetEvent;

@@ -22,13 +22,13 @@
 
 params ["_target", "_player", "_actionParams"];
 _actionParams params [
-    ["_type",       "ONLYTHIS",     [""]        ]
+    ["_filter",       "ONLYTHIS",     [""]        ]
 ];
 
 if !(isPlayer _target) exitWith {};
-if !(_type in ["ALL", "ALLPLAYERS", "ONLYTHIS"]) exitWith {};
+if !(_filter in ["ALL", "ALLPLAYERS", "ONLYTHIS"]) exitWith {};
 
 private _requester = _player;
 private _provider = _target;
 
-[QGVAR(EH_1_request), [_requester, _provider, _type], _provider] call CBA_fnc_targetEvent;
+[QGVAR(EH_P2P_1_request), [_requester, _provider, _filter], _provider] call CBA_fnc_targetEvent;

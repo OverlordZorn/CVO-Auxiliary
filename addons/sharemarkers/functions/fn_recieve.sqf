@@ -23,7 +23,8 @@ if (_markersRecieved isEqualTo "") exitWith {ZRN_LOG_MSG(failed: input failed);}
 
 private _requester = _markersRecieved deleteAt "requester";
 private _provider = _markersRecieved deleteAt "provider";
-private _type = _markersRecieved deleteAt "type";
+private _filter = _markersRecieved deleteAt "filter";
+private _mode = _markersRecieved deleteAt "mode";
 
 
 {
