@@ -32,7 +32,7 @@ if (!(_spawner in _nodeArray)) then
 		"cvo_csc_root",													// Action Name
 		"Take Supply Crate",									// Name for the ACE Interaction Menu
 		"\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa",																// Custom Icon 
-		{""},															// Statement
+		{""},											 				// Statement
 		{true}															// Condition
 	] call ace_interact_menu_fnc_createAction;
 

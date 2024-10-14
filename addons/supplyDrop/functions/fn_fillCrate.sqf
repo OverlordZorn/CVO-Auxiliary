@@ -49,3 +49,6 @@ if (count _backpacks > 0) then {
 };
 
 true
+
+
+
