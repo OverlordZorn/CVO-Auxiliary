@@ -63,7 +63,7 @@ private _highestRankAndSquadsize = (
 
 
 private _notLowestRank = (
-    !_higestRank && 
+    !_highestRank && 
     { rankID (_sortedByRankID # -1) isNotEqualTo (rankID _unit); }
 );
 
