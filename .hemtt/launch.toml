@@ -44,3 +44,7 @@ mission = "bigBoom.Altis"
 [ula]
 extends = "default"
 mission = "ULA-Dedicated-MP-Test.stratis"
+
+[CSC]
+extends = "default"
+mission = "CSC.Altis"
