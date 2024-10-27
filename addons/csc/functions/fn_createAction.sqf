@@ -31,11 +31,12 @@ private _children = {
 
     if (_cat isEqualTo "404") exitWith {};
 
-//    private "_mode";
+    private "_mode";
 
     private _entries = [];
+    /*
     if (typeOf _target isEqualTo "ModuleCurator_F") then {
-//        _mode = "ZEUS";
+        _mode = "ZEUS";
         {
             if (_x isEqualTo "Default Entry") then {continue};
             if (typeName != "HASHMAP") then {continue};
@@ -43,7 +44,7 @@ private _children = {
             if (_y getOrDefault ["airdrop_enabled", false]) then [_entries pushBack _x];
         } forEach _cat;
     } else {
-//        _mode = "NORMAL";
+        _mode = "NORMAL";
         {
             if (_x isEqualTo "Default Entry") then {continue};
             if (typeName != "HASHMAP") then {continue};
@@ -55,6 +56,7 @@ private _children = {
 
         } forEach _cat;
     };
+    */
 
     private _actions = [];
     {
