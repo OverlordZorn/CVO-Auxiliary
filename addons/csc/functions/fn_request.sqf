@@ -2,7 +2,7 @@
 
 /*
 * Author: Zorn
-* Function that will initialize ether the creation of the crate where it is needed or the airDrop feature.
+* Function that will handle the request of the supply crate - ether it gets created "normally" or it will initialise an airdrop.
 *
 * Arguments:
 *
