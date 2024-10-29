@@ -16,6 +16,17 @@
 // For testing purpose
 // ["Test"] call cvo_supplydrop_fnc_register;
 
+/*
+params [
+	["_entryName",  "Default",  	[""]            ],
+	["_items",		[], 			[[]]            ],
+	["_backpacks",	[],				[]	            ],
+	["_hashMap",	"404",		    [createHashMap] ],
+    ["_catName",    "global",       [""]            ]
+];
+*/
+
+
 
 [
     "ACE Medical Box",                                                   // Name
@@ -34,8 +45,8 @@
         ["class_box",       "ACE_medicalSupplyCrate_advanced"],
         ["class_air",       "B_T_VTOL_01_vehicle_F"]
     ]                                                                        // Hashmap of additional parameters that can be changed optionally
-] call cvo_supplyDrop_fnc_register;
-
+] call cvo_csc_fnc_register;
+/*
 [
     "Ammo Supply Box",                                                   // Name
     [
@@ -53,38 +64,5 @@
         //["class_box",       "ACE_medicalSupplyCrate_advanced"],
         ["class_air",       "B_T_VTOL_01_vehicle_F"]
     ]                                                                        // Hashmap of additional parameters that can be changed optionally
-] call cvo_supplyDrop_fnc_register;
-
-/*
-list of all possible additional parameter
-
-createHashMapFromArray [
-
-    ["Name",            ""],
-    ["pos_start",       [0,0,0]],
-
-    ["targetMode",      "MAPCLICK"],
-
-    ["pos_end",         "RETURN"],
-
-    ["drop_alt",        100],
-    ["drop_alt_forced", true],
-
-    ["items",           ""],
-    ["backpacks",       _backpacks],
-
-    ["class_box",       "C_supplyCrate_F"],
-    ["class_air",       "C_Heli_Light_01_civil_F"],
-    ["class_para",      "B_Parachute_02_F"],
-
-    ["side",            CIVILIAN],
-
-    ["isProtected",     false],
-    ["emptyBox",        true],
-    ["attachStrobe",    false],
-    ["class_strobe",    "ACE_IR_Strobe_Effect"],
-
-    ["attachSmoke",     true],
-    ["class_smoke",     "SmokeShellOrange"] // CfgMagazines
-];
-`/
+] call cvo_csc_fnc_register;
+*/
