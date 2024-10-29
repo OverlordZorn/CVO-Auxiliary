@@ -4,8 +4,3 @@
 #define PREFIX_BEAUTIFIED CVO
 
 #include "script_version.hpp"
-
-// #define VERSION MAJOR.MINOR.PATCH
-#define VERSION MAJOR.MINOR
-#define VERSION_AR MAJOR,MINOR,PATCH,BUILD
-#define VERSION_STR MAJOR##.##MINOR##.##PATCH##.##BUILD

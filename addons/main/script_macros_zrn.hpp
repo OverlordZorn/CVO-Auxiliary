@@ -1,5 +1,5 @@
 #ifdef __A3_DEBUG__
-    #define _ZRN_DEBUG_     // TODO Comment out before big release
+    #define _ZRN_DEBUG_
 #endif
 
 // CBA Settings
