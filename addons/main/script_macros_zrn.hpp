@@ -1,6 +1,6 @@
-#define _CVO_DEBUG_     // TODO Comment out before big release
-
-
+#ifdef __A3_DEBUG__
+    #define _ZRN_DEBUG_     // TODO Comment out before big release
+#endif
 
 // CBA Settings
 #define SET(var1) TRIPLES(ADDON,SET,var1)
@@ -26,7 +26,9 @@
 #define Q(var1) QUOTE(var1)
 #define QQ(var1) QQUOTE(var1)
 
-#define QADDON QUOTE(ADDON)
+#define QADDON Q(ADDON)
+#define QPREFIX Q(PREFIX)
+#define QCOMPONENT Q(COMPONENT)
 
 // Prefix Function
 #define PFUNC(var1) TRIPLES(PREFIX,fnc,var1)
@@ -68,7 +70,7 @@
 
 #define ZRN_LOG_MSG(MSG) diag_log (DEBUG_HEADER + " " + QUOTE(MSG))
 
-#ifdef _CVO_DEBUG_
+#ifdef _ZRN_DEBUG_
     #define ZRN_SCRIPTNAME(var1) private _fnc_scriptName = Q(var1)
 
     #define ZRN_LOG_MSG_1(MSG,A) diag_log (DEBUG_HEADER + (format [' %1 - A: %2',QUOTE(MSG),RETNIL(A)]))
