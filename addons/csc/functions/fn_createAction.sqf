@@ -27,7 +27,7 @@ private _children = {
     params ["_target", "_player", "_actionParams"];
     _actionParams params ["_catName"];
 
-    private _cat = missionNamespace getVariable [[PERFIX,COMPONENT,"CAT",_catName] joinString "_", "404"];
+    private _cat = missionNamespace getVariable [[QPREFIX,QCOMPONENT,"CAT",_catName] joinString "_", "404"];
 
     if (_cat isEqualTo "404") exitWith {};
 
@@ -74,10 +74,6 @@ private _children = {
             ,{true}                                                         //  * 4: Condition <CODE>
             ,{}                                                             //  * 5: Insert children code <CODE> (Optional)
             ,_params                                                        //  * 6: Action parameters <ANY> (Optional)
-        //    ,[0,0,0]                                                      //  * 7: Position (Position array, Position code or Selection Name) <ARRAY>, <CODE> or <STRING> (Optional)
-        //    ,20                                                           //  * 8: Distance <NUMBER> (Optional)
-        //    ,[false,false,false,false,false]                              //  * 9: Other parameters [showDisabled,enableInside,canCollapse,runOnHover,doNotCheckLOS] <ARRAY> (Optional)
-        //    ,{}                                                           //  * 10: Modifier function <CODE> (Optional)
         ] call ace_interact_menu_fnc_createAction;
 
         _actions pushBack [_aceAction, [], _target];
@@ -94,10 +90,6 @@ private _aceAction = [
     ,{true}                                                     //  * 4: Condition <CODE>
     ,_children                                                  //  * 5: Insert children code <CODE> (Optional)
     ,_params                                                    //  * 6: Action parameters <ANY> (Optional)
-//    ,[0,0,0]                                                    //  * 7: Position (Position array, Position code or Selection Name) <ARRAY>, <CODE> or <STRING> (Optional)
-//    ,20                                                         //  * 8: Distance <NUMBER> (Optional)
-//    ,[false,false,false,false,false]                            //  * 9: Other parameters [showDisabled,enableInside,canCollapse,runOnHover,doNotCheckLOS] <ARRAY> (Optional)
-//    ,{}                                                         //  * 10: Modifier function <CODE> (Optional)
 ] call ace_interact_menu_fnc_createAction;
 
 

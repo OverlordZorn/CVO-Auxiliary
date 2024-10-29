@@ -21,7 +21,8 @@ params [
 ];
 
 
-private _catalogName = [PERFIX,COMPONENT,"CAT",_catName] joinString "_";
+private _catalogName = [QPREFIX,QCOMPONENT,"CAT",_catName] joinString "_";
+ZRN_LOG_1(_catalogName);
 private  _cat = missionNamespace getVariable [_catalogName, "404"];
 
 if (_cat isEqualTo "404") then {
@@ -29,4 +30,5 @@ if (_cat isEqualTo "404") then {
     _cat set ["Default Entry", [] call FUNC(defaultEntry)];
 };
 
+ZRN_LOG_MSG_1(Catalog Retrieved,_cat);
 _cat

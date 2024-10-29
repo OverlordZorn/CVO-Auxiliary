@@ -28,10 +28,21 @@ params [
 // Verfiy Input
 
 private _failedParams = false;
-{ if ( ! (_x params [ ["", "", [""]], ["", 0,[0] ] ] ) ) then {_failedParams = true}; } forEach _items;
-{ if ( ! (_x params [ ["", "", [""]], ["", 0,[0] ] ] ) ) then {_failedParams = true}; } forEach _backpacks;
 
-if (_failedParams) exitWith {};
+{
+    // Current result is saved in variable _x
+    ZRN_LOG_MSG_1(Validating array,_x);
+    {
+        private _return = _x isEqualTypeParams ["", 0];
+        ZRN_LOG_MSG_2(validating:,_x,_return);
+
+        if ( ! _return ) then { _failedParams = true };
+    } forEach _x;
+    
+} forEach [_items, _backpacks];
+
+
+if (_failedParams) exitWith {ZRN_LOG_MSG(FAILED - ITEM/BACKPACK ARRAY INVALID ENTRY);};
 
 private _cat = [_catName] call FUNC(catalog);
 

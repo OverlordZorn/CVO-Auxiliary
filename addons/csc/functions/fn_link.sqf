@@ -25,14 +25,14 @@ if (_target isEqualTo "404") exitWith {ZRN_LOG_MSG(No target provided);};
 
 
 
-private _cat = missionNamespace getVariable [[PERFIX,COMPONENT,"CAT",_catName] joinString "_", "404"];
+private _cat = missionNamespace getVariable [[QPREFIX,QCOMPONENT,"CAT",_catName] joinString "_", "404"];
 
 if (_cat isEqualTo "404") exitWith {ZRN_LOG_MSG_1(Catalog not found,_catName);};
 
 
 
 private _fn_zeus = {
-    private _hasZeus = missionNamespace getVariable [[PERFIX,COMPONENT,_catName,"zeus"] joinString "_", false];
+    private _hasZeus = missionNamespace getVariable [[PREFIX,COMPONENT,_catName,"zeus"] joinString "_", false];
     if (!_hasZeus) then {
         private _aceAction = [_catName] call FUNC(createAction);
         [ ["ACE_ZeusActions"], _aceAction ] call ace_interact_menu_fnc_addActionToZeus;
