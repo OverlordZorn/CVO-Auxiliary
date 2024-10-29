@@ -13,6 +13,7 @@ Idk. its two new fonts. One is grafitti style, the other is stencil style. Only 
 
 `#(rgb,512,512,3)text(0,0,"shaffilastri",0.3,"#0000ff7f","#ff0000","shaffilastri")`
 
+`#(rgb,512,512,3)text(1,1,"VTKSSMASH",0.25,"#00000000","#690000","No Shooting\nduring\nBriefing\nor Debrief")`
 
 ### Magic of procedural textures
 

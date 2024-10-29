@@ -209,3 +209,26 @@
         "Amanar_Alghafiat"
     ]
 ] call FUNC(add_playlist);
+
+[
+    "Desert Ambient",
+    [
+        "RedDesertSky",
+        "ReplacementSky",
+        "StreetsOfTangier",
+        "Karunesh_Caravanserai",
+        "Desert_Lands",
+        "Nissim_TheGaslampKiller"
+    ]
+] call FUNC(add_playlist);
+
+[
+    "Eerie Ambient",
+    [
+        "Apoptose_Nidstang",
+        "MonasteriumImperi_PaxImperatoris",
+        "Phragments_TheFogsHaveRisen",
+        "Odinn",
+        "BlackTears"
+    ]
+] call FUNC(add_playlist);

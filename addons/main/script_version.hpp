@@ -1,4 +1,4 @@
 #define MAJOR  1
 #define MINOR 2
-#define PATCHLVL 4
+#define PATCH 5
 #define COMMIT empty

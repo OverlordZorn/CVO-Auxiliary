@@ -5,7 +5,7 @@
 
 #include "script_version.hpp"
 
-// #define VERSION MAJOR.MINOR.PATCHLVL
+// #define VERSION MAJOR.MINOR.PATCH
 #define VERSION MAJOR.MINOR
-#define VERSION_AR MAJOR,MINOR,PATCHLVL
+#define VERSION_AR MAJOR,MINOR,PATCH
  
