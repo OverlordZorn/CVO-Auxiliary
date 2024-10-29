@@ -1,3 +1,4 @@
+#include "../../script_component.hpp"
 /*
 * Author: Zorn
 * checks and, if needed, creates ACE Interaction Node for CSC

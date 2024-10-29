@@ -67,7 +67,7 @@ private _children = {
         private _code = { [QGVAR(EH_request), _this] call CBA_fnc_serverEvent; };
         
         private _aceAction = [
-            _entryName splitString " " joinstring "_"                       // * 0: Action name <STRING> 
+            _entryName splitString " " joinString "_"                       // * 0: Action name <STRING> 
             ,_entryName                                                     //  * 1: Name of the action shown in the menu <STRING>
             ,""                                                             //  * 2: Icon <STRING> "\A3\ui_f\data\igui\cfg\simpleTasks\types\backpack_ca.paa"
             ,_code                                                          //  * 3: Statement <CODE>
