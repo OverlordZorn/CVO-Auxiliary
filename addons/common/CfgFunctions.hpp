@@ -13,6 +13,8 @@ class CfgFunctions
             class slingload_cargoOwner {};
 
             class fullHeal {};
+
+            class holdaction_tp {};
 		};
     };
 };
