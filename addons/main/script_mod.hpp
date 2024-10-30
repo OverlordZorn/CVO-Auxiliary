@@ -1,6 +1,6 @@
-#define PREFIX CVO
+#define PREFIX cvo
 #define MAINPREFIX z
 
-#define PREFIX_BEAUTIFIED CVO
+#define PREFIX_BEAUTIFIED cvo
 
 #include "script_version.hpp"
