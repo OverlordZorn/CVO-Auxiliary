@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="cvo-aux">
-     <Package name="branding">
-          <Key ID="STR_CVO_branding_red_display">
-               <Original>Flag (CVO - Red)</Original>
-               <English>Flag (CVO - Red)</English>
-               <German>Flagge (CVO - Rot)</German>
-          </Key>
-          <Key ID="STR_CVO_branding_olive_display">
-               <Original>Flag (CVO - Olive)</Original>
-               <English>Flag (CVO - Olive)</English>
-               <German>Flagge (CVO - Oliv)</German>
-          </Key>
-     </Package>
+    <Package name="branding">
+        <Key ID="STR_CVO_branding_olive_display">
+            <Original>Flag (CVO - Olive)</Original>
+            <English>Flag (CVO - Olive)</English>
+            <German>Flagge (CVO - Oliv)</German>
+        </Key>
+        <Key ID="STR_CVO_branding_red_display">
+            <Original>Flag (CVO - Red)</Original>
+            <English>Flag (CVO - Red)</English>
+            <German>Flagge (CVO - Rot)</German>
+        </Key>
+    </Package>
 </Project>
