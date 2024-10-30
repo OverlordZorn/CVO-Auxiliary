@@ -26,4 +26,4 @@ class CfgFunctions
             class request {};
         };
     };
-};
+};  
