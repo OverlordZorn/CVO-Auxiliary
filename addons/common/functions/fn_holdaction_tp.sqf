@@ -33,17 +33,20 @@ if (isNull _destination) exitWith {ZRN_LOG_MSG_1(FAILED:,_destination)};
 
 private _completion = {
     _this#3 params ["_destination"];
+
+    ace_player allowDamage false;
+
     private _tgtPosASL = getPOSASL _destination;
     private _tgtDIR = getDir _destination;
 
     // elevates the player 10cm above the tgt to avoid falling through the floor
     _tgtPosASL set [2, _tgtPosASL#2 + 0.1];
 
-    ACE_PLAYER setPosASL _tgtPosASL;
-    ACE_PLAYER setDir _tgtDIR;
+    ace_player setPosASL _tgtPosASL;
+    ace_player setDir _tgtDIR;
 
     [ { [QGVAR(holdAction_TP_blackening), true, DURATION * 0.35 ] call BIS_fnc_blackIn; } , [], DURATION * 0.2 ] call CBA_fnc_waitAndExecute;
-
+    [ { ace_player allowDamage true; } , [], 2] call CBA_fnc_waitAndExecute;
     
 };
 
