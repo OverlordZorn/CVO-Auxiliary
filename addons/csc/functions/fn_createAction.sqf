@@ -15,6 +15,13 @@
 * Public: Yes
 */
 
+//////////////////// CONTINUE HERE <---
+// READ and UNDERSTAND
+// ACTION SHALL WORK BASED ON TARGET
+// IF TARGET IS ZEUS - GET ZEUS ACTIONS FROM ARRAY
+// IF TARGET IS OBJECT, CHECK IF THIS OBJECT IS IN THE LINK ARRAY AND RETRIEVE KEYS FROM HASHMAP
+//// IF NOT, CHECK IF CLASSNAME IS IN LINK ARRAY ANS RETRIEVE KEYS FROM HASHMAP
+
 params [
     ["_catName",    "global",   [""]],
     ["_Type",       "",         [""]]
@@ -27,7 +34,7 @@ private _children = {
     params ["_target", "_player", "_actionParams"];
     _actionParams params ["_catName"];
 
-    private _cat = missionNamespace getVariable [[QPREFIX,QCOMPONENT,"CAT",_catName] joinString "_", "404"];
+    private _cat = [_catName] call FUNC(catalog);
 
     if (_cat isEqualTo "404") exitWith {};
 

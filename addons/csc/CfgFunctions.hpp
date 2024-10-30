@@ -17,6 +17,7 @@ class CfgFunctions
             class preInit { preInit = 1; };
 
             class catalog {};
+            class getCatName {};
             class defaultEntry {};
             class createAction {};
 
