@@ -37,7 +37,7 @@ private _fn_zeus = {
     if (!_zeusEnabled) then {
         private _aceAction = [_catName] call FUNC(createAction);
         [ ["ACE_ZeusActions"], _aceAction ] call ace_interact_menu_fnc_addActionToZeus;
-        MissionNamespace setVariable [[_catName,"zeus"] call FUNC(getCatName),true];
+        missionNamespace setVariable [[_catName,"zeus"] call FUNC(getCatName),true];
     };
 };
 
