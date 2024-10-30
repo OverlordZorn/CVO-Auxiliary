@@ -13,3 +13,9 @@ options.ignore = [
     "rankID",
     "groupID"
 ]
+
+[sqf.var_all_caps]
+options.ignore = [
+    "CVO_*", ## Used in cvo arsenal, mainly CVO_A_BASE
+    "IDC_*", ## Used in DynamicGroups - Is a macro, but not defined inside the mod, but within arma. hemtt thinks its a variable.
+]
