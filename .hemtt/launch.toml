@@ -15,6 +15,14 @@ parameters = [
     "-noPauseAudio",
 ]
 
+[Debugger]
+extends = "default"
+workshop = [
+    "1645973522", # Intercept Minimal Dev
+    "1585582292", # Arma Debug Engine
+]
+
+
 [Stratis]
 extends = "default"
 dlc = ["ws","rf"]
@@ -23,7 +31,7 @@ mission = "Stratis.Stratis"
 
 [GreenMag]
 extends = "Stratis"
-workshop = ["2352603233"]
+workshop = ["2352603233"] # Greenmag
 
 [executeUnit]
 extends = "default"
@@ -46,5 +54,6 @@ extends = "default"
 mission = "ULA-Dedicated-MP-Test.stratis"
 
 [CSC]
-extends = "default"
+# extends = "default"
+extends = "Debugger"
 mission = "CSC.Altis"
