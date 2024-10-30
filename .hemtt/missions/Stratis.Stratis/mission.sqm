@@ -8,7 +8,7 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=1341;
+		nextID=1343;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=87;
+		nextID=88;
 	};
 	class Camera
 	{
-		pos[]={4388.2974,274.20099,3737.7761};
-		dir[]={-0.30194783,-0.49461707,0.81497329};
-		up[]={-0.17184061,0.869111,0.46380696};
-		aside[]={0.93770909,0,0.3474215};
+		pos[]={3481.1941,151.60437,2632.4524};
+		dir[]={-0.026475759,-0.47218373,0.88110417};
+		up[]={-0.014181985,0.88150018,0.47197169};
+		aside[]={0.99955106,-9.4787538e-09,0.030034881};
 	};
 };
 binarizationWanted=0;
@@ -56,7 +56,7 @@ addons[]=
 	"A3_Weapons_F",
 	"A3_Characters_F_Enoch_Facewear",
 	"A3_Characters_F_Enoch",
-	"CVO_branding",
+	"cvo_branding",
 	"A3_Ui_F",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Characters_F_Orange",
@@ -64,13 +64,15 @@ addons[]=
 	"ace_field_rations",
 	"RF_Vehicles_Pickup_01",
 	"ace_compat_rf",
-	"ace_compat_rf_realisticnames"
+	"ace_compat_rf_realisticnames",
+	"A3_Structures_F_Mil_Helipads",
+	"A3_Signs_F_Signs_Ad"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=28;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -192,8 +194,8 @@ class AddonsMetaData
 		};
 		class Item17
 		{
-			className="CVO_branding";
-			name="CVO Branding";
+			className="cvo_branding";
+			name="cvo Branding";
 			author="24th Chorni Voron";
 			url="https://github.com/OverlordZorn/CVO-Auxiliary";
 		};
@@ -253,6 +255,20 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item26
+		{
+			className="A3_Structures_F_Mil";
+			name="Arma 3 - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item27
+		{
+			className="A3_Signs_F";
+			name="Arma 3 - Signs";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -294,7 +310,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=22;
+		items=24;
 		class Item0
 		{
 			dataType="Group";
@@ -1829,6 +1845,57 @@ class Mission
 									};
 								};
 							};
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item22
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1801.406,5.5,5549.1279};
+				angles[]={0,5.7652588,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="lz";
+			};
+			id=1341;
+			type="Land_HelipadCircle_F";
+		};
+		class Item23
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3478.8359,144.59428,2644.698};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="[this,lz] call cvo_common_fnc_holdaction_tp;";
+			};
+			id=1342;
+			type="SignAd_SponsorS_ARMEX_F";
+			atlOffset=-0.037002563;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="#(rgb,512,512,3)text(1,1,""VTKSSMASH"",0.25,""#00000000"",""#690000"",""Fasttravel"")";
 						};
 					};
 				};
