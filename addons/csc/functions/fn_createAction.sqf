@@ -27,10 +27,11 @@ params [
     ["_Type",       "",         [""]]
 ];
 
+ZRN_LOG_MSG_1(init,_this);
 
 
-private _params = [_catName];
 private _children = {
+    
     params ["_target", "_player", "_actionParams"];
     _actionParams params ["_catName"];
 
@@ -88,6 +89,7 @@ private _children = {
     } forEach _entries;
 };
 
+private _params = [_catName];
 
 private _aceAction = [
     QGVAR(root)                                                 // * 0: Action name <STRING>
