@@ -46,6 +46,8 @@ params [
         ["class_air",       "B_T_VTOL_01_vehicle_F"]
     ]                                                                        // Hashmap of additional parameters that can be changed optionally
 ] call cvo_csc_fnc_register;
+
+["ZEUS", "ACE Medical Box"] call cvo_csc_link;
 /*
 [
     "Ammo Supply Box",                                                   // Name
