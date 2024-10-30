@@ -47,7 +47,7 @@ params [
     ]                                                                        // Hashmap of additional parameters that can be changed optionally
 ] call cvo_csc_fnc_register;
 
-["ZEUS", "ACE Medical Box"] call cvo_csc_link;
+["ZEUS", "ACE Medical Box"] call cvo_csc_fnc_link;
 /*
 [
     "Ammo Supply Box",                                                   // Name
