@@ -21,4 +21,4 @@
 [QGVAR(EH_request), _this] call CBA_fnc_serverEvent;
 */
 
-[QGVAR(EH_dispatch), FUNC(dispatchAircraft)] call CBA_fnc_addEventHandler;
+[QGVAR(EH_dispatch), FUNC(dispatch)] call CBA_fnc_addEventHandler;

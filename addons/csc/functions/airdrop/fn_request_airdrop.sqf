@@ -15,6 +15,8 @@
 * Public: No
 */
 
+ZRN_LOG_MSG_1(INIT,_this);
+
 params [
     ["_entryName",  "404",      [""]            ],
     ["_catName",    "global",   [""]            ],

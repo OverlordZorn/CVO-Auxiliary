@@ -33,6 +33,9 @@ class CfgFunctions
             class getPosFromMap {};
 			class dispatch {};
             class dropCrate {};
+
+            class request_airdrop {};
+
 		};
 
         class COMPONENT
