@@ -65,9 +65,12 @@ if (_this isEqualTo []) then {
         ["ace_cargo_add_jerrycans", 0],
         ["ace_cargo_add_tracks", 0],
 
+        ["zeus_enabled", true],
 
-        ["airdrop_enabled", true],
+        ["zeus_mode", "AIRDROP"],
+       
         ["airdrop_targetMode", "MAPCLICK"],
+        ["airdrop_deliveryMode", "PARACHUTE"],
 
         ["airframe_class", "C_Heli_Light_01_civil_F"],
         ["airframe_side", civilian],

@@ -33,5 +33,5 @@ if (_cat isEqualTo "404") then {
     ZRN_LOG_MSG_1(catalog established,_catalogName in allVariables missionNamespace);
 };
 
-ZRN_LOG_MSG_1(Catalog Retrieved,_cat);
+ZRN_LOG_MSG_1(Catalog Entries,keys _cat);
 _cat

@@ -16,10 +16,12 @@
 * Public: Yes
 */
 
+ZRN_LOG_MSG_1(INIT,_this);
+
 params [
-    ["_target",      "404",     ["", objNull] ],     // Object, Classname or ZEUS Action
-    ["_entryName",   "Default", [""] ],
-    ["_catName", "global",  [""] ]
+    ["_target",     "404",     ["", objNull] ],     // Object, Classname or ZEUS Action
+    ["_entryName",  "Default", [""]          ],
+    ["_catName",    "global",  [""]          ]
 ];
 
 if (_target isEqualTo "404") exitWith {ZRN_LOG_MSG(No target provided);};

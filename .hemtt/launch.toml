@@ -55,5 +55,5 @@ mission = "ULA-Dedicated-MP-Test.stratis"
 
 [CSC]
 # extends = "default"
-extends = "Debugger"
+extends = "default"
 mission = "CSC.Altis"
