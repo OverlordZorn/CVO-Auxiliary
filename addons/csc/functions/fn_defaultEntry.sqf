@@ -12,7 +12,7 @@
 * Example:
 * ['something', player] call prefix_component_fnc_functionname
 *
-* Public: No
+* Public: Yes
 */
 
 // If there are any parameters provided, consider it the user trying to update the default entry.
@@ -28,10 +28,15 @@ if (_this isEqualTo []) then {
         ["items", []],
         ["backpacks", []],
 
+        ["zeus_enabled", true],
+        ["zeus_mode", "AIRDROP"],
+
+        ["normal_mode", "spawn"],   // currently: "spawn" will spawn the box at pos_spawn
+
         ["box_class", "C_supplyCrate_F"],
         ["box_empty", true],
 
-        ["pos_spawn", [0,0,0]],
+        ["spawn_pos", [0,0,0]],     // can be fixed position[pos2d/3d] or object (helipad, tarp, sth like that) or "REL" which will put the box relative behind the source object
 
         ["ace_medical_facility", false],
         ["ace_medical_vehicle", false],
@@ -65,16 +70,14 @@ if (_this isEqualTo []) then {
         ["ace_cargo_add_jerrycans", 0],
         ["ace_cargo_add_tracks", 0],
 
-        ["zeus_enabled", true],
-
-        ["zeus_mode", "AIRDROP"],
-       
         ["airdrop_targetMode", "MAPCLICK"],
-        ["airdrop_deliveryMode", "PARACHUTE"],
+        //["airdrop_deliveryMode", "PARACHUTE"], // Currently not in use
 
-        ["airframe_class", "C_Heli_Light_01_civil_F"],
+        ["airdrop_targetMode_zeus", "MAPCLICK"],
+
         ["airframe_side", civilian],
         ["airframe_protected", true],
+        ["airframe_class", "C_Heli_Light_01_civil_F"],
 
         ["airdrop_pos_start", [0,0,0]],
         ["airdrop_pos_end", "RETURN"],
@@ -82,10 +85,13 @@ if (_this isEqualTo []) then {
         ["airdrop_alt", 100],
         ["airdrop_alt_forced", true],
 
+        ["airdrop_flyInHeightASL", [35,35,35]],
+
         ["airdrop_attachSmoke", true],
         ["airdrop_class_smoke", "SmokeShellOrange"], // CfgMagazines  
 
         ["parachute_class", "B_Parachute_02_F"],
+
         ["parachute_attachStrobe", false],
         ["parachute_strobe_class", "ACE_IR_Strobe_Effect"]
     ];

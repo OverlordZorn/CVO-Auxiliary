@@ -1,4 +1,4 @@
-#include "../script_component.hpp"
+#include "../../script_component.hpp"
 
 /*
 * Author: Zorn
@@ -12,7 +12,7 @@
 * Example:
 * ['something', player] call prefix_component_fnc_functionname
 *
-* Public: Yes
+* Public: No
 */
 
 

@@ -1,4 +1,4 @@
-#include "../script_component.hpp"
+#include "../../script_component.hpp"
 
 /*
 * Author: Zorn
@@ -12,7 +12,7 @@
 * Example:
 * ['something', player] call prefix_component_fnc_functionname
 *
-* Public: Yes
+* Public: No
 */
 
 //////////////////// CONTINUE HERE <---
@@ -30,18 +30,14 @@ params [
 ZRN_LOG_MSG_1(init,_this);
 
 private _children = {
+    private _fnc_scriptName = "cA_children";
     
     params ["_target", "_player", "_actionParams"];
     _actionParams params ["_catName"];
 
-    ZRN_LOG_MSG_3(init CHILD EVAL,typeOf _target,_player,_actionParams);
-
     private _cat = [_catName] call FUNC(catalog);
     
-    ZRN_LOG_MSG_3(PostCatalogFNC,_catName,typeName _cat,keys _cat);
-
     if (_cat isEqualTo "404") exitWith {};
-
 
     private _entries = [];
     private _mode = switch (true) do {
@@ -49,20 +45,21 @@ private _children = {
         default { "NORMAL" };
     };
 
-
-
     private _code = switch (_mode) do {
         case "ZEUS": {
-            ZRN_LOG_MSG_1(PRE-filter:,typename _x);
-            ZRN_LOG_MSG_1(PRE-filter:,typename _y);
-            if (_x isEqualTo "Default Entry" OR {typeName _y isNotEqualTo "HASHMAP"}) then {continue};
-            ZRN_LOG_MSG(MODE: ZEUS);
-            private _zeusEnabled = _y getOrDefault ["zeus_enabled", false];
-            ZRN_LOG_1(_zeusEnabled);
-            if (_zeusEnabled) then {_entries pushBack _x};
+            {
+                if (_x isEqualTo "Default Entry" OR {typeName _y isNotEqualTo "HASHMAP"}) then {continue};
+                private _zeusEnabled = _y getOrDefault ["zeus_enabled", false];
+                ZRN_LOG_1(_zeusEnabled);
+                if (_zeusEnabled) then {_entries pushBack _x};
+            }
         };
 
-        case "NORMAL": { ZRN_LOG_MSG(MODE: CASE); }; // Default Case
+        case "NORMAL": {
+            {
+                if (_x isEqualTo "Default Entry" OR {typeName _y isNotEqualTo "HASHMAP"}) then {continue};
+            }
+        }; // Default Case
         /*
         default {
             private _sources = _y getOrDefault ["links", []];
@@ -73,23 +70,18 @@ private _children = {
         */
     };
     
-    ZRN_LOG_MSG_1(reee,keys _cat);
-    ZRN_LOG_MSG_1(reee,typeName _cat);
-
     _code forEach _cat;
-
-    ZRN_LOG_MSG_1(PostForEach,_entries);
 
     private _actions = [];
     {
         // Current result is saved in variable _x
         private _entryName = _x;
-        ZRN_LOG_MSG_1(forEachEntry,_x);
+        ZRN_LOG_MSG_1(forEachEntry,_entryName);
 
-        private _params = [_entryName,_catName];
+        private _params = [_entryName, _catName, _mode];
         private _code = {
             ZRN_LOG_MSG_1(REQUEST,_this);
-            // [QGVAR(EH_request), _this] call CBA_fnc_serverEvent;
+            _this call FUNC(request);
         };
         private _aceAction = [
             _entryName splitString " " joinString "_"                       // * 0: Action name <STRING> 

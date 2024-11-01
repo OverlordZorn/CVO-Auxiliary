@@ -1,4 +1,4 @@
-#include "../script_component.hpp"
+#include "../../script_component.hpp"
 
 /*
 * Author: Zorn
@@ -13,13 +13,14 @@
 * Example:
 * ['something', player] call cvo_fnc_sth
 *
-* Public: Yes
+* Public: No
 */
 
 if !(hasInterface) exitWith {};
 
 params [
-    ["_entryName",  "",         [""]            ]
+    ["_entryName",  "",     [""]    ],
+	["_catName", 	"",		[""]	]
 ];
 
 #define MSG_designate ["<t color='#0000ff' size='1'>supplyDrop<br/>Left Click to designate dropzone<br/>Alt + Left Click to abort</t>", -1, 0, 60, 1] spawn BIS_fnc_dynamicText;
@@ -27,9 +28,13 @@ params [
 #define MSG_aborted   ["<t color='#ff0000' size='1'>supplyDrop<br/>aborted</t>", -1, 0, 5, 1] spawn BIS_fnc_dynamicText;
 
 
+private _isCuratorOpen = !isNull (findDisplay 312);
 
 // Closes Zeus Interface and Opens the Map with slight delay
-findDisplay 312 closeDisplay 2;
+if (_isCuratorOpen) then {
+	findDisplay 312 closeDisplay 2;
+	missionNamespace setVariable [QGVAR(curatorWasOpen), true];
+};
 [ {
 	openMap [true, true];
 	MSG_designate
@@ -41,7 +46,7 @@ private _id_mapClick = addMissionEventHandler [
 	"MapSingleClick",
 	{
 		params ["_units", "_pos", "_alt", "_shift"];
-		_thisArgs params ["_entryName"];
+		_thisArgs params ["_entryName","_catName"];
 
 		missionNamespace setVariable [QGVAR(mapClicked), true];
 		
@@ -50,10 +55,10 @@ private _id_mapClick = addMissionEventHandler [
 
 		ZRN_LOG_MSG_2(Position Defined,_entryName,_pos);
 		
-		[QGVAR(EH_dispatch), [_entryName,_pos] ] call CBA_fnc_serverEvent;		
+		[QGVAR(EH_dispatch), [_entryName,_catName,_pos] ] call CBA_fnc_serverEvent;		
 		MSG_success;
 	},
-	[_entryName]
+	[_entryName,_catName]
 ];
 
 
@@ -66,7 +71,7 @@ private _code = {
 	removeMissionEventHandler ["MapSingleClick", _id_mapClick];
 	missionNamespace setVariable [QGVAR(mapClicked), nil];
 
-	openCuratorInterface;
+	if (missionNamespace getVariable [QGVAR(curatorWasOpen), false]) then {openCuratorInterface};
 };
 private _code_timeout = {
 	params ["_id_mapClick"];
@@ -75,7 +80,7 @@ private _code_timeout = {
 	removeMissionEventHandler ["MapSingleClick", _id_mapClick];
 	missionNamespace setVariable [QGVAR(mapClicked), nil];
 
-	openCuratorInterface;
+	if (missionNamespace getVariable [QGVAR(curatorWasOpen), false]) then {openCuratorInterface};
 	
 	MSG_aborted
 };

@@ -1,4 +1,4 @@
-#include "../script_component.hpp"
+#include "../../script_component.hpp"
 
 /*
 * Author: Zorn
@@ -14,7 +14,7 @@
 * [_catName] call FUNC(getCatName)
 * [_catName,"zeus"] call FUNC(getCatName)
 *
-* Public: Yes
+* Public: No
 */
 
 params [
