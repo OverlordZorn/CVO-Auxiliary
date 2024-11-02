@@ -23,15 +23,20 @@ if (_this isEqualTo []) then {
     private _defaultEntry = createHashMapFromArray [
         ["Name", "Default Entry"],
 
-        ["links", []],
+        ["links", [[],[]]],     // [Array of Classnames, Array of Objects]
 
         ["items", []],
         ["backpacks", []],
 
         ["zeus_enabled", true],
-        ["zeus_mode", "AIRDROP"],
 
-        ["normal_mode", "spawn"],   // currently: "spawn" will spawn the box at pos_spawn
+        //// Modes
+        // "AIRDROP" will start the airdrop feature. Target Pos will be defined through "airdrop_targetMode"/"airdrop_targetMode_zeus"
+        // "POS" will take spawn_pos [2/3D or Object] and spawn the crate on that position
+        // "REL" will spawn the crate relative to its size behind the provided object
+
+        ["zeus_mode", "AIRDROP"],
+        ["normal_mode", "REL"], 
 
         ["box_class", "C_supplyCrate_F"],
         ["box_empty", true],

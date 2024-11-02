@@ -2,16 +2,11 @@
 
 /* 
  * Author: Zorn
- * Creates an ACE INTERACTION on the Target to request an AmmoCrate and fills it with a custom Array.
+ * Function the keep Compatibility with old Scripts / Missions.
+ *
+ * DO NOT USE THIS ANYMORE - USE NEW REGISTER + LINK Function INSTEAD
  *
  * Arguments:
- * 0: Target supplySpawner, where the ace action should be added <OBJECT> or <CLASS as STRING>
- * 1: Name of the supplyCrateAction <string>
- * 2: Nested Array of content EXCEPT BACKPACKS [["class0", amount], ["classN",#]] <Nested Array>
- * 3: Class of Crate to be used <OBJECT> <Optional - Default: "LandWoodenBox_F">
- * 4: Nested Array of Content BACKPACKS Only [[class0, #], [classN,#]] <Nested Array > <optional - Default: []>
- * 5: Spawn Location - ideally a invisible helipad or Tarp_01_Large_Black_F <Object> <optional - default: objNull>
- * 6: HashMap - additional, optional parameters (see fn_spawnCSC)
  * 
  * Return Value:
  * None
@@ -56,45 +51,32 @@ params [
 	["_title", 			"Default Name", 	[""]	 	    			],
 	["_itemArray",		[],					[[]]						],
 	["_className",		"Land_WoodenBox_F", [""] 			    		],
-	["_backbackArray",	[],					[]							],
+	["_backpackArray",	[],					[]							],
 	["_spawnloc", 		"REL", 				["",objNull,[]],	[2,3] 	],
 	["_hashMap",		createHashMap,		[createHashMap]				]
 ];
 
-// Create Parent Node (if needed)
-[_target] call FUNC(createNode);
+private _mode = "REL";
+private _pos = [0,0,0];
 
-// Prep
-private _actionID = ["CVO","CSC",_title splitString " " joinString "_"] joinString "_";
-private _EH_ID = ["CVO","CSC",_title,_target] joinString "_";
-
-
-// ## create aceActionArray
-private _aceAction = [
-	_actionID,
-	_title,
-	"\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa",
-	{
-		params ["_target", "_player", "_actionParams"];
-		_actionParams params ["_EH_ID", "_className", "_spawnloc", "_title", "_itemArray", "_backbackArray", "_hashMap"];
-		[_EH_ID, [_target, _player, _className, _spawnLoc, _title, _itemArray, _backbackArray, _hashMap] ] call CBA_fnc_serverEvent;
-	},
-	{true},
-	{},
-	[_EH_ID, _className, _spawnloc, _title, _itemArray, _backbackArray, _hashMap]
-] call ace_interact_menu_fnc_createAction;
-
-
-// ## ATTACHING THE ACTION to class OR OBJECT
-switch (typeName _target) do {
-	case "OBJECT": { [_target, 0, ["ACE_MainActions", "cvo_csc_root"], _aceAction ] call ace_interact_menu_fnc_addActionToObject; };
-	case "STRING": { [_target, 0, ["ACE_MainActions", "cvo_csc_root"],	_aceAction ] call ace_interact_menu_fnc_addActionToClass;  };
+switch (true) do {
+	case (_spawnloc isEqualTo "REL"): {  };
+	default { _mode = "POS"; _pos = _spawnloc };
 };
 
+private _mergedHashMap = createHashMapFromArray [
+	["box_class", _className],
+	["spawn_pos", _pos],
+	["normal_mode", _mode]
+] merge [_hashMap, true];
 
-// Register EventHandler
-[_EH_ID, FUNC(spawnCSC)] call CBA_fnc_addEventHandler;
+
+[
+	_title
+	,_itemArray
+	,_backpackArray
+	,_mergedHashMap
+] call cvo_csc_fnc_register;
 
 
-diag_log format ["[CVO](debug)(fn_addCSC) Established: %2 => %1", _target, _title];
-
+[_target, _title] call cvo_csc_fnc_link;

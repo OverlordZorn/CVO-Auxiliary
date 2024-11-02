@@ -29,5 +29,8 @@ if (_cat isEqualTo "404") then {
     _cat set ["Default Entry", [] call FUNC(defaultEntry)];
     
     missionNamespace setVariable [_catalogName, _cat];
+
+    // Automatically link a new Catalog to Zeus
+    ["ZEUS","", _catName] call FUNC(link);
 };
 _cat

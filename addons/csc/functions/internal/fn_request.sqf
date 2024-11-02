@@ -39,9 +39,9 @@ ZRN_LOG_1(_deliveryMethod);
 
 if (_deliveryMethod isEqualTo false) exitWith {ZRN_LOG_MSG_1(Failed: DeliveryMethod Invalid,_mode);};
 
-switch (_deliveryMethod) do {
-    case "AIRDROP": {
-        [_entryName, _catName, _target, _player, _entry, _mode] call FUNC(request_airdrop);
-    };
+switch (_deliveryMethod) do {   // AIRDROP, POS, REL
+    case "AIRDROP": { [_entryName, _catName, _target, _player, _entry, _mode] call FUNC(request_airdrop); };
+    case "POS";
+    case "REL": { [QGVAR(EH_request_server), [_entryName,_catName,_deliveryMethod,_target]] call CBA_fnc_serverEvent; };
     default { };
 };

@@ -40,8 +40,11 @@ private _children = {
     if (_cat isEqualTo "404") exitWith {};
 
     private _entries = [];
+
+    private _target_classname = typeOf _target;
+
     private _mode = switch (true) do {
-        case (typeOf _target isEqualTo "ModuleCurator_F"): { "ZEUS" };
+        case (_target_classname isEqualTo "ModuleCurator_F"): { "ZEUS" };
         default { "NORMAL" };
     };
 
@@ -50,7 +53,6 @@ private _children = {
             {
                 if (_x isEqualTo "Default Entry" OR {typeName _y isNotEqualTo "HASHMAP"}) then {continue};
                 private _zeusEnabled = _y getOrDefault ["zeus_enabled", false];
-                ZRN_LOG_1(_zeusEnabled);
                 if (_zeusEnabled) then {_entries pushBack _x};
             }
         };
@@ -58,16 +60,10 @@ private _children = {
         case "NORMAL": {
             {
                 if (_x isEqualTo "Default Entry" OR {typeName _y isNotEqualTo "HASHMAP"}) then {continue};
+                private _links = _y get "links";
+                if (_target_classname in _links#0 || {_target in _links#1}) then { _entries pushBack _x };
             }
-        }; // Default Case
-        /*
-        default {
-            private _sources = _y getOrDefault ["links", []];
-
-            if (count _sources == 0) then {continue};
-            if (_target in _sources || typeName _target in _sources) then { _entries pushBack _x; };
-        };
-        */
+        }; 
     };
     
     _code forEach _cat;

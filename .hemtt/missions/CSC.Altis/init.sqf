@@ -39,32 +39,12 @@ params [
         // ["somebackpackclassname", 420]
     ],                                                                       // Array of Backpacks to be filled into - Default: []
     createHashMapFromArray [
-        ["pos_start",       [10,10,10]],
-        ["emptyBox",        false],
-        ["targetMode",      "MAPCLICK"],
-        ["class_box",       "ACE_medicalSupplyCrate_advanced"],
-        ["class_air",       "B_T_VTOL_01_vehicle_F"]
+        ["airdrop_pos_start",   [1000,1000,1000]],
+        ["box_empty",           false],
+        ["box_class",           "ACE_medicalSupplyCrate_advanced"],
+        ["airframe_class",      "B_T_VTOL_01_vehicle_F"]
     ]                                                                        // Hashmap of additional parameters that can be changed optionally
 ] call cvo_csc_fnc_register;
 
-["ZEUS", "ACE Medical Box"] call cvo_csc_fnc_link;
-/*
-[
-    "Ammo Supply Box",                                                   // Name
-    [
-        ["ace_banana", 69],
-        ["ace_suture", 69],
-        ["ACE_painkillers", 69]
-    ],                                                                       // Array of Items to be filled into - Default: [] 
-    [
-        // ["somebackpackclassname", 420]
-    ],                                                                       // Array of Backpacks to be filled into - Default: []
-    createHashMapFromArray [
-        ["pos_start",       [10,10,10]],
-        ["emptyBox",        true],
-        ["targetMode",      "MAPCLICK"],
-        //["class_box",       "ACE_medicalSupplyCrate_advanced"],
-        ["class_air",       "B_T_VTOL_01_vehicle_F"]
-    ]                                                                        // Hashmap of additional parameters that can be changed optionally
-] call cvo_csc_fnc_register;
-*/
+["B_Slingload_01_Ammo_F", "ACE Medical Box"] call cvo_csc_fnc_link;
+[source, "ACE Medical Box"] call cvo_csc_fnc_link;

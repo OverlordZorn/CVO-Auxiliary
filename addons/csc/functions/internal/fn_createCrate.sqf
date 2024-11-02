@@ -140,7 +140,7 @@ while {_addJerryCans > 0} do { ["Land_CanisterFuel_F", _box]  call ace_cargo_fnc
 while {_addTracks > 0}    do { ["ACE_Track",           _box]  call ace_cargo_fnc_loadItem; _addTracks = _addTracks -1};
 
 
-["cvo_csc_Event_crateSpawnedServer", [_box, _title] ] call CBA_fnc_ServerEvent;
+["cvo_csc_Event_crateSpawnedServer", [_box, _title] ] call CBA_fnc_ServerEvent; // legacy for HAM SR
 [QGVAR(box_created_server), [_box, _title] ] call CBA_fnc_ServerEvent;
 
 _box

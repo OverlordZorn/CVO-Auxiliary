@@ -5,9 +5,7 @@ class CfgFunctions
 		class DOUBLES(COMPONENT,old)           // Category
 		{
 			file = PATH_TO_FUNC_SUB(old);
-			class createNode {};
 			class addCSC {};
-            class spawnCSC {};
 		};
 
 		class DOUBLES(COMPONENT,internal)           // Category
@@ -22,7 +20,9 @@ class CfgFunctions
             class createAction {};
 
             class request {};
+            class request_server {};
 
+            class getPos {};
             class createCrate {};
 		};
 
