@@ -75,7 +75,7 @@ if (_this isEqualTo []) then {
         ["ace_cargo_add_jerrycans", 0],
         ["ace_cargo_add_tracks", 0],
 
-        ["airdrop_targetMode", "MAPCLICK"],
+        ["airdrop_targetMode", "MAPCLICK"],      // MAPCLICK, FIXED (spawn_pos), PLAYER, TARGET
         //["airdrop_deliveryMode", "PARACHUTE"], // Currently not in use
 
         ["airdrop_targetMode_zeus", "MAPCLICK"],
