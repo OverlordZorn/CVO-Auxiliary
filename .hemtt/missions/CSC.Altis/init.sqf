@@ -39,10 +39,15 @@ params [
         // ["somebackpackclassname", 420]
     ],                                                                       // Array of Backpacks to be filled into - Default: []
     createHashMapFromArray [
-        ["airdrop_pos_start",   [1000,1000,1000]],
+        ["airdrop_pos_start",   [10000,10000,1000]],
         ["box_empty",           false],
         ["box_class",           "ACE_medicalSupplyCrate_advanced"],
-        ["airframe_class",      "B_T_VTOL_01_vehicle_F"]
+        ["airframe_class",      "B_T_VTOL_01_vehicle_F"],
+        ["normal_mode",         "AIRDROP"],
+        ["airdrop_targetMode",  "TARGET"]
+        
+
+
     ]                                                                        // Hashmap of additional parameters that can be changed optionally
 ] call cvo_csc_fnc_register;
 
