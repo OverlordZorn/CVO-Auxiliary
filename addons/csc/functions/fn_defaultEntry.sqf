@@ -97,7 +97,7 @@ if (_this isEqualTo []) then {
 
         ["parachute_class", "B_Parachute_02_F"],
 
-        ["parachute_attachStrobe", false],
+        ["parachute_attachStrobe", true],
         ["parachute_strobe_class", "ACE_IR_Strobe_Effect"]
     ];
 
@@ -106,8 +106,8 @@ if (_this isEqualTo []) then {
 } else {
 
     params [
-        ["_catalogName",        "global",   [""]            ],
-        ["_newDefaults",        "404",      [createHashMap] ]
+        ["_newDefaults",        "404",      [createHashMap] ],
+        ["_catalogName",        "global",   [""]            ]
     ];
 
     if (_newDefaults isEqualTo "404") exitWith {};
