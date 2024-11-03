@@ -37,7 +37,7 @@ private _deliveryMethod = switch (_mode) do {
 
 ZRN_LOG_1(_deliveryMethod);
 
-if (_deliveryMethod isEqualTo false) exitWith {ZRN_LOG_MSG_1(Failed: DeliveryMethod Invalid,_mode);};
+if (_deliveryMethod isEqualTo false) exitWith {ZRN_LOG_MSG_1(Failed: Mode Invalid,_mode);};
 
 switch (_deliveryMethod) do {   // AIRDROP, POS, REL
     case "AIRDROP": { [_entryName, _catName, _target, _player, _entry, _mode] call FUNC(request_airdrop); };
