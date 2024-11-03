@@ -40,7 +40,7 @@ private _targetMode = switch (_mode) do {
 
 switch (_targetMode) do {
     case "MAPCLICK": {
-        [_entryName, _catName] call FUNC(getPosFromMap)
+        [_entryName, _catName] call FUNC(getPosFromMap);
     };
 
     case "FIXED": {
@@ -58,5 +58,5 @@ switch (_targetMode) do {
         [QGVAR(EH_dispatch), [_entryName,_catName,_pos] ] call CBA_fnc_serverEvent;
     };
 
-    default {};
+    default {ZRN_LOG_MSG_1(FAILED - Invalid Target Mode, _targetMode);};
 };
