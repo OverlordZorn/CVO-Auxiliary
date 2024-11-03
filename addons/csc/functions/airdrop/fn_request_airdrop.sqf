@@ -49,14 +49,14 @@ switch (_targetMode) do {
     };
 
     case "PLAYER": {
-        private _pos = _entry getPos _player;
+        private _pos = getPos _player;
         [QGVAR(EH_dispatch), [_entryName,_catName,_pos] ] call CBA_fnc_serverEvent;
     };
 
     case "TARGET": {
-        private _pos = _entry getPos _target;
+        private _pos = getPos _target;
         [QGVAR(EH_dispatch), [_entryName,_catName,_pos] ] call CBA_fnc_serverEvent;
     };
 
-    default {ZRN_LOG_MSG_1(FAILED - Invalid Target Mode, _targetMode);};
+    default {ZRN_LOG_MSG_1(FAILED - Invalid Target Mode,_targetMode);};
 };
