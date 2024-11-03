@@ -73,7 +73,7 @@ if (_entry get "airdrop_attachSmoke") then {
 if (_entry get "parachute_attachStrobe") then {
     private _strobe = createVehicle [_entry get "parachute_strobe_class", [0,0,10], [], 0, "CAN_COLLIDE"];
     _strobe attachTo [attachedTo _box, [0,0,32]];
-    [ {	isTouchingGround _this#1 }, { deleteVehicle _this#0 }, [_strobe, _box] ] call CBA_fnc_waitUntilAndExecute;
+    [ {	isTouchingGround (_this#1) }, { deleteVehicle (_this#0) }, [_strobe, _box] ] call CBA_fnc_waitUntilAndExecute;
 };
 
 // Detaches the box from the parachute once its close to the ground or deleted
