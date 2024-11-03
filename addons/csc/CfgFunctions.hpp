@@ -47,4 +47,4 @@ class CfgFunctions
             class link {};
         };
     };
-};  
+};
