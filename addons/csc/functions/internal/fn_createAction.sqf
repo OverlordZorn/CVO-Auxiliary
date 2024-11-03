@@ -72,7 +72,6 @@ private _children = {
     {
         // Current result is saved in variable _x
         private _entryName = _x;
-        ZRN_LOG_MSG_1(forEachEntry,_entryName);
 
         private _params = [_entryName, _catName, _mode];
         private _code = {
@@ -90,7 +89,6 @@ private _children = {
         ] call ace_interact_menu_fnc_createAction;
 
         _actions pushBack [_aceAction, [], _target];
-        ZRN_LOG_1(_actions);
 
     } forEach _entries;
 
