@@ -3,7 +3,7 @@
 name: Release
 
 env:
-  FOLDER: '@cvo_aux'
+  FOLDER: @cvo_aux
   WORKSHOPID: '3037257908_terst'
 
 
