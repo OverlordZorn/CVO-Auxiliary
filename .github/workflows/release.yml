@@ -6,8 +6,6 @@ env:
   FOLDER: '@cvo_aux'
   WORKSHOPID: '3037257908'
 
-
-
 on:
   release:
     types: released
