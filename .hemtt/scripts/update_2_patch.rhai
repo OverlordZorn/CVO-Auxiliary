@@ -12,7 +12,6 @@ let next = current + 1;
 
 script_version.replace(prefix + current.to_string(), prefix + next.to_string());
 
-
 // Write the modified contents to script_version.hpp
 HEMTT_RFS.join("addons")
     .join("main")
