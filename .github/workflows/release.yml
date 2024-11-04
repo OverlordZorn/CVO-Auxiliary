@@ -4,7 +4,7 @@ name: Release
 
 env:
   FOLDER: '@cvo_aux'
-  WORKSHOPID: '123_3037257908'
+  WORKSHOPID: '3037257908'
 
 
 on:
