@@ -36,7 +36,7 @@ private _completion = {
 
     ace_player allowDamage false;
 
-    private _tgtPosASL = getPOSASL _destination;
+    private _tgtPosASL = getPosASL _destination;
     private _tgtDIR = getDir _destination;
 
     // elevates the player 10cm above the tgt to avoid falling through the floor

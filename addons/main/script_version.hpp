@@ -1,8 +1,8 @@
-#define MAJOR  1
+#define MAJOR 1
 #define MINOR 2
 #define PATCH 1
-#define BUILD 18
-#define COMMIT empty
+#define BUILD 63
+
 
 // #define VERSION MACROS
 #define VERSION MAJOR.MINOR

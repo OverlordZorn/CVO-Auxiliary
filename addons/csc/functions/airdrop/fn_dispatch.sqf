@@ -1,4 +1,4 @@
-#include "../script_component.hpp"
+#include "../../script_component.hpp"
 
 /*
 * Author: Zorn
@@ -12,7 +12,7 @@
 * Example:
 * ['something', player] call cvo_fnc_sth
 *
-* Public: Yes
+* Public: No
 */
 
 if !(isServer) exitWith {};
@@ -21,29 +21,29 @@ if !(isServer) exitWith {};
 
 params [
     ["_entryName",  "",         [""]            ],
+    ["_catName",    "",         [""]            ],
     ["_targetPos",  [0,0,0],    [[]],   [2,3]   ]
 ];
 
 
 
-private _catalog = missionNamespace getVariable [QGVAR(catalog), "404"];
-if (_catalog isEqualTo "404") exitWith {ZRN_LOG_MSG(Failed: No Catalog)};
-if !(_entryName in _catalog) exitWith  {ZRN_LOG_MSG(Failed: No Entry)};
+private _cat = [_catName] call FUNC(catalog);
+if (_cat isEqualTo "404") exitWith {ZRN_LOG_MSG(Failed: No Catalog)};
+if !(_entryName in _cat) exitWith  {ZRN_LOG_MSG(Failed: No Entry)};
 
-
-private _entry = _catalog get _entryName;
-private _startPos = _entry get "pos_start";
+private _entry = _cat get _entryName;
+private _startPos = _entry get "airdrop_pos_start";
 
 _startPos set [2, 0 max (ATLToASL _startPos # 2) + 100];
 
 
 // Create Aircraft
-private _aircraft = createVehicle [(_entry get "class_air"), [0,0,0], [], 0, "FLY"];
+private _aircraft = createVehicle [(_entry get "airframe_class"), [0,0,0], [], 0, "FLY"];
 
-_aircraft flyInHeight [_entry get "drop_alt", _entry get "drop_alt_forced"];
-_aircraft flyInHeightASL [25, 25, 25];
+_aircraft flyInHeight [_entry get "airdrop_alt", _entry get "airdrop_alt_forced"];
+_aircraft flyInHeightASL (_entry get "airdrop_flyInHeightASL");
 
-private _grp = (_entry get "side") createVehicleCrew _aircraft;
+private _grp = (_entry get "airframe_side") createVehicleCrew _aircraft;
 _grp addVehicle _aircraft;
 _grp setCombatBehaviour "CARELESS";
 _grp deleteGroupWhenEmpty true;
@@ -57,13 +57,13 @@ private _dir = (_startPos getDir _targetPos);
 _aircraft setDir _dir;
 
 // If enabled, make Asset Invincible
-if (_entry get "isProtected") then { { _x allowDamage false; } forEach [_aircraft] + crew _aircraft; };
+if (_entry get "airframe_protected") then { { _x allowDamage false; } forEach [_aircraft] + crew _aircraft; };
 
 // Provide Waypoints
 _grp addWaypoint [_targetPos, 25];
 _grp addWaypoint [_targetPos getPos [250, _dir], 25];
 
-private _endpos = _entry get "pos_end";
+private _endpos = _entry get "airdrop_pos_end";
 
 _endPos = switch true do {
     case (_endPos isEqualTo "RETURN"):   { _startPos };
@@ -79,13 +79,13 @@ _wpEnd setWaypointStatements ["true", "{deleteVehicle _x} forEach [vehicle this]
 // PFEH - Drop Crate 
 private _pfeh_id = [{
     params ["_args", "_handle"];
-    _args params ["_entryName", "_aircraft", "_targetPos"];
+    _args params ["_entry", "_aircraft", "_targetPos"];
 
     if (( _aircraft distance2D _targetPos ) > 50) exitWith {};
-    [_entryName, _aircraft] call FUNC(dropCrate);
+    [_entry, _aircraft] call FUNC(dropCrate);
     _handle call CBA_fnc_removePerFrameHandler;
 
-}, _delay, [_entryName, _aircraft, _targetPos]] call CBA_fnc_addPerFrameHandler;
+}, _delay, [_entry, _aircraft, _targetPos]] call CBA_fnc_addPerFrameHandler;
 
 // Store PFEH_ID on object to retrieve during EH's
 _aircraft setVariable [QGVAR(pfeh_id), _pfeh_id];
