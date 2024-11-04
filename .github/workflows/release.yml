@@ -33,15 +33,15 @@ jobs:
         - name: Move release to releases folder
           run:
             version="${{ github.event.release.tag_name }}"
-            mv .hemttout/release "${{ env.FOLDERNAME }}-${{ env.VERSION }}"
+            mv .hemttout/release "@cvo_aux-${{ env.VERSION }}"
 
         - name: Zip release
-          run: zip -r "${{ env.FOLDERNAME }}-${{ env.VERSION }}.zip" ./${{ env.FOLDERNAME }}-${{ env.VERSION }}
+          run: zip -r "@cvo_aux-${{ env.VERSION }}.zip" ./@cvo_aux-${{ env.VERSION }}
 
         - name: Update Release with Files
           uses: softprops/action-gh-release@v1
           with:
-            files: ./${{ env.FOLDERNAME }}-${{ env.VERSION }}.zip
+            files: ./@cvo_aux-${{ env.VERSION }}.zip
             draft: true
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -50,7 +50,7 @@ jobs:
           uses: arma-actions/workshop-upload@v1
           with:
             itemId: ${{ env.WORKSHOPID }}
-            contentPath: './${{ env.FOLDERNAME }}-${{ env.VERSION }}'
+            contentPath: './@cvo_aux-${{ env.VERSION }}'
             changelog: |
               https://github.com/${{ github.repository }}/releases/tag/v${{ env.VERSION }}
 
