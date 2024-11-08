@@ -23,30 +23,43 @@ params [
 
 ZRN_LOG_MSG_1(INIT,_input);
 
-private _queue = GETMGVAR(queue,"404");
-
-if (_queue isEqualTo "404") then {
-    _queue = [];
-    SETMGVAR(queue,_queue);
-};
-
 private _return = "";
-if ( _input == "" ) exitWith { ZRN_LOG_MSG(outputting queue); _queue };
+
+// Handles Return
+// ""       -> Returns the current Queue or [] if queue is NIL
+// "CLEAR"  -> NIL's the GVAR
+// "NEXT"   -> Will Return the 
+// Default  -> Store input in queue
 
 switch (_input) do {
+    case "": {
+        private _queue = GETMGVAR(queue,"404");
+        if {_queue == "404"} then {_queue = []};
+        _return = _queue;
+    };
     case "CLEAR": {
-        SETMGVAR(queue,nil); _return = "CLEARED";
+        SETMGVAR(queue,nil);
+        _return = "CLEARED";
     };
     case "NEXT":  {
-        _return = _queue deleteAt 0;
-        ZRN_LOG_MSG_1(NEXT,_return);
-        if (count _queue == 0) then { ["CLEAR"] call FUNC(queue) };
+        private _queue = GETMGVAR(queue,"404");
+        if (_queue isEqualTo "404") then {
+            _return = "";
+        } else {
+            _return = _queue deleteAt 0;
+            if (count _queue == 0) then { ["CLEAR"] call FUNC(queue) };
+        };
+
     };
     default {
-        ZRN_LOG_MSG_1(stored,_input);
+        private _queue = GETMGVAR(queue,"404");
+        if (_queue isEqualTo "404") then {
+            _queue = [];
+            SETMGVAR(queue,_queue);
+        };
         _queue pushBack _input;
         _return = "STORED";
     };
 };
-
+ZRN_LOG_1(_return);
 _return
