@@ -15,7 +15,13 @@
 * Public: No
 */
 
-private _configs =  "true" configClasses (configFile >> "CfgMusic");
+params [
+	["_cfg",        "404"]
+];
+
+if (_cfg isEqualTo "404") then { _cfg = (configFile >> "CfgMusic")};
+
+private _configs =  "true" configClasses (_cfg);
 
 private _longestIndex = count str (count _configs + 1);
 private _longestClassname = selectMax (_configs apply { count configName _x });
