@@ -2,7 +2,7 @@
 
 /*
 * Author: Zorn
-* [Description]
+* Function to play a song on the remote clients
 *
 * Arguments:
 *
@@ -15,5 +15,11 @@
 * Public: No
 */
 
+if !(hasInterface) exitWith {};
 
-[QGVAR(EH_catalog), FUNC(catalog)] call CBA_fnc_addEventHandler;
+params [
+    ["_track",        "",         [""]       ]
+];
+
+playMusic _track;
+

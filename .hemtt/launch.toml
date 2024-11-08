@@ -4,6 +4,7 @@ workshop = [
     "463939057",  # ACE3
     "2369477168", # Advanced Developer Tools
     "1779063631", # ZEN
+    "3355988282", # CVO Media
 ]
 
 dlc = []
@@ -33,7 +34,7 @@ mission = "Stratis.Stratis"
 extends = "Stratis"
 workshop = ["2352603233"] # Greenmag
 
-[executeUnit]
+[VR]
 extends = "default"
 mission = "exec.VR"
 

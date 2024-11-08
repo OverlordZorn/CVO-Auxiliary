@@ -2,31 +2,52 @@ class CfgFunctions
 {
 	class ADDON            // Tag
 	{
-		class DOUBLES(COMPONENT,old)           // Category
-		{
-			file = PATH_TO_FUNC_SUB(old);
+        class debug
+        {
+            file = PATH_TO_FUNC_SUB(debug);
+            class getTrackDuration {  };
+            class test {  };
+        };
 
-            class define_playlists { preInit = 1; };
-			class postInit { postInit = 1; };
+        class config
+        {
+            file = PATH_TO_FUNC_SUB(config);
 
-            class add_playlist {};
-			
-            class songFromPlaylist {};
-    	    class play {};
+            class initial_playlists { preInit = 1; };
+            class fromConfig {};
+            class getName {};
+            class addonLoaded {};
+        };
 
-            class fadeStop {};
-
-            class message {};
-            class message_backlog {};
-		};
-        class DOUBLES(COMPONENT,internal)
+        class internal
         {
             file = PATH_TO_FUNC_SUB(internal);
 
+            class init_zeusAction { postInit = 1; };
+            
+            class init_musicEventHandlers { preInit = 1; };
+            class init_cbaEvents { preInit = 1; };
+            
+
+            class createAction {};
             class catalog {};
+            class publicArray {};
+            class queue {};
+            class request {};
+            class select {};
             class verify {};
+            class play {};
 
 
+        };
+
+        class remote
+        {
+            file = PATH_TO_FUNC_SUB(remote);
+            class request_server {};
+            class update_server {};
+            class fade_client {};
+            class play_client {};
         };
 	}; 
 };

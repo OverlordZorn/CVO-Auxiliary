@@ -19,4 +19,5 @@ params [
     ["_track",        "",         [""]       ]
 ];
 
-isClass (configFile >> "CfgMusic" >> _track)
+private _return = isClass (configFile >> "CfgMusic" >> _track);
+_return

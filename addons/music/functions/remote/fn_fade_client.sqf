@@ -1,4 +1,4 @@
-#include "../script_component.hpp"
+#include "../../script_component.hpp"
 
 /*
  * Author: [Name of Author(s)]
@@ -23,16 +23,18 @@ params [
 	["_fadeTime", 5, [0]]
 ];
 
-if (!isNil QGVAR(isFading)) exitWith {};
+ZRN_LOG_MSG_1(INIT,_fadeTime);
 
-GVAR(isFading) = true;
+if ( GETMGVAR(isFading,false) ) exitWith {};
+
+SETMGVAR(isFading,true);
 private _savedMusicVolume = musicVolume;
 _fadeTime fadeMusic 0;
 [
 	{
 		playMusic "";
 		0 fadeMusic _this;
-		GVAR(isFading) = nil;
+		SETMGVAR(isFading,false);
 	},										// Code
 	_savedMusicVolume,						// Parameters
 	(_fadeTime + 1)							// Time To wait
