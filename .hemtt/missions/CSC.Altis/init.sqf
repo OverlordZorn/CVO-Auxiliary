@@ -50,6 +50,28 @@ params [
 
     ]                                                                        // Hashmap of additional parameters that can be changed optionally
 ] call cvo_csc_fnc_register;
+[
+    "ACE Medical Box 2",                                                   // Name
+    [
+        ["ace_banana", 169],
+        ["ace_suture", 169],
+        ["ACE_painkillers", 169]
+    ],                                                                       // Array of Items to be filled into - Default: [] 
+    [
+        // ["somebackpackclassname", 420]
+    ],                                                                       // Array of Backpacks to be filled into - Default: []
+    createHashMapFromArray [
+        ["airdrop_pos_start",   [10000,10000,100]],
+        ["box_empty",           false],
+        ["box_class",           "ACE_medicalSupplyCrate_advanced"],
+        ["airframe_class",      "B_T_VTOL_01_vehicle_F"],
+        ["normal_mode",         "AIRDROP"],
+        ["airdrop_targetMode",  "TARGET"]
+        
+
+
+    ]                                                                        // Hashmap of additional parameters that can be changed optionally
+] call cvo_csc_fnc_register;
 
 ["B_Slingload_01_Ammo_F", "ACE Medical Box"] call cvo_csc_fnc_link;
 [source, "ACE Medical Box"] call cvo_csc_fnc_link;
