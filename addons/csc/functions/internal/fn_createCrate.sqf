@@ -27,7 +27,7 @@ private _box = createVehicle [_entry get "box_class", [0,0,0],[],2,"CAN_COLLIDE"
 
 _box setVariable ["ace_cargo_customname", _entry get "name", true];
 
-if (_entry get "empty_box") then {
+if (_entry get "box_empty") then {
     // Empties the inventory of the Box
     clearBackpackCargoGlobal _box;
     clearMagazineCargoGlobal _box;
