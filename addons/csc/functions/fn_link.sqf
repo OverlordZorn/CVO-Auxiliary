@@ -28,7 +28,9 @@ if (_target isEqualTo "404") exitWith {ZRN_LOG_MSG(No target provided);};
 
 private _cat = [_catName] call FUNC(catalog);
 if (_cat isEqualTo "404") exitWith {ZRN_LOG_MSG_1(Catalog not found,_catName);};
-private _links = _cat get _entryName getOrDefault ["links", []];
+private _links = _cat get _entryName getOrDefault ["links", [[],[]]];
+
+ZRN_LOG_1(_links);
 
 
 // Check if zeus is enabled for this catalog already - if not - create zeus action and attach it to zeus.
