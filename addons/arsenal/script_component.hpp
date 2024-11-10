@@ -1,5 +1,5 @@
 #define COMPONENT arsenal
-#define COMPONENT_BEAUTIFIED arsenal
+#define COMPONENT_BEAUTIFIED Arsenal Framework
 
 #include "\z\cvo\addons\main\script_mod.hpp"
 

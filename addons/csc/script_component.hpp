@@ -1,5 +1,5 @@
 #define COMPONENT csc
-#define COMPONENT_BEAUTIFIED Custom Supply Crate
+#define COMPONENT_BEAUTIFIED Custom Supply Crate Framework
 
 
 #include "\z\cvo\addons\main\script_mod.hpp"
