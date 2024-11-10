@@ -29,13 +29,14 @@ class CfgFunctions
             class init_cbaEvents { preInit = 1; };
             
 
+            class startMonitor {};
             class createAction {};
-            class catalog {};
             class publicArray {};
-            class queue {};
             class request {};
+            class catalog {};
             class select {};
             class verify {};
+            class queue {};
             class play {};
 
 
