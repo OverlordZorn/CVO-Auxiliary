@@ -51,7 +51,7 @@ private _entry = _cat getOrDefault [_entryName, "404"];
 if (_entry isEqualTo "404") then {
 
     _entry = createHashMapFromArray [ ["entryName", _entryName] ];
-    _entry merge [(_cat get "Default Entry"), false];
+    _entry merge [+ (_cat get "Default Entry"), false];
 };
 
 _entry set ["items", _items];
