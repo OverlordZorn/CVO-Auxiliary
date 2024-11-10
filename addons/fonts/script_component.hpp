@@ -1,5 +1,5 @@
 #define COMPONENT fonts
-#define COMPONENT_BEAUTIFIED Fonts
+#define COMPONENT_BEAUTIFIED Fonts 
 
 
 #include "\z\cvo\addons\main\script_mod.hpp"
