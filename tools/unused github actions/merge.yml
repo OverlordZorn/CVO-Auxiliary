@@ -1,9 +1,9 @@
 name: Merge Version Bump
 
-# on:
-#  pull_request:
-#    types:
-#      - closed
+on:
+  pull_request:
+    types:
+      - closed
 
 permissions:
   contents: write
