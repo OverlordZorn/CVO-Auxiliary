@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=88;
+		nextID=90;
 	};
 	class Camera
 	{
 		pos[]={3481.1941,151.60437,2632.4524};
-		dir[]={-0.026475759,-0.47218373,0.88110417};
-		up[]={-0.014181985,0.88150018,0.47197169};
-		aside[]={0.99955106,-9.4787538e-09,0.030034881};
+		dir[]={0.033633195,-0.52990609,0.84739429};
+		up[]={0.021015609,0.84805483,0.5294916};
+		aside[]={0.99921799,-1.3969839e-09,-0.039659116};
 	};
 };
 binarizationWanted=0;
@@ -195,7 +195,7 @@ class AddonsMetaData
 		class Item17
 		{
 			className="cvo_branding";
-			name="cvo Branding";
+			name="CVO Branding";
 			author="24th Chorni Voron";
 			url="https://github.com/OverlordZorn/CVO-Auxiliary";
 		};

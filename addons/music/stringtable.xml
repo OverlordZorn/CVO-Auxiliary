@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="cvo-auxiliary">
+    <Package name="Music">
+        <Key ID="STR_cvo_music_set_cat_title">
+            <English>CVO - Music</English>
+        </Key>
+        <Key ID="STR_cvo_music_set_subcat_serverSetting">
+            <English>Server Settings</English>
+        </Key>
+        <Key ID="STR_cvo_music_set_delayMin">
+            <English>Minimum Delay</English>
+        </Key>
+        <Key ID="STR_cvo_music_set_delayMin_desc">
+            <English>Minimum Delay in seconds.\nCombined Delay will define pause before the next title in music queue will be played.</English>
+        </Key>
+        <Key ID="STR_cvo_music_set_delayRnd">
+            <English>Randomized Delay</English>
+        </Key>
+        <Key ID="STR_cvo_music_set_delayRnd_desc">
+            <English>Random Delay in seconds.\nCombined Delay will define pause before the next title in music queue will be played.</English>
+        </Key>
+    </Package>
+</Project>
