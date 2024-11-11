@@ -23,7 +23,6 @@ params [
     ["_args",         [],  []      ]
 ];
 
-ZRN_LOG_MSG_1(INIT,_selectMode);
 
 private _updateArray = false;
 private  _cat = missionNamespace getVariable [QGVAR(HM_playlists), "404"];

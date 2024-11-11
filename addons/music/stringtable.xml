@@ -1,23 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="cvo-auxiliary">
     <Package name="Music">
-        <Key ID="STR_cvo_music_set_cat_title">
-            <English>CVO - Music</English>
-        </Key>
-        <Key ID="STR_cvo_music_set_subcat_serverSetting">
-            <English>Server Settings</English>
-        </Key>
-        <Key ID="STR_cvo_music_set_delayMin">
-            <English>Minimum Delay</English>
-        </Key>
-        <Key ID="STR_cvo_music_set_delayMin_desc">
-            <English>Minimum Delay in seconds.\nCombined Delay will define pause before the next title in music queue will be played.</English>
-        </Key>
-        <Key ID="STR_cvo_music_set_delayRnd">
-            <English>Randomized Delay</English>
-        </Key>
-        <Key ID="STR_cvo_music_set_delayRnd_desc">
-            <English>Random Delay in seconds.\nCombined Delay will define pause before the next title in music queue will be played.</English>
-        </Key>
+        <Container name="CBA Settings">
+            <Key ID="STR_cvo_music_set_cat_title">
+                <English>CVO - Music</English>
+            </Key>
+            <Key ID="STR_cvo_music_set_subcat_serverSetting">
+                <English>Server Settings</English>
+            </Key>
+            <Key ID="STR_cvo_music_set_delayMin">
+                <English>Minimum Delay</English>
+            </Key>
+            <Key ID="STR_cvo_music_set_delayMin_desc">
+                <English>Minimum Delay in seconds.\nCombined Delay will define pause before the next title in music queue will be played.</English>
+            </Key>
+            <Key ID="STR_cvo_music_set_delayRnd">
+                <English>Randomized Delay</English>
+            </Key>
+            <Key ID="STR_cvo_music_set_delayRnd_desc">
+                <English>Random Delay in seconds.\nCombined Delay will define pause before the next title in music queue will be played.</English>
+            </Key>
+        </Container>
+        <Container name="Music Diary">
+            <Key ID="STR_cvo_music_diary_fading">
+                <English>Music is fading out...</English>
+            </Key>
+            <Key ID="STR_cvo_music_diary_fading_already">
+                <English>Music is already fading...</English>
+            </Key>
+            <Key ID="STR_cvo_music_diary_faded">
+                <English>Music has stopped.</English>
+            </Key>
+            <Key ID="STR_cvo_music_diary_subject_title">
+                <English>CVO Music</English>
+            </Key>
+            <Key ID="STR_cvo_music_diary_record_MusicControls_Title">
+                <English>Music Controls</English>
+            </Key>
+            <Key ID="STR_cvo_music_diary_record_MusicControls_fadeButton">
+                <English>Fade and stop current music</English>
+            </Key>
+            <Key ID="STR_cvo_music_diary_record_MusicHistory_Title">
+                <English>Music History</English>
+            </Key>
+            <Key ID="STR_cvo_music_diary_record_MusicHistory_Header">
+                <English>Previously played Music:</English>
+            </Key>
+        </Container>
     </Package>
 </Project>
