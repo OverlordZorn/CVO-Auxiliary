@@ -57,7 +57,7 @@ private _insertChildren = {
         {
             private _playlistAction = [
                 QGVAR(_x)                               // * 0: Action name <STRING>
-                ,[_x] call FUNC(getName)                //  * 1: Name of the action shown in the menu <STRING> 
+                ,[_x] call FUNC(getPlaylistName)                //  * 1: Name of the action shown in the menu <STRING> 
                 ,""                                     //  * 2: Icon <STRING> "\A3\ui_f\data\igui\cfg\simpleTasks\types\backpack_ca.paa"
                 ,_code                                  //  * 3: Statement <CODE>
                 ,{true}                                 //  * 4: Condition <CODE>

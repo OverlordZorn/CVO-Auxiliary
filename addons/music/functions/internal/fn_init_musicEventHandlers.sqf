@@ -24,7 +24,7 @@ addMusicEventHandler ["MusicStart", {
     private _completedAt = CBA_MissionTime + _totalLength - linearConversion [0,1,_currentPosition,0,_totalLength,true];
     [QGVAR(EH_update_server), [getPlayerID player, _completedAt]] call CBA_fnc_serverEvent;
 
-    systemChat format ["MusicStart: %1", _musicClassname];
+    [_musicClassname] call FUNC(updateHistory);
 }];
 
 
@@ -34,6 +34,4 @@ addMusicEventHandler ["MusicStop", {
     
     private _completedAt = -1;
     [QGVAR(EH_update_server), [getPlayerID player, _completedAt]] call CBA_fnc_serverEvent;
-
-    systemChat format ["Music Stop: %1", _musicClassname];
 }];

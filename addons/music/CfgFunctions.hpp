@@ -15,8 +15,19 @@ class CfgFunctions
 
             class initial_playlists { preInit = 1; };
             class fromConfig {};
-            class getName {};
+            class getPlaylistName {};
+            class getMusicName {};
             class addonLoaded {};
+        };
+
+        class diary
+        {
+            file = PATH_TO_FUNC_SUB(diary);
+
+            class createDiary { postInit = 1; };
+            class updateHistory {};
+
+            class fade_local {};
         };
 
         class internal
@@ -28,7 +39,6 @@ class CfgFunctions
             class init_musicEventHandlers { preInit = 1; };
             class init_cbaEvents { preInit = 1; };
             
-
             class startMonitor {};
             class createAction {};
             class publicArray {};
@@ -38,8 +48,6 @@ class CfgFunctions
             class verify {};
             class queue {};
             class play {};
-
-
         };
 
         class remote
