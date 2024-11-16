@@ -27,6 +27,7 @@ private  _cat = missionNamespace getVariable [_catalogName, "404"];
 if (_cat isEqualTo "404") then {
     _cat = createHashMap;
     _cat set ["Default Entry", [] call FUNC(defaultEntry)];
+    _cat set ["CAT Links", [[],[]]];
     
     missionNamespace setVariable [_catalogName, _cat];
 

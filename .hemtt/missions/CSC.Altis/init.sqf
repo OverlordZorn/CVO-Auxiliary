@@ -74,4 +74,10 @@ params [
 ] call cvo_csc_fnc_register;
 
 ["B_Slingload_01_Ammo_F", "ACE Medical Box"] call cvo_csc_fnc_link;
+["B_Slingload_01_Ammo_F", "ACE Medical Box"] call cvo_csc_fnc_link;
+["B_Slingload_01_Ammo_F", "ACE Medical Box 2"] call cvo_csc_fnc_link;
+["B_Slingload_01_Ammo_F", "ACE Medical Box 2"] call cvo_csc_fnc_link;
 [source, "ACE Medical Box"] call cvo_csc_fnc_link;
+[source, "ACE Medical Box"] call cvo_csc_fnc_link;
+[source, "ACE Medical Box 2"] call cvo_csc_fnc_link;
+[source, "ACE Medical Box 2"] call cvo_csc_fnc_link;
