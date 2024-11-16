@@ -51,7 +51,7 @@ private _children = {
     private _code = switch (_mode) do {
         case "ZEUS": {
             {
-                if (_x isEqualTo "Default Entry" OR {typeName _y isNotEqualTo "HASHMAP"}) then {continue};
+                if (_x in ["Default Entry", "CAT Links"] OR {typeName _y isNotEqualTo "HASHMAP"}) then {continue};
                 private _zeusEnabled = _y getOrDefault ["zeus_enabled", false];
                 if (_zeusEnabled) then {_entries pushBack _x};
             }
@@ -59,7 +59,7 @@ private _children = {
 
         case "NORMAL": {
             {
-                if (_x isEqualTo "Default Entry" OR {typeName _y isNotEqualTo "HASHMAP"}) then {continue};
+                if (_x in ["Default Entry", "CAT Links"] OR {typeName _y isNotEqualTo "HASHMAP"}) then {continue};
                 private _links = _y get "links";
                 if (_target_classname in _links#0 || {_target in _links#1}) then { _entries pushBack _x };
             }
