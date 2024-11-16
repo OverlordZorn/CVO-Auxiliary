@@ -28,7 +28,10 @@ if (_target isEqualTo "404") exitWith {ZRN_LOG_MSG(No target provided);};
 
 private _cat = [_catName] call FUNC(catalog);
 if (_cat isEqualTo "404") exitWith {ZRN_LOG_MSG_1(Catalog not found,_catName);};
+
 private _links = _cat get _entryName getOrDefault ["links", [[],[]]];
+private _cat_links = _cat getOrDefault ["CAT Links", [[],[]]];
+
 
 ZRN_LOG_1(_links);
 
@@ -48,22 +51,29 @@ private _fn_obj = {
     // Add action to Object
     if (isNull _target) exitWith {ZRN_LOG_MSG(FAILED: Target Null)};
 
-    if !(_target in _links#1) then {
+    if !(_target in (_cat_links#1)) then {
         private _aceAction = [_catName] call FUNC(createAction);
         [_target, 0, ["ACE_MainActions"], _aceAction] call ace_interact_menu_fnc_addActionToObject;
+
+        (_cat_links#1) pushBackUnique _target;
     };
+
     // Add Object to Entry-Links
-    _links#1 pushBackUnique _target;
+    (_links#1) pushBackUnique _target;
 };
 
 private _fn_class = {
     if !(isClass (configFile >> "CfgVehicles" >> _target)) exitWith {ZRN_LOG_MSG(FAILED: Target Class not found in CfgVehicles);};
 
-    if !(_target in _links#0) then {
+    if !(_target in (_cat_links#0)) then {
         private _aceAction = [_catName] call FUNC(createAction);
         [_target, 0, ["ACE_MainActions"], _aceAction] call ace_interact_menu_fnc_addActionToClass;
+
+        (_cat_links#0) pushBackUnique _target;
     };
-    _links#0 pushBackUnique _target;
+
+    // Add Class to the Classname links.
+    (_links#0) pushBackUnique _target;
 };
 
 
@@ -73,3 +83,6 @@ switch (true) do {
     case (_target isEqualType ""):      _fn_class;
     default {  };
 }
+
+
+// if has node, then only add to link.
