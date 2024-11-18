@@ -5,11 +5,11 @@ if !(hasInterface) exitWith {};
 // Once CBA_Settings are initialized, will run the fnc_eventhandler to add/remove the Ace Arsenal closed eventhandler.
 
 private _code = {
-    private _isEnabled = missionNamespace getVariable ["CVO_SET_Insignia_on_arsenalClosed", false];
+    private _isEnabled = missionNamespace getVariable [QSET(on_arsenalClosed), false];
     [_isEnabled] call FUNC(eh_arsenal);
 
 
-    _isEnabled = missionNamespace getVariable ["CVO_SET_Insignia_on_missionStart", false];
+    _isEnabled = missionNamespace getVariable [QSET(on_missionStart), false];
     if (_isEnabled) then { [player] call FUNC(autoAssign); };
 
 };
