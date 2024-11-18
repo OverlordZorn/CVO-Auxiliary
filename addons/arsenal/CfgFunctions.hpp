@@ -15,13 +15,11 @@ class CfgFunctions
 			class addArsenalInteraction {};
 		};
 
-		class Arsenal_GreenMag
+		class Arsenal_Tabs
 		{
-			file = PATH_TO_FUNC;
+			file = PATH_TO_FUNC_SUB(arsenal_tabs);
 			requiredAddons[] = {"cvo_main",  "greenmag_main" };
-
-
-			class greenmag_tab { postInit = 1; };
+			class greenmag { postInit = 1; };
 		};
 	};
 };
