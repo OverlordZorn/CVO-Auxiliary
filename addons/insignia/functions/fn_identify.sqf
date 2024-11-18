@@ -44,7 +44,7 @@ private _callSign = switch (_regexReturn) do {
     default {"blank"};
 };
 
-private _threshold = missionNamespace getVariable ["CVO_SET_Insignia_threshold_SL", 5];
+private _threshold = missionNamespace getVariable [QSET(threshold_SL), 5];
 
 private _sortedByRankID = [units group _unit, [], {rankId _x}, "DESCEND"] call BIS_fnc_sortBy;
 private _ranks = _sortedByRankID apply {rankID _x};
