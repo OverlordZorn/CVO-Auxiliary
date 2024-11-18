@@ -11,7 +11,7 @@ if !(hasInterface) exitWith {};
 
 private _code = {
         ["ace_arsenal_displayClosed", {
-            private _isEnabled = missionNamespace getVariable ["CVO_SET_Arsenal_saveOnArsenalClose", true];
+            private _isEnabled = missionNamespace getVariable [QSET(save_arsenalClose), true];
             if (_isEnabled) then {
                 [ { player setVariable [QGVAR(Loadout), getUnitLoadout player]; } , [], 3] call CBA_fnc_waitAndExecute;
             };
@@ -19,7 +19,7 @@ private _code = {
 
 
         player addEventHandler ["Respawn", {
-	        private _isEnabled = missionNamespace getVariable ["CVO_SET_loadPlayerLoadoutOnRespawn", true];
+	        private _isEnabled = missionNamespace getVariable [QSET(load_onRespawn), true];
             if (_isEnabled) then {
                 params ["_unit", "_corpse"]; 
                 player setUnitLoadout (player getVariable [QGVAR(Loadout), []]);
