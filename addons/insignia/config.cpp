@@ -34,6 +34,6 @@ class CfgPatches {
 };
 
 #include "CfgFunctions.hpp"
-#include "CfgUnitInsignia.hpp"
-#include "XEH_preInit.hpp"
+#include "XEH/CfgXEH.hpp"
 
+#include "CfgUnitInsignia.hpp"
