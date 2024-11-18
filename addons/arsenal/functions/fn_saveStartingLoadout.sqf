@@ -21,10 +21,10 @@ if !(hasInterface) exitWith {};
 
 private _code = {
 
-	private _isEnabled = missionNamespace getVariable ["CVO_SET_savePlayerLoadoutAtStartBool", true];
+	private _isEnabled = missionNamespace getVariable [QSET(save_missionStart), true];
 	if !(_isEnabled) exitWith {};
 
-	private _delay = missionNamespace getVariable ["CVO_SET_savePlayerLoadoutAtStartDelay", 5];
+	private _delay = missionNamespace getVariable [QSET(save_missionStart_delay), 5];
 
 	private _saveLoadout = {
 		player setVariable [QGVAR(Loadout), getUnitLoadout player];
