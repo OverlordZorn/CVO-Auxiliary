@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="cvo-auxiliary">
+    <Package name="Insignia">
+        <Container name="CBA Settings">
+            <Key ID="STR_cvo_insignia_set_cat_title">
+                <English>CVO - Insignia</English>
+            </Key>
+            <Key ID="STR_cvo_insignia_set_on_arsenalClosed">
+                <English>AutoAssign on ACE Arsenal Closed</English>
+            </Key>
+            <Key ID="STR_cvo_insignia_set_on_arsenalClosed_desc">
+                <English>Identifes and AutoAssigns Units Insignia when the ACE Arsenal is being closed.</English>
+            </Key>
+            <Key ID="STR_cvo_insignia_set_on_missionStart">
+                <English>AutoAssign on Mission Start</English>
+            </Key>
+            <Key ID="STR_cvo_insignia_set_on_missionStart_desc">
+                <English>Identifes and AutoAssigns Units Insignia during Mission Start.</English>
+            </Key>
+            <Key ID="STR_cvo_insignia_set_threshold_SL">
+                <English>Threshhold for Squadleaders</English>
+            </Key>
+            <Key ID="STR_cvo_insignia_set_threshold_SL_desc">
+                <English>An Infantrysquad needs to have atleast this many units for the highest ranking Unit to become an SL instead of a TL.</English>
+            </Key>
+        </Container>
+    </Package>
+</Project>

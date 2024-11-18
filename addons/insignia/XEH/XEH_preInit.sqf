@@ -1,15 +1,16 @@
-#include "script_component.hpp"
+#include "../script_component.hpp"
+
 
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 // General Marker Settings
 
 [
-	"CVO_SET_Insignia_on_arsenalClosed",			//    _setting     - Unique setting name. Matches resulting variable name <STRING>
+	QSET(on_arsenalClosed),			//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"CHECKBOX",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-	["AutoAssign on ACE Arsenal Closed","Identifes and AutoAssigns Units Insignia when the ACE Arsenal is being closed."],
+	[LSTRING(set_on_arsenalClosed),LSTRING(set_on_arsenalClosed_desc)],
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-	["CVO", "Insignia"],					//    _category    - Category for the settings menu + optional sub-category <STRING, ARRAY>
+	[LSTRING(set_cat_title)],					//    _category    - Category for the settings menu + optional sub-category <STRING, ARRAY>
 	true,									//    _valueInfo   - Extra properties of the setting depending of _settingType. See examples below <ANY>
 	0,										//    _isGlobal    - 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <NUMBER>
 	{
@@ -20,11 +21,11 @@
 
 
 [
-	"CVO_SET_Insignia_on_missionStart",		//    _setting     - Unique setting name. Matches resulting variable name <STRING>
+	QSET(on_missionStart),		//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"CHECKBOX",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-	["AutoAssign on Mission Start","Identifes and AutoAssigns Units Insignia during Mission Start."],
+	[LSTRING(set_on_missionStart),LSTRING(set_on_missionStart_desc)],
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-	["CVO", "Insignia"],					//    _category    - Category for the settings menu + optional sub-category <STRING, ARRAY>
+	[LSTRING(set_cat_title)],					//    _category    - Category for the settings menu + optional sub-category <STRING, ARRAY>
 	true,									//    _valueInfo   - Extra properties of the setting depending of _settingType. See examples below <ANY>
 	0,										//    _isGlobal    - 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <NUMBER>
 	{},										//    _script      - Script to execute when setting is changed. (optional) <CODE>
@@ -38,7 +39,7 @@
 	"CHECKBOX",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
 	["AutoAssign on Join/Leave of Group","Identifes and AutoAssigns Units Insignia when someone joins/leaves the Squad."],
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-	["CVO", "Insignia"],					//    _category    - Category for the settings menu + optional sub-category <STRING, ARRAY>
+	[LSTRING(set_cat_title)],					//    _category    - Category for the settings menu + optional sub-category <STRING, ARRAY>
 	true,									//    _valueInfo   - Extra properties of the setting depending of _settingType. See examples below <ANY>
 	1,										//    _isGlobal    - 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <NUMBER>
 	{
@@ -59,11 +60,11 @@ Whenever Unit Joins or Leaves the squad. GroupIdChanged
 */
 
 [
-	"CVO_SET_Insignia_threshold_SL",		//    _setting     - Unique setting name. Matches resulting variable name <STRING>
+	QSET(threshold_SL),		//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"SLIDER",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-	["Threshhold for Squadleaders","An Infantrysquad needs to have atleast this many units for the highest ranking Unit to become an SL instead of a TL."],
+	[LSTRING(set_on_threshold_SL),LSTRING(set_on_threshold_SL_desc)],
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
-	["CVO", "Insignia"],					//    _category    - Category for the settings menu + optional sub-category <STRING, ARRAY>
+	[LSTRING(set_cat_title)],					//    _category    - Category for the settings menu + optional sub-category <STRING, ARRAY>
 	[3,12,5,0,false],						//    _valueInfo   - Extra properties of the setting depending of _settingType. See examples below <ANY>
 	1,										//    _isGlobal    - 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <NUMBER>
 	{},										//    _script      - Script to execute when setting is changed. (optional) <CODE>
