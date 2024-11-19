@@ -38,6 +38,10 @@ workshop = ["2352603233"] # Greenmag
 extends = "default"
 mission = "exec.VR"
 
+[VR]
+extends = "default"
+mission = "VR.VR"
+
 [airlift]
 extends = "default"
 mission = "airlift.VR"
