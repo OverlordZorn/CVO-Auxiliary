@@ -1,4 +1,4 @@
-#include "\z\cvo\addons\dynGroups\DynamicGroupsCommonDefines.inc"
+#include "\zrn\cvo\addons\dynGroups\DynamicGroupsCommonDefines.inc"
 
 if !(["PlayerIsLeader",[player]] call BIS_fnc_dynamicGroups) exitWith {};
 

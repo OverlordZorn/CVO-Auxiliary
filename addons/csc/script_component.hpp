@@ -2,5 +2,5 @@
 #define COMPONENT_BEAUTIFIED Custom Supply Crate Framework
 
 
-#include "\z\cvo\addons\main\script_mod.hpp"
-#include "\z\cvo\addons\main\script_macros.hpp"
+#include "\zrn\cvo\addons\main\script_mod.hpp"
+#include "\zrn\cvo\addons\main\script_macros.hpp"

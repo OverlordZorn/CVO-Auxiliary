@@ -1,5 +1,5 @@
 // Include common defines file
-#include "\z\cvo\addons\dynGroups\DynamicGroupsCommonDefines.inc"
+#include "\zrn\cvo\addons\dynGroups\DynamicGroupsCommonDefines.inc"
 
 private ["_mode", "_params"];
 _mode   = _this param [0, "", [""]];
