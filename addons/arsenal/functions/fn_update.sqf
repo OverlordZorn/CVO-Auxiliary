@@ -40,7 +40,7 @@ if ([player, 1] call ace_repair_fnc_isEngineer) 		then {_roles pushBackUnique "E
 	diag_log format ["_array: %1", _array];
 
 
-	if (!(_array isEqualTo false)) then {
+	if ((_array isNotEqualTo false)) then {
 		// _array = [  "KEY/ROLENAME",	[  ["ARRAY OF CLASSNAMES"],{"Optional CODEBLOCK"}  ]  ]
 		
 		diag_log format ["Role: %1 detected", _x];
@@ -62,7 +62,7 @@ private _hashMap_PlayerKit = missionNamespace getVariable ["CVO_A_HASH_PlayerKit
 _array = _hashMap_PlayerKit getOrDefault [_uid,false];
 
 
-if (!(_array isEqualTo false)) then {
+if ((_array isNotEqualTo false)) then {
 
 	private _code = [] call (_array select 2);
 

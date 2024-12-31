@@ -605,7 +605,7 @@ switch _mode do
 		} forEach _playerList;
 
 		// Make sure we need to update
-		if !(_newPlayersList isEqualTo _oldPlayersList) then
+		if (_newPlayersList isNotEqualTo _oldPlayersList) then
 		{
 			// Store new list
 			uiNamespace setVariable [_targetList, _newPlayersList];
@@ -750,7 +750,7 @@ switch _mode do
 		{
 			private _index = ["TreeGetDataIndex", [_listbox, _data]] call DISPLAY;
 
-			if !(_index isEqualTo []) then
+			if (_index isNotEqualTo []) then
 			{
 				_listbox tvSetText [_index, _text];
 				_listbox tvSetPicture [_index, _picture];

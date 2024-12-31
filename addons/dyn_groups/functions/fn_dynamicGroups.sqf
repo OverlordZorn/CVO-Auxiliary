@@ -461,7 +461,7 @@ switch (_mode) do
 			_kicks = _kicksOld - [_group];
 
 			// Store this event, we want to be able to see if player was kicked out of a group
-			if !(_kicksOld isEqualTo _kicks) then
+			if (_kicksOld isNotEqualTo _kicks) then
 			{
 				_player setVariable [VAR_KICKED_BY, _kicks, IS_PUBLIC];
 			};

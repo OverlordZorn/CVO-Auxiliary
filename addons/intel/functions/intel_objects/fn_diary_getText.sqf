@@ -24,7 +24,7 @@ private _stringArray = [];
 
 private _header = "<font face='EtelkaMonospacePro' color='#0099ff' size='14'>Intel Found:</font>";
 
-_stringArray pushback _header;
+_stringArray pushBack _header;
 
 {
     private _groupName = _x;

@@ -24,7 +24,7 @@ private _array = intel_database get _groupName;
 diag_log format ['[CVO](debug)(fn_checkGroup) _array: %1', _array];
 
 private _amountTotal = count _array;
-private _found = { _x } count (_array apply {missionNamespace getvariable _x} apply { isNull _x});
+private _found = { _x } count ( _array apply { missionNamespace getVariable _x } apply { isNull _x } );
 
 diag_log format ['[CVO](debug)(fn_checkGroup) _array: %1', _array];
 diag_log format ['[CVO](debug)(fn_checkGroup) _found: %1 - _amountTotal: %2', _found , _amountTotal];
