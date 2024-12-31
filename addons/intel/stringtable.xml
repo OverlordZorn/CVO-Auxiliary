@@ -2,8 +2,35 @@
 <Project name="cvo-auxiliary">
     <Package name="Intel">
         <Container name="CBA Settings">
+            <Key ID="STR_cvo_Intel_set_Enable">
+                <English>Enable</English>
+            </Key>
             <Key ID="STR_cvo_Intel_set_cat_title">
                 <English>CVO - Intel</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_missionstart_delay_desc">
+                <English>The Initial delay after Missionstart before for the existing flags markers are being marked. This is mainly for persistancy scripts/mods to be effective before.</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_missionstart_delay_sec">
+                <English>Delay in seconds</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_missionstart_enable_desc">
+                <English>Enables/Disables the feature. Creates Map Markers for the selected ACE Marker Flag after Missionstart.</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_missionstart_type_desc">
+                <English>Will create a mapmarker for ACE marker flags of this type shortly after missionstart.</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_playerplaced_delay_desc">
+                <English>The delay for the marker to be visible on the map after a player has placed it on the map in Minutes.</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_playerplaced_delay_min">
+                <English>Delay in minutes</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_playerplaced_enable_desc">
+                <English>Enables/Disables the feature. Creates Map Markers for the selected ACE Marker Flag when placed during the mission.</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_playerplaced_type_desc">
+                <English>Will initially create a mapmarker for player placed ACE Marker Flags of this type after the set delay.</English>
             </Key>
             <Key ID="STR_cvo_Intel_set_subcat_markerSettings">
                 <English>Marker Settings</English>
@@ -14,38 +41,11 @@
             <Key ID="STR_cvo_Intel_set_subcat_missionstart_type">
                 <English>Missionstart - Type</English>
             </Key>
-            <Key ID="STR_cvo_Intel_set_Enable">
-                <English>Enable</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_missionstart_enable_desc">
-                <English>Enables/Disables the feature. Creates Map Markers for the selected ACE Marker Flag after Missionstart.</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_missionstart_delay_sec">
-                <English>Delay in seconds</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_missionstart_delay_desc">
-                <English>The Initial delay after Missionstart before for the existing flags markers are being marked. This is mainly for persistancy scripts/mods to be effective before.</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_missionstart_type_desc">
-                <English>Will create a mapmarker for ACE marker flags of this type shortly after missionstart.</English>
-            </Key>
             <Key ID="STR_cvo_Intel_set_subcat_playerplaced">
                 <English>Placed by Player - Markers for ACE Marker Flags</English>
             </Key>
             <Key ID="STR_cvo_Intel_set_subcat_playerplaced_type">
                 <English>Placed by Player - Type</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_playerplaced_delay_min">
-                <English>Delay in minutes</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_playerplaced_enable_desc">
-                <English>Enables/Disables the feature. Creates Map Markers for the selected ACE Marker Flag when placed during the mission.</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_playerplaced_delay_desc">
-                <English>The delay for the marker to be visible on the map after a player has placed it on the map in Minutes.</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_playerplaced_type_desc">
-                <English>Will initially create a mapmarker for player placed ACE Marker Flags of this type after the set delay.</English>
             </Key>
         </Container>
     </Package>
