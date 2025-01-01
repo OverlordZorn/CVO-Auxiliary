@@ -2,6 +2,15 @@
 
 ## functions
 
+### `cvo_common_fnc_makeCosmetic`
+
+Turns an item, like guns (technically, ground weapon holders), into an non interactable, unmovable, purely cosmetic item.
+
+```sqf
+// objects init field
+[this] call cvo_common_fnc_makeCosmetic;
+```
+
 ### `cvo_common_fnc_executeUnit`
 
 adds force to a unit and sets damage to 1 afterwards.

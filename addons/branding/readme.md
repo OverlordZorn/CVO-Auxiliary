@@ -24,15 +24,15 @@ Adds CVO Banners
 ## Old
 ### Flag Texture Paths
 ```sqf 
-this setFlagTexture "z\cvo\addons\branding\data\flag_voron_red_512.paa";
-this setFlagTexture "z\cvo\addons\branding\data\flag_voron_red_2048.paa";
+this setFlagTexture "zrn\cvo\addons\branding\data\flag_voron_red_512.paa";
+this setFlagTexture "zrn\cvo\addons\branding\data\flag_voron_red_2048.paa";
 
-this setFlagTexture "z\cvo\addons\branding\data\flag_voron_olive_512.paa";
-this setFlagTexture "z\cvo\addons\branding\data\flag_voron_olive_2048.paa";
+this setFlagTexture "zrn\cvo\addons\branding\data\flag_voron_olive_512.paa";
+this setFlagTexture "zrn\cvo\addons\branding\data\flag_voron_olive_2048.paa";
 ```
 
 ### Leaderportrait
 tba. 
 Vanilla Classname  `GalleryFrame_01_large_portrait_F`
-Texture #0 `z\cvo\addons\branding\data\Leaderportrait.paa`
+Texture #0 `zrn\cvo\addons\branding\data\Leaderportrait.paa`
 Note: Seems like it doesnt like `"`

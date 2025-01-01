@@ -2,7 +2,7 @@
 disableSerialization;
 
 // Include common defines file
-#include "\z\cvo\addons\dynGroups\DynamicGroupsCommonDefines.inc"
+#include "\zrn\cvo\addons\dynGroups\DynamicGroupsCommonDefines.inc"
 
 // Script parameters
 private ["_mode", "_params"];
@@ -313,7 +313,7 @@ switch _mode do
 			private _insignia = missionNamespace getVariable [VAR_FORCED_INSIGNIA, ""];
 			private _insigniaTexture = if (_insignia != "") then {["GetInsigniaTexture", [_insignia]] call GROUPS} else {["GetInsigniaTexture", [_groupPicture]] call GROUPS};
 			if (_insigniaTexture == "") then {
-				_groupIcon ctrlSetText "\z\cvo\addons\dynGroups\data\noInsignia.paa";
+				_groupIcon ctrlSetText "\zrn\cvo\addons\dynGroups\data\noInsignia.paa";
 			} else {
 				_groupIcon ctrlSetText _insigniaTexture;
 			};
@@ -605,7 +605,7 @@ switch _mode do
 		} forEach _playerList;
 
 		// Make sure we need to update
-		if !(_newPlayersList isEqualTo _oldPlayersList) then
+		if (_newPlayersList isNotEqualTo _oldPlayersList) then
 		{
 			// Store new list
 			uiNamespace setVariable [_targetList, _newPlayersList];
@@ -750,7 +750,7 @@ switch _mode do
 		{
 			private _index = ["TreeGetDataIndex", [_listbox, _data]] call DISPLAY;
 
-			if !(_index isEqualTo []) then
+			if (_index isNotEqualTo []) then
 			{
 				_listbox tvSetText [_index, _text];
 				_listbox tvSetPicture [_index, _picture];

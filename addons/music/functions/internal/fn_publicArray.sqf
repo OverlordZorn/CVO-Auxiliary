@@ -21,4 +21,4 @@ private _previousKeys = GETMGVAR(public_keys,[]);
 
 private _newKeys = keys  _hashmap select { !( "_pool" in _x ) && { count (_hashMap get _x) > 0 } };
 
-if !( _previousKeys isEqualTo _newKeys ) then { SETMGVAR_PUBLIC(public_keys,_newKeys,true);};
+if ( _previousKeys isNotEqualTo _newKeys ) then { SETMGVAR_PUBLIC(public_keys,_newKeys,true);};

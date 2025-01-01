@@ -1,5 +1,5 @@
 #define PREFIX cvo
-#define MAINPREFIX z
+#define MAINPREFIX zrn
 
 #define PREFIX_BEAUTIFIED CVO Auxiliary
 

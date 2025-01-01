@@ -1,6 +1,6 @@
 name = "CVO Auxiliary";
 
-author = "Overlord Zorn";
+author = "Overlord Zorn {version}";
 
 picture         = "img\flag_voron_red_1024_2048.paa";                                                                                               // Picture displayed from the expansions menu. Optimal size is 2048x1024
 hideName        = "false";                                                                                                                          // Hide the extension name

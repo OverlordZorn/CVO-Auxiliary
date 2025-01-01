@@ -17,7 +17,6 @@
 
 // this stuff needs to happen on the client
 
-if !(isServer) exitWith {};
 
 params ["_target", "_player", "_actionParams"];
 _actionParams params ["_entryName","_catName", "_mode"];
@@ -27,15 +26,12 @@ ZRN_LOG_MSG_1(INIT,_this);
 private _cat = [_catName] call FUNC(catalog);
 private _entry = _cat get _entryName;
 
-ZRN_LOG_1(typeName _entry);
-
 private _deliveryMethod = switch (_mode) do {
     case "ZEUS": { _entry get "zeus_mode"};
     case "NORMAL": { _entry get "normal_mode"};
     default { false };
 };
 
-ZRN_LOG_1(_deliveryMethod);
 
 if (_deliveryMethod isEqualTo false) exitWith {ZRN_LOG_MSG_1(Failed: Mode Invalid,_mode);};
 
