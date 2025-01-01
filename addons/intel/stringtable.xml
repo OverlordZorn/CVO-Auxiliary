@@ -2,8 +2,35 @@
 <Project name="cvo-auxiliary">
     <Package name="Intel">
         <Container name="CBA Settings">
+            <Key ID="STR_cvo_Intel_set_Enable">
+                <English>Enable</English>
+            </Key>
             <Key ID="STR_cvo_Intel_set_cat_title">
                 <English>CVO - Intel</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_missionstart_delay_desc">
+                <English>The Initial delay after Missionstart before for the existing flags markers are being marked. This is mainly for persistancy scripts/mods to be effective before.</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_missionstart_delay_sec">
+                <English>Delay in seconds</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_missionstart_enable_desc">
+                <English>Enables/Disables the feature. Creates Map Markers for the selected ACE Marker Flag after Missionstart.</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_missionstart_type_desc">
+                <English>Will create a mapmarker for ACE marker flags of this type shortly after missionstart.</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_playerplaced_delay_desc">
+                <English>The delay for the marker to be visible on the map after a player has placed it on the map in Minutes.</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_playerplaced_delay_min">
+                <English>Delay in minutes</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_playerplaced_enable_desc">
+                <English>Enables/Disables the feature. Creates Map Markers for the selected ACE Marker Flag when placed during the mission.</English>
+            </Key>
+            <Key ID="STR_cvo_Intel_set_playerplaced_type_desc">
+                <English>Will initially create a mapmarker for player placed ACE Marker Flags of this type after the set delay.</English>
             </Key>
             <Key ID="STR_cvo_Intel_set_subcat_markerSettings">
                 <English>Marker Settings</English>
@@ -14,38 +41,33 @@
             <Key ID="STR_cvo_Intel_set_subcat_missionstart_type">
                 <English>Missionstart - Type</English>
             </Key>
-            <Key ID="STR_cvo_Intel_set_Enable">
-                <English>Enable</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_missionstart_enable_desc">
-                <English>Enables/Disables the feature. Creates Map Markers for the selected ACE Marker Flag after Missionstart.</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_missionstart_delay_sec">
-                <English>Delay in seconds</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_missionstart_delay_desc">
-                <English>The Initial delay after Missionstart before for the existing flags markers are being marked. This is mainly for persistancy scripts/mods to be effective before.</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_missionstart_type_desc">
-                <English>Will create a mapmarker for ACE marker flags of this type shortly after missionstart.</English>
-            </Key>
             <Key ID="STR_cvo_Intel_set_subcat_playerplaced">
                 <English>Placed by Player - Markers for ACE Marker Flags</English>
             </Key>
             <Key ID="STR_cvo_Intel_set_subcat_playerplaced_type">
                 <English>Placed by Player - Type</English>
             </Key>
-            <Key ID="STR_cvo_Intel_set_playerplaced_delay_min">
-                <English>Delay in minutes</English>
+        </Container>
+        <Container name="Intel Object">
+            <Key ID="STR_cvo_Intel_ModuleCreateIntel_IntelFound">
+                <English>Intel Found</English>
+                <Italian>Avviso trovato</Italian>
+                <Polish>Znaleziono dane wywiadowcze</Polish>
+                <German>Hinweis gefunden</German>
+                <Korean>인텔 찾아짐</Korean>
+                <Japanese>インテルを発見</Japanese>
+                <Chinese>情報發現</Chinese>
+                <Chinesesimp>情报发现</Chinesesimp>
             </Key>
-            <Key ID="STR_cvo_Intel_set_playerplaced_enable_desc">
-                <English>Enables/Disables the feature. Creates Map Markers for the selected ACE Marker Flag when placed during the mission.</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_playerplaced_delay_desc">
-                <English>The delay for the marker to be visible on the map after a player has placed it on the map in Minutes.</English>
-            </Key>
-            <Key ID="STR_cvo_Intel_set_playerplaced_type_desc">
-                <English>Will initially create a mapmarker for player placed ACE Marker Flags of this type after the set delay.</English>
+            <Key ID="STR_cvo_Intel_ModuleCreateIntel_PlayerFoundIntel">
+                <English>%1 found intel: "%2"</English>
+                <Italian>% 1 ha trovato il suggerimento "% 2"</Italian>
+                <Polish>%1 znalazł dane wywiadowcze: "%2"</Polish>
+                <German>%1 hat den Hinweis "%2" gefunden</German>
+                <Korean>%1이 인텔 취득: "%2"</Korean>
+                <Japanese>%1 がインテルを発見: "%2"</Japanese>
+                <Chinese>%1 發現情報: "%2"</Chinese>
+                <Chinesesimp>%1 发现情报: "%2"</Chinesesimp>
             </Key>
         </Container>
     </Package>

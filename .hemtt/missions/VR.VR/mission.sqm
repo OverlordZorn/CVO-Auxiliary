@@ -8,27 +8,28 @@ class EditorData
 	toggles=517;
 	class ItemIDProvider
 	{
-		nextID=186;
+		nextID=187;
 	};
 	class Camera
 	{
-		pos[]={0.47298321,29.067928,-25.468061};
-		dir[]={0.031283207,-0.75997806,0.64924896};
-		up[]={0.036577139,0.64992648,0.75911689};
-		aside[]={0.99886912,1.7450247e-07,-0.04813011};
+		pos[]={2.7006025,7.134984,-7.4723735};
+		dir[]={0.75554872,-0.48625356,0.43898022};
+		up[]={0.42044038,0.87381786,0.24427943};
+		aside[]={0.50237048,0,-0.86465263};
 	};
 };
 binarizationWanted=0;
 sourceName="vr";
 addons[]=
 {
-	"A3_Characters_F"
+	"A3_Characters_F",
+	"A3_Props_F_Oldman_Items"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -36,7 +37,18 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item1
+		{
+			className="A3_Props_F_Oldman";
+			name="Arma 3 Old Man - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
+};
+dlcs[]=
+{
+	"Oldman"
 };
 randomSeed=4540948;
 class ScenarioData
@@ -66,7 +78,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
 			dataType="Group";
@@ -125,6 +137,24 @@ class Mission
 			{
 			};
 			id=0;
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7.0970001,5.1560721,-4.0380001};
+				angles[]={0,4.0316234,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[""intel_test""] call cvo_intel_fnc_createIntel";
+				name="intel_test";
+			};
+			id=186;
+			type="Land_Laptop_Intel_02_F";
 		};
 	};
 };

@@ -1,4 +1,4 @@
-#include "../script_component.hpp"
+#include "../../script_component.hpp"
 
 /*
 *	Scans all Objects on the map, then, seperates out required flag colors.
