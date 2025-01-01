@@ -29,15 +29,15 @@ _stringArray pushBack _header;
 {
     private _groupName = _x;
 
-    [_groupName] call FUNC(checkGroup) params ["_remaining","_total"];
+    [_groupName] call FUNC(checkGroup) params ["_found","_total"];
 
-    diag_log format ['[CVO](debug)(fn_diary_getText) _remaining: %1 - _total: %2', _remaining , _total];
+    diag_log format ['[CVO](debug)(fn_diary_getText) _found: %1 - _total: %2', _found , _total];
 
-    private _text = if (_remaining == _total) then {
-        format ["<font size=10 face='EtelkaMonospacePro'>%1 / %2 - %3 - Complete!</font>",_remaining, _total, _groupName];
-    } else {
-        format ["<font size=10 face='EtelkaMonospacePro'>%1 / %2 - %3</font>",_remaining, _total, _groupName];
-    };
+    private _text = [
+        format ["<font size=10 face='EtelkaMonospacePro'>%1 / %2 - %3</font>",_found, _total, _groupName],
+        format ["<font size=10 face='EtelkaMonospacePro'>%1 / %2 - %3 - Complete!</font>",_found, _total, _groupName]
+    ] select (_found == _total);
+    
     _stringArray pushBack _text;
 } forEach _discoveredIntelGroups;
 

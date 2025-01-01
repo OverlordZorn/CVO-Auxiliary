@@ -17,5 +17,5 @@
 
 [ QGVAR(EH_update),          FUNC(diary_updateRecord) ] call CBA_fnc_addEventHandler;
 [ QGVAR(EH_addIntelAction),  FUNC(addIntelAction)     ] call CBA_fnc_addEventHandler;
-[ QGVAR(EH_addIntelEntry),   FUNC(addIntel)           ] call CBA_fnc_addEventHandler;
+[ QGVAR(EH_addIntelEntry),   FUNC(addIntelEntry)      ] call CBA_fnc_addEventHandler;
 

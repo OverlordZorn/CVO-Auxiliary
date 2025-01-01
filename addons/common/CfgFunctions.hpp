@@ -16,7 +16,9 @@ class CfgFunctions
 
             class holdaction_tp {};
 
-            class makeObjectCosmetic {};
+            class makeCosmetic {};
+
+            class markAllLocations {};
 		};
     };
 };

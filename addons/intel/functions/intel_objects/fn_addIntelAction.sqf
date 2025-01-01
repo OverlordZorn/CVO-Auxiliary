@@ -31,6 +31,8 @@
 
 params ["_object", "_share", "_delete", "_actionType", "_actionText", "_actionSounds", "_duration", "_title", "_text"];
 
+ZRN_LOG_1(_this);
+
 private _fnc_addIntel = {
     
     // Send to message to curators that a player has found intel
@@ -48,7 +50,7 @@ private _fnc_addIntel = {
         true
     ] call CBA_fnc_notify;
 
-    [QGVAR(EH_addIntel), [_title, _text]] call CBA_fnc_globalEventJIP;
+    [QGVAR(EH_addIntelEntry), [_title, _text]] call CBA_fnc_globalEventJIP;
 };
 
 // Removing previous action regardless of type to handle switching action types
