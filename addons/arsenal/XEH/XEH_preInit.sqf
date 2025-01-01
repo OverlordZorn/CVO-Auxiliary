@@ -3,7 +3,7 @@
 [
 	QSET(save_arsenalClose),//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"CHECKBOX",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-	[LSTRING(set_save_arsenalClosed),LSTRING(set_save_arsenalClosed_desc)],
+	SETLSTRING(save_arsenalClosed),
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
 	[LSTRING(set_cat_title),LSTRING(set_subcat_save)],					//    _category    - Category for the settings menu + optional sub-category <STRING, ARRAY>
 	true,									//    _valueInfo   - Extra properties of the setting depending of _settingType. See examples below <ANY>
@@ -16,7 +16,7 @@
 [
 	QSET(save_missionStart),//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"CHECKBOX",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-	[LSTRING(set_save_missionStart),LSTRING(set_save_missionStart_desc)],
+	SETLSTRING(save_missionstart),
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
 	[LSTRING(set_cat_title),LSTRING(set_subcat_save)],					//    _category    - Category for the settings menu + optional sub-category <STRING, ARRAY>
 	true,									//    _valueInfo   - Extra properties of the setting depending of _settingType. See examples below <ANY>
@@ -27,7 +27,7 @@
 [
 	QSET(save_missionStart_delay),//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"SLIDER",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-	[LSTRING(set_save_missionStart_delay),LSTRING(set_save_missionStart_delay_desc)],
+	SETLSTRING(save_missionStart_delay),
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
 	[LSTRING(set_cat_title),LSTRING(set_subcat_save)],					//    _category    - Category for the settings menu + optional sub-category <STRING, ARRAY>
 	[0, 60, 30, 0, false],									//    _valueInfo   - Extra properties of the setting depending of _settingType. See examples below <ANY>
@@ -40,7 +40,7 @@
 [
 	QSET(load_onRespawn),//    _setting     - Unique setting name. Matches resulting variable name <STRING>
 	"CHECKBOX",								//    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
-	LSTRING_SET_ARRAY(apply_onRespawn),
+	SETLSTRING(apply_onRespawn),
 //	["Load Player Loadout on Respawn","Load Player Loadout on Respawn"],
 											//    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
 	[LSTRING(set_cat_title),LSTRING(set_subcat_load)],					//    _category    - Category for the settings menu + optional sub-category <STRING, ARRAY>
