@@ -33,4 +33,4 @@ class CfgPatches {
 };
 
 #include "CfgFunctions.hpp"
-#include "XEH_preInit.hpp"
+#include "XEH\CfgXEH.hpp"

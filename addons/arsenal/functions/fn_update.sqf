@@ -32,6 +32,9 @@ systemChat format ['[CVO](ARSENAL) Init: Player Roles: %1', _roles];
 if ([player, 1] call ace_medical_treatment_fnc_isMedic) then {_roles pushBackUnique "Medic"};
 if ([player, 1] call ace_repair_fnc_isEngineer) 		then {_roles pushBackUnique "Engineer"};
 
+if ([player, 2] call ace_medical_treatment_fnc_isMedic) then {_roles pushBackUnique "Doctor"};
+if ([player, 2] call ace_repair_fnc_isEngineer) 		then {_roles pushBackUnique "AdvEngineer"};
+
 
 {// Retrieves Info from HASHMAP
 	private _hashMap_RoleKit = missionNamespace getVariable ["CVO_A_HASH_RoleKit", createHashMap];

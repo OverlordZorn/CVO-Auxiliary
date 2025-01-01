@@ -15,25 +15,26 @@ if (isNil QGVAR(local_box)) then {
 	// Creates Virtual Arsenal box for the player locally if none has been existing before
 
 	GVAR(local_box) = createVehicleLocal ["B_supplyCrate_F", [0,0,0], [], 0, "CAN_COLLIDE"];
+	private _localBox = GVAR(local_box);
 
-	player setVariable [QGVAR(local_box), GVAR(local_box), false];
+	player setVariable [QGVAR(local_box), _localBox, false];
 
-	[GVAR(local_box), false] 				call ace_dragging_fnc_setDraggable;			// Disables Dragging
-	[GVAR(local_box), false] 				call ace_dragging_fnc_setCarryable;			// Disables Carrying
-	[GVAR(local_box), -1] 					call ace_cargo_fnc_setSize;					// Disables Ace Cargo Loading
-	GVAR(local_box) setVariable ["ace_cargo_noRename", true];							// Disables Ace Cargo Renaming
+	[_localBox, false] 				call ace_dragging_fnc_setDraggable;			// Disables Dragging
+	[_localBox, false] 				call ace_dragging_fnc_setCarryable;			// Disables Carrying
+	[_localBox, -1] 					call ace_cargo_fnc_setSize;					// Disables Ace Cargo Loading
+	_localBox setVariable ["ace_cargo_noRename", true];							// Disables Ace Cargo Renaming
 
 	//	hideObject GVAR(local_box);															// Hides the Object
 
-	clearBackpackCargo GVAR(local_box);													// Empties the ArsenalBox
-	clearMagazineCargo GVAR(local_box);
-	clearWeaponCargo GVAR(local_box);
-	clearItemCargo GVAR(local_box);
+	clearBackpackCargo _localBox;													// Empties the ArsenalBox
+	clearMagazineCargo _localBox;
+	clearWeaponCargo _localBox;
+	clearItemCargo _localBox;
 
-	GVAR(local_box) enableSimulation false;												// Disables Simulation
+	_localBox enableSimulation false;												// Disables Simulation
 
 
-	[GVAR(local_box), false, false] call ace_arsenal_fnc_initBox;
+	[_localBox, false, false] call ace_arsenal_fnc_initBox;
 
 } else {
 
