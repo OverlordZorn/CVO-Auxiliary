@@ -2,7 +2,7 @@
 // Insert the following into your description.ext
 // "true" and "false" will be converted into booleans
 
-// "DefaultEntry" is a special case and will define the "Defaults" for all the implemented
+// "DefaultEntry" is a special case and will define the "Defaults" for all properties.
 
 class CfgCustomSupplyCrates
 {
@@ -24,6 +24,7 @@ class CfgCustomSupplyCrates
         box_empty = "true";
 
         // can be fixed position[pos2d/3d] or object (helipad, tarp, sth like that) or "REL" which will put the box relative behind the source object
+        // only use one of the options below:
         // spawn_pos = "REL";         // "REL" as a magic key
         // spawn_pos = "myHeliPad";   // Variable Name as a String
         spawn_pos[] = { 0, 0, 0 };
