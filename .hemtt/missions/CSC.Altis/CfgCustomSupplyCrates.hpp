@@ -1,5 +1,3 @@
-
-
 // This file serves as an example for a missionConfig based setup of CSC for a mission.
 // Insert the following into your description.ext
 // "true" and "false" will be converted into booleans
