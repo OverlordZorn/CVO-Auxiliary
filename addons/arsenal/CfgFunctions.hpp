@@ -7,7 +7,6 @@ class CfgFunctions
 			file = PATH_TO_FUNC;
             class postInit { postInit = 1; };
 
-			class eventHandlers { postInit = 1; };
 			class saveStartingLoadout { postInit = 1; };
 
 			class open	{};
