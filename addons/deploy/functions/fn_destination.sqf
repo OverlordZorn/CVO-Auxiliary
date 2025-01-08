@@ -15,20 +15,14 @@
 * Public: No
 */
 
+
 params [
     ["_target",  false,     [objNull, []], [2,3] ],
-    ["_catName", "Default", [""]                 ]
+    ["_networkName", "Default", [""]                 ],
     ["_params",  [],        [[]]                 ]
 ];
 
-private _cat = missionNamespace getVariable [[ADDON,_catName] joinString "_", "404"];
-
-if (_cat isEqualTo "404") then {
-    _cat createHashMapFromArray [
-        ["Departure", []],
-        ["Destinations", []]
-    ];
-};
+private _network = [_networkName] call FUNC(network);
 
 private _type = switch (true) do {
     case (typeName _target == "ARRAY"): { "POS" };
@@ -36,6 +30,7 @@ private _type = switch (true) do {
     case ( _target isKindOf "Static" ): { "STATIC" };
     default { "undefined" };
 };
+
 
 
 private _destination = createHashMapFromArray _params;
@@ -46,4 +41,4 @@ _destination merge createHashMapFromArray [
     ["type", _type]
 ];
 
-_cat get "Destinations" pushBack _destination;
+_network get "destinations" pushBack _destination;

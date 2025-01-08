@@ -15,25 +15,18 @@
 * Public: Yes
 */
 
+
 params [
     ["_object",     objNull,    [objNull] ],
-    ["_catName",    "Default",  [objNull] ]
+    ["_networkName",    "Default",  [objNull] ],
+    ["_offset",     [0,0,0],    [[]], [3] ]
 ];
 
 if (_object isEqualTo objNull) exitWith {};
+_object setVariable [QGVAR(NetworkName), _networkName];
 
-private _cat = missionNamespace getVariable [[ADDON,_catName] joinString "_", "404"];
+private _network = [_networkName] call FUNC(network);
 
-if (_cat isEqualTo "404") then {
-    _cat createHashMapFromArray [
-        ["Departure", [_object]],
-        ["Destinations", []]
-    ];
-    missionNamespace setVariable [[ADDON,_catName] joinString "_",_cat];
-    [_object] call FUNC(addAction);
-} else {
-    _cat set [ "Departure", _cat get "Departure" pushBackUnique _object ];
-};
+_network get "departure" pushBackUnique _object;
 
-_object setVariable [QGVAR(Departure), _catName];
-
+[_object, _networkName, _offset] call FUNC(addAction);
