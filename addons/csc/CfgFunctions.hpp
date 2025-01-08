@@ -35,8 +35,13 @@ class CfgFunctions
             class dropCrate {};
 
             class request_airdrop {};
-
 		};
+        class DOUBLES(COMPONENT,missionConfig)
+        {
+            file = PATH_TO_FUNC_SUB(missionConfig);
+            class updateDefault { preInit = 1; };
+            class importPresets { postInit = 1; };
+        };
 
         class COMPONENT
         {

@@ -20,7 +20,7 @@ params [
 	["_entryName",  "Default",  	[""]            ],
 	["_items",		[], 			[[]]            ],
 	["_backpacks",	[],				[]	            ],
-	["_hashMap",	"404",		    [createHashMap] ],
+	["_hashMap",	"404",		    [createHashMap,[]] ],
     ["_catName",    "global",       [""]            ]
 ];
 
@@ -56,6 +56,10 @@ if (_entry isEqualTo "404") then {
 
 _entry set ["items", _items];
 _entry set ["backpacks", _backpacks];
+
+if (_hashMap isEqualType []) then {
+    _hashMap = createHashMapFromArray _hashMap;
+};
 
 if (_hashMap isNotEqualTo "404") then {
     _entry merge [_hashMap, true];
