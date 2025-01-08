@@ -65,3 +65,7 @@ mission = "CSC.Altis"
 [Arsenal]
 extends = "default"
 mission = "Arsenal.Altis"
+
+[Deploy]
+extends = "default"
+mission = "Deploy.Altis"

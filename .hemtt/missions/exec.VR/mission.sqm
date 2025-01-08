@@ -8,14 +8,14 @@ class EditorData
 	toggles=517;
 	class ItemIDProvider
 	{
-		nextID=187;
+		nextID=189;
 	};
 	class Camera
 	{
-		pos[]={-1.3345492,50.018776,-77.972412};
-		dir[]={0.074861355,-0.5346635,0.84174412};
-		up[]={0.047363948,0.84506488,0.53256214};
-		aside[]={0.99606937,-1.9095751e-08,-0.088586472};
+		pos[]={-0.67291784,48.773838,-76.524162};
+		dir[]={0.074861161,-0.53466284,0.84174311};
+		up[]={0.047363766,0.84506547,0.53256088};
+		aside[]={0.99606854,3.7252903e-09,-0.088586226};
 	};
 };
 binarizationWanted=0;
@@ -23,13 +23,15 @@ sourceName="exec";
 addons[]=
 {
 	"A3_Characters_F",
-	"A3_Modules_F_Curator_Curator"
+	"A3_Modules_F_Curator_Curator",
+	"A3_Soft_F_Quadbike_01",
+	"A3_Structures_F_Kart_Mil_Flags"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=2;
+		items=4;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -44,7 +46,25 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item2
+		{
+			className="A3_Soft_F";
+			name="Arma 3 Alpha - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Structures_F_Kart";
+			name="Arma 3 Karts - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
+};
+dlcs[]=
+{
+	"Kart"
 };
 randomSeed=4540948;
 class ScenarioData
@@ -74,7 +94,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=42;
+		items=44;
 		class Item0
 		{
 			dataType="Group";
@@ -2639,6 +2659,55 @@ class Mission
 				};
 				nAttributes=4;
 			};
+		};
+		class Item42
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={22.693001,6.6262865,-23.650999};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="car";
+			};
+			id=187;
+			type="B_Quadbike_01_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item43
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={22.625,8.9768047,-8.7379999};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="flagpole";
+			};
+			id=188;
+			type="Flag_Fuel_F";
 		};
 	};
 };
