@@ -9,10 +9,10 @@ It is seperated in 3 Parts
 1. BASE KIT - This is Available for Everyone
 ##################
 
-Variable Name: CVO_A_BASE = [];
+Variable Name: cvo_arsenal_base = [];
 
 For easier reading it is suggested to compartmentalise
-and append the individual Groups to CVO_A_BASE
+and append the individual Groups to cvo_arsenal_base
 
 
 
@@ -60,7 +60,7 @@ diag_log ("[CVO] [Arsenal_Define] - start");
 
 if (isServer) then {
 	_array = (getMissionLayerEntities EDITOR_LAYER_NAME)#0;
-	[_array] remoteExecCall ["cvo_arsenal_fnc_addArsenalInteraction", [0,-2] select isDedicated, true];
+	[_array] remoteExecCall ["cvo_arsenal_fnc_addAction", [0,-2] select isDedicated, true];
 };
 
 if (!hasInterface) exitWith {};
@@ -69,7 +69,7 @@ if (!hasInterface) exitWith {};
 // ###### DEFINE BASE KIT HERE - AVAILABLE FOR EVERYONE
 // #####################################################
 
-CVO_A_BASE = [];
+cvo_arsenal_base = [];
 
 // ###### Baseline Equipment ###### 
 // The Following can be mostly left as default
@@ -78,7 +78,7 @@ CVO_A_BASE = [];
 // How to add Equipment if a certain Addon is Loaded - here, GreenMag
 if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
 
-		CVO_A_BASE append [
+		cvo_arsenal_base append [
 			//"greenmag_ammo_556x45_basic_60Rnd",
 			//"greenmag_ammo_556x45_basic_30Rnd",
 
@@ -107,7 +107,7 @@ if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
 
 
 // Medical 
-CVO_A_BASE append [
+cvo_arsenal_base append [
 	"ACE_packingBandage",
 	"ACE_fieldDressing",
 	"ACE_tourniquet", 
@@ -122,19 +122,8 @@ CVO_A_BASE append [
 
 // Tools & Equipment
 
-private _rations = [
-	"ACE_MRE_BeefStew",
-	"ACE_MRE_ChickenTikkaMasala",
-	"ACE_MRE_ChickenHerbDumplings",
-	"ACE_MRE_CreamChickenSoup",
-	"ACE_MRE_CreamTomatoSoup",
-	"ACE_MRE_LambCurry",
-	"ACE_MRE_MeatballsPasta",
-	"ACE_MRE_SteakVegetables"
-];
-CVO_A_BASE append _rations;
 
-CVO_A_BASE append [
+cvo_arsenal_base append [
 	"ChemicalDetector_01_watch_F",
 	"ItemAndroid",
 	"ItemcTabHCam",
@@ -178,14 +167,14 @@ CVO_A_BASE append [
 	"ItemCompass"];
 
 // Binoculars
-CVO_A_BASE append [
+cvo_arsenal_base append [
 	"Nikon_DSLR_HUD",
 	"Nikon_DSLR",
 	"Binocular"
 	];
 
 // NVGs
-CVO_A_BASE append [	
+cvo_arsenal_base append [	
 	//actual nvgs
 	//"ACE_NVG_Gen4",
 	"ACE_NVG_Gen3_WP",
@@ -199,21 +188,22 @@ CVO_A_BASE append [
 
 
 // Rappeling Rope 
-CVO_A_BASE append [
+cvo_arsenal_base append [
 	"AUR_Rappel_Rope_70",
 	"AUR_Rappel_Rope_50",
 	"AUR_Rappel_Rope_30",
 	"AUR_Rappel_Rope_20",
 	"AUR_Rappel_Rope_10",
-	"AUR_Rappel_Gear"];
+	"AUR_Rappel_Gear"
+	];
 
 // Radios
-CVO_A_BASE append  ["ACRE_PRC343"];
+cvo_arsenal_base append  ["ACRE_PRC343"];
 
 // ###### Wearables ###### 
 
 // Uniforms 
-CVO_A_BASE append [
+cvo_arsenal_base append [
 	//mgp g3 uniforms 
 	/*"milgp_u_g3_field_set_3cd",
 	"milgp_u_g3_field_set_aor1",
@@ -260,7 +250,7 @@ CVO_A_BASE append [
 	"U_lxWS_UN_Camo2"];
 
 // Vests
-CVO_A_BASE append [
+cvo_arsenal_base append [
 	
 	"Aegis_V_OCarrierLuchnik_Lite_blk_F",
 	"PLP_UNA_V_PlateCarrier2_F",
@@ -270,7 +260,7 @@ CVO_A_BASE append [
 ];
 
 // Backpacks
-CVO_A_BASE append [
+cvo_arsenal_base append [
 	"ace_gunbag_Tan",
 
 	"B_LegStrapBag_coyote_F",
@@ -283,7 +273,7 @@ CVO_A_BASE append [
 	];
 
 // Headgear
-CVO_A_BASE append [
+cvo_arsenal_base append [
 	"PLP_UNA_H_HelmetB",
 	"Aegis_H_Booniehat_UNO_hs_F",
 	"Aegis_H_Booniehat_UNO_F",
@@ -300,7 +290,7 @@ CVO_A_BASE append [
 	];
 
 // Facewear
-CVO_A_BASE append [
+cvo_arsenal_base append [
 	//vanilla+ glasses
 	"G_Aviator",
 	"G_Glasses_black_RF",
@@ -381,7 +371,7 @@ CVO_A_BASE append [
 // ###### WEAPONS - MAIN ###### 
 
 // Rifles
-CVO_A_BASE append  [
+cvo_arsenal_base append  [
 	// FALs
 	"arifle_SLR_lxWS",
 	"arifle_SLR_D_lxWS",
@@ -424,7 +414,7 @@ CVO_A_BASE append  [
 	];
 
 // Pistols
-CVO_A_BASE append [
+cvo_arsenal_base append [
 	"acc_flashlight_pistol",
 	"hgun_Rook40_F",
 	"hgun_P07_F",
@@ -435,7 +425,7 @@ CVO_A_BASE append [
 	];
 
 // Handgrenades and Throwables
-CVO_A_BASE append   [
+cvo_arsenal_base append   [
 
 	"ACE_CTS9",
 	"HandGrenade",
@@ -464,12 +454,12 @@ CVO_A_BASE append   [
 	"ACE_Chemlight_UltraHiOrange"];
 
 // Explosives
-CVO_A_BASE append [
+cvo_arsenal_base append [
 	
 	];
 
 // CBRN KIT
-CVO_A_BASE append [
+cvo_arsenal_base append [
 	"U_C_CBRN_Suit_01_Blue_F", 
 	"G_AirPurifyingRespirator_01_F",
 	"G_RegulatorMask_F", 
@@ -492,7 +482,7 @@ CVO_A_BASE append [
 // #####################################################
 
 
-CVO_A_HASH_RoleKit = createHashMapFromArray [
+cvo_arsenal_roles = createHashMapFromArray [
 	["Medic", [[
 		"arifle_SLR_Para_lxWS",
 		"arifle_SLR_Para_snake_lxWS",
@@ -715,7 +705,7 @@ CVO_A_HASH_RoleKit = createHashMapFromArray [
 // Formatting Template: [  "STEAM64",	["PlayerName", "["ARRAY OF CLASSNAMES"],{"Optional CODEBLOCK"}  ]  ]
 
 
-CVO_A_HASH_PlayerKit = createHashMapFromArray [
+cvo_arsenal_players = createHashMapFromArray [
 	["_SP_PLAYER_", 		["Editor Debug", 	["ACE_Banana"],		{systemChat "CVO_A_Playerkit test Successful - ACE_Sandbag_empty Given"; 	["ACE_Sandbag_empty"]}		]	],	
 	["76561197970306509", 	["Zorn", 			["G_Spectacles_Tinted", "G_Balaclava_blk", "H_Beret_blk", "B_LegStrapBag_black_F", "WSLV_Brown_gn_black_Camo", "ACE_SpraypaintBlack"],	{[]}	]],
 	["76561198090236234", 	["Recon", 			[],	{[]}	]],
