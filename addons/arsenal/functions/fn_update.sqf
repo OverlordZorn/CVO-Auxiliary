@@ -19,14 +19,12 @@ if (!hasInterface) exitWith {};
 
 private _finalKit = [];
 
-_baseKit = missionNamespace getVariable ["CVO_A_BASE", []];
+_baseKit = missionNamespace getVariable [QGVAR(base), []];
 _finalKit append _baseKit;
 
 // ############ Detect ROLE KIT ############
 
 private _roles = player getVariable ["CVO_A_Roles", []];
-diag_log format ['[CVO](ARSENAL) Init: Player Roles: %1', _roles];
-systemChat format ['[CVO](ARSENAL) Init: Player Roles: %1', _roles];
 
 // Detectes ACE MEDIC and ACE Engineer
 if ([player, 1] call ace_medical_treatment_fnc_isMedic) then {_roles pushBackUnique "Medic"};
@@ -35,9 +33,11 @@ if ([player, 1] call ace_repair_fnc_isEngineer) 		then {_roles pushBackUnique "E
 if ([player, 2] call ace_medical_treatment_fnc_isMedic) then {_roles pushBackUnique "Doctor"};
 if ([player, 2] call ace_repair_fnc_isEngineer) 		then {_roles pushBackUnique "AdvEngineer"};
 
+diag_log format ['[CVO](ARSENAL) Init: Player Roles: %1', _roles];
+systemChat format ['[CVO](ARSENAL) Init: Player Roles: %1', _roles];
 
 {// Retrieves Info from HASHMAP
-	private _hashMap_RoleKit = missionNamespace getVariable ["CVO_A_HASH_RoleKit", createHashMap];
+	private _hashMap_RoleKit = missionNamespace getVariable [QGVAR(roleKit), createHashMap];
 	private _array = _hashMap_RoleKit getOrDefault [_x,false];
 
 	diag_log format ["_array: %1", _array];
@@ -61,7 +61,7 @@ if ([player, 2] call ace_repair_fnc_isEngineer) 		then {_roles pushBackUnique "A
 // ############ Detect PLAYER KIT ############
 private _uid = getPlayerUID player;
 
-private _hashMap_PlayerKit = missionNamespace getVariable ["CVO_A_HASH_PlayerKit", createHashMap];
+private _hashMap_PlayerKit = missionNamespace getVariable [QGVAR(playerKit), createHashMap];
 _array = _hashMap_PlayerKit getOrDefault [_uid,false];
 
 

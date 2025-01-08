@@ -5,21 +5,26 @@ class CfgFunctions
 		class COMPONENT           // Category
 		{
 			file = PATH_TO_FUNC;
+            class postInit { postInit = 1; };
 
-
-			class eventHandlers  { postInit = 1; };
+			class eventHandlers { postInit = 1; };
 			class saveStartingLoadout { postInit = 1; };
 
 			class open	{};
 			class update  {};
-			class addArsenalInteraction {};
+			class addAction {};
 		};
 
 		class Arsenal_Tabs
 		{
 			file = PATH_TO_FUNC_SUB(arsenal_tabs);
-			requiredAddons[] = {"cvo_main",  "greenmag_main" };
 			class greenmag { postInit = 1; };
 		};
+
+        class missionConfig
+        {
+            file = PATH_TO_FUNC_SUB(missionConfig);
+            class missionConfig { postInit = 1; };
+        };
 	};
 };

@@ -54,11 +54,14 @@ mission = "rockslide.Tanoa"
 extends = "default"
 mission = "bigBoom.Altis"
 
-[ula]
+[ULA]
 extends = "default"
 mission = "ULA-Dedicated-MP-Test.stratis"
 
 [CSC]
-# extends = "default"
 extends = "default"
 mission = "CSC.Altis"
+
+[Arsenal]
+extends = "default"
+mission = "Arsenal.Altis"
