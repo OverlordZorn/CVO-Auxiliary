@@ -14,7 +14,7 @@
 * None
 *
 * Example:
-* ['something', player] call prefix_component_fnc_functionname
+* [this, lz_range, "Go to the Firing Range"] call cvo_aux_fnc_holdaction_tp;
 *
 * Public: Yes
 */
