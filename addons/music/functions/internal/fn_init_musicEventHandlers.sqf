@@ -22,8 +22,8 @@ addMusicEventHandler ["MusicStart", {
 	params ["_musicClassname", "_eventHandlerId", "_currentPosition", "_totalLength"];
 
     private _completedAt = CBA_MissionTime + _totalLength - linearConversion [0,1,_currentPosition,0,_totalLength,true];
-    [QGVAR(EH_update_server), [getPlayerID player, _completedAt]] call CBA_fnc_serverEvent;
 
+    [_completedAt] call FUNC(serverUpdate_buffer);
     [_musicClassname] call FUNC(updateHistory);
 }];
 
@@ -33,5 +33,6 @@ addMusicEventHandler ["MusicStop", {
     params ["_musicClassname", "_eventHandlerId", "_currentPosition", "_totalLength"];
     
     private _completedAt = -1;
-    [QGVAR(EH_update_server), [getPlayerID player, _completedAt]] call CBA_fnc_serverEvent;
+    [_completedAt] call FUNC(serverUpdate_buffer);
+
 }];

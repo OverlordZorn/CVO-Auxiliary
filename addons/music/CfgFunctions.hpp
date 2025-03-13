@@ -39,6 +39,7 @@ class CfgFunctions
             class init_musicEventHandlers { preInit = 1; };
             class init_cbaEvents { preInit = 1; };
             
+            class serverUpdate_buffer {};
             class startMonitor {};
             class createAction {};
             class publicArray {};
